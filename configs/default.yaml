@@ -1,0 +1,35 @@
+# Configuración por defecto del pipeline.
+# Las rutas relativas se resuelven contra la raíz del proyecto (donde está pyproject.toml).
+
+seed: 42
+
+paths:
+  raw_dir: data/raw/docs_raw
+  processed_dir: data/processed
+  outputs_dir: outputs
+  reports_dir: reports
+  logs_dir: outputs/logs
+  # Cache de respuestas del LLM (etapa qa). Versionado: permite reproducir qa.jsonl sin API key.
+  llm_cache_dir: data/cache/llm
+
+logging:
+  level: INFO
+
+llm:
+  # (reservado, aún sin implementar)
+  # replay = solo lee la cache y falla si falta una entrada (default: no requiere API key)
+  # record = llama a la API ante un miss y guarda la respuesta
+  # off    = ignora la cache
+  cache_mode: replay
+
+profile:
+  # Archivos de navegación docsify (no son contenido).
+  nav_filenames: [_sidebar.md, _coverpage.md, _navbar.md]
+  # Un archivo con menos palabras útiles que esto se marca como "stub".
+  stub_max_words: 15
+  # Patrones (regex, case-insensitive) que identifican texto placeholder.
+  todo_patterns: ['to\s*-?\s*do', 'tbd', 'wip', 'coming soon', 'pr[oó]ximamente', 'pendiente']
+  # Detección de idioma: mínimo de stopwords detectadas para emitir una etiqueta.
+  lang_min_stopwords: 3
+  # Si la proporción del idioma dominante es menor a esto, se etiqueta "mixed".
+  lang_mixed_threshold: 0.7

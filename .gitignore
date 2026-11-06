@@ -1,0 +1,23 @@
+# Entorno
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Cachés de herramientas
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Intermedios y logs (se reproducen con `make all`).
+# outputs/ (datasets finales) y data/cache/llm/ SÍ se versionan.
+data/processed/*
+!data/processed/.gitkeep
+outputs/logs/
+
+# SO / editores
+.DS_Store
+.vscode/
+.idea/
