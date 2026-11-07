@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, TypeVar
 
 import yaml
 
@@ -17,6 +17,8 @@ def find_project_root(start: Path | None = None) -> Path:
             return candidate
     return Path.cwd().resolve()
 
+
+T = TypeVar("T")
 
 DEFAULT_CONFIG = find_project_root(Path(__file__).parent) / "configs" / "default.yaml"
 
@@ -32,12 +34,36 @@ class Paths:
 
 
 @dataclass(frozen=True)
-class ProfileConfig:
+class FilesConfig:
+    # Navegación docsify: fuera del corpus, se guarda como metadata.
     nav_filenames: tuple[str, ...] = ("_sidebar.md", "_coverpage.md", "_navbar.md")
-    stub_max_words: int = 15
+
+
+@dataclass(frozen=True)
+class TextConfig:
     todo_patterns: tuple[str, ...] = (r"to\s*-?\s*do", "tbd", "wip")
     lang_min_stopwords: int = 3
     lang_mixed_threshold: float = 0.7
+
+
+@dataclass(frozen=True)
+class ProfileConfig:
+    stub_max_words: int = 15
+
+
+@dataclass(frozen=True)
+class NormalizeConfig:
+    stub_min_tokens: int = 8
+
+
+@dataclass(frozen=True)
+class DedupConfig:
+    shingle_size: int = 5
+    num_perm: int = 128
+    near_dup_threshold: float = 0.6
+    lsh_threshold: float = 0.45
+    near_dup_min_tokens: int = 20
+    n_diff_examples: int = 5
 
 
 @dataclass(frozen=True)
@@ -45,7 +71,11 @@ class Config:
     seed: int
     paths: Paths
     log_level: str = "INFO"
+    files: FilesConfig = field(default_factory=FilesConfig)
+    text: TextConfig = field(default_factory=TextConfig)
     profile: ProfileConfig = field(default_factory=ProfileConfig)
+    normalize: NormalizeConfig = field(default_factory=NormalizeConfig)
+    dedup: DedupConfig = field(default_factory=DedupConfig)
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -66,11 +96,17 @@ def load_config(path: Path | None = None, overrides: dict[str, Any] | None = Non
     raw_paths = {**raw.get("paths", {}), **(overrides or {})}
     paths = Paths(**{k: _resolve(base, str(v)) for k, v in raw_paths.items()})
 
-    prof = raw.get("profile", {})
-    profile = ProfileConfig(**{k: tuple(v) if isinstance(v, list) else v for k, v in prof.items()})
+    def section(cls: type[T], name: str) -> T:
+        values = raw.get(name) or {}
+        return cls(**{k: tuple(v) if isinstance(v, list) else v for k, v in values.items()})
+
     return Config(
         seed=int(raw.get("seed", 42)),
         paths=paths,
         log_level=str(raw.get("logging", {}).get("level", "INFO")),
-        profile=profile,
+        files=section(FilesConfig, "files"),
+        text=section(TextConfig, "text"),
+        profile=section(ProfileConfig, "profile"),
+        normalize=section(NormalizeConfig, "normalize"),
+        dedup=section(DedupConfig, "dedup"),
     )

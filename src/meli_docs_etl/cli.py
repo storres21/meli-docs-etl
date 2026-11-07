@@ -49,14 +49,18 @@ def profile(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
 
 @app.command()
 def normalize(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
-    """(pendiente) Limpia Markdown: badges, comentarios docsify, navegación."""
-    _not_implemented("normalize", config, log_level)
+    """Normaliza Markdown, parte en secciones y filtra (nav, stubs, TO DO)."""
+    from meli_docs_etl.stages import normalize as stage
+
+    stage.run(_bootstrap("normalize", config, log_level))
 
 
 @app.command()
 def dedup(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
-    """(pendiente) Agrupa duplicados exactos y casi duplicados en clusters."""
-    _not_implemented("dedup", config, log_level)
+    """Dedup de secciones (exacto + MinHash) → sections_dedup.jsonl + reports/dedup.md."""
+    from meli_docs_etl.stages import dedup as stage
+
+    stage.run(_bootstrap("dedup", config, log_level))
 
 
 @app.command()

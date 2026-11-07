@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from meli_docs_etl.config import ProfileConfig, load_config
+from meli_docs_etl.config import TextConfig, load_config
 from meli_docs_etl.inventory import build_inventory
 from meli_docs_etl.lang import detect_language
 from meli_docs_etl.md_utils import compile_todo, extract_headers, is_placeholder
@@ -72,7 +72,7 @@ def test_headers_ignore_code_fences_and_flag_malformed() -> None:
 
 
 def test_placeholder_detection() -> None:
-    todo_re = compile_todo(ProfileConfig().todo_patterns)
+    todo_re = compile_todo(TextConfig().todo_patterns)
     assert is_placeholder("TO DO.", todo_re)
     assert is_placeholder("### Algo <!-- {docsify-ignore} -->\nTODO", todo_re)
     assert not is_placeholder("TODO: documentar el endpoint de pagos", todo_re)
@@ -86,7 +86,7 @@ def test_language_detection() -> None:
 
 
 def test_inventory(raw_dir: Path) -> None:
-    recs = {r.path: r for r in build_inventory(raw_dir, ProfileConfig())}
+    recs = {r.path: r for r in build_inventory(raw_dir, load_config())}
     a, b = recs["proj-a/1.0.0/guide/README.md"], recs["proj-a/latest/guide/README.md"]
     assert a.sha256 == b.sha256
     assert b.resolved_version == "2.3.0" and a.resolved_version == "1.0.0"

@@ -1,4 +1,4 @@
-.PHONY: help setup all profile normalize dedup chunk split qa evaluate test lint clean
+.PHONY: help setup all pipeline profile normalize dedup chunk split qa evaluate test lint clean
 
 CONFIG ?= configs/default.yaml
 RUN = uv run meli-etl
@@ -9,15 +9,17 @@ help:  ## Lista los comandos disponibles
 setup:  ## Crea el entorno (.venv) desde uv.lock
 	uv sync
 
-all: setup profile test  ## Setup + etapas implementadas + tests
+all: setup pipeline test  ## Setup + etapas implementadas + tests
+
+pipeline: profile normalize dedup  ## Etapas implementadas, en orden
 
 profile:  ## Etapa 1: reports/profile.md + inventory.jsonl
 	$(RUN) profile --config $(CONFIG)
 
-normalize:  ## Etapa 2 (pendiente)
+normalize:  ## Etapa 2: normaliza, parte en secciones y filtra
 	$(RUN) normalize --config $(CONFIG)
 
-dedup:  ## Etapa 3 (pendiente)
+dedup:  ## Etapa 3: dedup de secciones → reports/dedup.md
 	$(RUN) dedup --config $(CONFIG)
 
 chunk:  ## Etapa 4 (pendiente)

@@ -22,14 +22,41 @@ llm:
   # off    = ignora la cache
   cache_mode: replay
 
-profile:
-  # Archivos de navegación docsify (no son contenido).
-  nav_filenames: [_sidebar.md, _coverpage.md, _navbar.md]
-  # Un archivo con menos palabras útiles que esto se marca como "stub".
-  stub_max_words: 15
+files:
+  # Navegación docsify (no son contenido). coverpage.md: portada sin "_" en traffic-gate-api.
+  nav_filenames: [_sidebar.md, _coverpage.md, _navbar.md, coverpage.md]
+
+text:
   # Patrones (regex, case-insensitive) que identifican texto placeholder.
   todo_patterns: ['to\s*-?\s*do', 'tbd', 'wip', 'coming soon', 'pr[oó]ximamente', 'pendiente']
   # Detección de idioma: mínimo de stopwords detectadas para emitir una etiqueta.
   lang_min_stopwords: 3
   # Si la proporción del idioma dominante es menor a esto, se etiqueta "mixed".
   lang_mixed_threshold: 0.7
+
+profile:
+  # Diagnóstico: archivo con menos palabras de prosa que esto se marca "stub" en profile.md.
+  # (El filtro real del corpus es normalize.stub_min_tokens, que sí cuenta código y tablas.)
+  stub_max_words: 15
+
+normalize:
+  # Un archivo es stub si, sin headers ni imágenes, le quedan menos tokens que esto
+  # (cuenta prosa, código, tablas y texto de links).
+  stub_min_tokens: 8
+
+dedup:
+  # Shingles de k palabras para MinHash / Jaccard.
+  shingle_size: 5
+  num_perm: 128
+  # Jaccard mínimo (exacto, verificado) para considerar dos secciones casi-duplicadas.
+  # 0.6 cae en el valle vacío de la distribución observada (ningún par en [0.4, 0.6)):
+  # debajo solo hay secciones hermanas con plantilla común (≤ 0.35); encima, siempre la
+  # misma sección en otra versión (≥ 0.69). Ver reports/dedup.md §4.
+  near_dup_threshold: 0.6
+  # Umbral de banding LSH para generar candidatos (más bajo que el final → más recall;
+  # los candidatos se verifican con Jaccard exacto).
+  lsh_threshold: 0.45
+  # Secciones con menos tokens solo participan del dedup exacto (Jaccard poco fiable).
+  near_dup_min_tokens: 20
+  # Pares casi-duplicados mostrados con diff en reports/dedup.md.
+  n_diff_examples: 5

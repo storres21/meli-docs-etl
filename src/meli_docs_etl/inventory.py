@@ -12,7 +12,7 @@ from typing import Any
 
 import yaml
 
-from meli_docs_etl.config import ProfileConfig
+from meli_docs_etl.config import Config
 from meli_docs_etl.lang import detect_language
 from meli_docs_etl.md_utils import (
     compile_todo,
@@ -70,11 +70,11 @@ def normalize_for_hash(text: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
 
 
-def classify(rel: Path, cfg: ProfileConfig) -> str:
+def classify(rel: Path, nav_filenames: tuple[str, ...]) -> str:
     name, ext = rel.name, rel.suffix.lower()
     if name == META_FILENAME:
         return "meta"
-    if name in cfg.nav_filenames:
+    if name in nav_filenames:
         return "nav"
     if ext in {".yaml", ".yml"} or (ext == ".json" and "specs" in rel.parts):
         return "spec"
@@ -83,7 +83,7 @@ def classify(rel: Path, cfg: ProfileConfig) -> str:
     return "other"
 
 
-def _split_path(rel: Path) -> tuple[str, str, str]:
+def split_path(rel: Path) -> tuple[str, str, str]:
     parts = rel.parts
     project = parts[0] if len(parts) > 1 else ""
     version = parts[1] if len(parts) > 2 else ""
@@ -91,7 +91,7 @@ def _split_path(rel: Path) -> tuple[str, str, str]:
     return project, version, kind
 
 
-def _version_from_urls(urls: dict[str, str], project: str) -> str | None:
+def version_from_urls(urls: dict[str, str], project: str) -> str | None:
     pattern = re.compile(rf"/{re.escape(project)}/([^/]+)/")
     for url in urls.values():
         if m := pattern.search(url):
@@ -103,7 +103,7 @@ def load_meta(raw_dir: Path) -> dict[tuple[str, str], dict[str, str]]:
     """Lee todos los documentationTypes.json → {(proyecto, versión_dir): urls}."""
     meta: dict[tuple[str, str], dict[str, str]] = {}
     for f in sorted(raw_dir.rglob(META_FILENAME)):
-        project, version, _ = _split_path(f.relative_to(raw_dir))
+        project, version, _ = split_path(f.relative_to(raw_dir))
         try:
             meta[(project, version)] = json.loads(f.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, UnicodeDecodeError) as exc:
@@ -111,8 +111,8 @@ def load_meta(raw_dir: Path) -> dict[tuple[str, str], dict[str, str]]:
     return meta
 
 
-def _analyze_markdown(rec: FileRecord, text: str, cfg: ProfileConfig) -> None:
-    todo_re = compile_todo(cfg.todo_patterns)
+def _analyze_markdown(rec: FileRecord, text: str, cfg: Config) -> None:
+    todo_re = compile_todo(cfg.text.todo_patterns)
     rec.headers = [
         {"level": h.level, "title": h.title, "line": h.line, "malformed": h.malformed}
         for h in extract_headers(text)
@@ -129,13 +129,15 @@ def _analyze_markdown(rec: FileRecord, text: str, cfg: ProfileConfig) -> None:
         rec.status = "empty"
     elif is_placeholder(text, todo_re):
         rec.status = "todo_only"
-    elif rec.n_words < cfg.stub_max_words:
+    elif rec.n_words < cfg.profile.stub_max_words:
         rec.status = "stub"
     else:
         rec.status = "ok"
 
     # Sin marcadores TODO: "TO DO" aportaría un falso hit inglés ("do").
-    lang = detect_language(todo_re.sub(" ", text), cfg.lang_min_stopwords, cfg.lang_mixed_threshold)
+    lang = detect_language(
+        todo_re.sub(" ", text), cfg.text.lang_min_stopwords, cfg.text.lang_mixed_threshold
+    )
     rec.lang, rec.lang_es_hits, rec.lang_en_hits = lang.label, lang.es_hits, lang.en_hits
 
 
@@ -161,7 +163,7 @@ def _analyze_spec(rec: FileRecord, text: str) -> None:
     }
 
 
-def build_inventory(raw_dir: Path, cfg: ProfileConfig) -> list[FileRecord]:
+def build_inventory(raw_dir: Path, cfg: Config) -> list[FileRecord]:
     if not raw_dir.is_dir():
         raise FileNotFoundError(f"raw_dir no existe: {raw_dir}")
 
@@ -172,7 +174,7 @@ def build_inventory(raw_dir: Path, cfg: ProfileConfig) -> list[FileRecord]:
 
     for f in files:
         rel = f.relative_to(raw_dir)
-        project, version, kind = _split_path(rel)
+        project, version, kind = split_path(rel)
         data = f.read_bytes()
         try:
             text, utf8_ok = data.decode("utf-8"), True
@@ -181,14 +183,14 @@ def build_inventory(raw_dir: Path, cfg: ProfileConfig) -> list[FileRecord]:
             log.warning("Archivo no UTF-8: %s", rel)
 
         urls = meta.get((project, version), {})
-        resolved = _version_from_urls(urls, project) or version
+        resolved = version_from_urls(urls, project) or version
         rec = FileRecord(
             path=rel.as_posix(),
             project=project,
             version_dir=version,
             resolved_version=resolved,
             doc_kind=kind,
-            file_type=classify(rel, cfg),
+            file_type=classify(rel, cfg.files.nav_filenames),
             ext=rel.suffix.lower().lstrip("."),
             size_bytes=len(data),
             n_lines=text.count("\n") + (1 if text and not text.endswith("\n") else 0),

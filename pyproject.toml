@@ -5,6 +5,7 @@ description = "Pipeline local y reproducible: docs Markdown crudas -> corpus, Q&
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "datasketch>=1.6",
     "pyyaml>=6.0",
     "typer>=0.12",
 ]

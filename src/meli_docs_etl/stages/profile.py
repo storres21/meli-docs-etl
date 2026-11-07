@@ -17,7 +17,7 @@ from collections import Counter, defaultdict
 from collections.abc import Iterable, Sequence
 from pathlib import Path
 
-from meli_docs_etl.config import Config, ProfileConfig, find_project_root
+from meli_docs_etl.config import Config, find_project_root
 from meli_docs_etl.inventory import ALIAS_VERSIONS, FileRecord, build_inventory
 
 log = logging.getLogger(__name__)
@@ -54,7 +54,7 @@ def _display_path(p: Path) -> str:
         return p.as_posix()
 
 
-def render_report(records: list[FileRecord], raw_dir: Path, pcfg: ProfileConfig) -> str:
+def render_report(records: list[FileRecord], raw_dir: Path, cfg: Config) -> str:
     md = [r for r in records if r.file_type in {"content", "nav"}]
     content = [r for r in records if r.file_type == "content"]
     projects = sorted({r.project for r in records})
@@ -315,8 +315,9 @@ def render_report(records: list[FileRecord], raw_dir: Path, pcfg: ProfileConfig)
     out += ["", "## 6. Idioma detectado", ""]
     out.append(
         "Heurística de stopwords es/en sobre el texto sin código, URLs ni badges. "
-        f"`mixed` = el idioma dominante tiene < {pcfg.lang_mixed_threshold:.0%} de las stopwords; "
-        f"`unknown` = menos de {pcfg.lang_min_stopwords} stopwords."
+        f"`mixed` = el idioma dominante tiene < {cfg.text.lang_mixed_threshold:.0%} "
+        "de las stopwords; "
+        f"`unknown` = menos de {cfg.text.lang_min_stopwords} stopwords."
     )
     out += [""]
     out.append(
@@ -431,7 +432,9 @@ def render_report(records: list[FileRecord], raw_dir: Path, pcfg: ProfileConfig)
         "- **Palabras útiles**: tras quitar bloques de código, inline code, comentarios HTML, "
         "imágenes/badges, URLs, tags HTML, headers y marcadores TO DO.",
         "- **Estados**: `empty` = sin texto tras limpiar; `todo_only` = solo marcadores TO DO; "
-        f"`stub` = menos de {pcfg.stub_max_words} palabras útiles (`stub_max_words`).",
+        f"`stub` = menos de {cfg.profile.stub_max_words} palabras útiles (`stub_max_words`). "
+        "Es un diagnóstico de prosa: el filtro real del corpus está en la etapa `normalize` "
+        "(ver `reports/dedup.md`), que también cuenta código y tablas.",
         "- **Duplicados**: aquí solo exactos. Los casi duplicados (MinHash/shingles) "
         "se tratan en la etapa `dedup`.",
         "- El inventario completo está en `inventory.jsonl` dentro de `processed_dir`.",
@@ -441,7 +444,7 @@ def render_report(records: list[FileRecord], raw_dir: Path, pcfg: ProfileConfig)
 
 
 def run(cfg: Config) -> Path:
-    records = build_inventory(cfg.paths.raw_dir, cfg.profile)
+    records = build_inventory(cfg.paths.raw_dir, cfg)
 
     cfg.paths.processed_dir.mkdir(parents=True, exist_ok=True)
     inv_path = cfg.paths.processed_dir / "inventory.jsonl"
@@ -452,6 +455,6 @@ def run(cfg: Config) -> Path:
 
     cfg.paths.reports_dir.mkdir(parents=True, exist_ok=True)
     report_path = cfg.paths.reports_dir / "profile.md"
-    report_path.write_text(render_report(records, cfg.paths.raw_dir, cfg.profile), encoding="utf-8")
+    report_path.write_text(render_report(records, cfg.paths.raw_dir, cfg), encoding="utf-8")
     log.info("Reporte escrito en %s", report_path)
     return report_path

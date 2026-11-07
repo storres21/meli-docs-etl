@@ -10,8 +10,8 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 | Carpetas de versión | 16 |
 | Archivos | 107 |
 | Tamaño total (KB) | 314.7 |
-| Markdown de contenido | 71 |
-| Markdown de navegación (_sidebar/_coverpage) | 17 |
+| Markdown de contenido | 70 |
+| Markdown de navegación (_sidebar/_coverpage) | 18 |
 | Specs (swagger/openapi) | 3 |
 | Metadatos (documentationTypes.json) | 16 |
 | Grupos de duplicados exactos (sha256) | 19 |
@@ -19,7 +19,7 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 | Grupos duplicados solo tras normalizar espacios | 0 |
 | Contenido vacío / solo TO DO / stub | 0 / 1 / 6 |
 | Contenido con al menos una sección TO DO | 1 |
-| Idioma del contenido (es / en / mixed / unknown) | 10 / 51 / 0 / 10 |
+| Idioma del contenido (es / en / mixed / unknown) | 9 / 51 / 0 / 10 |
 | Archivos no UTF-8 | 0 |
 
 ## 2. Archivos por proyecto / versión / tipo
@@ -35,7 +35,7 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 | payment-promise-gateway | 0.0.10-test-crc-migration | = | 2 | 1 | 0 | 0 | 1 | 0 | 16.1 |
 | payment-promise-gateway | latest | 3.7.0 | 2 | 1 | 0 | 0 | 1 | 0 | 16.1 |
 | price-engine-api | latest | 0.0.2-setting-up | 8 | 4 | 2 | 1 | 1 | 0 | 6.2 |
-| traffic-gate-api | latest | 1.65.0 | 9 | 6 | 1 | 1 | 1 | 0 | 35.9 |
+| traffic-gate-api | latest | 1.65.0 | 9 | 5 | 2 | 1 | 1 | 0 | 35.9 |
 | unified-transaction-configs | v0.0.2 | = | 4 | 2 | 1 | 0 | 1 | 0 | 2.2 |
 | vendor-stockkeeper-api | 0.0.10-stock-consumer | = | 8 | 5 | 2 | 0 | 1 | 0 | 20.1 |
 | vendor-stockkeeper-api | 0.0.3-paused-seller | = | 8 | 5 | 2 | 0 | 1 | 0 | 16.4 |
@@ -47,8 +47,8 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 
 | Tipo | Extensiones | Archivos | KB |
 |---|---|---|---|
-| content | md | 71 | 279.2 |
-| nav | md | 17 | 3.9 |
+| content | md | 70 | 278.9 |
+| nav | md | 18 | 4.2 |
 | spec | yaml | 3 | 29.7 |
 | meta | json | 16 | 1.9 |
 
@@ -68,8 +68,8 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 
 | Métrica | min | p25 | mediana | p90 | max | media |
 |---|---|---|---|---|---|---|
-| Bytes | 33 | 442 | 2824 | 8878 | 41345 | 4027 |
-| Palabras útiles | 0 | 42 | 109 | 594 | 2022 | 239 |
+| Bytes | 33 | 670 | 2892 | 8878 | 41345 | 4080 |
+| Palabras útiles | 0 | 43 | 109 | 594 | 2022 | 242 |
 
 **Los 10 más grandes**
 
@@ -99,7 +99,7 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 | order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md | 225 | 14 |
 | demand-forecast-docs/latest/guide/explicabilidad/README.md | 259 | 43 |
 | price-engine-api/latest/guide/general.md | 281 | 0 |
-| traffic-gate-api/latest/guide/coverpage.md | 300 | 24 |
+| vendor-stockkeeper-api/latest/guide/introduction.md | 363 | 49 |
 
 ## 4. Duplicados exactos (sha256 de bytes)
 
@@ -174,7 +174,7 @@ Heurística de stopwords es/en sobre el texto sin código, URLs ni badges. `mixe
 | order-workflow-api | 0 | 6 | 0 | 2 |
 | payment-promise-gateway | 0 | 2 | 0 | 0 |
 | price-engine-api | 2 | 0 | 0 | 2 |
-| traffic-gate-api | 6 | 0 | 0 | 0 |
+| traffic-gate-api | 5 | 0 | 0 | 0 |
 | unified-transaction-configs | 2 | 0 | 0 | 0 |
 | vendor-stockkeeper-api | 0 | 16 | 0 | 4 |
 | zenith-keeper | 0 | 0 | 0 | 2 |
@@ -225,7 +225,6 @@ Heurística de stopwords es/en sobre el texto sin código, URLs ni badges. `mixe
 | price-engine-api/latest/guide/flujos.md | unknown | 0 | 0 |
 | price-engine-api/latest/guide/general.md | es | 3 | 0 |
 | traffic-gate-api/latest/guide/README.md | es | 196 | 0 |
-| traffic-gate-api/latest/guide/coverpage.md | es | 4 | 0 |
 | traffic-gate-api/latest/guide/sections/arch.md | es | 175 | 0 |
 | traffic-gate-api/latest/guide/sections/database.md | es | 124 | 0 |
 | traffic-gate-api/latest/guide/sections/processes.md | es | 386 | 0 |
@@ -312,7 +311,7 @@ Heurística de stopwords es/en sobre el texto sin código, URLs ni badges. `mixe
 | price-engine-api/latest/guide/general.md | content | 5 | 1 | 3 | 0 | 0 |
 | traffic-gate-api/latest/guide/README.md | content | 4 | 1 | 2 | 0 | 0 |
 | traffic-gate-api/latest/guide/_sidebar.md | nav | 0 | 0 | 0 | 0 | 0 |
-| traffic-gate-api/latest/guide/coverpage.md | content | 1 | 1 | 1 | 0 | 0 |
+| traffic-gate-api/latest/guide/coverpage.md | nav | 1 | 1 | 1 | 0 | 0 |
 | traffic-gate-api/latest/guide/sections/arch.md | content | 4 | 1 | 2 | 0 | 0 |
 | traffic-gate-api/latest/guide/sections/database.md | content | 2 | 1 | 2 | 0 | 0 |
 | traffic-gate-api/latest/guide/sections/processes.md | content | 4 | 1 | 2 | 0 | 0 |
@@ -1356,6 +1355,6 @@ H1 Use cases
 
 - **Tipo**: `nav` = archivos de navegación docsify; `meta` = documentationTypes.json; `spec` = YAML/JSON de API; `content` = el resto del Markdown.
 - **Palabras útiles**: tras quitar bloques de código, inline code, comentarios HTML, imágenes/badges, URLs, tags HTML, headers y marcadores TO DO.
-- **Estados**: `empty` = sin texto tras limpiar; `todo_only` = solo marcadores TO DO; `stub` = menos de 15 palabras útiles (`stub_max_words`).
+- **Estados**: `empty` = sin texto tras limpiar; `todo_only` = solo marcadores TO DO; `stub` = menos de 15 palabras útiles (`stub_max_words`). Es un diagnóstico de prosa: el filtro real del corpus está en la etapa `normalize` (ver `reports/dedup.md`), que también cuenta código y tablas.
 - **Duplicados**: aquí solo exactos. Los casi duplicados (MinHash/shingles) se tratan en la etapa `dedup`.
 - El inventario completo está en `inventory.jsonl` dentro de `processed_dir`.
