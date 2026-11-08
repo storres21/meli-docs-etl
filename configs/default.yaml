@@ -11,6 +11,8 @@ paths:
   logs_dir: outputs/logs
   # Cache de respuestas del LLM (etapa qa). Versionado: permite reproducir qa.jsonl sin API key.
   llm_cache_dir: data/cache/llm
+  # Etiquetas humanas (versionado): revisión de pares casi-duplicados.
+  labels_dir: data/labels
 
 logging:
   level: INFO
@@ -60,3 +62,15 @@ dedup:
   near_dup_min_tokens: 20
   # Pares casi-duplicados mostrados con diff en reports/dedup.md.
   n_diff_examples: 5
+
+labels:
+  # Pares de secciones con Jaccard ≥ esto se exportan para etiquetar (meli-etl label-pairs).
+  review_min_jaccard: 0.1
+  # Umbrales evaluados por meli-etl validate-threshold: start..stop con paso step.
+  grid_start: 0.1
+  grid_stop: 0.9
+  grid_step: 0.05
+  # true: recomienda el umbral más alto que mantiene el recall máximo (un falso negativo
+  # es leakage train/eval; un falso positivo solo agranda un cluster, sin perder contenido).
+  # false: recomienda el umbral con mejor F1.
+  recall_priority: true

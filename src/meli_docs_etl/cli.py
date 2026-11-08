@@ -63,6 +63,27 @@ def dedup(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
     stage.run(_bootstrap("dedup", config, log_level))
 
 
+@app.command("label-pairs")
+def label_pairs(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
+    """Exporta pares casi-duplicados para etiquetar → data/labels/ (review.md + labels.csv)."""
+    from meli_docs_etl.stages import label_pairs as stage
+
+    stage.run(_bootstrap("label-pairs", config, log_level))
+
+
+@app.command("validate-threshold")
+def validate_threshold(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
+    """Valida el umbral de casi-duplicados con las etiquetas → reports/dedup.md §8."""
+    from meli_docs_etl.stages import validate_threshold as stage
+
+    cfg = _bootstrap("validate-threshold", config, log_level)
+    try:
+        stage.run(cfg)
+    except (FileNotFoundError, ValueError) as exc:
+        log.error("%s", exc)
+        raise typer.Exit(code=2) from exc
+
+
 @app.command()
 def chunk(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
     """(pendiente) Chunking por secciones → corpus.jsonl con procedencia."""

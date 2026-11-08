@@ -1,10 +1,10 @@
-.PHONY: help setup all pipeline profile normalize dedup chunk split qa evaluate test lint clean
+.PHONY: help setup all pipeline profile normalize dedup label-pairs validate-threshold chunk split qa evaluate test lint clean
 
 CONFIG ?= configs/default.yaml
 RUN = uv run meli-etl
 
 help:  ## Lista los comandos disponibles
-	@grep -E '^[a-z]+:.*##' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  %-10s %s\n", $$1, $$2}'
+	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  %-19s %s\n", $$1, $$2}'
 
 setup:  ## Crea el entorno (.venv) desde uv.lock
 	uv sync
@@ -21,6 +21,12 @@ normalize:  ## Etapa 2: normaliza, parte en secciones y filtra
 
 dedup:  ## Etapa 3: dedup de secciones → reports/dedup.md
 	$(RUN) dedup --config $(CONFIG)
+
+label-pairs:  ## Exporta pares casi-dup para etiquetar (no pisa etiquetas)
+	$(RUN) label-pairs --config $(CONFIG)
+
+validate-threshold:  ## Valida el umbral con data/labels → reports/dedup.md §8
+	$(RUN) validate-threshold --config $(CONFIG)
 
 chunk:  ## Etapa 4 (pendiente)
 	$(RUN) chunk --config $(CONFIG)

@@ -17,7 +17,7 @@ from collections import Counter, defaultdict
 from collections.abc import Iterable, Sequence
 from pathlib import Path
 
-from meli_docs_etl.config import Config, find_project_root
+from meli_docs_etl.config import Config, display_path
 from meli_docs_etl.inventory import ALIAS_VERSIONS, FileRecord, build_inventory
 
 log = logging.getLogger(__name__)
@@ -46,14 +46,6 @@ def _dup_groups(records: list[FileRecord], key: str) -> list[list[FileRecord]]:
     return sorted(dups, key=lambda g: (-len(g), g[0].path))
 
 
-def _display_path(p: Path) -> str:
-    root = find_project_root()
-    try:
-        return p.relative_to(root).as_posix()
-    except ValueError:
-        return p.as_posix()
-
-
 def render_report(records: list[FileRecord], raw_dir: Path, cfg: Config) -> str:
     md = [r for r in records if r.file_type in {"content", "nav"}]
     content = [r for r in records if r.file_type == "content"]
@@ -68,7 +60,7 @@ def render_report(records: list[FileRecord], raw_dir: Path, cfg: Config) -> str:
 
     out: list[str] = ["# Perfil de `docs_raw`", ""]
     out.append(
-        f"Fuente: `{_display_path(raw_dir)}`. Generado por `meli-etl profile` "
+        f"Fuente: `{display_path(raw_dir)}`. Generado por `meli-etl profile` "
         "(determinista: misma entrada → mismo reporte)."
     )
 

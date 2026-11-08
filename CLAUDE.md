@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Technical assessment (Mercado Libre, Data Scientist – LLMs). A local, reproducible pipeline that turns raw Markdown docs of 10 fictional software projects (`data/raw/docs_raw/<project>/<version>/...`) into:
 `outputs/corpus.jsonl` (chunks with provenance), `outputs/qa.jsonl` (Q&A anchored to chunks, train/eval split **by duplicate cluster** to avoid leakage), RL data (verifiable answers, unanswerable questions, DPO pairs), and retrieval metrics (BM25 Recall@k/MRR).
 
-Stages, in order: `profile → normalize → dedup → chunk → split → qa → evaluate`. `profile`, `normalize` and `dedup` are implemented; the rest are CLI stubs that exit with code 2. Each stage reads the previous one's output from `data/processed/`. Code, comments, logs and reports are written in Spanish.
+Stages, in order: `profile → normalize → dedup → chunk → split → qa → evaluate`. `profile`, `normalize` and `dedup` are implemented; the rest are CLI stubs that exit with code 2. Two auxiliary commands outside `make pipeline`: `label-pairs` (exports near-dup pairs for blind human labeling to `data/labels/`) and `validate-threshold` (sweeps thresholds against those labels → `reports/dedup.md` §8). Each stage reads the previous one's output from `data/processed/`. Code, comments, logs and reports are written in Spanish.
 
 ## Commands
 
@@ -33,13 +33,13 @@ make clean                   # removes data/processed/* and outputs/logs only
 - `md_utils.py`: headers via regex with code-fence tracking, deliberately not a CommonMark parser, so it can **flag** malformed headers like `#Title`. Also handles sections (header path → body), `strip_noise` (removes code, badges, HTML/docsify comments, URLs), and TODO-placeholder detection.
 - `lang.py`: deterministic es/en stopword heuristic → `es | en | mixed | unknown`. Strip TODO markers before calling it ("TO DO" would add an English hit on "do").
 - `normalize.py` (pure transforms) + `stages/normalize.py`: splits the RAW file into sections first, then normalizes each one, so every section keeps `raw_hash` and `norm_hash`. HTML entities are decoded inside code blocks too (export artifact in the data). Nav files become metadata (`nav.py`). Stub filtering uses `content_tokens`, which counts code and tables. Do not reuse profile's prose-only `n_words` for this.
-- `dedup_utils.py` + `stages/dedup.py`: exact dedup by `norm_hash` (title + body), then MinHash/LSH candidates verified with exact Jaccard. The lossless merge rule: absorb a section only if all its lines are already in a kept section, otherwise keep it as `variant`. `cluster_id` is the split key. The near-dup threshold (0.6) was chosen from the observed similarity valley; see `reports/dedup.md` §4 before changing it.
+- `dedup_utils.py` + `stages/dedup.py`: exact dedup by `norm_hash` (title + body), then MinHash/LSH candidates verified with exact Jaccard. The lossless merge rule: absorb a section only if all its lines are already in a kept section, otherwise keep it as `variant`. `cluster_id` is the split key. The near-dup threshold (0.6) was chosen from the observed similarity valley; see `reports/dedup.md` §4 (and §8, human-label validation) before changing it. §8 lives between `<!-- threshold-validation -->` markers so both `dedup` and `validate-threshold` render it.
 - `stages/profile.py`: writes `data/processed/inventory.jsonl` (meant for reuse by dedup/split) and `reports/profile.md`. Reports must stay **deterministic** (no timestamps, stable ordering); a test checks two runs produce identical output.
 
 ## Conventions and constraints
 
 - Nothing hardcoded: paths, thresholds and seed come from the YAML config.
-- Versioned: `data/raw/`, `outputs/` (final datasets are deliverables), `reports/`, `data/cache/llm/`. Ignored: `data/processed/*`, `outputs/logs/`.
+- Versioned: `data/raw/`, `outputs/` (final datasets are deliverables), `reports/`, `data/cache/llm/`, `data/labels/` (human labels: `label-pairs` must never drop a filled label, and the review file must never show Jaccard). Ignored: `data/processed/*`, `outputs/logs/`.
 - `data/cache/llm/` will cache LLM responses so `qa` is reproducible without an API key (`replay` mode by default). Do not call any LLM unless asked.
 - Tests use a synthetic tree built in `tmp_path`, not the real data.
 - Only declare dependencies that are actually used; add them when their stage gets implemented.

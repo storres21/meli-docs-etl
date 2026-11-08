@@ -151,8 +151,8 @@ Dentro de cada cluster, la canónica es la sección con más líneas. Otra secci
 
 <details><summary>Líneas únicas que justifican cada variante</summary>
 
-- `2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#000` (variante de `2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#000`): `| date | timestamp | Not null | Date timestamp when was created | DEFAULT_GENERATED |`; `| version | int | Not null | Version |  |`
-- `vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#005` (variante de `vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#005`): `2. You should confirm that the item was correctly paused by **checking the item's status**`; `This alert happens when something goes wrong while trying to sell a publication without st`
+- `2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#000` (variante de `2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#000`, J = 0.762): `| date | timestamp | Not null | Date timestamp when was created | DEFAULT_GENERATED |`; `| version | int | Not null | Version |  |`
+- `vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#005` (variante de `vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#005`, J = 0.688): `2. You should confirm that the item was correctly paused by **checking the item's status**`; `This alert happens when something goes wrong while trying to sell a publication without st`
 
 </details>
 
@@ -265,8 +265,15 @@ La versión efectiva de una carpeta alias (`latest`) es la carpeta concreta con 
 | vendor-stockkeeper-api/latest | 0.41.0 | 0.0.3-paused-seller | 0.0.3-paused-seller | 0.0.3-paused-seller (1.00) | declara `0.41.0` (no presente en docs_raw) pero el contenido es idéntico a `0.0.3-paused-seller` |
 | zenith-keeper/1.1.6 | 1.1.6 | 1.1.6 | — | — | ok |
 
+<!-- threshold-validation:start -->
+## 8. Validación del umbral con etiquetas humanas
+
+Sin etiquetas todavía: `meli-etl label-pairs` genera `data/labels/near_dup_labels.csv`; completarlo y correr `meli-etl validate-threshold`.
+<!-- threshold-validation:end -->
+
 ## Salidas
 
 - `sections_dedup.jsonl`: secciones canónicas y variantes con `occurrences` (proyecto, versión declarada/efectiva, archivo, `section_path`, tipo de match).
 - `cluster_id` agrupa duplicados exactos y casi-duplicados: **es la clave del split train/eval**.
 - `versions.json`, `nav.jsonl`, `normalized_docs.jsonl`, `sections.jsonl` en `processed_dir`.
+- `near_dup_pairs.jsonl`: pares de representantes con Jaccard ≥ 0.1 (insumo de `label-pairs` y `validate-threshold`).

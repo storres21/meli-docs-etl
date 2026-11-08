@@ -18,6 +18,14 @@ def find_project_root(start: Path | None = None) -> Path:
     return Path.cwd().resolve()
 
 
+def display_path(p: Path) -> str:
+    """Ruta relativa a la raíz del proyecto (para logs y reportes deterministas)."""
+    try:
+        return p.relative_to(find_project_root()).as_posix()
+    except ValueError:
+        return p.as_posix()
+
+
 T = TypeVar("T")
 
 DEFAULT_CONFIG = find_project_root(Path(__file__).parent) / "configs" / "default.yaml"
@@ -31,6 +39,7 @@ class Paths:
     reports_dir: Path
     logs_dir: Path
     llm_cache_dir: Path
+    labels_dir: Path
 
 
 @dataclass(frozen=True)
@@ -67,6 +76,18 @@ class DedupConfig:
 
 
 @dataclass(frozen=True)
+class LabelsConfig:
+    # Pares con Jaccard ≥ esto se exportan para etiquetado humano.
+    review_min_jaccard: float = 0.1
+    # Grilla de umbrales evaluada por validate-threshold.
+    grid_start: float = 0.1
+    grid_stop: float = 0.9
+    grid_step: float = 0.05
+    # True: recomienda el umbral más alto con recall máximo; False: el de mejor F1.
+    recall_priority: bool = True
+
+
+@dataclass(frozen=True)
 class Config:
     seed: int
     paths: Paths
@@ -76,6 +97,7 @@ class Config:
     profile: ProfileConfig = field(default_factory=ProfileConfig)
     normalize: NormalizeConfig = field(default_factory=NormalizeConfig)
     dedup: DedupConfig = field(default_factory=DedupConfig)
+    labels: LabelsConfig = field(default_factory=LabelsConfig)
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -109,4 +131,5 @@ def load_config(path: Path | None = None, overrides: dict[str, Any] | None = Non
         profile=section(ProfileConfig, "profile"),
         normalize=section(NormalizeConfig, "normalize"),
         dedup=section(DedupConfig, "dedup"),
+        labels=section(LabelsConfig, "labels"),
     )

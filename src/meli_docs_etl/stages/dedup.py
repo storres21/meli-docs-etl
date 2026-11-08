@@ -3,6 +3,7 @@
 Lee `sections.jsonl` / `normalized_docs.jsonl` (etapa normalize) y escribe:
 - `<processed_dir>/sections_dedup.jsonl`: secciones canónicas y variantes con sus ocurrencias.
 - `<processed_dir>/versions.json`: versión declarada vs. versión efectiva por contenido.
+- `<processed_dir>/near_dup_pairs.jsonl`: pares con Jaccard ≥ labels.review_min_jaccard.
 - `<reports_dir>/dedup.md`.
 
 `cluster_id` agrupa duplicados exactos y casi-duplicados: es la clave para el split
@@ -20,7 +21,7 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any
 
-from meli_docs_etl.config import Config, find_project_root
+from meli_docs_etl.config import Config, display_path
 from meli_docs_etl.dedup_utils import (
     UnionFind,
     body_lines,
@@ -32,6 +33,13 @@ from meli_docs_etl.dedup_utils import (
 )
 from meli_docs_etl.inventory import ALIAS_VERSIONS
 from meli_docs_etl.stages.normalize import DOCS_FILE, SECTIONS_FILE, STATS_FILE, n_words
+from meli_docs_etl.stages.validate_threshold import (
+    LABELS_FILE,
+    PAIRS_FILE,
+    build_validation,
+)
+from meli_docs_etl.stages.validate_threshold import render_section as render_threshold_section
+from meli_docs_etl.threshold_validation import pair_id
 
 log = logging.getLogger(__name__)
 
@@ -203,6 +211,11 @@ def dedup_sections(
                     "exact_group_id": "ex-" + s["norm_hash"][:12],
                     "role": "canonical" if i == 0 else "variant",
                     "variant_of": None if i == 0 else canonical["section_id"],
+                    "jaccard_vs_canonical": (
+                        None
+                        if i == 0
+                        else round(_pair_j(all_pairs, canonical["section_id"], s["section_id"]), 4)
+                    ),
                     "project": s["project"],
                     "version_dir": s["version_dir"],
                     "declared_version": s["declared_version"],
@@ -307,6 +320,7 @@ def render_report(
     versions: dict[str, Any],
     norm_stats: dict[str, Any],
     cfg: Config,
+    threshold_section: str = "",
 ) -> str:
     d = cfg.dedup
     content_docs = [x for x in docs if x["file_type"] == "content"]
@@ -618,7 +632,8 @@ def render_report(
         for r in variants:
             uniq = r["unique_lines_vs_canonical"]
             out += [
-                f"- `{r['section_id']}` (variante de `{r['variant_of']}`): "
+                f"- `{r['section_id']}` (variante de `{r['variant_of']}`, "
+                f"J = {r['jaccard_vs_canonical']:.3f}): "
                 + "; ".join(f"`{u[:90]}`" for u in uniq[:4])
                 + (f" … (+{len(uniq) - 4})" if len(uniq) > 4 else "")
             ]
@@ -698,6 +713,8 @@ def render_report(
         )
     )
 
+    out += ["", threshold_section]
+
     out += [
         "",
         "## Salidas",
@@ -708,16 +725,42 @@ def render_report(
         "**es la clave del split train/eval**.",
         "- `versions.json`, `nav.jsonl`, `normalized_docs.jsonl`, `sections.jsonl` "
         "en `processed_dir`.",
+        f"- `{PAIRS_FILE}`: pares de representantes con Jaccard ≥ "
+        f"{cfg.labels.review_min_jaccard} (insumo de `label-pairs` y `validate-threshold`).",
         "",
     ]
     return "\n".join(out)
 
 
-def _display(p: Path) -> str:
+def write_pairs(all_pairs: dict[tuple[str, str], float], min_j: float, path: Path) -> int:
+    """Pares (a < b) con Jaccard ≥ min_j, ordenados por pair_id."""
+    rows = sorted(
+        (
+            {"pair_id": pair_id(a, b), "a": a, "b": b, "jaccard": j}
+            for (a, b), j in all_pairs.items()
+            if j >= min_j
+        ),
+        key=lambda r: r["pair_id"],
+    )
+    with open(path, "w", encoding="utf-8") as fh:
+        for r in rows:
+            fh.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
+    return len(rows)
+
+
+def _threshold_section(cfg: Config) -> str:
+    """§8: validación con etiquetas si existen; si no, instrucciones."""
+    labels_rel = display_path(cfg.paths.labels_dir / LABELS_FILE)
     try:
-        return p.relative_to(find_project_root()).as_posix()
-    except ValueError:
-        return p.as_posix()
+        v = build_validation(cfg)
+    except FileNotFoundError:
+        return render_threshold_section(None, cfg, labels_rel)
+    except ValueError as exc:
+        log.warning("Etiquetas no utilizables: %s", exc)
+        return render_threshold_section(None, cfg, labels_rel, f"Etiquetas no utilizables: {exc}")
+    if not (v.counts["same"] + v.counts["diff"]):
+        return render_threshold_section(None, cfg, labels_rel)
+    return render_threshold_section(v, cfg, labels_rel)
 
 
 def run(cfg: Config) -> Path:
@@ -738,6 +781,7 @@ def run(cfg: Config) -> Path:
     (processed / VERSIONS_FILE).write_text(
         json.dumps(versions, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8"
     )
+    write_pairs(diag["all_pairs"], cfg.labels.review_min_jaccard, processed / PAIRS_FILE)
     log.info(
         "Secciones: %d → %d grupos exactos → %d finales (%d variantes); %d pares casi-dup",
         len(kept),
@@ -753,7 +797,10 @@ def run(cfg: Config) -> Path:
     cfg.paths.reports_dir.mkdir(parents=True, exist_ok=True)
     report = cfg.paths.reports_dir / "dedup.md"
     report.write_text(
-        render_report(docs, sections, records, diag, versions, norm_stats, cfg), encoding="utf-8"
+        render_report(
+            docs, sections, records, diag, versions, norm_stats, cfg, _threshold_section(cfg)
+        ),
+        encoding="utf-8",
     )
-    log.info("Reporte escrito en %s", _display(report))
+    log.info("Reporte escrito en %s", display_path(report))
     return report

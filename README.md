@@ -32,6 +32,7 @@ configs/            configuración (rutas, semilla, umbrales)
 data/raw/docs_raw/  input crudo (versionado)
 data/processed/     salidas intermedias (ignoradas por git)
 data/cache/llm/     cache de respuestas del LLM (versionada → qa reproducible sin API key)
+data/labels/        etiquetas humanas (versionadas): validación del umbral de casi-duplicados
 outputs/            datasets finales: corpus.jsonl, qa.jsonl, ... (versionados)
 outputs/logs/       logs por etapa (ignorados por git)
 reports/            reportes legibles (profile.md, dedup.md, ...)
@@ -51,7 +52,9 @@ La semilla (`seed`) se fija al inicio de cada etapa y los logs quedan en `output
 |---|---|---|---|
 | profile | `meli-etl profile` | ✅ | `reports/profile.md`, `inventory.jsonl` |
 | normalize | `meli-etl normalize` | ✅ | `normalized_docs.jsonl`, `sections.jsonl`, `nav.jsonl` |
-| dedup | `meli-etl dedup` | ✅ | `sections_dedup.jsonl`, `versions.json`, `reports/dedup.md` |
+| dedup | `meli-etl dedup` | ✅ | `sections_dedup.jsonl`, `versions.json`, `near_dup_pairs.jsonl`, `reports/dedup.md` |
+| (aux) | `meli-etl label-pairs` | ✅ | `data/labels/near_dup_review.md`, `near_dup_labels.csv` |
+| (aux) | `meli-etl validate-threshold` | ✅ | `reports/dedup.md` §8 |
 | chunk | `meli-etl chunk` | ⏳ | `corpus.jsonl` |
 | split | `meli-etl split` | ⏳ | _TBD_ |
 | qa | `meli-etl qa` | ⏳ | `qa.jsonl`, datos RL/DPO |
@@ -87,14 +90,37 @@ normaliza cada una, conservando texto y hash crudos para medir el efecto de norm
 3. **Regla de fusión sin pérdida**: dentro de un cluster, la canónica es la sección con más
    líneas; otra se absorbe (pasa a `occurrences`) solo si **todas** sus líneas ya están en
    una sección conservada. Si aporta una línea nueva queda como `variant` con el mismo
-   `cluster_id`. La redundancia que esto deja se cuantifica en el reporte.
+   `cluster_id`, `variant_of` y `jaccard_vs_canonical` (similitud de shingles contra la
+   canónica). La redundancia que esto deja se cuantifica en el reporte.
 4. **Versiones**: la versión efectiva de una carpeta alias es la carpeta concreta con
    contenido idéntico; las inconsistencias con `documentationTypes.json` se reportan.
 
 `cluster_id` agrupa duplicados exactos y casi-duplicados: es la clave del split train/eval
 sin leakage. Cómo leer `reports/dedup.md`: §1 embudo por paso, §3 efecto de normalizar,
 §4 distribución de similitudes (justifica el umbral), §5 clusters y redundancia,
-§6 diffs de ejemplo, §7 versiones.
+§6 diffs de ejemplo, §7 versiones, §8 validación del umbral con etiquetas humanas.
+
+### Validación del umbral con etiquetas humanas
+
+Fuera de `make pipeline`, para que nada automático toque las etiquetas:
+
+```bash
+make label-pairs         # data/labels/near_dup_review.md + near_dup_labels.csv
+# completar la columna label: same | diff | unsure
+make validate-threshold  # tabla por umbral + recomendación en reports/dedup.md §8
+```
+
+- **Revisión ciega**: `near_dup_review.md` muestra los pares con Jaccard ≥
+  `labels.review_min_jaccard` en orden aleatorio (`seed`), con rutas y el texto completo de
+  ambas secciones en un diff, **sin** el Jaccard ni el cluster actual.
+- `pair_id` = hash de los dos `section_id`: estable aunque cambie el orden o el corpus.
+  Volver a correr `label-pairs` **conserva** las etiquetas ya cargadas.
+- `validate-threshold` barre la grilla `labels.grid_*` y calcula TP/FP/FN/TN, precisión,
+  recall y F1 (los `unsure` se excluyen pero se cuentan). Recomienda, priorizando recall,
+  el punto medio del intervalo de umbrales con recall máximo y mejor precisión: un falso
+  negativo es leakage train/eval; un falso positivo solo agranda un cluster (la regla de
+  fusión no pierde contenido). No cambia la config: la decisión es manual.
+- `dedup` vuelve a generar la §8 desde las etiquetas, así que no se pierde al re-correr.
 
 ## Hallazgos del perfilado
 
