@@ -85,6 +85,8 @@ class LabelsConfig:
     grid_step: float = 0.05
     # True: recomienda el umbral más alto con recall máximo; False: el de mejor F1.
     recall_priority: bool = True
+    # Con menos pares `same` que esto, la §8 avisa que la recomendación es frágil.
+    min_same_pairs: int = 10
 
 
 @dataclass(frozen=True)

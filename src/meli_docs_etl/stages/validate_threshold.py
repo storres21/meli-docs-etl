@@ -19,8 +19,11 @@ from typing import Any
 from meli_docs_etl.config import Config, display_path
 from meli_docs_etl.threshold_validation import (
     LABELS,
+    Fragility,
     Recommendation,
     ThresholdRow,
+    evaluate_predictions,
+    fragility,
     recommend,
     sweep,
     threshold_grid,
@@ -50,6 +53,23 @@ def read_labels(path: Path) -> list[dict[str, str]]:
         ]
 
 
+def checked_labels(path: Path) -> list[dict[str, str]]:
+    """Etiquetas en minúsculas; ValueError si alguna no es same/diff/unsure."""
+    rows = read_labels(path)
+    invalid = [r["pair_id"] for r in rows if r["label"] and r["label"].lower() not in LABELS]
+    if invalid:
+        raise ValueError(
+            f"Etiquetas inválidas en {len(invalid)} pares ({', '.join(invalid[:10])}); "
+            f"valores permitidos: {', '.join(LABELS)}."
+        )
+    return [{**r, "label": r["label"].lower()} for r in rows]
+
+
+def same_pair_ids(path: Path) -> set[str]:
+    """pair_ids etiquetados `same`: dedup los usa como must-link."""
+    return {r["pair_id"] for r in checked_labels(path) if r["label"] == "same"}
+
+
 @dataclass
 class Validation:
     n_pairs: int
@@ -61,8 +81,12 @@ class Validation:
     diff_js: list[float] = field(default_factory=list)
     rows: list[ThresholdRow] = field(default_factory=list)
     rec: Recommendation | None = None
-    # Pares mal clasificados con el umbral actual de la config.
-    errors: list[dict[str, Any]] = field(default_factory=list)
+    frag: Fragility | None = None
+    critical: list[dict[str, Any]] = field(default_factory=list)
+    # Clustering final de dedup (umbral actual + must-link) evaluado contra las etiquetas.
+    final: ThresholdRow | None = None
+    # Pares etiquetados con su Jaccard, rutas y si el clustering final los agrupa.
+    labeled: list[dict[str, Any]] = field(default_factory=list)
 
 
 def build_validation(cfg: Config) -> Validation:
@@ -72,50 +96,45 @@ def build_validation(cfg: Config) -> Validation:
     labels_path = cfg.paths.labels_dir / LABELS_FILE
     if not labels_path.exists():
         raise FileNotFoundError(f"{labels_path} no existe: corré antes `meli-etl label-pairs`.")
-    rows = read_labels(labels_path)
-
-    invalid = [r["pair_id"] for r in rows if r["label"] and r["label"].lower() not in LABELS]
-    if invalid:
-        raise ValueError(
-            f"Etiquetas inválidas en {len(invalid)} pares ({', '.join(invalid[:10])}); "
-            f"valores permitidos: {', '.join(LABELS)}."
-        )
-
-    labeled: list[tuple[float, str, dict[str, str]]] = []
+    labeled: list[dict[str, Any]] = []
     missing, n_unlabeled = [], 0
-    for r in rows:
+    for r in checked_labels(labels_path):
         if not r["label"]:
             n_unlabeled += 1
         elif r["pair_id"] not in pairs:
             missing.append(r["pair_id"])
         else:
-            labeled.append((pairs[r["pair_id"]]["jaccard"], r["label"].lower(), r))
+            labeled.append({**pairs[r["pair_id"]], **r})
+    labeled.sort(key=lambda x: (-x["jaccard"], x["pair_id"]))
+    js = [(x["jaccard"], x["label"]) for x in labeled]
 
     current = cfg.dedup.near_dup_threshold
     v = Validation(
         n_pairs=len(pairs),
-        counts=Counter(label for _, label, _ in labeled),
+        counts=Counter(label for _, label in js),
         n_unlabeled=n_unlabeled,
         missing=missing,
         current=current,
-        same_js=sorted(j for j, label, _ in labeled if label == "same"),
-        diff_js=sorted(j for j, label, _ in labeled if label == "diff"),
+        same_js=sorted(j for j, label in js if label == "same"),
+        diff_js=sorted(j for j, label in js if label == "diff"),
+        labeled=labeled,
     )
     lc = cfg.labels
-    v.rows = sweep(
-        [(j, label) for j, label, _ in labeled],
-        threshold_grid(lc.grid_start, lc.grid_stop, lc.grid_step),
-    )
+    grid = threshold_grid(lc.grid_start, lc.grid_stop, lc.grid_step)
+    v.rows = sweep(js, grid)
+    v.final = evaluate_predictions([(x["same_cluster"], x["label"]) for x in labeled], current)
     if v.same_js:
         v.rec = recommend(v.rows, lc.recall_priority)
-    for j, label, r in sorted(labeled, key=lambda x: (-x[0], x[2]["pair_id"])):
-        if (label == "same" and j < current) or (label == "diff" and j >= current):
-            p = pairs[r["pair_id"]]
-            v.errors.append({**r, "label": label, "jaccard": j, "a": p["a"], "b": p["b"]})
+        v.frag = fragility(js, grid, lc.recall_priority, lc.min_same_pairs)
+        v.critical = [labeled[i] for i in v.frag.critical]
     return v
 
 
 # --------------------------------------------------------------------------- reporte
+
+
+def _nota(x: dict[str, Any]) -> str:
+    return x["nota"].replace("|", "\\|") or "—"
 
 
 def _fmt(x: float | None) -> str:
@@ -177,9 +196,17 @@ def _render_body(v: Validation, labels_rel: str, cfg: Config) -> list[str]:
             f"{_fmt(r.recall)} | {_fmt(r.f1)} | {r.unsure_above} | {' · '.join(tags)} |"
         )
     out += table
+    f = v.final
+    out += [
+        "",
+        f"**Clustering final de `dedup`** (umbral {v.current:.2f} + must-link de los `same`): "
+        f"TP {f.tp} · FP {f.fp} · FN {f.fn} · TN {f.tn} · precisión {_fmt(f.precision)} · "
+        f"recall {_fmt(f.recall)} · F1 {_fmt(f.f1)}. La tabla de arriba mide solo el umbral; "
+        "acá se mide lo que realmente usa el split.",
+    ]
 
-    if v.rec:
-        r = v.rec.row
+    if v.rec and v.frag:
+        r, fr = v.rec.row, v.frag
         lo, hi = v.rec.equivalent
         current_in = lo - 1e-9 <= v.current <= hi + 1e-9
         criterion = (
@@ -193,7 +220,7 @@ def _render_body(v: Validation, labels_rel: str, cfg: Config) -> list[str]:
             "",
             f"**Umbral recomendado: {r.threshold:.2f}** (recall {_fmt(r.recall)}, precisión "
             f"{_fmt(r.precision)}, F1 {_fmt(r.f1)}; n = {n_eval} pares evaluables, "
-            f"{r.tp + r.fn} `same`).",
+            f"{r.tp + r.fn} `same`)" + (" — **frágil, ver avisos**." if fr.fragile else "."),
             "",
             f"- **Criterio**: {criterion}; todos los umbrales en **[{lo:.2f}, {hi:.2f}]** dan "
             f"la misma matriz de confusión, así que con estas etiquetas son indistinguibles. "
@@ -205,36 +232,97 @@ def _render_body(v: Validation, labels_rel: str, cfg: Config) -> list[str]:
             "pone dos secciones distintas en el mismo cluster: con la regla de fusión sin "
             "pérdida (§5) no se descarta contenido, solo el split queda un poco más grueso. "
             "El costo es asimétrico, así que se acepta perder precisión antes que recall.",
+            "- **Must-link**: los pares etiquetados `same` se agrupan en `dedup` con cualquier "
+            "umbral (`match: human_label`), así que el recall sobre el set etiquetado no depende "
+            "del umbral. El umbral decide sobre los pares **no** etiquetados: por eso importa "
+            "más que la recomendación sea robusta que exprimir el recall de este set.",
             f"- **Umbral actual ({v.current:.2f})**: "
             + (
                 "está dentro del intervalo equivalente; con estas etiquetas da los mismos "
                 "resultados que el recomendado."
                 if current_in
-                else "queda **fuera** del intervalo equivalente; ver la tabla para el costo."
+                else "queda **fuera** del intervalo equivalente"
+                + (
+                    "; como la recomendación es frágil y los `same` ya se agrupan por must-link, "
+                    "la config lo mantiene."
+                    if fr.fragile
+                    else "; ver la tabla para el costo."
+                )
             ),
             f"- **Límites**: el recall se mide solo sobre pares con Jaccard ≥ "
             f"{cfg.labels.review_min_jaccard} entre representantes con ≥ "
             f"{cfg.dedup.near_dup_min_tokens} tokens; un `same` por debajo de eso no se ve "
-            f"(con t = {cfg.labels.grid_start:.2f} el recall es 100% por construcción). Con "
-            f"{r.tp + r.fn} pares `same`, cada uno vale "
-            f"{1 / (r.tp + r.fn):.0%} de recall.",
+            f"(con t = {cfg.labels.grid_start:.2f} el recall es 100% por construcción).",
+            "",
+            "### Robustez de la recomendación",
+            "",
+        ]
+        warn = []
+        if fr.few_positives:
+            warn.append(
+                f"⚠️ **Pocos positivos**: {fr.n_same} pares `same` (mínimo configurado "
+                f"{cfg.labels.min_same_pairs}); cada uno vale {1 / fr.n_same:.0%} de recall."
+            )
+        if fr.zero_width:
+            warn.append(
+                f"⚠️ **Intervalo de ancho cero**: solo {r.threshold:.2f} da esta matriz de "
+                "confusión; un paso de la grilla hacia cualquier lado cambia el resultado."
+            )
+        if fr.thin_margin:
+            warn.append(
+                f"⚠️ **Margen menor a un paso de la grilla**: hay un par etiquetado a "
+                f"{fr.margin:.3f} del umbral recomendado."
+            )
+        if v.critical:
+            crit = "; ".join(
+                f"`{x['pair_id']}` ({x['label']}, J = {x['jaccard']:.3f})" for x in v.critical
+            )
+            warn.append(
+                f"⚠️ **Depende de {len(v.critical)} etiqueta(s)**: quitando cualquiera de "
+                f"estos pares cambia el umbral recomendado: {crit}."
+            )
+        out += [f"- {w}" for w in warn] or [
+            f"- Sin avisos: {fr.n_same} `same`, intervalo [{lo:.2f}, {hi:.2f}], margen "
+            f"{fr.margin:.3f}, ningún par decide la recomendación por sí solo."
         ]
 
-    out += ["", f"**Pares mal clasificados con el umbral actual ({v.current:.2f})**", ""]
-    if not v.errors:
+    fn = [x for x in v.labeled if x["label"] == "same" and x["jaccard"] < v.current]
+    out += ["", f"### `same` bajo el umbral actual ({v.current:.2f})", ""]
+    if not fn:
         out.append("Ninguno.")
     else:
         out += [
-            "| pair_id | Etiqueta | Jaccard | Error | A | B | Nota |",
-            "|---|---|---|---|---|---|---|",
+            "| pair_id | Jaccard | Clustering final | A | B | Nota |",
+            "|---|---|---|---|---|---|",
         ]
-        for e in v.errors:
-            kind = "FN" if e["label"] == "same" else "FP"
-            nota = e["nota"].replace("|", "\\|") or "—"
-            out.append(
-                f"| {e['pair_id']} | {e['label']} | {e['jaccard']:.3f} | {kind} | "
-                f"`{e['a']}` | `{e['b']}` | {nota} |"
-            )
+        out += [
+            f"| {x['pair_id']} | {x['jaccard']:.3f} | "
+            f"{'agrupado (must-link)' if x['same_cluster'] else '**separado**'} | "
+            f"`{x['a']}` | `{x['b']}` | {_nota(x)} |"
+            for x in fn
+        ]
+
+    grouped_diff = [x for x in v.labeled if x["label"] == "diff" and x["same_cluster"]]
+    out += [
+        "",
+        "### Pares `diff` que quedan agrupados",
+        "",
+        "Las etiquetas `diff` **no separan** pares que el umbral agrupa: solo cuentan para las "
+        "métricas. `diff` responde a «¿es el mismo contenido?»; el cluster responde a «¿deben ir "
+        "al mismo lado del split?». Dos versiones que comparten la mayor parte del texto deben "
+        "ir juntas aunque una tenga cambios relevantes: separarlas filtraría a eval lo que se vio "
+        "en train. Ninguna se pierde: la regla sin pérdida conserva cada una como canónica o "
+        "variante, con sus líneas propias en `unique_lines_vs_canonical`.",
+        "",
+    ]
+    if not grouped_diff:
+        out.append("Ninguno.")
+    else:
+        out += ["| pair_id | Jaccard | A | B | Nota |", "|---|---|---|---|---|"]
+        out += [
+            f"| {x['pair_id']} | {x['jaccard']:.3f} | `{x['a']}` | `{x['b']}` | {_nota(x)} |"
+            for x in grouped_diff
+        ]
     if v.missing:
         out += ["", f"Etiquetas de pares que ya no existen: {', '.join(v.missing)}."]
     return out
@@ -263,6 +351,14 @@ def replace_section(report: str, section: str) -> str:
 
 def run(cfg: Config) -> Path:
     v = build_validation(cfg)
+    labels_path = cfg.paths.labels_dir / LABELS_FILE
+    pairs_path = cfg.paths.processed_dir / PAIRS_FILE
+    if labels_path.stat().st_mtime > pairs_path.stat().st_mtime:
+        log.warning(
+            "Las etiquetas son más nuevas que la última corrida de dedup: los must-link nuevos "
+            "no se reflejan en el clustering final. Corré `meli-etl dedup` (o "
+            "`make validate-threshold`, que lo hace antes)."
+        )
     if v.rec is None:
         raise ValueError(
             f"No hay pares `same` etiquetados ({v.counts['diff']} `diff`, "
@@ -282,6 +378,8 @@ def run(cfg: Config) -> Path:
         *v.rec.equivalent,
     )
 
+    if v.frag and v.frag.fragile:
+        log.warning("Recomendación frágil: ver «Robustez de la recomendación» en la §8")
     report = cfg.paths.reports_dir / "dedup.md"
     if not report.exists():
         raise FileNotFoundError(f"{report} no existe: corré antes `meli-etl dedup`.")

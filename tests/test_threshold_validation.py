@@ -5,7 +5,9 @@ from __future__ import annotations
 import pytest
 
 from meli_docs_etl.threshold_validation import (
+    evaluate_predictions,
     evaluate_threshold,
+    fragility,
     pair_id,
     recommend,
     sweep,
@@ -78,3 +80,30 @@ def test_recommendation_prioritizes_recall() -> None:
     by_f1 = recommend(rows, recall_priority=False)
     assert by_recall.row.recall == 1.0 and by_recall.row.fp > 0
     assert by_f1.row.recall < 1.0 and by_f1.row.f1 > by_recall.row.f1
+
+
+def test_final_clustering_metrics_from_predictions() -> None:
+    # Must-link agrupa un `same` bajo el umbral; un `diff` agrupado cuenta como FP.
+    r = evaluate_predictions([(True, "same"), (True, "same"), (True, "diff"), (False, "diff")], 0.6)
+    assert (r.tp, r.fp, r.fn, r.tn) == (2, 1, 0, 1)
+    assert (r.recall, r.precision) == (1.0, pytest.approx(2 / 3))
+
+
+def test_fragility_flags() -> None:
+    grid = threshold_grid(0.1, 0.9, 0.05)
+    # PAIRS: recomendado 0.65 en [0.60, 0.70]. Con solo 2 `same`, sacar el de 0.70 o el
+    # `diff` de 0.55 mueve el intervalo (pares críticos 1 y 2); los demás no lo cambian.
+    robust = fragility(PAIRS, grid, recall_priority=True, min_same=2)
+    assert not (robust.zero_width or robust.few_positives or robust.thin_margin)
+    assert robust.margin == pytest.approx(0.05)
+    assert robust.critical == [1, 2]
+
+    # Forma de los datos reales: un `same` bajo (0.319) pegado a un `diff` (0.316) y otro
+    # `diff` justo debajo (0.27). Recall 100% solo con 0.30, a 0.016 del `diff`.
+    real_like = [(0.95, "same"), (0.319, "same"), (0.316, "diff"), (0.27, "diff"), (0.1, "diff")]
+    f = fragility(real_like, grid, recall_priority=True, min_same=10)
+    assert f.few_positives and f.n_same == 2
+    assert f.zero_width
+    assert f.thin_margin and f.margin == pytest.approx(0.016)
+    assert 1 in f.critical  # sin el `same` de 0.319 la recomendación sube
+    assert f.fragile

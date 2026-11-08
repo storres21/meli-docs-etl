@@ -74,3 +74,5 @@ labels:
   # es leakage train/eval; un falso positivo solo agranda un cluster, sin perder contenido).
   # false: recomienda el umbral con mejor F1.
   recall_priority: true
+  # Con menos pares `same` etiquetados que esto, la §8 avisa que la recomendación es frágil.
+  min_same_pairs: 10

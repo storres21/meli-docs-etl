@@ -47,18 +47,18 @@ def _ratio(num: int, den: int) -> float | None:
     return num / den if den else None
 
 
-def evaluate_threshold(pairs: Sequence[tuple[float, str]], threshold: float) -> ThresholdRow:
+def evaluate_predictions(predicted: Sequence[tuple[bool, str]], threshold: float) -> ThresholdRow:
+    """Matriz de confusión y métricas para predicciones ya tomadas (par agrupado o no)."""
     tp = fp = fn = tn = unsure_above = 0
-    for j, label in pairs:
-        predicted = j >= threshold
+    for pred, label in predicted:
         if label == "unsure":
-            unsure_above += predicted
+            unsure_above += pred
         elif label == "same":
-            tp += predicted
-            fn += not predicted
+            tp += pred
+            fn += not pred
         elif label == "diff":
-            fp += predicted
-            tn += not predicted
+            fp += pred
+            tn += not pred
         else:
             raise ValueError(f"Etiqueta inválida: {label!r} (válidas: {', '.join(LABELS)})")
     precision, recall = _ratio(tp, tp + fp), _ratio(tp, tp + fn)
@@ -68,6 +68,10 @@ def evaluate_threshold(pairs: Sequence[tuple[float, str]], threshold: float) -> 
         else None
     )
     return ThresholdRow(threshold, tp, fp, fn, tn, unsure_above, precision, recall, f1)
+
+
+def evaluate_threshold(pairs: Sequence[tuple[float, str]], threshold: float) -> ThresholdRow:
+    return evaluate_predictions([(j >= threshold, label) for j, label in pairs], threshold)
 
 
 def sweep(pairs: Sequence[tuple[float, str]], thresholds: Sequence[float]) -> list[ThresholdRow]:
@@ -104,3 +108,48 @@ def recommend(rows: Sequence[ThresholdRow], recall_priority: bool = True) -> Rec
     while hi < len(rows) - 1 and rows[hi + 1].confusion == rows[opt].confusion:
         hi += 1
     return Recommendation(rows[(lo + hi) // 2], (rows[lo].threshold, rows[hi].threshold))
+
+
+@dataclass(frozen=True)
+class Fragility:
+    n_same: int
+    few_positives: bool  # menos pares `same` que el mínimo configurado
+    zero_width: bool  # ningún otro umbral de la grilla da la misma matriz de confusión
+    margin: float  # distancia del umbral recomendado al Jaccard etiquetado más cercano
+    thin_margin: bool  # margen menor que un paso de la grilla
+    critical: list[int]  # índices de pares cuya etiqueta, sola, decide la recomendación
+
+    @property
+    def fragile(self) -> bool:
+        return self.few_positives or self.zero_width or self.thin_margin or bool(self.critical)
+
+
+def fragility(
+    pairs: Sequence[tuple[float, str]],
+    thresholds: Sequence[float],
+    recall_priority: bool,
+    min_same: int,
+) -> Fragility:
+    """Qué tan frágil es la recomendación: tamaño de muestra, ancho del intervalo,
+    margen y pares críticos (leave-one-out: quitar ese par cambia el umbral recomendado)."""
+    rec = recommend(sweep(pairs, thresholds), recall_priority)
+    t = rec.row.threshold
+    step = thresholds[1] - thresholds[0] if len(thresholds) > 1 else 0.0
+    labeled = [i for i, (_, label) in enumerate(pairs) if label != "unsure"]
+    margin = min((abs(pairs[i][0] - t) for i in labeled), default=float("inf"))
+    critical = []
+    for i in labeled:
+        rest = [p for k, p in enumerate(pairs) if k != i]
+        if not any(label == "same" for _, label in rest):
+            continue
+        if recommend(sweep(rest, thresholds), recall_priority).row.threshold != t:
+            critical.append(i)
+    n_same = sum(label == "same" for _, label in pairs)
+    return Fragility(
+        n_same=n_same,
+        few_positives=n_same < min_same,
+        zero_width=rec.equivalent[0] == rec.equivalent[1],
+        margin=margin,
+        thin_margin=margin < step - 1e-9,
+        critical=critical,
+    )

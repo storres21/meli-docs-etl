@@ -25,7 +25,7 @@ dedup:  ## Etapa 3: dedup de secciones → reports/dedup.md
 label-pairs:  ## Exporta pares casi-dup para etiquetar (no pisa etiquetas)
 	$(RUN) label-pairs --config $(CONFIG)
 
-validate-threshold:  ## Valida el umbral con data/labels → reports/dedup.md §8
+validate-threshold: dedup  ## Aplica must-link (dedup) y valida el umbral → dedup.md §8
 	$(RUN) validate-threshold --config $(CONFIG)
 
 chunk:  ## Etapa 4 (pendiente)

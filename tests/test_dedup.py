@@ -49,6 +49,17 @@ FILES = {
     "pay/latest/documentationTypes.json": json.dumps(
         {"guide": "https://d.s3.amazonaws.com/pay/3.7.0/guide/index.html"}
     ),
+    # Mismo contenido en dos documentos de una versión: Jaccard bajo el umbral.
+    "ops/1.0/guide/setup/README.md": (
+        "# Setup\n\n## Prerequisites Summary\n\nInstall Java 17, Maven 3.9 and Docker before "
+        "running the service locally on your machine. Ask the team for access to the staging "
+        "database and to the message broker.\n"
+    ),
+    "ops/1.0/guide/setup/local-development.md": (
+        "# Local Development\n\n## Prerequisites\n\nInstall Java 17, Maven 3.9 and Docker "
+        "before running the service locally. Then clone the repository and run the bootstrap "
+        "script that creates the local queues and the test topics.\n"
+    ),
 }
 
 
@@ -153,8 +164,43 @@ def test_label_pairs_blind_review_and_label_merge(cfg: Config) -> None:
     assert (rows[first]["label"], rows[first]["nota"]) == ("same", "ok")
 
     # validate-threshold reemplaza la §8 del reporte; dedup la vuelve a generar igual.
+    dedup.run(cfg)  # aplica los must-link nuevos
     report = validate_threshold.run(cfg)
     text = report.read_text(encoding="utf-8")
     assert "Umbral recomendado" in text and text.count(validate_threshold.MARK_START) == 1
     dedup.run(cfg)
     assert report.read_text(encoding="utf-8") == text
+
+
+def _write_labels(cfg: Config, labels: dict[str, str]) -> None:
+    cfg.paths.labels_dir.mkdir(parents=True, exist_ok=True)
+    rows = "".join(f"{pid},{label},\n" for pid, label in labels.items())
+    (cfg.paths.labels_dir / validate_threshold.LABELS_FILE).write_text(
+        "pair_id,label,nota\n" + rows, encoding="utf-8"
+    )
+
+
+def test_same_labels_are_must_links_and_diff_never_splits(cfg: Config) -> None:
+    _run(cfg)
+    pairs_path = cfg.paths.processed_dir / validate_threshold.PAIRS_FILE
+    pairs = validate_threshold.read_pairs(pairs_path)
+    threshold = cfg.dedup.near_dup_threshold
+    (low,) = [p for p in pairs.values() if p["jaccard"] < threshold]  # prerequisitos de ops
+    (high,) = [p for p in pairs.values() if p["jaccard"] >= threshold]  # Services
+    assert not low["same_cluster"] and high["same_cluster"]
+
+    _write_labels(cfg, {low["pair_id"]: "same", high["pair_id"]: "diff"})
+    records = _run(cfg)
+    pairs = validate_threshold.read_pairs(pairs_path)
+    # `same` bajo el umbral → agrupado por must-link; `diff` sobre el umbral → sigue agrupado.
+    assert pairs[low["pair_id"]]["same_cluster"] and pairs[high["pair_id"]]["same_cluster"]
+    by_id = {r["section_id"]: r for r in records}
+    a, b = by_id[low["a"]], by_id[low["b"]]
+    assert a["cluster_id"] == b["cluster_id"]
+    # Ambas aportan líneas propias: ninguna se pierde, una queda como variante human_label.
+    variant = a if a["role"] == "variant" else b
+    assert variant["match_to_canonical"] == "human_label"
+    assert variant["unique_lines_vs_canonical"]
+    report = (cfg.paths.reports_dir / "dedup.md").read_text(encoding="utf-8")
+    assert "Uniones por etiqueta humana (must-link, `match: human_label`):** 1 pares" in report
+    assert "### Pares `diff` que quedan agrupados" in report

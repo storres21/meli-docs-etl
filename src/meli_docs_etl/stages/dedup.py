@@ -16,7 +16,7 @@ import difflib
 import json
 import logging
 from collections import Counter, defaultdict
-from collections.abc import Iterable
+from collections.abc import Collection, Iterable
 from itertools import combinations
 from pathlib import Path
 from typing import Any
@@ -37,6 +37,7 @@ from meli_docs_etl.stages.validate_threshold import (
     LABELS_FILE,
     PAIRS_FILE,
     build_validation,
+    same_pair_ids,
 )
 from meli_docs_etl.stages.validate_threshold import render_section as render_threshold_section
 from meli_docs_etl.threshold_validation import pair_id
@@ -146,8 +147,13 @@ def _occurrence(s: Section, effective: dict[str, str], match: str, j: float | No
 
 
 def dedup_sections(
-    kept: list[Section], versions: dict[str, Any], cfg: Config
+    kept: list[Section],
+    versions: dict[str, Any],
+    cfg: Config,
+    must_link: Collection[str] = (),
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """`must_link`: pair_ids etiquetados `same` por una persona; se agrupan aunque su
+    Jaccard quede bajo el umbral. Las etiquetas `diff` nunca separan pares."""
     d = cfg.dedup
     effective = {k: v["effective_version"] for k, v in versions.items()}
 
@@ -176,13 +182,27 @@ def dedup_sections(
     edges = {p: j for p, j in edges.items() if j >= d.near_dup_threshold}
     truth = {p for p, j in all_pairs.items() if j >= d.near_dup_threshold}
 
+    # Must-link: pares `same` (etiqueta humana) que el umbral no agrupa por sí solo.
+    by_pid = {pair_id(a, b): (a, b) for a, b in all_pairs}
+    human = {by_pid[pid]: all_pairs[by_pid[pid]] for pid in must_link if pid in by_pid}
+    human = {p: j for p, j in human.items() if p not in edges}
+    missing_links = sorted(pid for pid in must_link if pid not in by_pid)
+
     uf: UnionFind[str] = UnionFind(sorted(reps))
-    for a, b in sorted(edges):
+    for a, b in sorted(edges) + sorted(human):
         uf.union(a, b)
+
+    def link(a: str, b: str) -> str:
+        """Cómo quedó unido un par dentro del cluster."""
+        x, y = sorted((a, b))
+        if (x, y) in edges:
+            return "near_dup"
+        return "human_label" if (x, y) in human else "transitive"
 
     # 3) Regla de fusión sin pérdida dentro de cada cluster.
     records: list[dict[str, Any]] = []
     clusters_info: list[dict[str, Any]] = []
+    cluster_of: dict[str, str] = {}
     for group in uf.groups():
         res = merge_cluster(
             [reps[sid] for sid in group],
@@ -191,6 +211,7 @@ def dedup_sections(
         )
         canonical = res.kept[0]
         cluster_id = "cl-" + canonical["norm_hash"][:12]
+        cluster_of.update(dict.fromkeys(group, cluster_id))
         canon_lines = body_lines(canonical["body"])
         for i, s in enumerate(res.kept):
             occ = [
@@ -199,9 +220,8 @@ def dedup_sections(
             ]
             for ab in res.absorbed_by.get(i, []):
                 j = _pair_j(all_pairs, s["section_id"], ab["section_id"])
-                occ += [
-                    _occurrence(m, effective, "near_dup", j) for m in members_of[ab["section_id"]]
-                ]
+                match = link(s["section_id"], ab["section_id"])
+                occ += [_occurrence(m, effective, match, j) for m in members_of[ab["section_id"]]]
             lines = body_lines(s["body"])
             shared = lines & canon_lines if i else frozenset()
             records.append(
@@ -215,6 +235,9 @@ def dedup_sections(
                         None
                         if i == 0
                         else round(_pair_j(all_pairs, canonical["section_id"], s["section_id"]), 4)
+                    ),
+                    "match_to_canonical": (
+                        None if i == 0 else link(canonical["section_id"], s["section_id"])
                     ),
                     "project": s["project"],
                     "version_dir": s["version_dir"],
@@ -261,6 +284,9 @@ def dedup_sections(
         "all_pairs": all_pairs,
         "candidates": candidates,
         "edges": edges,
+        "human_links": human,
+        "missing_links": missing_links,
+        "cluster_of": cluster_of,
         "truth": truth,
         "clusters": clusters_info,
     }
@@ -619,6 +645,25 @@ def render_report(
         if cl
         else "_Sin clusters de casi-duplicados._"
     )
+    human = diag["human_links"]
+    out += [
+        "",
+        f"**Uniones por etiqueta humana (must-link, `match: human_label`):** {len(human)} pares "
+        f"etiquetados `same` en `{display_path(cfg.paths.labels_dir / LABELS_FILE)}` que el "
+        "umbral no agrupa por sí solo. Las etiquetas `diff` no separan pares: solo cuentan "
+        "para las métricas de la §8.",
+    ]
+    if human:
+        out += [""]
+        out.append(
+            _table(
+                ["Jaccard", "A", "B"],
+                [
+                    (f"{j:.3f}", _short(diag["reps"][a]), _short(diag["reps"][b]))
+                    for (a, b), j in sorted(human.items(), key=lambda x: (-x[1], x[0]))
+                ],
+            )
+        )
     variants = [r for r in records if r["role"] == "variant"]
     out += [
         "",
@@ -633,7 +678,7 @@ def render_report(
             uniq = r["unique_lines_vs_canonical"]
             out += [
                 f"- `{r['section_id']}` (variante de `{r['variant_of']}`, "
-                f"J = {r['jaccard_vs_canonical']:.3f}): "
+                f"J = {r['jaccard_vs_canonical']:.3f}, {r['match_to_canonical']}): "
                 + "; ".join(f"`{u[:90]}`" for u in uniq[:4])
                 + (f" … (+{len(uniq) - 4})" if len(uniq) > 4 else "")
             ]
@@ -732,11 +777,23 @@ def render_report(
     return "\n".join(out)
 
 
-def write_pairs(all_pairs: dict[tuple[str, str], float], min_j: float, path: Path) -> int:
-    """Pares (a < b) con Jaccard ≥ min_j, ordenados por pair_id."""
+def write_pairs(
+    all_pairs: dict[tuple[str, str], float],
+    cluster_of: dict[str, str],
+    min_j: float,
+    path: Path,
+) -> int:
+    """Pares (a < b) con Jaccard ≥ min_j, ordenados por pair_id; `same_cluster` indica si
+    el clustering final (umbral + must-link) los agrupa."""
     rows = sorted(
         (
-            {"pair_id": pair_id(a, b), "a": a, "b": b, "jaccard": j}
+            {
+                "pair_id": pair_id(a, b),
+                "a": a,
+                "b": b,
+                "jaccard": j,
+                "same_cluster": cluster_of[a] == cluster_of[b],
+            }
             for (a, b), j in all_pairs.items()
             if j >= min_j
         ),
@@ -746,6 +803,18 @@ def write_pairs(all_pairs: dict[tuple[str, str], float], min_j: float, path: Pat
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
     return len(rows)
+
+
+def _must_link(cfg: Config) -> set[str]:
+    """pair_ids etiquetados `same` (vacío si no hay etiquetas o son inválidas)."""
+    path = cfg.paths.labels_dir / LABELS_FILE
+    if not path.exists():
+        return set()
+    try:
+        return same_pair_ids(path)
+    except ValueError as exc:
+        log.warning("Etiquetas no utilizables, sin must-link: %s", exc)
+        return set()
 
 
 def _threshold_section(cfg: Config) -> str:
@@ -773,7 +842,10 @@ def run(cfg: Config) -> Path:
     versions = resolve_versions(sections)
     kept = [s for s in sections if s["kept"]]
     log.info("Dedup de %d secciones", len(kept))
-    records, diag = dedup_sections(kept, versions, cfg)
+    must_link = _must_link(cfg)
+    records, diag = dedup_sections(kept, versions, cfg, must_link)
+    for pid in diag["missing_links"]:
+        log.warning("Etiqueta `same` de un par que ya no existe (se ignora): %s", pid)
 
     with open(processed / DEDUP_FILE, "w", encoding="utf-8") as fh:
         for r in records:
@@ -781,7 +853,9 @@ def run(cfg: Config) -> Path:
     (processed / VERSIONS_FILE).write_text(
         json.dumps(versions, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8"
     )
-    write_pairs(diag["all_pairs"], cfg.labels.review_min_jaccard, processed / PAIRS_FILE)
+    write_pairs(
+        diag["all_pairs"], diag["cluster_of"], cfg.labels.review_min_jaccard, processed / PAIRS_FILE
+    )
     log.info(
         "Secciones: %d → %d grupos exactos → %d finales (%d variantes); %d pares casi-dup",
         len(kept),
