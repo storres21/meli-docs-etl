@@ -166,3 +166,11 @@ qa:
   neighbor_max_chars: 1500
   # Muestra para revisión humana del juez (meli-etl label-qa).
   human_sample_size: 30
+
+evaluate:
+  # BM25 Okapi (implementado a mano en retrieval.py) sobre contextualized_text.
+  k1: 1.5
+  b: 0.75
+  # Recall@k; el último corte define "fallo" en los ejemplos de reports/evaluate.md.
+  ks: [1, 5, 10]
+  n_failure_examples: 5

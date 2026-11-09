@@ -163,6 +163,16 @@ class QAConfig:
 
 
 @dataclass(frozen=True)
+class EvaluateConfig:
+    # BM25 Okapi.
+    k1: float = 1.5
+    b: float = 0.75
+    # Cortes de Recall@k (el último también define "fallo" en los ejemplos del reporte).
+    ks: tuple[int, ...] = (1, 5, 10)
+    n_failure_examples: int = 5
+
+
+@dataclass(frozen=True)
 class Config:
     seed: int
     paths: Paths
@@ -177,6 +187,7 @@ class Config:
     split: SplitConfig = field(default_factory=SplitConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
     qa: QAConfig = field(default_factory=QAConfig)
+    evaluate: EvaluateConfig = field(default_factory=EvaluateConfig)
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -215,4 +226,5 @@ def load_config(path: Path | None = None, overrides: dict[str, Any] | None = Non
         split=section(SplitConfig, "split"),
         llm=section(LLMConfig, "llm"),
         qa=section(QAConfig, "qa"),
+        evaluate=section(EvaluateConfig, "evaluate"),
     )

@@ -66,8 +66,7 @@ disponibles: `uv run meli-etl --help` o `make help`.
 ### 4. Correr el pipeline
 
 ```bash
-make all      # = uv sync + profile → normalize → dedup → chunk → split + pytest
-make qa       # Q&A desde la cache del LLM (replay: sin red ni API key)
+make all      # = uv sync + profile → normalize → dedup → chunk → split → qa → evaluate + pytest
 ```
 
 Lo mismo, comando a comando y sin `make`:
@@ -79,13 +78,14 @@ uv run meli-etl dedup        # dedup exacto + casi-dup   → reports/dedup.md
 uv run meli-etl chunk        # fichas                    → outputs/corpus.jsonl, reports/chunk.md
 uv run meli-etl split        # train / eval (manifiesto) → split en corpus.jsonl, reports/split.md
 uv run meli-etl qa           # preguntas (replay)        → outputs/qa.jsonl, reports/qa.md
+uv run meli-etl evaluate     # BM25 por estrategia       → reports/evaluate.md
 uv run pytest                # tests (sintéticos, sin red)
 ```
 
 El orden importa: cada etapa lee la salida de la anterior en `data/processed/`. Tarda menos de
-un minuto en total. `qa` no está en `make pipeline`/`make all` porque depende de la cache del
-LLM; con la cache versionada corre en segundos y sin llamar a ningún modelo (el log termina
-en `cache: N aciertos, 0 llamadas`).
+un minuto en total. `qa` corre en modo replay: lee las respuestas del LLM de la cache
+versionada, sin red ni API key, y el log termina en `cache: N aciertos, 0 llamadas`.
+`evaluate` no usa LLM.
 
 Todas las etapas aceptan `--config <yaml>` (default `configs/default.yaml`) y
 `--log-level DEBUG|INFO|WARNING`. Con make: `make dedup CONFIG=otra.yaml`.
@@ -104,9 +104,12 @@ esperable: la segunda corrida ya encuentra todos los grupos en el manifiesto (`k
 
 Resultados:
 
-- Entregables: `outputs/corpus.jsonl` (fichas con `split`) y `outputs/qa.jsonl` (preguntas
-  ancladas a fichas). Esquemas en «Esquemas de salida».
-- Reportes: `reports/profile.md`, `dedup.md`, `chunk.md`, `split.md`, `qa.md`.
+- Entregables: `outputs/corpus.jsonl` (fichas con `split`), `outputs/qa.jsonl` (preguntas
+  ancladas a fichas) y `outputs/retrieval_metrics.json` (métricas de `evaluate`). Esquemas en
+  «Esquemas de salida».
+- Reportes: `reports/profile.md`, `dedup.md`, `chunk.md`, `split.md`, `qa.md`,
+  [`evaluate.md`](reports/evaluate.md) y el diseño
+  [`experiment_plan.md`](reports/experiment_plan.md) (no lo genera el pipeline).
 - Intermedios: `data/processed/` (no versionados; se regeneran). Logs:
   `outputs/logs/<etapa>.log`.
 
@@ -213,9 +216,9 @@ La semilla (`seed`) se fija al inicio de cada etapa y los logs quedan en `output
 | (aux) | `meli-etl validate-threshold` | ✅ | `reports/dedup.md` §8 |
 | chunk | `meli-etl chunk` | ✅ | `outputs/corpus.jsonl`, `corpus_<estrategia>.jsonl`, `reports/chunk.md` |
 | split | `meli-etl split` | ✅ | campo `split` en `corpus.jsonl`, `data/splits/manifest.json`, `reports/split.md` |
-| qa | `meli-etl qa` | ✅ (cache grabada; fuera de `make all`, correr `make qa`) | `outputs/qa.jsonl`, `qa_candidates.jsonl`, `reports/qa.md` |
+| qa | `meli-etl qa` | ✅ (replay desde la cache grabada) | `outputs/qa.jsonl`, `qa_candidates.jsonl`, `reports/qa.md` |
 | (aux) | `meli-etl label-qa` | ✅ | `data/labels/qa_review.md`, `qa_judge_labels.csv` |
-| evaluate | `meli-etl evaluate` | ⏳ | métricas Recall@k / MRR |
+| evaluate | `meli-etl evaluate` | ✅ | `reports/evaluate.md`, `outputs/retrieval_metrics.json` |
 
 ### normalize
 
@@ -508,7 +511,36 @@ reanuda si se corta. La revisión humana del juez: `make label-qa`, completar
 
 ## Evaluación
 
-_TBD._
+**Retrieval** ([`reports/evaluate.md`](reports/evaluate.md), `meli-etl evaluate`):
+
+- **Método:** BM25 Okapi implementado a mano (`retrieval.py`; k1 = 1,5, b = 0,75; minúsculas
+  y secuencias de letras/dígitos) sobre el `contextualized_text`. Se corre para cada una de
+  las tres estrategias de chunking (`data/processed/corpus_<estrategia>.jsonl`), indexando
+  todo el corpus.
+- **Preguntas:** las de `eval_section` y `eval_project` de `outputs/qa.jsonl`, sin las
+  `unanswerable`. Se reporta con y sin las `leak_risk`.
+- **Criterio de acierto** (vale para cualquier estrategia): el chunk recuperado contiene
+  literalmente la `evidence`, con espacios normalizados. En las `openapi`, el chunk es el de
+  esa operación (proyecto + método + path).
+- **Métricas:** Recall@1/5/10 y MRR, más un baseline aleatorio con semilla. El reporte
+  incluye además:
+  - la tabla estrategia × split × métrica;
+  - la estrategia recomendada y por qué;
+  - eval_section vs eval_project;
+  - el efecto de quitar `leak_risk`;
+  - 5 fallos diagnosticados.
+- **Resultado actual:** `merged` y `section` empatan (MRR ≈ 0,80, R@5 ≈ 0,93 con `merged`,
+  frente a MRR ≈ 0,03 del azar). Se recomienda `merged`, que es la estrategia del
+  entregable.
+
+**Plan de experimentos** ([`reports/experiment_plan.md`](reports/experiment_plan.md)): diseño
+(sin entrenar) de un SFT con QLoRA sobre Qwen2.5-7B-Instruct. Contenido:
+
+- brazos base, base + RAG, SFT closed-book y SFT + RAG;
+- métricas: exactitud verificable, fidelidad, abstención y alucinación, juez, Recall@k y
+  olvido;
+- rigor: 3 semillas, bootstrap pareado y decontaminación;
+- criterio de éxito pre-registrado, extensión a GRPO/DPO, costo y riesgos.
 
 ## Limitaciones y trabajo futuro
 

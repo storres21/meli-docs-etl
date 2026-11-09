@@ -11,7 +11,7 @@ setup:  ## Crea el entorno (.venv) desde uv.lock
 
 all: setup pipeline test  ## Setup + etapas implementadas + tests
 
-pipeline: profile normalize dedup chunk split  ## Etapas implementadas, en orden
+pipeline: profile normalize dedup chunk split qa evaluate  ## Etapas, en orden (qa en replay: sin red)
 
 profile:  ## Etapa 1: reports/profile.md + inventory.jsonl
 	$(RUN) profile --config $(CONFIG)
@@ -46,7 +46,7 @@ qa-record:  ## Etapa 6 grabando en la cache lo que falte (requiere el proveedor;
 label-qa:  ## Exporta muestra para revisión humana del juez (no pisa etiquetas)
 	$(RUN) label-qa --config $(CONFIG)
 
-evaluate:  ## Etapa 7 (pendiente)
+evaluate:  ## Etapa 7: BM25 Recall@k/MRR por estrategia → reports/evaluate.md
 	$(RUN) evaluate --config $(CONFIG)
 
 test:  ## Corre pytest

@@ -33,12 +33,6 @@ def _bootstrap(stage: str, config: Path | None, log_level: str | None) -> Config
     return cfg
 
 
-def _not_implemented(stage: str, config: Path | None, log_level: str | None) -> None:
-    _bootstrap(stage, config, log_level)
-    log.error("La etapa '%s' todavía no está implementada.", stage)
-    raise typer.Exit(code=2)
-
-
 @app.command()
 def profile(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
     """Perfila docs_raw → reports/profile.md + inventory.jsonl."""
@@ -165,8 +159,15 @@ def label_qa(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
 
 @app.command()
 def evaluate(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
-    """(pendiente) Reporte de calidad + Recall@k/MRR con BM25."""
-    _not_implemented("evaluate", config, log_level)
+    """Retrieval BM25 sobre las 3 estrategias (Recall@k/MRR) → reports/evaluate.md."""
+    from meli_docs_etl.stages import evaluate as stage
+
+    cfg = _bootstrap("evaluate", config, log_level)
+    try:
+        stage.run(cfg)
+    except (FileNotFoundError, stage.EvaluateError) as exc:
+        log.error("%s", exc)
+        raise typer.Exit(code=1) from exc
 
 
 if __name__ == "__main__":
