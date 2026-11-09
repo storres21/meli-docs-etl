@@ -229,5 +229,6 @@ hora). El costo principal es el tiempo de análisis.
   aparte.
 - **Techo del retriever.** BM25 deja ~7 % de las preguntas sin la ficha en el top-5, y eso
   limita a B y D por igual. Se reporta el desempeño condicionado al retrieval.
+- Una prueba local con mlx-lm en Mac falló porque algunos ejemplos superan los 2048 tokens; para entrenar hay que filtrar o limitar la longitud de secuencia.
 - **Desbalance de idioma:** solo 9 preguntas en español en eval, así que no hay potencia
   para conclusiones por idioma.

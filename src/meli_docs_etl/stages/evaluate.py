@@ -15,12 +15,14 @@ from __future__ import annotations
 import json
 import logging
 import random
+from collections import Counter, defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 from meli_docs_etl.config import Config, display_path
+from meli_docs_etl.qa_quality import render_quality
 from meli_docs_etl.retrieval import (
     BM25,
     first_hit_rank,
@@ -31,7 +33,8 @@ from meli_docs_etl.retrieval import (
 )
 from meli_docs_etl.split_utils import EVAL_PROJECT, EVAL_SECTION
 from meli_docs_etl.stages.chunk import CORPUS_FILE, STRATEGIES
-from meli_docs_etl.stages.qa import QA_FILE
+from meli_docs_etl.stages.qa import CANDIDATES_FILE, QA_FILE
+from meli_docs_etl.tokens import token_counter
 
 log = logging.getLogger(__name__)
 
@@ -181,9 +184,30 @@ def run(cfg: Config) -> Path:
     )
     report = cfg.paths.reports_dir / "evaluate.md"
     report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(render_report(rows, results, questions, gold, corpora, cfg), encoding="utf-8")
+    text = render_report(rows, results, questions, gold, corpora, cfg)
+    report.write_text(text + "\n" + "\n".join(quality_section(cfg)), encoding="utf-8")
     log.info("Escrito %s y reporte %s", display_path(out), display_path(report))
     return report
+
+
+def quality_section(cfg: Config) -> list[str]:
+    """§8: calidad del dataset Q&A completo (todos los splits y tipos)."""
+    qa = _read_jsonl(cfg.paths.outputs_dir / QA_FILE, "meli-etl qa")
+    chunks = _read_jsonl(cfg.paths.outputs_dir / CORPUS_FILE, "meli-etl chunk && split")
+    discards: dict[str, Counter] = defaultdict(Counter)
+    cands = cfg.paths.processed_dir / CANDIDATES_FILE
+    if cands.exists():  # intermedio de qa: explica por qué una ficha quedó sin preguntas
+        for c in _read_jsonl(cands, "meli-etl qa"):
+            if c["discard"]:
+                discards[c["chunk_id"]][c["discard"]] += 1
+    return render_quality(
+        qa,
+        chunks,
+        token_counter(cfg.chunk.tokenizer, cfg.paths.tiktoken_cache_dir),
+        cfg.qa.near_dup_jaccard,
+        cfg.qa.min_tokens,
+        discards,
+    )
 
 
 # --------------------------------------------------------------------------- reporte

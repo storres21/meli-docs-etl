@@ -67,7 +67,9 @@ def test_hit_criterion_by_evidence_and_by_operation() -> None:
 # --------------------------------------------------------------------------- etapa
 
 
-def _chunk(cid: str, project: str, text: str, op: dict | None = None) -> dict:
+def _chunk(
+    cid: str, project: str, text: str, op: dict | None = None, split: str = "eval_section"
+) -> dict:
     head = f"{project} › guide/{cid}.md › Sección"
     return {
         "chunk_id": cid,
@@ -79,6 +81,7 @@ def _chunk(cid: str, project: str, text: str, op: dict | None = None) -> dict:
         "contextualized_text": f"{head}\n\n{text}",
         "operation": op,
         "source_type": "openapi" if op else "markdown",
+        "split": split,
     }
 
 
@@ -89,6 +92,7 @@ def _q(qid: str, cid: str, split: str, evidence: str, question: str, **kw: objec
         "split": split,
         "qa_type": "llm",
         "question": question,
+        "answer": evidence or "The documentation does not specify this.",
         "evidence": [evidence],
         "language": "en",
         "leak_risk": False,
@@ -107,8 +111,20 @@ def cfg(tmp_path: Path) -> Config:
     )
     chunks = [
         _chunk("c-bill", "alpha", "The billing worker retries failed jobs every 30 seconds."),
-        _chunk("c-ship", "alpha", "Shipping labels are printed by the label service at noon."),
-        _chunk("c-auth", "beta", "Tokens expire after 15 minutes and are refreshed by the SDK."),
+        _chunk(
+            "c-ship",
+            "alpha",
+            "Shipping labels are printed by the label service at noon.",
+            None,
+            "train",
+        ),
+        _chunk(
+            "c-auth",
+            "beta",
+            "Tokens expire after 15 minutes and are refreshed by the SDK.",
+            None,
+            "eval_project",
+        ),
         _chunk(
             "c-op",
             "beta",
@@ -126,6 +142,9 @@ def cfg(tmp_path: Path) -> Config:
         _q("q4", "c-ship", "train", "Shipping labels", "Who prints alpha shipping labels?"),
         _q("q5", "c-ship", "eval_section", "", "Unanswerable?", qa_type="unanswerable"),
     ]  # fmt: skip
+    projects = {c["chunk_id"]: c["project"] for c in chunks}
+    for q in qa:
+        q["project"] = projects[q["chunk_id"]]
     for d in (cfg.paths.outputs_dir, cfg.paths.processed_dir):
         d.mkdir(parents=True)
     lines = "".join(json.dumps(c) + "\n" for c in chunks)
@@ -157,7 +176,7 @@ def test_stage_reports_eval_questions_with_and_without_leak_risk(cfg: Config) ->
     assert row("todas", split="eval_project")["n"] == 1
     assert 0 < row("todas", "aleatorio")["MRR"] <= 1
     text = report.read_text(encoding="utf-8")
-    for heading in ("## 1.", "## 4. Conclusión", "## 5. eval_section", "## 6.", "## 7."):
+    for heading in ("## 1.", "## 4. Conclusión", "## 5. eval_section", "## 7.", "## 8. Calidad"):
         assert heading in text
     first = text
     stage.run(cfg)
