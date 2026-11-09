@@ -4,30 +4,180 @@ Pipeline local y reproducible que transforma documentación Markdown cruda de 10
 de software en datos para LLMs: corpus para retrieval/CPT, pares Q&A para SFT/evaluación,
 datos para RL y métricas de calidad/retrieval.
 
-## Quickstart
+## Instalación y ejecución, paso a paso
 
-Requisitos: Python ≥ 3.10 y [uv](https://docs.astral.sh/uv/).
+Todo corre local y sin red: el input (`data/raw/`), el tokenizer y las respuestas del LLM
+están versionados. Solo hace falta red para instalar las herramientas y, opcionalmente, para
+**regenerar** las preguntas con un LLM (paso 7).
+
+### 1. Requisitos
+
+| Herramienta | Para qué | Obligatoria |
+|---|---|---|
+| `git` | clonar el repo | sí |
+| [`uv`](https://docs.astral.sh/uv/) ≥ 0.4 | entorno e instalación de dependencias (lockfile `uv.lock`) | sí |
+| Python ≥ 3.10 | lo instala `uv` si no lo tenés | sí (vía uv) |
+| `make` | atajos (`make all`, `make qa`, …) | no: cada target tiene su comando `uv run` |
+| [Ollama](https://ollama.com) | solo para regenerar el Q&A con LLM local (paso 7) | no |
+
+Instalar `uv` (y `make` si no está):
 
 ```bash
-make all
+# macOS
+brew install uv                 # o: curl -LsSf https://astral.sh/uv/install.sh | sh
+xcode-select --install          # trae make y git, si no los tenés
+
+# Linux (Debian/Ubuntu)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+sudo apt-get install -y make git
+
+# Windows (PowerShell): sin make, usar los comandos `uv run` de abajo
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Esto crea el entorno desde `uv.lock`, corre las etapas implementadas y ejecuta los tests.
-Sin `make`:
+Abrí una terminal nueva y verificá:
+
+```bash
+uv --version
+git --version
+make --version     # opcional
+```
+
+Si no tenés Python ≥ 3.10, `uv sync` lo descarga solo; también podés hacerlo a mano con
+`uv python install 3.12`.
+
+### 2. Clonar
+
+```bash
+git clone https://github.com/storres21/meli-docs-etl.git
+cd meli-docs-etl
+```
+
+### 3. Instalar dependencias
 
 ```bash
 uv sync
-uv run meli-etl profile
-uv run meli-etl normalize
-uv run meli-etl dedup
-uv run meli-etl chunk
-uv run meli-etl split
-uv run pytest
 ```
 
-Entregable: `outputs/corpus.jsonl` (con su `split`). Reportes: `reports/profile.md`,
-`reports/dedup.md`, `reports/chunk.md` y `reports/split.md`. Intermedios en `data/processed/`. Funciona offline después de clonar:
-el tokenizer (tiktoken `o200k_base`) está cacheado en `data/cache/tiktoken/`.
+Crea `.venv/` con las versiones exactas de `uv.lock`, incluidas las de desarrollo (pytest,
+ruff). No hace falta activar el entorno: todo se corre con `uv run …`. Para ver los comandos
+disponibles: `uv run meli-etl --help` o `make help`.
+
+### 4. Correr el pipeline
+
+```bash
+make all      # = uv sync + profile → normalize → dedup → chunk → split + pytest
+make qa       # Q&A desde la cache del LLM (replay: sin red ni API key)
+```
+
+Lo mismo, comando a comando y sin `make`:
+
+```bash
+uv run meli-etl profile      # inventario y perfil       → reports/profile.md
+uv run meli-etl normalize    # secciones normalizadas    → data/processed/sections.jsonl
+uv run meli-etl dedup        # dedup exacto + casi-dup   → reports/dedup.md
+uv run meli-etl chunk        # fichas                    → outputs/corpus.jsonl, reports/chunk.md
+uv run meli-etl split        # train / eval (manifiesto) → split en corpus.jsonl, reports/split.md
+uv run meli-etl qa           # preguntas (replay)        → outputs/qa.jsonl, reports/qa.md
+uv run pytest                # tests (sintéticos, sin red)
+```
+
+El orden importa: cada etapa lee la salida de la anterior en `data/processed/`. Tarda menos de
+un minuto en total. `qa` no está en `make pipeline`/`make all` porque depende de la cache del
+LLM; con la cache versionada corre en segundos y sin llamar a ningún modelo (el log termina
+en `cache: N aciertos, 0 llamadas`).
+
+Todas las etapas aceptan `--config <yaml>` (default `configs/default.yaml`) y
+`--log-level DEBUG|INFO|WARNING`. Con make: `make dedup CONFIG=otra.yaml`.
+
+### 5. Verificar el resultado
+
+```bash
+wc -l outputs/corpus.jsonl outputs/qa.jsonl   # 235 fichas y 239 preguntas
+git status --short outputs data/splits        # vacío: salida idéntica a la versionada
+```
+
+El pipeline es determinista (semilla en la config, reportes sin timestamps), así que una
+corrida sobre un clon limpio reproduce byte a byte `outputs/` y el manifiesto del split. Si
+`git status` muestra cambios en `reports/split.md` después de correr `split` dos veces, es
+esperable: la segunda corrida ya encuentra todos los grupos en el manifiesto (`kept`).
+
+Resultados:
+
+- Entregables: `outputs/corpus.jsonl` (fichas con `split`) y `outputs/qa.jsonl` (preguntas
+  ancladas a fichas). Esquemas en «Esquemas de salida».
+- Reportes: `reports/profile.md`, `dedup.md`, `chunk.md`, `split.md`, `qa.md`.
+- Intermedios: `data/processed/` (no versionados; se regeneran). Logs:
+  `outputs/logs/<etapa>.log`.
+
+### 6. Otros comandos útiles
+
+```bash
+uv run pytest tests/test_qa.py                             # un archivo de tests
+uv run pytest tests/test_dedup.py::test_numeric_threshold_is_respected   # un test
+uv run ruff check src tests && uv run ruff format src tests              # lint + formato
+make clean       # borra data/processed/* y logs (no toca outputs/, reports/ ni caches)
+make split-rebuild   # rehace el split desde cero: genera un eval NUEVO (ver «Split y manifiesto»)
+```
+
+Revisión humana (fuera de `make all`, nunca borran etiquetas cargadas):
+
+```bash
+make label-pairs          # pares casi-duplicados para etiquetar → data/labels/near_dup_*
+make validate-threshold   # métricas del umbral con esas etiquetas → reports/dedup.md §8
+make label-qa             # muestra de 30 preguntas para revisar al juez → data/labels/qa_*
+```
+
+### 7. (Opcional) Regenerar el Q&A con un LLM
+
+Solo hace falta si cambiás prompts, modelos, parámetros de `qa:`/`llm:` o el corpus: en
+ese caso `make qa` falla con `Faltan N respuestas del LLM en la cache` y no escribe nada.
+
+**Con Ollama (default, local, sin API key):**
+
+```bash
+# macOS: brew install ollama   ·   Linux: curl -fsSL https://ollama.com/install.sh | sh
+ollama serve &                                # si no quedó corriendo como servicio
+ollama pull qwen2.5:7b                        # generador (~4,7 GB)
+ollama pull llama3.1:8b                       # juez (~4,9 GB)
+curl -s localhost:11434/api/tags              # debe listar ambos modelos
+
+make qa-record      # = uv run meli-etl qa --cache-mode record
+make qa             # verifica en replay que la cache quedó completa
+```
+
+`record` solo llama al modelo por lo que falta en `data/cache/llm/` y guarda cada respuesta
+apenas llega: si se corta, se vuelve a correr el mismo comando y retoma. El log muestra el
+avance y un ETA. Como referencia, unas 450 llamadas tardan ~1 h en Apple Silicon; en CPU,
+varias horas. Si el modelo falla al generar (p. ej. HTTP 500 `token repeat limit`), se
+reintenta una vez con `repeat_penalty` más alto y, si vuelve a fallar, se salta y se cuenta
+como `llm_error` en `reports/qa.md`. Un error de conexión (Ollama apagado, modelo sin
+descargar) corta la etapa con un mensaje que dice qué hacer.
+
+**Con Anthropic u OpenAI:** copiar la config, cambiar el proveedor y los modelos, y pasar la
+key por variable de entorno (nunca se escribe en el repo ni en la cache):
+
+```bash
+cp configs/default.yaml configs/anthropic.yaml
+# editar en configs/anthropic.yaml: llm.provider: anthropic, generator_model y judge_model
+export ANTHROPIC_API_KEY=...          # u OPENAI_API_KEY para provider: openai
+uv run meli-etl qa --cache-mode record --config configs/anthropic.yaml
+```
+
+La cache distingue proveedor y modelo, así que no pisa las respuestas de Ollama.
+
+### 8. Problemas frecuentes
+
+| Síntoma | Causa y solución |
+|---|---|
+| `uv: command not found` | Abrir una terminal nueva tras instalar uv (agrega `~/.local/bin` al `PATH`). |
+| `make: command not found` | Usar los comandos `uv run meli-etl …` del paso 4, o instalar make (paso 1). |
+| `… no existe: corré antes meli-etl <etapa>` | Se corrió una etapa sin las anteriores: correr el pipeline en orden (paso 4). |
+| `qa`: `Faltan N respuestas del LLM en la cache` | Cambió algo que entra en la clave de la cache (prompt, modelo, parámetros, corpus): grabar con `make qa-record` (paso 7). |
+| `qa`: `¿Está corriendo Ollama?` | `ollama serve` y `ollama pull <modelo>`; verificar con `curl localhost:11434/api/tags`. |
+| `split` falla diciendo que cambiaron parámetros | Se editó `seed` o `split.*`: es a propósito; `make split-rebuild` si se quiere un eval nuevo. |
+| `chunk` termina con código 1 | Falló el chequeo de conservación (contenido perdido o duplicado): ver `reports/chunk.md`. |
+| WARNING de `threshold_fallback` en `dedup` | No hay un valle claro de Jaccard: ver «Umbral `auto`» y recalibrar con etiquetas. |
 
 ## Estructura
 
@@ -63,7 +213,7 @@ La semilla (`seed`) se fija al inicio de cada etapa y los logs quedan en `output
 | (aux) | `meli-etl validate-threshold` | ✅ | `reports/dedup.md` §8 |
 | chunk | `meli-etl chunk` | ✅ | `outputs/corpus.jsonl`, `corpus_<estrategia>.jsonl`, `reports/chunk.md` |
 | split | `meli-etl split` | ✅ | campo `split` en `corpus.jsonl`, `data/splits/manifest.json`, `reports/split.md` |
-| qa | `meli-etl qa` | 🟡 (falta grabar la cache) | `outputs/qa.jsonl`, `qa_candidates.jsonl`, `reports/qa.md` |
+| qa | `meli-etl qa` | ✅ (cache grabada; fuera de `make all`, correr `make qa`) | `outputs/qa.jsonl`, `qa_candidates.jsonl`, `reports/qa.md` |
 | (aux) | `meli-etl label-qa` | ✅ | `data/labels/qa_review.md`, `qa_judge_labels.csv` |
 | evaluate | `meli-etl evaluate` | ⏳ | métricas Recall@k / MRR |
 
@@ -93,7 +243,8 @@ normaliza cada una, conservando texto y hash crudos para medir el efecto de norm
    concreta antes que un alias (`latest`).
 2. **Casi-duplicados**: shingles de 5 palabras, MinHash + LSH para candidatos y Jaccard
    **exacto** para verificar (`dedup.near_dup_threshold`). Las secciones con menos de
-   `near_dup_min_tokens` tokens solo participan del dedup exacto.
+   `near_dup_min_tokens` tokens solo participan del dedup exacto. El umbral puede ser un
+   número fijo o `auto` (el default; ver abajo).
 3. **Regla de fusión sin pérdida**: dentro de un cluster, la canónica es la sección con más
    líneas; otra se absorbe (pasa a `occurrences`) solo si **todas** sus líneas ya están en
    una sección conservada. Si aporta una línea nueva queda como `variant` con el mismo
@@ -106,6 +257,40 @@ normaliza cada una, conservando texto y hash crudos para medir el efecto de norm
 sin leakage. Cómo leer `reports/dedup.md`: §1 embudo por paso, §3 efecto de normalizar,
 §4 distribución de similitudes (justifica el umbral), §5 clusters y redundancia,
 §6 diffs de ejemplo, §7 versiones, §8 validación del umbral con etiquetas humanas.
+
+#### Umbral `auto`
+
+Con `dedup.near_dup_threshold: auto`, dedup elige el umbral a partir de los datos, en este
+orden (determinista):
+
+1. **Etiquetas** (`labels`): si `data/labels/near_dup_labels.csv` tiene al menos
+   `labels.min_same_pairs` pares `same` y otros tantos `diff`, usa la lógica de
+   `validate-threshold` con criterio F1: el punto medio (en la grilla `labels.grid_*`) del
+   intervalo de umbrales con mejor F1.
+2. **Valle** (`valley`): si no, toma el Jaccard de los pares candidatos de LSH y busca el
+   hueco sin pares más ancho dentro de `dedup.threshold_bounds` (`[0.3, 0.9]`); usa su
+   punto medio. Es la idea de §4: debajo quedan secciones hermanas con plantilla común,
+   encima la misma sección en otra versión.
+3. **Fallback** (`fallback`): si ese hueco mide menos de `dedup.min_valley_width` (0.1), usa
+   `dedup.threshold_fallback` (0.6) y escribe un WARNING.
+
+Un número en `near_dup_threshold` desactiva todo esto y se usa tal cual (método `config`).
+El umbral usado, el método, el valle y su ancho, y el histograma de Jaccard de los candidatos
+quedan en `reports/dedup.md` §4 y en `data/processed/versions.json` (clave
+`near_dup_threshold`). Las etapas posteriores (`chunk`, `split`, `validate-threshold`) leen el
+umbral de ahí. Con los datos actuales, las etiquetas no alcanzan (6 `same`), así que se usa el
+valle [0.30, 0.69] → 0.494. Ningún par cae entre 0.494 y 0.6, por eso los clusters son
+idénticos a los de 0.6.
+
+**Cuándo recalibrar con etiquetas** (`meli-etl label-pairs`, etiquetar, `make
+validate-threshold`):
+
+- cuando cambian las fuentes (proyectos o versiones nuevas, otra exportación de la
+  documentación): el valle puede moverse o desaparecer;
+- cuando aparece el WARNING de fallback: no hay un hueco claro y 0.6 es solo un valor por
+  defecto;
+- cuando hay pocos pares candidatos: el valle se apoya en pocos puntos, como hoy, con 6
+  candidatos.
 
 ### Validación del umbral con etiquetas humanas
 

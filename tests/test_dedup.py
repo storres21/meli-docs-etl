@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 import json
 from pathlib import Path
 
@@ -10,6 +11,7 @@ import pytest
 from meli_docs_etl.config import Config, load_config
 from meli_docs_etl.dedup_utils import body_lines, merge_cluster
 from meli_docs_etl.stages import dedup, label_pairs, normalize, validate_threshold
+from meli_docs_etl.threshold_validation import choose_threshold, threshold_grid
 
 INTRO = (
     "# Stock API\n\nThis service is responsible for the stock of the items sold by the "
@@ -184,7 +186,7 @@ def test_same_labels_are_must_links_and_diff_never_splits(cfg: Config) -> None:
     _run(cfg)
     pairs_path = cfg.paths.processed_dir / validate_threshold.PAIRS_FILE
     pairs = validate_threshold.read_pairs(pairs_path)
-    threshold = cfg.dedup.near_dup_threshold
+    threshold = validate_threshold.near_dup_threshold(cfg)
     (low,) = [p for p in pairs.values() if p["jaccard"] < threshold]  # prerequisitos de ops
     (high,) = [p for p in pairs.values() if p["jaccard"] >= threshold]  # Services
     assert not low["same_cluster"] and high["same_cluster"]
@@ -204,3 +206,67 @@ def test_same_labels_are_must_links_and_diff_never_splits(cfg: Config) -> None:
     report = (cfg.paths.reports_dir / "dedup.md").read_text(encoding="utf-8")
     assert "Uniones por etiqueta humana (must-link, `match: human_label`):** 1 pares" in report
     assert "### Pares `diff` que quedan agrupados" in report
+
+
+# --------------------------------------------------------------------------- umbral auto
+
+AUTO = {
+    "fallback": 0.6,
+    "bounds": (0.3, 0.9),
+    "min_valley_width": 0.1,
+    "grid": threshold_grid(0.1, 0.9, 0.05),
+    "min_label_pairs": 3,
+}
+
+
+def test_auto_threshold_takes_the_midpoint_of_a_clear_valley() -> None:
+    js = [0.05, 0.12, 0.31, 0.35, 0.72, 0.8, 0.95]
+    choice = choose_threshold("auto", js, [], **AUTO)
+    assert (choice.method, choice.valley, choice.threshold) == ("valley", (0.35, 0.72), 0.535)
+    assert choice.valley_width == 0.37
+    assert dict(choice.histogram)["[0.3, 0.4)"] == 2
+    assert choose_threshold("auto", list(reversed(js)), [], **AUTO) == choice  # determinista
+
+
+def test_auto_threshold_without_valley_falls_back_with_warning(
+    caplog: pytest.LogCaptureFixture,
+) -> None:
+    js = [0.3 + 0.07 * i for i in range(10)]  # pares cada 0.07: ningún hueco ≥ 0.1
+    with caplog.at_level("WARNING"):
+        choice = choose_threshold("auto", js, [], **AUTO)
+    assert (choice.method, choice.threshold) == ("fallback", 0.6)
+    assert choice.valley_width is not None and choice.valley_width < 0.1
+    assert any(
+        r.levelname == "WARNING" and "threshold_fallback" in r.message for r in caplog.records
+    )
+
+
+def test_auto_threshold_prefers_labels_over_valley() -> None:
+    js = [0.1, 0.2, 0.72, 0.8]  # valle [0.3, 0.72] → 0.51
+    labeled = [(0.2, "diff"), (0.25, "diff"), (0.3, "diff"), (0.45, "same"), (0.5, "same")]
+    labeled += [(0.8, "same"), (0.1, "unsure")]
+    choice = choose_threshold("auto", js, labeled, **AUTO)
+    # Mejor F1 (= 1) en [0.35, 0.45] → punto medio en la grilla.
+    assert (choice.method, choice.threshold) == ("labels", 0.4)
+    # Con menos pares que el mínimo, las etiquetas no deciden.
+    few = choose_threshold("auto", js, labeled[2:], **AUTO)
+    assert (few.method, few.threshold) == ("valley", 0.51)
+
+
+def test_numeric_threshold_is_respected(cfg: Config) -> None:
+    choice = choose_threshold(0.6, [0.1, 0.9], [(0.5, "same")] * 5 + [(0.1, "diff")] * 5, **AUTO)
+    assert (choice.method, choice.threshold) == ("config", 0.6)
+
+    auto_records = _run(cfg)
+    auto = json.loads((cfg.paths.processed_dir / dedup.VERSIONS_FILE).read_text())
+    assert auto[validate_threshold.THRESHOLD_KEY]["method"] in ("valley", "fallback")
+    fixed = dataclasses.replace(cfg, dedup=dataclasses.replace(cfg.dedup, near_dup_threshold=0.6))
+    fixed_records = _run(fixed)
+    rec = json.loads((cfg.paths.processed_dir / dedup.VERSIONS_FILE).read_text())
+    assert rec[validate_threshold.THRESHOLD_KEY]["method"] == "config"
+    assert rec[validate_threshold.THRESHOLD_KEY]["threshold"] == 0.6
+    assert validate_threshold.near_dup_threshold(fixed) == 0.6
+    report = (cfg.paths.reports_dir / "dedup.md").read_text(encoding="utf-8")
+    assert "Umbral: **Jaccard ≥ 0.6**" in report and "Método: **config**" in report
+    # En este corpus no hay pares entre el valle y 0.6: mismos clusters.
+    assert [r["cluster_id"] for r in fixed_records] == [r["cluster_id"] for r in auto_records]

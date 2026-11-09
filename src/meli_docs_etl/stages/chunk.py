@@ -46,6 +46,7 @@ from meli_docs_etl.lang import detect_language
 from meli_docs_etl.openapi import Operation, quality_notes, render_operations
 from meli_docs_etl.stages.dedup import DEDUP_FILE, VERSIONS_FILE
 from meli_docs_etl.stages.normalize import SECTIONS_FILE
+from meli_docs_etl.stages.validate_threshold import near_dup_threshold
 from meli_docs_etl.tokens import token_counter
 
 log = logging.getLogger(__name__)
@@ -373,7 +374,7 @@ def openapi_markdown_links(
     specs: list[Spec], records: dict[str, Record], cfg: Config
 ) -> list[tuple[str, str, float]]:
     """Operaciones casi-duplicadas de una sección Markdown (mismo Jaccard/umbral que dedup)."""
-    d = cfg.dedup
+    d, thr = cfg.dedup, near_dup_threshold(cfg)
     md = {
         r["cluster_id"]: shingles(tokenize(r["text"]), d.shingle_size)
         for r in records.values()
@@ -385,7 +386,7 @@ def openapi_markdown_links(
             sh = shingles(tokenize(op.text), d.shingle_size)
             for cid, other in md.items():
                 j = jaccard(sh, other)
-                if j >= d.near_dup_threshold:
+                if j >= thr:
                     links.append((openapi_cluster(spec, op), cid, j))
     return sorted(links)
 
@@ -771,7 +772,7 @@ def render_report(
         + ", ".join(sorted({ch["project"] for ch in big}))
         + f", {sum(ch['n_tokens'] for ch in big)} tokens.",
         f"- **Chunks con varios clusters** (por fusión): {len(multi)}.",
-        f"- **Uniones OpenAPI ↔ Markdown** (Jaccard ≥ {cfg.dedup.near_dup_threshold}): "
+        f"- **Uniones OpenAPI ↔ Markdown** (Jaccard ≥ {near_dup_threshold(cfg)}): "
         + (
             ", ".join(f"`{a}` ↔ `{b}` ({j:.2f})" for a, b, j in links)
             if links

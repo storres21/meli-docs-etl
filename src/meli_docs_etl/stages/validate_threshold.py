@@ -38,9 +38,27 @@ LABELS_FILE = "near_dup_labels.csv"
 MANUAL_LINKS_FILE = "manual_must_links.csv"
 MANUAL_COLUMNS = ("section_a", "section_b", "origen", "nota")
 REVIEW_FILE = "near_dup_review.md"
+# Escrito por dedup: versiones por proyecto y, bajo THRESHOLD_KEY, el umbral usado.
+VERSIONS_FILE = "versions.json"
+THRESHOLD_KEY = "near_dup_threshold"
 LABEL_COLUMNS = ("pair_id", "label", "nota")
 MARK_START = "<!-- threshold-validation:start -->"
 MARK_END = "<!-- threshold-validation:end -->"
+
+
+def near_dup_threshold(cfg: Config) -> float:
+    """Umbral de casi-duplicados efectivo: el número de la config o, en modo `auto`, el que
+    eligió dedup (registrado en versions.json). Lo usan las etapas posteriores."""
+    configured = cfg.dedup.near_dup_threshold
+    if not isinstance(configured, str):
+        return float(configured)
+    path = cfg.paths.processed_dir / VERSIONS_FILE
+    if not path.exists():
+        raise FileNotFoundError(f"{path} no existe: corré antes `meli-etl dedup`.")
+    rec = json.loads(path.read_text(encoding="utf-8")).get(THRESHOLD_KEY)
+    if rec is None:
+        raise ValueError(f"{path} no registra el umbral: volvé a correr `meli-etl dedup`.")
+    return float(rec["threshold"])
 
 
 def read_pairs(path: Path) -> dict[str, dict[str, Any]]:
@@ -139,7 +157,7 @@ def build_validation(cfg: Config) -> Validation:
     labeled.sort(key=lambda x: (-x["jaccard"], x["pair_id"]))
     js = [(x["jaccard"], x["label"]) for x in labeled]
 
-    current = cfg.dedup.near_dup_threshold
+    current = near_dup_threshold(cfg)
     v = Validation(
         n_pairs=len(pairs),
         counts=Counter(label for _, label in js),

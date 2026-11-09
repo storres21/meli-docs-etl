@@ -72,7 +72,12 @@ class NormalizeConfig:
 class DedupConfig:
     shingle_size: int = 5
     num_perm: int = 128
-    near_dup_threshold: float = 0.6
+    # Número fijo, o "auto": etiquetas humanas → valle de Jaccard → threshold_fallback.
+    near_dup_threshold: float | str = "auto"
+    threshold_fallback: float = 0.6
+    # El valle se busca dentro de este rango; solo cuenta si mide ≥ min_valley_width.
+    threshold_bounds: tuple[float, float] = (0.3, 0.9)
+    min_valley_width: float = 0.1
     lsh_threshold: float = 0.45
     near_dup_min_tokens: int = 20
     n_diff_examples: int = 5

@@ -99,7 +99,12 @@ def cfg(tmp_path: Path) -> Config:
             "splits_dir": tmp_path / "splits",
         }
     )
-    cfg = dataclasses.replace(base, split=dataclasses.replace(base.split, eval_project="beta"))
+    # Umbral fijo: estos tests escriben el corpus directo, sin correr dedup.
+    cfg = dataclasses.replace(
+        base,
+        split=dataclasses.replace(base.split, eval_project="beta"),
+        dedup=dataclasses.replace(base.dedup, near_dup_threshold=0.6),
+    )
     write_corpus(cfg, base_corpus())
     return cfg
 

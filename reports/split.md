@@ -67,11 +67,11 @@ El idioma no es una dimensión de estratificación aparte: depende casi por comp
 
 ## 3. Estabilidad y manifiesto
 
-Origen de cada asignación en esta corrida: kept 177, inherited 3, conflict 1, held_out 16 (desde el manifiesto).
+Origen de cada asignación en esta corrida: kept 181, held_out 16 (desde el manifiesto).
 
 **Cambios del conjunto de eval en esta corrida:**
 
-- ⚠️ **Cambio del conjunto de eval:** el grupo `sg-4c97d3c309dc` une contenido de splits distintos (`sg-3657ccb5478f` (eval_section), `sg-4c97d3c309dc` (train)) y va a **train** para no filtrar; pasan de eval a train 1 fichas: `ck-524c5b21f77c6bdc` (secciones: `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#002`, `catalog-portfolio-api/latest/guide/setup/local-development.md#002`)
+Ninguno.
 
 **Historial de cambios del conjunto de eval** (guardado en el manifiesto, versionado):
 
@@ -95,8 +95,8 @@ Origen de cada asignación en esta corrida: kept 177, inherited 3, conflict 1, h
 
 ### 5.1 Fichas parecidas en splits distintos (Jaccard ≥ 0.3)
 
-- **≥ 0.6 (umbral de dedup):** 0 pares. Dedup agrupa secciones; una ficha fusionada podría combinarlas de forma que supere el umbral sin compartir cluster.
-- **[0.3, 0.6):** 1 pares — plantilla o contenido compartido que dedup no considera duplicado (la §8 de dedup.md valida esa zona con etiquetas humanas).
+- **≥ 0.4941 (umbral de dedup):** 1 pares. Dedup agrupa secciones; una ficha fusionada podría combinarlas de forma que supere el umbral sin compartir cluster.
+- **[0.3, 0.4941):** 0 pares — plantilla o contenido compartido que dedup no considera duplicado (la §8 de dedup.md valida esa zona con etiquetas humanas).
 
 | Jaccard | Ficha A | Split A | Ficha B | Split B |
 |---|---|---|---|---|

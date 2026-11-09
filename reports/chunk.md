@@ -75,7 +75,7 @@ Generado por `meli-etl chunk`. Estrategia del entregable: **`merged`**; tokenize
 - **split_groups:** 197 para 235 chunks. Tamaños: 180 de 1, 8 de 2, 6 de 3, 1 de 4, 1 de 5, 1 de 12.
 - **Más grande:** `sg-6206cf4d3521` con 12 chunks, 1 clusters, proyecto(s) zenith-keeper, 2424 tokens.
 - **Chunks con varios clusters** (por fusión): 34.
-- **Uniones OpenAPI ↔ Markdown** (Jaccard ≥ 0.6): ninguna; las specs no repiten la guía, cada operación es su propio grupo.
+- **Uniones OpenAPI ↔ Markdown** (Jaccard ≥ 0.4941): ninguna; las specs no repiten la guía, cada operación es su propio grupo.
 
 **Chunks del grupo más grande:**
 

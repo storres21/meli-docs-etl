@@ -107,11 +107,28 @@ Shingles de 5 palabras; Jaccard **exacto** entre los 186 representantes (uno por
 | [0.8, 0.9) | 1 | █ |
 | [0.9, 1.0] | 3 | ██ |
 
-- Umbral: **Jaccard ≥ 0.6**. Par más similar por debajo: 0.350; par menos similar por encima: 0.688.
+- Umbral: **Jaccard ≥ 0.4941**. Par más similar por debajo: 0.350; par menos similar por encima: 0.688.
+- Método: **valley**, valle: punto medio del hueco sin pares más ancho en el Jaccard de los candidatos LSH; etiquetas insuficientes (6 same / 56 diff; mínimo 10).
+- Valle más ancho en [0.3, 0.9]: [0.300, 0.688] (ancho 0.388); se exige ancho ≥ 0.1.
+
+**Jaccard de los 6 candidatos LSH** (insumo del valle)
+
+| Jaccard | Pares |  |
+|---|---|---|
+| [0.0, 0.1) | 0 |  |
+| [0.1, 0.2) | 0 |  |
+| [0.2, 0.3) | 0 |  |
+| [0.3, 0.4) | 0 |  |
+| [0.4, 0.5) | 0 |  |
+| [0.5, 0.6) | 0 |  |
+| [0.6, 0.7) | 1 | ██████████ |
+| [0.7, 0.8) | 1 | ██████████ |
+| [0.8, 0.9) | 1 | ██████████ |
+| [0.9, 1.0] | 3 | ██████████████████████████████ |
 - Pares sobre el umbral: 6 (0 entre proyectos distintos).
 - Recall de MinHash/LSH (umbral de banding 0.45, 128 permutaciones) frente al cálculo exhaustivo: **100%** (6/6); 6 candidatos verificados.
 
-**Pares más similares bajo el umbral (0.3 ≤ Jaccard < 0.6)** — no se agrupan
+**Pares más similares bajo el umbral (0.3 ≤ Jaccard < 0.4941)** — no se agrupan
 
 | Jaccard | A | B |
 |---|---|---|
@@ -314,7 +331,7 @@ Etiquetas humanas en `data/labels/near_dup_labels.csv` sobre los 64 pares de rep
 | 0.45 | 5 | 1 | 1 | 55 | 83.3% | 83.3% | 83.3% | 0 |  |
 | 0.50 | 5 | 1 | 1 | 55 | 83.3% | 83.3% | 83.3% | 0 |  |
 | 0.55 | 5 | 1 | 1 | 55 | 83.3% | 83.3% | 83.3% | 0 |  |
-| 0.60 | 5 | 1 | 1 | 55 | 83.3% | 83.3% | 83.3% | 0 | actual |
+| 0.60 | 5 | 1 | 1 | 55 | 83.3% | 83.3% | 83.3% | 0 |  |
 | 0.65 | 5 | 1 | 1 | 55 | 83.3% | 83.3% | 83.3% | 0 |  |
 | 0.70 | 4 | 1 | 2 | 55 | 80.0% | 66.7% | 72.7% | 0 |  |
 | 0.75 | 4 | 1 | 2 | 55 | 80.0% | 66.7% | 72.7% | 0 |  |
@@ -322,7 +339,7 @@ Etiquetas humanas en `data/labels/near_dup_labels.csv` sobre los 64 pares de rep
 | 0.85 | 4 | 0 | 2 | 56 | 100.0% | 66.7% | 80.0% | 0 |  |
 | 0.90 | 3 | 0 | 3 | 56 | 100.0% | 50.0% | 66.7% | 0 |  |
 
-**Clustering final de `dedup`** (umbral 0.60 + must-link de los `same`): TP 6 · FP 1 · FN 0 · TN 55 · precisión 85.7% · recall 100.0% · F1 92.3%. La tabla de arriba mide solo el umbral; acá se mide lo que realmente usa el split.
+**Clustering final de `dedup`** (umbral 0.49 + must-link de los `same`): TP 6 · FP 1 · FN 0 · TN 55 · precisión 85.7% · recall 100.0% · F1 92.3%. La tabla de arriba mide solo el umbral; acá se mide lo que realmente usa el split.
 
 **Must-links manuales fuera de la muestra** (`manual_must_links.csv`, `match: audit_link`): 4 pares, 4 agrupados en el clustering final. No entran en las métricas de arriba: no están en la muestra etiquetable (Jaccard < 0.1 o secciones con < 20 tokens), así que no tienen un Jaccard comparable con el umbral.
 
@@ -340,7 +357,7 @@ Etiquetas humanas en `data/labels/near_dup_labels.csv` sobre los 64 pares de rep
 - **Criterio**: el umbral más alto que mantiene el **recall máximo**; todos los umbrales en **[0.30, 0.30]** dan la misma matriz de confusión, así que con estas etiquetas son indistinguibles. Se recomienda el punto medio del intervalo (hacia abajo en la grilla) para dejar margen a ambos lados frente a pares que no están en el set etiquetado.
 - **Por qué priorizar recall**: un falso negativo (misma sección en otra versión que queda en otro cluster) permite que una versión caiga en train y la otra en eval: es **leakage**, y además deja contenido redundante. Un falso positivo solo pone dos secciones distintas en el mismo cluster: con la regla de fusión sin pérdida (§5) no se descarta contenido, solo el split queda un poco más grueso. El costo es asimétrico, así que se acepta perder precisión antes que recall.
 - **Must-link**: los pares etiquetados `same` se agrupan en `dedup` con cualquier umbral (`match: human_label`), así que el recall sobre el set etiquetado no depende del umbral. El umbral decide sobre los pares **no** etiquetados: por eso importa más que la recomendación sea robusta que exprimir el recall de este set.
-- **Umbral actual (0.60)**: queda **fuera** del intervalo equivalente; como la recomendación es frágil y los `same` ya se agrupan por must-link, la config lo mantiene.
+- **Umbral actual (0.49)**: queda **fuera** del intervalo equivalente; como la recomendación es frágil y los `same` ya se agrupan por must-link, la config lo mantiene.
 - **Límites**: el recall se mide solo sobre pares con Jaccard ≥ 0.1 entre representantes con ≥ 20 tokens; un `same` por debajo de eso no se ve (con t = 0.10 el recall es 100% por construcción).
 
 ### Robustez de la recomendación
@@ -350,7 +367,7 @@ Etiquetas humanas en `data/labels/near_dup_labels.csv` sobre los 64 pares de rep
 - ⚠️ **Margen menor a un paso de la grilla**: hay un par etiquetado a 0.016 del umbral recomendado.
 - ⚠️ **Depende de 1 etiqueta(s)**: quitando cualquiera de estos pares cambia el umbral recomendado: `np-9892d723` (same, J = 0.319).
 
-### `same` bajo el umbral actual (0.60)
+### `same` bajo el umbral actual (0.49)
 
 | pair_id | Jaccard | Clustering final | A | B | Nota |
 |---|---|---|---|---|---|

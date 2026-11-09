@@ -8,8 +8,11 @@ métricas pero se cuenta.
 from __future__ import annotations
 
 import hashlib
+import logging
 from collections.abc import Sequence
 from dataclasses import dataclass
+
+log = logging.getLogger(__name__)
 
 LABELS = ("same", "diff", "unsure")
 
@@ -153,3 +156,107 @@ def fragility(
         thin_margin=margin < step - 1e-9,
         critical=critical,
     )
+
+
+# --------------------------------------------------------------------------- umbral auto
+
+METHODS = ("config", "labels", "valley", "fallback")
+
+
+@dataclass(frozen=True)
+class ThresholdChoice:
+    """Umbral de casi-duplicados usado por dedup y cómo se eligió (`METHODS`)."""
+
+    threshold: float
+    method: str
+    # Hueco sin pares más ancho dentro de threshold_bounds (se calcula siempre, para registro).
+    valley: tuple[float, float] | None
+    histogram: list[tuple[str, int]]  # Jaccard de los candidatos LSH, en tramos de 0.1
+    n_candidates: int
+    detail: str = ""
+
+    @property
+    def valley_width(self) -> float | None:
+        return None if self.valley is None else round(self.valley[1] - self.valley[0], 4)
+
+    def to_json(self) -> dict[str, object]:
+        return {
+            "threshold": self.threshold,
+            "method": self.method,
+            "valley": list(self.valley) if self.valley else None,
+            "valley_width": self.valley_width,
+            "histogram": [{"jaccard": r, "pairs": n} for r, n in self.histogram],
+            "n_candidates": self.n_candidates,
+            "detail": self.detail,
+        }
+
+
+def jaccard_histogram(values: Sequence[float], step: float = 0.1) -> list[tuple[str, int]]:
+    n = int(round(1 / step))
+    counts = [0] * n
+    for v in values:
+        counts[min(int(v / step + 1e-9), n - 1)] += 1
+    return [
+        (f"[{i * step:.1f}, {(i + 1) * step:.1f}{']' if i == n - 1 else ')'}", c)
+        for i, c in enumerate(counts)
+    ]
+
+
+def find_valley(values: Sequence[float], bounds: tuple[float, float]) -> tuple[float, float]:
+    """Hueco sin pares más ancho dentro de `bounds` (los extremos cuentan como bordes).
+    Empate → el más bajo, así el resultado es determinista."""
+    lo, hi = bounds
+    points = sorted({lo, hi, *(round(v, 6) for v in values if lo < v < hi)})
+    gaps = [(b - a, -a, a, b) for a, b in zip(points[:-1], points[1:], strict=True)]
+    _, _, a, b = max(gaps)
+    return (round(a, 4), round(b, 4))
+
+
+def choose_threshold(
+    configured: float | str,
+    candidate_js: Sequence[float],
+    labeled: Sequence[tuple[float, str]],
+    *,
+    fallback: float,
+    bounds: tuple[float, float],
+    min_valley_width: float,
+    grid: Sequence[float],
+    min_label_pairs: int,
+) -> ThresholdChoice:
+    """Número en la config → ese umbral. `auto`: (a) etiquetas humanas con ≥ min_label_pairs
+    `same` y `diff` → punto medio (en la grilla) del intervalo con mejor F1; (b) si no, punto
+    medio del valle de `candidate_js`; (c) si el valle mide < min_valley_width, `fallback`."""
+    valley = find_valley(candidate_js, bounds)
+    common = {
+        "valley": valley,
+        "histogram": jaccard_histogram(candidate_js),
+        "n_candidates": len(candidate_js),
+    }
+    if not isinstance(configured, str):
+        return ThresholdChoice(float(configured), "config", **common)
+    if configured != "auto":
+        raise ValueError(f"dedup.near_dup_threshold debe ser un número o 'auto': {configured!r}")
+    n_same = sum(label == "same" for _, label in labeled)
+    n_diff = sum(label == "diff" for _, label in labeled)
+    if n_same >= min_label_pairs and n_diff >= min_label_pairs:
+        rec = recommend(sweep(labeled, grid), recall_priority=False)
+        lo, hi = rec.equivalent
+        detail = f"{n_same} same / {n_diff} diff; mejor F1 en [{lo:.2f}, {hi:.2f}]"
+        return ThresholdChoice(rec.row.threshold, "labels", detail=detail, **common)
+    labels_note = (
+        f"etiquetas insuficientes ({n_same} same / {n_diff} diff; mínimo {min_label_pairs})"
+    )
+    if valley[1] - valley[0] >= min_valley_width:
+        mid = round((valley[0] + valley[1]) / 2, 4)
+        return ThresholdChoice(mid, "valley", detail=labels_note, **common)
+    log.warning(
+        "Umbral de casi-duplicados: sin valle de ancho ≥ %s en el Jaccard de los %d candidatos "
+        "LSH (más ancho: %s) y %s; se usa threshold_fallback = %s. Conviene etiquetar pares "
+        "(`meli-etl label-pairs`) y recalibrar.",
+        min_valley_width,
+        len(candidate_js),
+        valley,
+        labels_note,
+        fallback,
+    )
+    return ThresholdChoice(fallback, "fallback", detail=labels_note, **common)

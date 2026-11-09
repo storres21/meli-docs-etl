@@ -16,7 +16,7 @@ import difflib
 import json
 import logging
 from collections import Counter, defaultdict
-from collections.abc import Collection, Iterable, Sequence
+from collections.abc import Collection, Iterable, Mapping, Sequence
 from itertools import combinations
 from pathlib import Path
 from typing import Any
@@ -37,18 +37,24 @@ from meli_docs_etl.stages.validate_threshold import (
     LABELS_FILE,
     MANUAL_LINKS_FILE,
     PAIRS_FILE,
+    THRESHOLD_KEY,
+    VERSIONS_FILE,
     ManualLink,
     build_validation,
+    checked_labels,
     read_manual_links,
-    same_pair_ids,
 )
 from meli_docs_etl.stages.validate_threshold import render_section as render_threshold_section
-from meli_docs_etl.threshold_validation import pair_id
+from meli_docs_etl.threshold_validation import (
+    ThresholdChoice,
+    choose_threshold,
+    pair_id,
+    threshold_grid,
+)
 
 log = logging.getLogger(__name__)
 
 DEDUP_FILE = "sections_dedup.jsonl"
-VERSIONS_FILE = "versions.json"
 Section = dict[str, Any]
 
 
@@ -155,9 +161,11 @@ def dedup_sections(
     cfg: Config,
     must_link: Collection[str] = (),
     manual_links: Sequence[ManualLink] = (),
+    labels: Mapping[str, str] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """`must_link`: pair_ids etiquetados `same` por una persona; se agrupan aunque su
-    Jaccard quede bajo el umbral. `manual_links`: must-links declarados por section_id para
+    Jaccard quede bajo el umbral. `labels` (pair_id → same/diff/unsure) alimenta el umbral
+    `auto` (ver `choose_threshold`). `manual_links`: must-links declarados por section_id para
     pares fuera de la muestra etiquetable (p. ej. hallados en la auditoría del split).
     Las etiquetas `diff` nunca separan pares."""
     d = cfg.dedup
@@ -184,12 +192,28 @@ def dedup_sections(
         j = jaccard(sh[a], sh[b])
         if j > 0:
             all_pairs[(a, b)] = j
+    by_pid = {pair_id(a, b): (a, b) for a, b in all_pairs}
+    lc = cfg.labels
+    choice = choose_threshold(
+        d.near_dup_threshold,
+        sorted(all_pairs.get(p, 0.0) for p in candidates),
+        sorted(
+            (all_pairs[by_pid[pid]], label)
+            for pid, label in (labels or {}).items()
+            if pid in by_pid and label
+        ),
+        fallback=d.threshold_fallback,
+        bounds=d.threshold_bounds,
+        min_valley_width=d.min_valley_width,
+        grid=threshold_grid(lc.grid_start, lc.grid_stop, lc.grid_step),
+        min_label_pairs=lc.min_same_pairs,
+    )
+    thr = choice.threshold
     edges = {p: all_pairs.get(p, 0.0) for p in candidates}
-    edges = {p: j for p, j in edges.items() if j >= d.near_dup_threshold}
-    truth = {p for p, j in all_pairs.items() if j >= d.near_dup_threshold}
+    edges = {p: j for p, j in edges.items() if j >= thr}
+    truth = {p for p, j in all_pairs.items() if j >= thr}
 
     # Must-link: pares `same` (etiqueta humana) que el umbral no agrupa por sí solo.
-    by_pid = {pair_id(a, b): (a, b) for a, b in all_pairs}
     human = {by_pid[pid]: all_pairs[by_pid[pid]] for pid in must_link if pid in by_pid}
     human = {p: j for p, j in human.items() if p not in edges}
     missing_links = sorted(pid for pid in must_link if pid not in by_pid)
@@ -314,6 +338,7 @@ def dedup_sections(
         "reps": reps,
         "eligible": sorted(sh),
         "all_pairs": all_pairs,
+        "threshold": choice,
         "candidates": candidates,
         "edges": edges,
         "human_links": human,
@@ -597,7 +622,8 @@ def render_report(
         )
     )
 
-    thr = d.near_dup_threshold
+    choice: ThresholdChoice = diag["threshold"]
+    thr = choice.threshold
     gap_lo = max((j for j in all_pairs.values() if j < thr), default=0.0)
     gap_hi = min((j for j in all_pairs.values() if j >= thr), default=1.0)
     lsh_found = len(diag["truth"] & set(diag["edges"]))
@@ -607,6 +633,7 @@ def render_report(
         "",
         f"- Umbral: **Jaccard ≥ {thr}**. Par más similar por debajo: {gap_lo:.3f}; "
         f"par menos similar por encima: {gap_hi:.3f}.",
+        *_threshold_choice_lines(choice, d),
         f"- Pares sobre el umbral: {len(diag['truth'])} ({cross} entre proyectos distintos).",
         f"- Recall de MinHash/LSH (umbral de banding {d.lsh_threshold}, "
         f"{d.num_perm} permutaciones) "
@@ -838,6 +865,50 @@ def render_report(
     return "\n".join(out)
 
 
+METHOD_TEXT = {
+    "config": "fijo en la config (`dedup.near_dup_threshold`)",
+    "labels": "etiquetas humanas: punto medio (en la grilla) del intervalo con mejor F1",
+    "valley": "valle: punto medio del hueco sin pares más ancho en el Jaccard de los "
+    "candidatos LSH",
+    "fallback": "fallback (`dedup.threshold_fallback`): no hay etiquetas suficientes ni valle",
+}
+
+
+def _threshold_choice_lines(choice: ThresholdChoice, d: Any) -> list[str]:
+    """Cómo se eligió el umbral (también en versions.json) e histograma de candidatos."""
+    lo, hi = d.threshold_bounds
+    valley = (
+        f"[{choice.valley[0]:.3f}, {choice.valley[1]:.3f}] (ancho {choice.valley_width:.3f})"
+        if choice.valley
+        else "—"
+    )
+    out = [
+        f"- Método: **{choice.method}**, {METHOD_TEXT[choice.method]}"
+        + (f"; {choice.detail}" if choice.detail else "")
+        + ".",
+        f"- Valle más ancho en [{lo}, {hi}]: {valley}; se exige ancho ≥ {d.min_valley_width}.",
+    ]
+    if choice.method == "fallback":
+        out.append(
+            "- ⚠️ **Sin valle claro**: conviene etiquetar pares (`meli-etl label-pairs`) y "
+            "recalibrar."
+        )
+    total = choice.n_candidates
+    out += [
+        "",
+        f"**Jaccard de los {total} candidatos LSH** (insumo del valle)",
+        "",
+        _table(
+            ["Jaccard", "Pares", ""],
+            [
+                (r, n, _bar(n, max([n for _, n in choice.histogram] + [1])))
+                for r, n in choice.histogram
+            ],
+        ),
+    ]
+    return out
+
+
 def write_pairs(
     all_pairs: dict[tuple[str, str], float],
     cluster_of: dict[str, str],
@@ -866,16 +937,16 @@ def write_pairs(
     return len(rows)
 
 
-def _must_link(cfg: Config) -> set[str]:
-    """pair_ids etiquetados `same` (vacío si no hay etiquetas o son inválidas)."""
+def _labels(cfg: Config) -> dict[str, str]:
+    """pair_id → etiqueta humana (vacío si no hay etiquetas o son inválidas)."""
     path = cfg.paths.labels_dir / LABELS_FILE
     if not path.exists():
-        return set()
+        return {}
     try:
-        return same_pair_ids(path)
+        return {r["pair_id"]: r["label"] for r in checked_labels(path) if r["label"]}
     except ValueError as exc:
         log.warning("Etiquetas no utilizables, sin must-link: %s", exc)
-        return set()
+        return {}
 
 
 def _manual_links(cfg: Config) -> list[ManualLink]:
@@ -911,9 +982,18 @@ def run(cfg: Config) -> Path:
     versions = resolve_versions(sections)
     kept = [s for s in sections if s["kept"]]
     log.info("Dedup de %d secciones", len(kept))
-    must_link = _must_link(cfg)
+    labels = _labels(cfg)
+    must_link = {pid for pid, label in labels.items() if label == "same"}
     manual_links = _manual_links(cfg)
-    records, diag = dedup_sections(kept, versions, cfg, must_link, manual_links)
+    records, diag = dedup_sections(kept, versions, cfg, must_link, manual_links, labels)
+    choice: ThresholdChoice = diag["threshold"]
+    log.info(
+        "Umbral de casi-duplicados: %s (método %s; valle %s, ancho %s)",
+        choice.threshold,
+        choice.method,
+        choice.valley,
+        choice.valley_width,
+    )
     for e in diag["manual_links"]:
         if e["status"] != "unidas":
             log.warning(
@@ -929,7 +1009,13 @@ def run(cfg: Config) -> Path:
         for r in records:
             fh.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
     (processed / VERSIONS_FILE).write_text(
-        json.dumps(versions, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8"
+        json.dumps(
+            {**versions, THRESHOLD_KEY: choice.to_json()},
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        ),
+        encoding="utf-8",
     )
     write_pairs(
         diag["all_pairs"], diag["cluster_of"], cfg.labels.review_min_jaccard, processed / PAIRS_FILE

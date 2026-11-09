@@ -39,6 +39,7 @@ from meli_docs_etl.split_utils import (
     occurrence_keys,
 )
 from meli_docs_etl.stages.chunk import CORPUS_FILE
+from meli_docs_etl.stages.validate_threshold import near_dup_threshold
 
 log = logging.getLogger(__name__)
 
@@ -557,7 +558,7 @@ def render_report(
     )
 
     # 5. Auditoría sutil
-    thr = cfg.dedup.near_dup_threshold
+    thr = near_dup_threshold(cfg)
     sim = cross_split_similar(chunks, s.audit_jaccard_min, cfg.dedup.shingle_size)
     high = [x for x in sim if x[0] >= thr]
     out += [
