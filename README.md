@@ -1,5 +1,7 @@
 # meli-docs-etl
 
+Por favor encuentre la presentación que detalla el proceso de pensamiento detrás del proyecto [aquí](https://docs.google.com/presentation/d/1pn-H6Wov8zlbdAgt9mzNG0G92i02XVV3FwV0xqV441U/edit?usp=sharing)
+
 Pipeline local, determinista y reproducible que convierte la documentación Markdown cruda de
 10 proyectos de software (`data/raw/docs_raw/<proyecto>/<versión>/…`) en datos para entrenar y
 evaluar LLMs.
