@@ -63,7 +63,8 @@ La semilla (`seed`) se fija al inicio de cada etapa y los logs quedan en `output
 | (aux) | `meli-etl validate-threshold` | ✅ | `reports/dedup.md` §8 |
 | chunk | `meli-etl chunk` | ✅ | `outputs/corpus.jsonl`, `corpus_<estrategia>.jsonl`, `reports/chunk.md` |
 | split | `meli-etl split` | ✅ | campo `split` en `corpus.jsonl`, `data/splits/manifest.json`, `reports/split.md` |
-| qa | `meli-etl qa` | ⏳ | `qa.jsonl`, datos RL/DPO |
+| qa | `meli-etl qa` | 🟡 (falta grabar la cache) | `outputs/qa.jsonl`, `qa_candidates.jsonl`, `reports/qa.md` |
+| (aux) | `meli-etl label-qa` | ✅ | `data/labels/qa_review.md`, `qa_judge_labels.csv` |
 | evaluate | `meli-etl evaluate` | ⏳ | métricas Recall@k / MRR |
 
 ### normalize
@@ -290,7 +291,35 @@ Una fila por chunk, ordenadas por tipo, archivo y posición. Claves en orden alf
 
 ### `outputs/qa.jsonl`
 
-_TBD._
+Una pregunta por línea, anclada a una ficha de `corpus.jsonl` y con su split. Tres tipos:
+`llm` (generada desde el `text` de la ficha, con evidencia literal), `openapi` (determinista
+desde el swagger: método y path, parámetros obligatorios, códigos de respuesta) y
+`unanswerable` (plausible pero sin respuesta en la ficha ni en sus vecinas; respuesta "la
+documentación no lo especifica" en el idioma de la ficha). Filtros, embudo de descartes,
+fuga y acuerdo juez-humano: `reports/qa.md`.
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `qa_id` | str | `qa-` + sha256(chunk_id \| qa_type \| pregunta normalizada)[:16]: estable. |
+| `question`, `answer` | str | En el idioma de la ficha (`unknown`/`mixed` → el mayoritario del proyecto). |
+| `evidence` | list[str] | Citas literales de la ficha (una en `llm`, las líneas del swagger en `openapi`, vacía en `unanswerable`). |
+| `qa_type` | str | `llm`, `openapi` o `unanswerable`. |
+| `answer_type` | str | `short` (verificable) o `long`. |
+| `reference_answer`, `verifier` | str/list, str | Solo si `short`: respuesta de referencia y cómo compararla (`exact`, `normalized`, `set`); para recompensas verificables en RL. |
+| `chunk_id`, `split`, `project`, `source_path`, `section_path` | | Procedencia (heredada de la ficha). |
+| `language` | str | `es` o `en`. |
+| `leak_risk` | bool | Pregunta de eval sobre un endpoint que también aparece en una ficha de train (auditoría de split §5.2). |
+| `judge_scores` | obj | Rúbrica del LLM-juez (1-5): `faithfulness`, `clarity`, `usefulness`; en `unanswerable`, `answered` en lugar de `faithfulness`. `null` en `openapi`. |
+| `generator` | obj | Modelo y versión del prompt (o plantilla OpenAPI) que la generó. |
+| `messages_rag` | list | Chat para SFT con la ficha como contexto (caso RAG; p. ej. `eval_project`). |
+| `messages_closed_book` | list | Chat sin la ficha (conocimiento aprendido; p. ej. `eval_section`). |
+
+**Reproducibilidad.** El LLM (Ollama local por default; también Anthropic u OpenAI, con la
+key por variable de entorno) pasa por una cache versionada en `data/cache/llm/` cuya clave
+incluye el hash del prompt (`prompts/*.v1.md`), el modelo, los parámetros y la ficha. `make
+qa` corre en `replay` (sin red; falla si falta algo). `make qa-record` graba lo que falte y se
+reanuda si se corta. La revisión humana del juez: `make label-qa`, completar
+`data/labels/qa_judge_labels.csv` y volver a correr `make qa`.
 
 ## Evaluación
 

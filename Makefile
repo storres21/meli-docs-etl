@@ -1,4 +1,4 @@
-.PHONY: help setup all pipeline profile normalize dedup label-pairs validate-threshold chunk split-rebuild split qa evaluate test lint clean
+.PHONY: help setup all pipeline profile normalize dedup label-pairs validate-threshold chunk split-rebuild split qa qa-record label-qa evaluate test lint clean
 
 CONFIG ?= configs/default.yaml
 RUN = uv run meli-etl
@@ -37,8 +37,14 @@ split:  ## Etapa 5: train/eval_section/eval_project desde el manifiesto → repo
 split-rebuild:  ## Recalcula el split desde cero (conjunto de eval nuevo; ver README)
 	$(RUN) split --rebuild --config $(CONFIG)
 
-qa:  ## Etapa 6 (pendiente)
+qa:  ## Etapa 6: Q&A desde la cache del LLM (sin red) → outputs/qa.jsonl + reports/qa.md
 	$(RUN) qa --config $(CONFIG)
+
+qa-record:  ## Etapa 6 grabando en la cache lo que falte (requiere el proveedor; reanudable)
+	$(RUN) qa --cache-mode record --config $(CONFIG)
+
+label-qa:  ## Exporta muestra para revisión humana del juez (no pisa etiquetas)
+	$(RUN) label-qa --config $(CONFIG)
 
 evaluate:  ## Etapa 7 (pendiente)
 	$(RUN) evaluate --config $(CONFIG)

@@ -42,6 +42,7 @@ class Paths:
     labels_dir: Path
     tiktoken_cache_dir: Path
     splits_dir: Path
+    prompts_dir: Path
 
 
 @dataclass(frozen=True)
@@ -118,6 +119,43 @@ class SplitConfig:
 
 
 @dataclass(frozen=True)
+class LLMConfig:
+    # ollama | anthropic | openai (API keys por variable de entorno, nunca en la config).
+    provider: str = "ollama"
+    # None = URL por defecto del proveedor.
+    base_url: str | None = None
+    generator_model: str = "qwen2.5:7b"
+    judge_model: str = "llama3.1:8b"
+    temperature: float = 0.0
+    max_tokens: int = 1024
+    # Ventana de contexto (solo Ollama).
+    num_ctx: int = 8192
+    timeout_s: int = 600
+    # replay | record | off (ver llm.py).
+    cache_mode: str = "replay"
+
+
+@dataclass(frozen=True)
+class QAConfig:
+    prompt_version: str = "v1"
+    # Fichas con menos tokens no generan preguntas.
+    min_tokens: int = 32
+    # 2 preguntas LLM si la ficha supera esto; si no, 1.
+    two_questions_min_tokens: int = 400
+    # Fracción de fichas con una pregunta sin respuesta.
+    unanswerable_ratio: float = 0.2
+    # Idioma si ni la ficha ni su proyecto tienen es/en.
+    default_language: str = "en"
+    min_question_words: int = 5
+    short_answer_max_words: int = 8
+    near_dup_jaccard: float = 0.8
+    judge_min_score: int = 3
+    neighbors: int = 3
+    neighbor_max_chars: int = 1500
+    human_sample_size: int = 30
+
+
+@dataclass(frozen=True)
 class Config:
     seed: int
     paths: Paths
@@ -130,6 +168,8 @@ class Config:
     labels: LabelsConfig = field(default_factory=LabelsConfig)
     chunk: ChunkConfig = field(default_factory=ChunkConfig)
     split: SplitConfig = field(default_factory=SplitConfig)
+    llm: LLMConfig = field(default_factory=LLMConfig)
+    qa: QAConfig = field(default_factory=QAConfig)
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -166,4 +206,6 @@ def load_config(path: Path | None = None, overrides: dict[str, Any] | None = Non
         labels=section(LabelsConfig, "labels"),
         chunk=section(ChunkConfig, "chunk"),
         split=section(SplitConfig, "split"),
+        llm=section(LLMConfig, "llm"),
+        qa=section(QAConfig, "qa"),
     )

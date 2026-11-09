@@ -17,15 +17,28 @@ paths:
   tiktoken_cache_dir: data/cache/tiktoken
   # Manifiesto del split (versionado, NO editar a mano): congela la asignación de grupos.
   splits_dir: data/splits
+  # Prompts del LLM (versionados): <nombre>.<versión>.md; su hash entra en la clave de cache.
+  prompts_dir: prompts
 
 logging:
   level: INFO
 
 llm:
-  # (reservado, aún sin implementar)
-  # replay = solo lee la cache y falla si falta una entrada (default: no requiere API key)
-  # record = llama a la API ante un miss y guarda la respuesta
-  # off    = ignora la cache
+  # ollama | anthropic | openai. Las API keys se leen de ANTHROPIC_API_KEY / OPENAI_API_KEY
+  # (nunca de este archivo). base_url vacío = default del proveedor (Ollama: localhost:11434).
+  provider: ollama
+  base_url:
+  # Familias distintas para generar y juzgar: reduce que el juez apruebe su propio estilo.
+  generator_model: qwen2.5:7b
+  judge_model: llama3.1:8b
+  temperature: 0
+  max_tokens: 1024
+  # Ventana de contexto de Ollama (su default, 2048, corta las fichas largas).
+  num_ctx: 8192
+  timeout_s: 600
+  # replay = solo lee la cache y falla si falta una entrada (default: no requiere API ni red)
+  # record = llama al proveedor ante un miss y guarda la respuesta (reanudable si se corta)
+  # off    = ignora la cache (ni lee ni escribe)
   cache_mode: replay
 
 files:
@@ -116,3 +129,30 @@ split:
   audit_jaccard_min: 0.3
   # Cambiar seed, eval_project, eval_section_fraction, tolerance o min_groups_per_stratum
   # exige `meli-etl split --rebuild` (genera un conjunto de eval nuevo; ver README).
+
+qa:
+  # Versión de los prompts (prompts/qa_*.<versión>.md).
+  prompt_version: v1
+  # Fichas con menos tokens no generan preguntas (ni LLM ni sin respuesta).
+  min_tokens: 32
+  # 1 pregunta LLM por ficha; 2 si la ficha supera esto.
+  two_questions_min_tokens: 400
+  # Fracción de fichas (orden sha256(seed|chunk_id)) con una pregunta sin respuesta.
+  unanswerable_ratio: 0.2
+  # Idioma de la pregunta = idioma de la ficha; si es unknown/mixed, el mayoritario (es/en)
+  # del proyecto; si el proyecto no tiene ninguno, este.
+  default_language: en
+  # Filtro de trivialidad: preguntas con menos palabras se descartan.
+  min_question_words: 5
+  # Respuesta corta verificable (reference_answer + verifier): hasta estas palabras.
+  short_answer_max_words: 8
+  # Jaccard de palabras de contenido entre preguntas para considerarlas casi-duplicadas.
+  near_dup_jaccard: 0.8
+  # LLM-juez: cada criterio (1-5) debe ser ≥ esto.
+  judge_min_score: 3
+  # Sin respuesta: el juez ve también estas fichas vecinas (léxicas, mismo proyecto) para
+  # descartar preguntas que otra ficha sí responde; cada vecina se trunca a estos caracteres.
+  neighbors: 3
+  neighbor_max_chars: 1500
+  # Muestra para revisión humana del juez (meli-etl label-qa).
+  human_sample_size: 30

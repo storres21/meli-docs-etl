@@ -122,9 +122,45 @@ def split(
 
 
 @app.command()
-def qa(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
-    """(pendiente) Genera qa.jsonl y datos para RL/DPO."""
-    _not_implemented("qa", config, log_level)
+def qa(
+    config: ConfigOpt = None,
+    log_level: LevelOpt = None,
+    cache_mode: Annotated[
+        str | None,
+        typer.Option(
+            "--cache-mode",
+            help="Pisa llm.cache_mode: replay (solo cache, default), record (llama al "
+            "proveedor ante un miss y guarda; reanudable) u off.",
+        ),
+    ] = None,
+) -> None:
+    """Q&A anclado a fichas (LLM + OpenAPI + sin respuesta) → outputs/qa.jsonl + reports/qa.md."""
+    import dataclasses
+
+    from meli_docs_etl.llm import LLMError
+    from meli_docs_etl.stages import qa as stage
+
+    cfg = _bootstrap("qa", config, log_level)
+    if cache_mode:
+        cfg = dataclasses.replace(cfg, llm=dataclasses.replace(cfg.llm, cache_mode=cache_mode))
+    try:
+        stage.run(cfg)
+    except (FileNotFoundError, ValueError, RuntimeError, LLMError) as exc:
+        log.error("%s", exc)
+        raise typer.Exit(code=1) from exc
+
+
+@app.command("label-qa")
+def label_qa(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
+    """Exporta una muestra de preguntas juzgadas para revisión humana → data/labels/."""
+    from meli_docs_etl.stages import label_qa as stage
+
+    cfg = _bootstrap("label-qa", config, log_level)
+    try:
+        stage.run(cfg)
+    except FileNotFoundError as exc:
+        log.error("%s", exc)
+        raise typer.Exit(code=2) from exc
 
 
 @app.command()
