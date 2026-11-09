@@ -13,6 +13,10 @@ paths:
   llm_cache_dir: data/cache/llm
   # Etiquetas humanas (versionado): revisión de pares casi-duplicados.
   labels_dir: data/labels
+  # Archivo BPE de tiktoken (versionado): el chunking funciona offline después de clonar.
+  tiktoken_cache_dir: data/cache/tiktoken
+  # Manifiesto del split (versionado, NO editar a mano): congela la asignación de grupos.
+  splits_dir: data/splits
 
 logging:
   level: INFO
@@ -76,3 +80,39 @@ labels:
   recall_priority: true
   # Con menos pares `same` etiquetados que esto, la §8 avisa que la recomendación es frágil.
   min_same_pairs: 10
+
+chunk:
+  # Estrategia del entregable (outputs/corpus.jsonl). Las tres se generan siempre en
+  # data/processed/corpus_<estrategia>.jsonl para compararlas en evaluate:
+  #   section       = una sección → un chunk (sin fusionar ni partir)
+  #   section_split = parte las secciones > max_tokens
+  #   merged        = además fusiona hermanas consecutivas cortas (< min_tokens) hasta target
+  strategy: merged
+  # Tokenizer de tiktoken: o200k_base rinde mejor en español (1.70 tok/palabra vs 1.84 de
+  # cl100k_base en este corpus) e igual en inglés.
+  tokenizer: o200k_base
+  # Tokens por chunk, justificados con la distribución de secciones (ver reports/chunk.md §2):
+  # min ≈ p30 (por debajo es un fragmento), target ≈ p80 (una sección típica),
+  # max ≈ p93 (solo se parten las secciones realmente largas; ventana de embeddings usual).
+  min_tokens: 64
+  target_tokens: 256
+  max_tokens: 512
+  # Profundidad máxima al aplanar esquemas OpenAPI anidados.
+  openapi_max_depth: 4
+
+split:
+  # Proyecto retenido entero (eval_project): mide generalización a documentación nueva.
+  # order-workflow-api: tamaño mediano (8.6% de tokens), inglés, sin OpenAPI ni versiones,
+  # así "proyecto nuevo" no se mezcla con idioma, formato ni versiones (ver reports/split.md).
+  eval_project: order-workflow-api
+  # Fracción de tokens de cada estrato (proyecto × source_type) para eval_section.
+  eval_section_fraction: 0.175
+  # Un grupo no entra a eval_section si deja su estrato por encima de fracción + tolerancia
+  # (así un grupo gigante, como zenith use-cases con 12 fichas, no desbalancea el eval).
+  tolerance: 0.05
+  # Estratos con menos grupos que esto quedan enteros en train (no hay qué retener).
+  min_groups_per_stratum: 4
+  # Auditoría: pares de fichas en splits distintos con Jaccard ≥ esto se reportan (fuga sutil).
+  audit_jaccard_min: 0.3
+  # Cambiar seed, eval_project, eval_section_fraction, tolerance o min_groups_per_stratum
+  # exige `meli-etl split --rebuild` (genera un conjunto de eval nuevo; ver README).

@@ -86,14 +86,39 @@ def validate_threshold(config: ConfigOpt = None, log_level: LevelOpt = None) -> 
 
 @app.command()
 def chunk(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
-    """(pendiente) Chunking por secciones → corpus.jsonl con procedencia."""
-    _not_implemented("chunk", config, log_level)
+    """Chunking (secciones + OpenAPI) → outputs/corpus.jsonl + reports/chunk.md."""
+    from meli_docs_etl.stages import chunk as stage
+
+    cfg = _bootstrap("chunk", config, log_level)
+    try:
+        stage.run(cfg)
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        log.error("%s", exc)
+        raise typer.Exit(code=1) from exc
 
 
 @app.command()
-def split(config: ConfigOpt = None, log_level: LevelOpt = None) -> None:
-    """(pendiente) Split train/eval por cluster de duplicados (sin leakage)."""
-    _not_implemented("split", config, log_level)
+def split(
+    config: ConfigOpt = None,
+    log_level: LevelOpt = None,
+    rebuild: Annotated[
+        bool,
+        typer.Option(
+            "--rebuild",
+            help="Recalcula el split desde cero (ignora el manifiesto): genera un conjunto de "
+            "eval nuevo. Necesario si cambian seed o parámetros de `split:`.",
+        ),
+    ] = False,
+) -> None:
+    """Split train / eval_section / eval_project por split_group → corpus.jsonl + manifiesto."""
+    from meli_docs_etl.stages import split as stage
+
+    cfg = _bootstrap("split", config, log_level)
+    try:
+        stage.run(cfg, rebuild=rebuild)
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        log.error("%s", exc)
+        raise typer.Exit(code=1) from exc
 
 
 @app.command()

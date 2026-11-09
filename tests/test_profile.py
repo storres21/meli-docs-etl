@@ -79,6 +79,20 @@ def test_placeholder_detection() -> None:
     assert not is_placeholder("Texto normal", todo_re)
 
 
+@pytest.mark.parametrize(
+    "text", ["_TODO_", "*TODO*", "**TODO**", "__TODO__", "_TBD_", "**WIP**", "### Cron\n_TODO_"]
+)
+def test_placeholder_detects_emphasized_markers(text: str) -> None:
+    assert is_placeholder(text, compile_todo(TextConfig().todo_patterns))
+
+
+def test_placeholder_needs_whole_word() -> None:
+    todo_re = compile_todo(TextConfig().todo_patterns)
+    assert not is_placeholder("_TODO_ revisar el endpoint de pagos", todo_re)
+    assert not todo_re.search("TODOS los campos")  # palabra más larga
+    assert not todo_re.search("wiping")
+
+
 def test_language_detection() -> None:
     assert detect_language(ES_DOC).label == "es"
     assert detect_language(EN_DOC).label == "en"

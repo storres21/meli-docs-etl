@@ -16,7 +16,7 @@ import difflib
 import json
 import logging
 from collections import Counter, defaultdict
-from collections.abc import Collection, Iterable
+from collections.abc import Collection, Iterable, Sequence
 from itertools import combinations
 from pathlib import Path
 from typing import Any
@@ -35,8 +35,11 @@ from meli_docs_etl.inventory import ALIAS_VERSIONS
 from meli_docs_etl.stages.normalize import DOCS_FILE, SECTIONS_FILE, STATS_FILE, n_words
 from meli_docs_etl.stages.validate_threshold import (
     LABELS_FILE,
+    MANUAL_LINKS_FILE,
     PAIRS_FILE,
+    ManualLink,
     build_validation,
+    read_manual_links,
     same_pair_ids,
 )
 from meli_docs_etl.stages.validate_threshold import render_section as render_threshold_section
@@ -151,9 +154,12 @@ def dedup_sections(
     versions: dict[str, Any],
     cfg: Config,
     must_link: Collection[str] = (),
+    manual_links: Sequence[ManualLink] = (),
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """`must_link`: pair_ids etiquetados `same` por una persona; se agrupan aunque su
-    Jaccard quede bajo el umbral. Las etiquetas `diff` nunca separan pares."""
+    Jaccard quede bajo el umbral. `manual_links`: must-links declarados por section_id para
+    pares fuera de la muestra etiquetable (p. ej. hallados en la auditoría del split).
+    Las etiquetas `diff` nunca separan pares."""
     d = cfg.dedup
     effective = {k: v["effective_version"] for k, v in versions.items()}
 
@@ -188,8 +194,32 @@ def dedup_sections(
     human = {p: j for p, j in human.items() if p not in edges}
     missing_links = sorted(pid for pid in must_link if pid not in by_pid)
 
+    # Must-links manuales: por section_id (puede ser una copia exacta) → su representante.
+    rep_of = {s["section_id"]: g[0]["section_id"] for g in groups.values() for s in g}
+    manual: dict[tuple[str, str], dict[str, Any]] = {}
+    manual_report: list[dict[str, Any]] = []
+    for m in manual_links:
+        ra, rb = rep_of.get(m.section_a), rep_of.get(m.section_b)
+        entry = {"link": m, "jaccard": None}
+        if ra is None or rb is None:
+            entry["status"] = "sección inexistente o filtrada"
+        elif ra == rb:
+            entry["status"] = "ya idénticas (dedup exacto)"
+        else:
+            x, y = sorted((ra, rb))
+            entry["jaccard"] = jaccard(
+                shingles(tokenize(reps[x]["text"]), d.shingle_size),
+                shingles(tokenize(reps[y]["text"]), d.shingle_size),
+            )
+            if (x, y) in edges or (x, y) in human:
+                entry["status"] = "ya agrupadas"
+            else:
+                entry["status"] = "unidas"
+                manual[(x, y)] = entry
+        manual_report.append(entry)
+
     uf: UnionFind[str] = UnionFind(sorted(reps))
-    for a, b in sorted(edges) + sorted(human):
+    for a, b in sorted(edges) + sorted(human) + sorted(manual):
         uf.union(a, b)
 
     def link(a: str, b: str) -> str:
@@ -197,7 +227,9 @@ def dedup_sections(
         x, y = sorted((a, b))
         if (x, y) in edges:
             return "near_dup"
-        return "human_label" if (x, y) in human else "transitive"
+        if (x, y) in human:
+            return "human_label"
+        return "audit_link" if (x, y) in manual else "transitive"
 
     # 3) Regla de fusión sin pérdida dentro de cada cluster.
     records: list[dict[str, Any]] = []
@@ -286,6 +318,7 @@ def dedup_sections(
         "edges": edges,
         "human_links": human,
         "missing_links": missing_links,
+        "manual_links": manual_report,
         "cluster_of": cluster_of,
         "truth": truth,
         "clusters": clusters_info,
@@ -664,6 +697,34 @@ def render_report(
                 ],
             )
         )
+    manual = diag["manual_links"]
+    out += [
+        "",
+        f"**Must-links manuales (`match: audit_link`):** {len(manual)} pares declarados en "
+        f"`{display_path(cfg.paths.labels_dir / MANUAL_LINKS_FILE)}` para casos fuera de la "
+        "muestra etiquetable (Jaccard < "
+        f"{cfg.labels.review_min_jaccard} o secciones con < {d.near_dup_min_tokens} tokens), "
+        "por ejemplo los hallados en la auditoría sutil del split. Se reportan aparte de las "
+        "etiquetas de la muestra.",
+    ]
+    if manual:
+        out += [""]
+        out.append(
+            _table(
+                ["Origen", "Jaccard", "A", "B", "Estado", "Nota"],
+                [
+                    (
+                        e["link"].origen,
+                        "—" if e["jaccard"] is None else f"{e['jaccard']:.3f}",
+                        e["link"].section_a,
+                        e["link"].section_b,
+                        e["status"],
+                        e["link"].nota or "—",
+                    )
+                    for e in manual
+                ],
+            )
+        )
     variants = [r for r in records if r["role"] == "variant"]
     out += [
         "",
@@ -817,6 +878,14 @@ def _must_link(cfg: Config) -> set[str]:
         return set()
 
 
+def _manual_links(cfg: Config) -> list[ManualLink]:
+    try:
+        return read_manual_links(cfg.paths.labels_dir / MANUAL_LINKS_FILE)
+    except ValueError as exc:
+        log.warning("Must-links manuales no utilizables: %s", exc)
+        return []
+
+
 def _threshold_section(cfg: Config) -> str:
     """§8: validación con etiquetas si existen; si no, instrucciones."""
     labels_rel = display_path(cfg.paths.labels_dir / LABELS_FILE)
@@ -843,7 +912,16 @@ def run(cfg: Config) -> Path:
     kept = [s for s in sections if s["kept"]]
     log.info("Dedup de %d secciones", len(kept))
     must_link = _must_link(cfg)
-    records, diag = dedup_sections(kept, versions, cfg, must_link)
+    manual_links = _manual_links(cfg)
+    records, diag = dedup_sections(kept, versions, cfg, must_link, manual_links)
+    for e in diag["manual_links"]:
+        if e["status"] != "unidas":
+            log.warning(
+                "Must-link manual %s ↔ %s: %s",
+                e["link"].section_a,
+                e["link"].section_b,
+                e["status"],
+            )
     for pid in diag["missing_links"]:
         log.warning("Etiqueta `same` de un par que ya no existe (se ignora): %s", pid)
 

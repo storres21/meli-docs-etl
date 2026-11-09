@@ -142,7 +142,9 @@ def words(text: str) -> list[str]:
 
 
 def compile_todo(patterns: Sequence[str]) -> re.Pattern[str]:
-    return re.compile(r"\b(?:" + "|".join(patterns) + r")\b", re.IGNORECASE)
+    """Marcadores TODO como palabra suelta. El límite es "no alfanumérico" en vez de `\b`
+    porque `_` cuenta como letra para `\b`: así también se detectan `_TODO_` (cursiva)."""
+    return re.compile(r"(?<![^\W_])(?:" + "|".join(patterns) + r")(?![^\W_])", re.IGNORECASE)
 
 
 def is_placeholder(text: str, todo_re: re.Pattern[str]) -> bool:

@@ -9,11 +9,11 @@ Generado por `meli-etl normalize` + `meli-etl dedup` (determinista). Unidad de d
 | 0. Crudo (Markdown: contenido + navegación) | 88 | 530 | 33621 |
 | 1. Normalizado | 88 | 530 | 32019 |
 | 2. Filtro de archivos (nav, stub, todo_only) | 65 | 516 | 31543 |
-| 3. Filtro de secciones (cuerpo vacío, TO DO) | 65 | 433 | 31329 |
-| 4. Dedup exacto | 42 | 238 | 20287 |
-| 5. Dedup casi-duplicados (regla sin pérdida) | 40 | 234 | 19918 |
+| 3. Filtro de secciones (cuerpo vacío, TO DO) | 65 | 432 | 31326 |
+| 4. Dedup exacto | 42 | 237 | 20284 |
+| 5. Dedup casi-duplicados (regla sin pérdida) | 40 | 233 | 19915 |
 
-- Resultado: **234 secciones** = 231 canónicas + 3 variantes, en 231 clusters.
+- Resultado: **233 secciones** = 226 canónicas + 7 variantes, en 226 clusters.
 - En los pasos 0–1 los tokens incluyen navegación; desde el paso 2 se cuentan por sección.
 
 ## 2. Archivos excluidos del corpus
@@ -34,7 +34,7 @@ Criterio de stub: menos de 8 tokens de contenido tras quitar headers e imágenes
 | Motivo | Secciones | Significado |
 |---|---|---|
 | empty_body | 83 | header sin cuerpo propio (contenedor) o solo imágenes; su título sigue en `section_path` de las hijas |
-| todo | 0 | cuerpo con solo marcadores TO DO |
+| todo | 1 | cuerpo con solo marcadores TO DO |
 
 ## 3. Efecto de la normalización
 
@@ -76,7 +76,7 @@ Archivos que pasaron a ser idénticos: `vendor-stockkeeper-api/0.0.10-stock-cons
 
 ## 4. Distribución de similitudes y umbral
 
-Shingles de 5 palabras; Jaccard **exacto** entre los 186 representantes (uno por grupo exacto) con ≥ 20 tokens. 52 representantes más cortos solo participan del dedup exacto.
+Shingles de 5 palabras; Jaccard **exacto** entre los 186 representantes (uno por grupo exacto) con ≥ 20 tokens. 51 representantes más cortos solo participan del dedup exacto.
 
 **Similitud máxima de cada sección con cualquier otra** (n = 186)
 
@@ -141,7 +141,11 @@ Dentro de cada cluster, la canónica es la sección con más líneas. Otra secci
 | Cluster | Representantes | Secciones | Jaccard mín. | Canónica | Absorbidas | Variantes | Proyectos |
 |---|---|---|---|---|---|---|---|
 | cl-25a9ae4b0007 | 2 | 4 | 0.32 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#001 | 0 | 1 | catalog-portfolio-api |
+| cl-3057666d013d | 2 | 4 | 0.00 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#004 | 0 | 1 | catalog-portfolio-api |
+| cl-4766821d51d2 | 2 | 4 | 0.00 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#002 | 0 | 1 | catalog-portfolio-api |
+| cl-7a764c7c4ea1 | 2 | 4 | 0.00 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#000 | 0 | 1 | catalog-portfolio-api |
 | cl-7c88c2e2fa86 | 2 | 4 | 0.99 | vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#004 | 1 | 0 | vendor-stockkeeper-api |
+| cl-a63012b78abf | 2 | 4 | 0.01 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#014 | 0 | 1 | catalog-portfolio-api |
 | cl-ad2e9580cd32 | 2 | 4 | 0.99 | vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#003 | 1 | 0 | vendor-stockkeeper-api |
 | cl-b750bbdc9217 | 2 | 4 | 0.86 | vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#002 | 1 | 0 | vendor-stockkeeper-api |
 | cl-c36dd1f6921b | 2 | 4 | 0.69 | vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#005 | 0 | 1 | vendor-stockkeeper-api |
@@ -154,12 +158,25 @@ Dentro de cada cluster, la canónica es la sección con más líneas. Otra secci
 |---|---|---|
 | 0.319 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md › Prerequisites Summary | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md › Prerequisites |
 
-**Redundancia que queda (costo de no perder contenido):** 3 variantes con 231 tokens; de ellos 118 tokens están en líneas compartidas con su canónica = **0.6%** del corpus final (19918 tokens).
+**Must-links manuales (`match: audit_link`):** 4 pares declarados en `data/labels/manual_must_links.csv` para casos fuera de la muestra etiquetable (Jaccard < 0.1 o secciones con < 20 tokens), por ejemplo los hallados en la auditoría sutil del split. Se reportan aparte de las etiquetas de la muestra.
+
+| Origen | Jaccard | A | B | Estado | Nota |
+|---|---|---|---|---|---|
+| auditoría | 0.421 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#000 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#000 | unidas | resumen vs detalle del setup local, detectado en la auditoría sutil del split |
+| auditoría | 0.016 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#002 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#002 | unidas | resumen vs detalle, mismo contenido |
+| auditoría | 0.000 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#004 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#016 | unidas | resumen vs detalle, mismo contenido |
+| auditoría | 0.011 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#014 | catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#007 | unidas | resumen vs detalle, mismo contenido |
+
+**Redundancia que queda (costo de no perder contenido):** 7 variantes con 344 tokens; de ellos 128 tokens están en líneas compartidas con su canónica = **0.6%** del corpus final (19915 tokens).
 
 <details><summary>Líneas únicas que justifican cada variante</summary>
 
 - `2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#000` (variante de `2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#000`, J = 0.762, near_dup): `| date | timestamp | Not null | Date timestamp when was created | DEFAULT_GENERATED |`; `| version | int | Not null | Version |  |`
 - `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#003` (variante de `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#001`, J = 0.319, human_label): `- **Git**: For version control`; `- **Gradle**: 7.3 or higher`; `- **Java**: JDK 17 or higher`; `- **MySQL**: 8.0 or higher` … (+1)
+- `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#000` (variante de `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#000`, J = 0.000, audit_link): `Step-by-step guide for setting up the Catalog Portfolio API service for local development.`
+- `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#002` (variante de `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#002`, J = 0.000, audit_link): `# Using RetailFlow CLI (recommended)`
+- `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#016` (variante de `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#004`, J = 0.000, audit_link): `1. [API Reference](../api-reference/) - Learn about available endpoints`; `2. [Brand Management](../brand-management/) - Understand brand operations`; `3. [Architecture](../architecture/) - Explore system design`; `After successful setup:`
+- `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#007` (variante de `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#014`, J = 0.011, audit_link): `| **Database Connection Failed** | `Connection refused` | Verify MySQL is running and cred`; `| **Invalid Database Schema** | `Table doesn't exist` | Run database migrations |`; `| **Missing Configuration** | `FileNotFoundException` | Ensure all config files are presen`; `| **Port Already in Use** | `Address already in use` | Change port or kill existing proces` … (+2)
 - `vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#005` (variante de `vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#005`, J = 0.688, near_dup): `2. You should confirm that the item was correctly paused by **checking the item's status**`; `This alert happens when something goes wrong while trying to sell a publication without st`
 
 </details>
@@ -307,6 +324,15 @@ Etiquetas humanas en `data/labels/near_dup_labels.csv` sobre los 64 pares de rep
 
 **Clustering final de `dedup`** (umbral 0.60 + must-link de los `same`): TP 6 · FP 1 · FN 0 · TN 55 · precisión 85.7% · recall 100.0% · F1 92.3%. La tabla de arriba mide solo el umbral; acá se mide lo que realmente usa el split.
 
+**Must-links manuales fuera de la muestra** (`manual_must_links.csv`, `match: audit_link`): 4 pares, 4 agrupados en el clustering final. No entran en las métricas de arriba: no están en la muestra etiquetable (Jaccard < 0.1 o secciones con < 20 tokens), así que no tienen un Jaccard comparable con el umbral.
+
+| Origen | Sección A | Sección B | Agrupado | Nota |
+|---|---|---|---|---|
+| auditoría | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#000` | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#000` | ✅ | resumen vs detalle del setup local, detectado en la auditoría sutil del split |
+| auditoría | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#002` | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#002` | ✅ | resumen vs detalle, mismo contenido |
+| auditoría | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#004` | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#016` | ✅ | resumen vs detalle, mismo contenido |
+| auditoría | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#014` | `catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#007` | ✅ | resumen vs detalle, mismo contenido |
+
 ### Recomendación
 
 **Umbral recomendado: 0.30** (recall 100.0%, precisión 54.5%, F1 70.6%; n = 62 pares evaluables, 6 `same`) — **frágil, ver avisos**.
@@ -336,7 +362,7 @@ Las etiquetas `diff` **no separan** pares que el umbral agrupa: solo cuentan par
 
 | pair_id | Jaccard | A | B | Nota |
 |---|---|---|---|---|
-| np-cde275b2 | 0.762 | `2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#000` | `2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#000` | Contenido distinto: en latest productive_date (timestamp, null) pasa a version (int, Not null) y created_date a date; el cambio de nombre y tipo es significativo. Agrupado para el split: comparten 10 de 12 líneas y separarlos filtraría a eval lo visto en train; latest se conserva como variante. |
+| np-cde275b2 | 0.762 | `2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#000` | `2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#000` | Contenido distinto: en latest productive_date (timestamp, null) pasa a version (int, Not null) y created_date a date; el cambio de nombre y tipo es significativo. Agrupado para el split: comparten 10 de 12 lineas y separarlos filtraria a eval lo visto en train; latest se conserva como variante. |
 <!-- threshold-validation:end -->
 
 ## Salidas

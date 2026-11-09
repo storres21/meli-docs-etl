@@ -1,4 +1,4 @@
-.PHONY: help setup all pipeline profile normalize dedup label-pairs validate-threshold chunk split qa evaluate test lint clean
+.PHONY: help setup all pipeline profile normalize dedup label-pairs validate-threshold chunk split-rebuild split qa evaluate test lint clean
 
 CONFIG ?= configs/default.yaml
 RUN = uv run meli-etl
@@ -11,7 +11,7 @@ setup:  ## Crea el entorno (.venv) desde uv.lock
 
 all: setup pipeline test  ## Setup + etapas implementadas + tests
 
-pipeline: profile normalize dedup  ## Etapas implementadas, en orden
+pipeline: profile normalize dedup chunk split  ## Etapas implementadas, en orden
 
 profile:  ## Etapa 1: reports/profile.md + inventory.jsonl
 	$(RUN) profile --config $(CONFIG)
@@ -28,11 +28,14 @@ label-pairs:  ## Exporta pares casi-dup para etiquetar (no pisa etiquetas)
 validate-threshold: dedup  ## Aplica must-link (dedup) y valida el umbral → dedup.md §8
 	$(RUN) validate-threshold --config $(CONFIG)
 
-chunk:  ## Etapa 4 (pendiente)
+chunk:  ## Etapa 4: chunks + OpenAPI → outputs/corpus.jsonl + reports/chunk.md
 	$(RUN) chunk --config $(CONFIG)
 
-split:  ## Etapa 5 (pendiente)
+split:  ## Etapa 5: train/eval_section/eval_project desde el manifiesto → reports/split.md
 	$(RUN) split --config $(CONFIG)
+
+split-rebuild:  ## Recalcula el split desde cero (conjunto de eval nuevo; ver README)
+	$(RUN) split --rebuild --config $(CONFIG)
 
 qa:  ## Etapa 6 (pendiente)
 	$(RUN) qa --config $(CONFIG)

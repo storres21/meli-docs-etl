@@ -33,6 +33,10 @@ log = logging.getLogger(__name__)
 
 PAIRS_FILE = "near_dup_pairs.jsonl"
 LABELS_FILE = "near_dup_labels.csv"
+# Must-links declarados a mano para pares fuera de la muestra etiquetable (Jaccard < 0.1 o
+# secciones con < near_dup_min_tokens): section_a, section_b, origen, nota.
+MANUAL_LINKS_FILE = "manual_must_links.csv"
+MANUAL_COLUMNS = ("section_a", "section_b", "origen", "nota")
 REVIEW_FILE = "near_dup_review.md"
 LABEL_COLUMNS = ("pair_id", "label", "nota")
 MARK_START = "<!-- threshold-validation:start -->"
@@ -70,6 +74,31 @@ def same_pair_ids(path: Path) -> set[str]:
     return {r["pair_id"] for r in checked_labels(path) if r["label"] == "same"}
 
 
+@dataclass(frozen=True)
+class ManualLink:
+    section_a: str
+    section_b: str
+    origen: str
+    nota: str
+
+
+def read_manual_links(path: Path) -> list[ManualLink]:
+    """Must-links manuales; ValueError si falta una sección o el origen."""
+    if not path.exists():
+        return []
+    with open(path, encoding="utf-8", newline="") as fh:
+        rows = [{k: (r.get(k) or "").strip() for k in MANUAL_COLUMNS} for r in csv.DictReader(fh)]
+    bad = [
+        i + 2 for i, r in enumerate(rows) if not (r["section_a"] and r["section_b"] and r["origen"])
+    ]
+    if bad:
+        raise ValueError(
+            f"{path.name}: filas {bad} sin section_a, section_b u origen (columnas: "
+            f"{', '.join(MANUAL_COLUMNS)})."
+        )
+    return [ManualLink(**r) for r in rows]
+
+
 @dataclass
 class Validation:
     n_pairs: int
@@ -87,6 +116,8 @@ class Validation:
     final: ThresholdRow | None = None
     # Pares etiquetados con su Jaccard, rutas y si el clustering final los agrupa.
     labeled: list[dict[str, Any]] = field(default_factory=list)
+    # Must-links manuales (fuera de la muestra) y si el clustering final los agrupa.
+    manual: list[tuple[ManualLink, bool | None]] = field(default_factory=list)
 
 
 def build_validation(cfg: Config) -> Validation:
@@ -123,11 +154,31 @@ def build_validation(cfg: Config) -> Validation:
     grid = threshold_grid(lc.grid_start, lc.grid_stop, lc.grid_step)
     v.rows = sweep(js, grid)
     v.final = evaluate_predictions([(x["same_cluster"], x["label"]) for x in labeled], current)
+    v.manual = _manual_status(cfg)
     if v.same_js:
         v.rec = recommend(v.rows, lc.recall_priority)
         v.frag = fragility(js, grid, lc.recall_priority, lc.min_same_pairs)
         v.critical = [labeled[i] for i in v.frag.critical]
     return v
+
+
+def _manual_status(cfg: Config) -> list[tuple[ManualLink, bool | None]]:
+    """Cada must-link manual con True/False si sus secciones comparten cluster (None si
+    alguna sección no está en el corpus deduplicado)."""
+    links = read_manual_links(cfg.paths.labels_dir / MANUAL_LINKS_FILE)
+    dedup_path = cfg.paths.processed_dir / "sections_dedup.jsonl"
+    if not links or not dedup_path.exists():
+        return [(m, None) for m in links]
+    cluster: dict[str, str] = {}
+    with open(dedup_path, encoding="utf-8") as fh:
+        for rec in map(json.loads, fh):
+            for o in rec["occurrences"]:
+                cluster[o["section_id"]] = rec["cluster_id"]
+    out = []
+    for m in links:
+        a, b = cluster.get(m.section_a), cluster.get(m.section_b)
+        out.append((m, None if a is None or b is None else a == b))
+    return out
 
 
 # --------------------------------------------------------------------------- reporte
@@ -204,6 +255,25 @@ def _render_body(v: Validation, labels_rel: str, cfg: Config) -> list[str]:
         f"recall {_fmt(f.recall)} · F1 {_fmt(f.f1)}. La tabla de arriba mide solo el umbral; "
         "acá se mide lo que realmente usa el split.",
     ]
+    if v.manual:
+        ok = sum(g is True for _, g in v.manual)
+        out += [
+            "",
+            f"**Must-links manuales fuera de la muestra** (`{MANUAL_LINKS_FILE}`, `match: "
+            f"audit_link`): {len(v.manual)} pares, {ok} agrupados en el clustering final. No "
+            "entran en las métricas de arriba: no están en la muestra etiquetable (Jaccard < "
+            f"{cfg.labels.review_min_jaccard} o secciones con < {cfg.dedup.near_dup_min_tokens} "
+            "tokens), así que no tienen un Jaccard comparable con el umbral.",
+            "",
+            "| Origen | Sección A | Sección B | Agrupado | Nota |",
+            "|---|---|---|---|---|",
+        ]
+        out += [
+            f"| {m.origen} | `{m.section_a}` | `{m.section_b}` | "
+            f"{'✅' if g else '❌' if g is False else 'sección inexistente'} | "
+            f"{m.nota.replace('|', chr(92) + '|') or '—'} |"
+            for m, g in v.manual
+        ]
 
     if v.rec and v.frag:
         r, fr = v.rec.row, v.frag

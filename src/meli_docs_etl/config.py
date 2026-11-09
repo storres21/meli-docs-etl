@@ -40,6 +40,8 @@ class Paths:
     logs_dir: Path
     llm_cache_dir: Path
     labels_dir: Path
+    tiktoken_cache_dir: Path
+    splits_dir: Path
 
 
 @dataclass(frozen=True)
@@ -90,6 +92,32 @@ class LabelsConfig:
 
 
 @dataclass(frozen=True)
+class ChunkConfig:
+    # merged | section_split | section (ver stages/chunk.py)
+    strategy: str = "merged"
+    tokenizer: str = "o200k_base"
+    min_tokens: int = 64
+    target_tokens: int = 256
+    max_tokens: int = 512
+    # Profundidad máxima al aplanar esquemas OpenAPI anidados.
+    openapi_max_depth: int = 4
+
+
+@dataclass(frozen=True)
+class SplitConfig:
+    # Proyecto retenido entero en eval_project (lo elige una persona; sin default).
+    eval_project: str | None = None
+    # Fracción de tokens de cada estrato (proyecto × source_type) que va a eval_section.
+    eval_section_fraction: float = 0.175
+    # Un grupo no entra a eval_section si deja al estrato por encima de fracción + tolerancia.
+    tolerance: float = 0.05
+    # Estratos con menos grupos que esto quedan enteros en train.
+    min_groups_per_stratum: int = 4
+    # Pares de fichas en splits distintos con Jaccard ≥ esto se reportan como fuga sutil.
+    audit_jaccard_min: float = 0.3
+
+
+@dataclass(frozen=True)
 class Config:
     seed: int
     paths: Paths
@@ -100,6 +128,8 @@ class Config:
     normalize: NormalizeConfig = field(default_factory=NormalizeConfig)
     dedup: DedupConfig = field(default_factory=DedupConfig)
     labels: LabelsConfig = field(default_factory=LabelsConfig)
+    chunk: ChunkConfig = field(default_factory=ChunkConfig)
+    split: SplitConfig = field(default_factory=SplitConfig)
 
 
 def _resolve(base: Path, value: str) -> Path:
@@ -134,4 +164,6 @@ def load_config(path: Path | None = None, overrides: dict[str, Any] | None = Non
         normalize=section(NormalizeConfig, "normalize"),
         dedup=section(DedupConfig, "dedup"),
         labels=section(LabelsConfig, "labels"),
+        chunk=section(ChunkConfig, "chunk"),
+        split=section(SplitConfig, "split"),
     )

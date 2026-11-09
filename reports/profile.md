@@ -18,7 +18,7 @@ Fuente: `data/raw/docs_raw`. Generado por `meli-etl profile` (determinista: mism
 | Archivos redundantes (copias sobre el primero) | 28 (26%) |
 | Grupos duplicados solo tras normalizar espacios | 0 |
 | Contenido vacío / solo TO DO / stub | 0 / 1 / 6 |
-| Contenido con al menos una sección TO DO | 1 |
+| Contenido con al menos una sección TO DO | 2 |
 | Idioma del contenido (es / en / mixed / unknown) | 9 / 51 / 0 / 10 |
 | Archivos no UTF-8 | 0 |
 
@@ -161,6 +161,7 @@ _Ninguno adicional: las copias o son idénticas byte a byte o difieren en conten
 | Archivo | Secciones TO DO / total | Secciones |
 |---|---|---|
 | price-engine-api/latest/guide/general.md | 3 / 5 | General > Introducción<br>General > Responsabilidades > Price Engine API es responsable de:<br>General > Responsabilidades > Price Engine API no se responsabiliza por: |
+| order-workflow-api/5.6.2-hotfix-1/guide/services/database.md | 1 / 7 | Database > Objects stored > Cron History |
 
 ## 6. Idioma detectado
 
@@ -214,7 +215,7 @@ Heurística de stopwords es/en sobre el texto sin código, URLs ni badges. `mixe
 | order-workflow-api/5.6.2-hotfix-1/guide/architecture.md | unknown | 0 | 0 |
 | order-workflow-api/5.6.2-hotfix-1/guide/development.md | en | 0 | 19 |
 | order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md | en | 0 | 7 |
-| order-workflow-api/5.6.2-hotfix-1/guide/services/database.md | en | 1 | 4 |
+| order-workflow-api/5.6.2-hotfix-1/guide/services/database.md | en | 0 | 4 |
 | order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md | unknown | 0 | 1 |
 | order-workflow-api/5.6.2-hotfix-1/guide/usage.md | en | 0 | 3 |
 | order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md | en | 0 | 15 |

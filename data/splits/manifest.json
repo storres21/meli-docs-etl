@@ -1,0 +1,3739 @@
+{
+ "_nota": "Generado por `meli-etl split`. NO editar a mano (README «Split y manifiesto»).",
+ "eval_changes": [
+  {
+   "antes": {
+    "sg-1e48b23f1af1": "train",
+    "sg-ac1600e0130e": "eval_section"
+   },
+   "fichas_que_salen": [
+    "ck-39f4a64f770731ce"
+   ],
+   "grupo": "sg-ac1600e0130e",
+   "n": 1,
+   "tipo": "union_entre_splits"
+  },
+  {
+   "antes": {
+    "sg-3657ccb5478f": "eval_section",
+    "sg-4c97d3c309dc": "train"
+   },
+   "fichas_que_salen": [
+    "ck-524c5b21f77c6bdc"
+   ],
+   "grupo": "sg-4c97d3c309dc",
+   "n": 2,
+   "secciones_que_salen": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#002",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#002"
+   ],
+   "tipo": "union_entre_splits"
+  }
+ ],
+ "groups": {
+  "sg-0389ee24028f": {
+   "chunk_ids": [
+    "ck-45f4b1af2c304b5f"
+   ],
+   "cluster_ids": [
+    "cl-12ad6a687559",
+    "cl-e2af7312f723",
+    "cl-e8f848d8e4e8"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md#000",
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md#001",
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/database.md#002",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md#000",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md#001",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/database.md#002",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md#000",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md#001",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/database.md#002",
+    "vendor-stockkeeper-api/latest/guide/database.md#000",
+    "vendor-stockkeeper-api/latest/guide/database.md#001",
+    "vendor-stockkeeper-api/latest/guide/database.md#002"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 124
+  },
+  "sg-07b9a303877c": {
+   "chunk_ids": [
+    "ck-0b18883b531bf53b"
+   ],
+   "cluster_ids": [
+    "cl-4dcff934f9dd"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#003"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 373
+  },
+  "sg-09c0f6a2393f": {
+   "chunk_ids": [
+    "ck-d3e6fa20e1f35fbb"
+   ],
+   "cluster_ids": [
+    "cl-6f7fb56e0c73",
+    "cl-73f1c9d91474",
+    "cl-c577f90a75a3"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/README.md#003",
+    "order-workflow-api/5.6.2-hotfix-1/guide/README.md#004",
+    "order-workflow-api/5.6.2-hotfix-1/guide/README.md#005"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 165
+  },
+  "sg-0cdb33dd9966": {
+   "chunk_ids": [
+    "ck-d92b6cf6a140df19"
+   ],
+   "cluster_ids": [
+    "cl-508f812b6f1e"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#010",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#010"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 80
+  },
+  "sg-0e889fa14e43": {
+   "chunk_ids": [
+    "ck-0a6c63e488b63957"
+   ],
+   "cluster_ids": [
+    "cl-6494107cb535"
+   ],
+   "keys": [
+    "unified-transaction-configs/v0.0.2/guide/howto.md#003"
+   ],
+   "projects": [
+    "unified-transaction-configs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 80
+  },
+  "sg-0f1d745edf96": {
+   "chunk_ids": [
+    "ck-056f0721899bb056"
+   ],
+   "cluster_ids": [
+    "cl-7d1e008fb4b3"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#003",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#003"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 430
+  },
+  "sg-11f9fca4756c": {
+   "chunk_ids": [
+    "ck-a516ff5115ba2bdc"
+   ],
+   "cluster_ids": [
+    "cl-0081cba0d0ff",
+    "cl-4f840e8f17f0"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#018",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#019",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#018",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#019"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 164
+  },
+  "sg-13e2b5c9d5c2": {
+   "chunk_ids": [
+    "ck-ffdc2f9f74148870"
+   ],
+   "cluster_ids": [
+    "oa-2a5aafb915fc"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 80
+  },
+  "sg-149ef9496baa": {
+   "chunk_ids": [
+    "ck-a17defb43fe9c9d5"
+   ],
+   "cluster_ids": [
+    "cl-ffc98cf1ae1e"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#009"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 200
+  },
+  "sg-16c693e513e3": {
+   "chunk_ids": [
+    "ck-188acb23df0bc741"
+   ],
+   "cluster_ids": [
+    "cl-271110df9c83"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#003",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#003",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#003",
+    "vendor-stockkeeper-api/latest/guide/important.md#003"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 75
+  },
+  "sg-191449747d2b": {
+   "chunk_ids": [
+    "ck-5154c0938a5ba8e8"
+   ],
+   "cluster_ids": [
+    "cl-08bdb94b946e"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#002",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#002"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 335
+  },
+  "sg-1ae4d419a267": {
+   "chunk_ids": [
+    "ck-eef3096a062dd023"
+   ],
+   "cluster_ids": [
+    "cl-a217086a9bdd"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#004",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#004"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 103
+  },
+  "sg-1cd988f5eff0": {
+   "chunk_ids": [
+    "ck-dc155f31e8ba1142"
+   ],
+   "cluster_ids": [
+    "cl-6b060392140c"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#004"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 65
+  },
+  "sg-1e0c75ecce47": {
+   "chunk_ids": [
+    "ck-58bf4e9331365e51"
+   ],
+   "cluster_ids": [
+    "oa-d24588c58ccb"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products/orders{idOrder}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "eval_section",
+   "tokens": 87
+  },
+  "sg-1e48ae93880a": {
+   "chunk_ids": [
+    "ck-c03930421dbdb5f1"
+   ],
+   "cluster_ids": [
+    "oa-03a0945b313a"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products/warehouse{productId}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 133
+  },
+  "sg-1ef2046d58fe": {
+   "chunk_ids": [
+    "ck-61e1b55946e948d0"
+   ],
+   "cluster_ids": [
+    "cl-a1435ea557a7"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/introduction.md#001",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/introduction.md#001",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/introduction.md#001",
+    "vendor-stockkeeper-api/latest/guide/introduction.md#001"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 64
+  },
+  "sg-21d84ba5c13a": {
+   "chunk_ids": [
+    "ck-9d571658d13d71ec"
+   ],
+   "cluster_ids": [
+    "cl-5c0fd5fff215"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#005"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 75
+  },
+  "sg-21e85f2f0e0a": {
+   "chunk_ids": [
+    "ck-1c0ceb96492a4c65"
+   ],
+   "cluster_ids": [
+    "cl-ff56dbced0e8"
+   ],
+   "keys": [
+    "unified-transaction-configs/v0.0.2/guide/howto.md#002"
+   ],
+   "projects": [
+    "unified-transaction-configs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 92
+  },
+  "sg-2292dfad6ab2": {
+   "chunk_ids": [
+    "ck-89d00bd6e874a02c"
+   ],
+   "cluster_ids": [
+    "cl-2d3493ada434"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#006"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 190
+  },
+  "sg-229e3a017a65": {
+   "chunk_ids": [
+    "ck-a8c7f433d24d2ef8"
+   ],
+   "cluster_ids": [
+    "cl-2326e855c53b",
+    "cl-6c5789b9c9c1",
+    "cl-836a3efe3225",
+    "cl-ad81c39bfa73",
+    "cl-e5d28a14e206"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/development.md#001",
+    "order-workflow-api/5.6.2-hotfix-1/guide/development.md#002",
+    "order-workflow-api/5.6.2-hotfix-1/guide/development.md#003",
+    "order-workflow-api/5.6.2-hotfix-1/guide/development.md#004",
+    "order-workflow-api/5.6.2-hotfix-1/guide/development.md#005"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 157
+  },
+  "sg-22bdc6c0a6ca": {
+   "chunk_ids": [
+    "ck-a02bf37950ffb8d2"
+   ],
+   "cluster_ids": [
+    "cl-7af5f932bf00"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#018",
+    "payment-promise-gateway/latest/guide/README.md#018"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 296
+  },
+  "sg-29589c8bef26": {
+   "chunk_ids": [
+    "ck-c9820a6661b243b7"
+   ],
+   "cluster_ids": [
+    "cl-74a61e531566"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/processes.md#003"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 318
+  },
+  "sg-29c48836d014": {
+   "chunk_ids": [
+    "ck-40a2d38030357ea6"
+   ],
+   "cluster_ids": [
+    "cl-a7a0406d6453"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#008",
+    "2p-revenue-optimizer-api/latest/guide/README.md#008"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 172
+  },
+  "sg-2aa6fe2eb8b1": {
+   "chunk_ids": [
+    "ck-971a0f1f6590eab7"
+   ],
+   "cluster_ids": [
+    "cl-e7587cce1a4d"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/explicabilidad/README.md#000"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 52
+  },
+  "sg-2ad6423fec7e": {
+   "chunk_ids": [
+    "ck-90cad04a2ac5d710"
+   ],
+   "cluster_ids": [
+    "cl-61fb3da73b68"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#013",
+    "payment-promise-gateway/latest/guide/README.md#013"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 194
+  },
+  "sg-2de9f8fbadba": {
+   "chunk_ids": [
+    "ck-b395a58545ed242e"
+   ],
+   "cluster_ids": [
+    "cl-640311c55f90"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/README.md#000"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 440
+  },
+  "sg-2e98eb219132": {
+   "chunk_ids": [
+    "ck-90365a5da1944b8b"
+   ],
+   "cluster_ids": [
+    "cl-c98864ab8363"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#011",
+    "payment-promise-gateway/latest/guide/README.md#011"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 206
+  },
+  "sg-2ea144f01993": {
+   "chunk_ids": [
+    "ck-e2287e18d68f482e"
+   ],
+   "cluster_ids": [
+    "cl-e2bff26d2a4a"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/database.md#001"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 324
+  },
+  "sg-2f9b24d0c34b": {
+   "chunk_ids": [
+    "ck-e8ef9fa78035fb3f"
+   ],
+   "cluster_ids": [
+    "cl-0ea2b2925c91",
+    "cl-75f112bc3921",
+    "cl-c4c5f0f886b0"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#006",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#007",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#008",
+    "payment-promise-gateway/latest/guide/README.md#006",
+    "payment-promise-gateway/latest/guide/README.md#007",
+    "payment-promise-gateway/latest/guide/README.md#008"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 76
+  },
+  "sg-31b517e2ccbc": {
+   "chunk_ids": [
+    "ck-0f2a4350128086f0",
+    "ck-2e9527b424188883"
+   ],
+   "cluster_ids": [
+    "cl-3057666d013d"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#004",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#016",
+    "catalog-portfolio-api/latest/guide/setup/README.md#004",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#016"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 107
+  },
+  "sg-339a508f9f22": {
+   "chunk_ids": [
+    "ck-6e60ee14fd96710f"
+   ],
+   "cluster_ids": [
+    "oa-37d12c2184e6"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /ping"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 41
+  },
+  "sg-34000aefc22e": {
+   "chunk_ids": [
+    "ck-0b1793af1f5ee7eb"
+   ],
+   "cluster_ids": [
+    "cl-48e8a042200e"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#004",
+    "catalog-portfolio-api/latest/guide/README.md#004"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 83
+  },
+  "sg-350a6f947b90": {
+   "chunk_ids": [
+    "ck-32553fc9a5bb4f77",
+    "ck-6e877bbfc08315d4"
+   ],
+   "cluster_ids": [
+    "cl-c36dd1f6921b"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#005",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#005",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#005",
+    "vendor-stockkeeper-api/latest/guide/alerts.md#005"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 353
+  },
+  "sg-381641cf64e1": {
+   "chunk_ids": [
+    "ck-c107abf9cc49e201"
+   ],
+   "cluster_ids": [
+    "cl-685f293f6d24",
+    "cl-84affa5150d1"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#014",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#015",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#014",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#015"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 147
+  },
+  "sg-3834b8601bcc": {
+   "chunk_ids": [
+    "ck-cd10501906d41a8f"
+   ],
+   "cluster_ids": [
+    "cl-666571d167dd"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#019",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#019"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 66
+  },
+  "sg-3960e5e358b1": {
+   "chunk_ids": [
+    "ck-7a0e4e9ffadae103"
+   ],
+   "cluster_ids": [
+    "oa-1c229ae980df"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|POST /auth/sign-in"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 89
+  },
+  "sg-3acd2b5d602f": {
+   "chunk_ids": [
+    "ck-9224202064e22e37"
+   ],
+   "cluster_ids": [
+    "cl-6f7fc299cd82"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#011",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#011"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 161
+  },
+  "sg-3d1208da6347": {
+   "chunk_ids": [
+    "ck-bd5c1404e5e28dbc"
+   ],
+   "cluster_ids": [
+    "cl-dd500f9a683f"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#015",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#015"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 115
+  },
+  "sg-3da77fe35682": {
+   "chunk_ids": [
+    "ck-7a1669abfc09c842"
+   ],
+   "cluster_ids": [
+    "oa-50ccc3a6eb58"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|POST /auth/sign-up"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "eval_section",
+   "tokens": 138
+  },
+  "sg-3f19b7ed3481": {
+   "chunk_ids": [
+    "ck-55b5c02067e28efc"
+   ],
+   "cluster_ids": [
+    "cl-1d59fb6859eb"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#005"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 780
+  },
+  "sg-400522d72ee1": {
+   "chunk_ids": [
+    "ck-370c56dcc6d9233d"
+   ],
+   "cluster_ids": [
+    "oa-06a6149c9f69"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|PUT /v1/whitelist"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "eval_section",
+   "tokens": 246
+  },
+  "sg-40c64a7df234": {
+   "chunk_ids": [
+    "ck-3913ae4a5322a7b9"
+   ],
+   "cluster_ids": [
+    "cl-e92be2b5c2cd"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#003",
+    "catalog-portfolio-api/latest/guide/README.md#003"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 175
+  },
+  "sg-41ba770333d0": {
+   "chunk_ids": [
+    "ck-abd0b025127b255d"
+   ],
+   "cluster_ids": [
+    "cl-4e7d25803d84"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#012"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 420
+  },
+  "sg-41ccc3be306b": {
+   "chunk_ids": [
+    "ck-b3954b06dc891cd4",
+    "ck-e552130e29b42ee3"
+   ],
+   "cluster_ids": [
+    "cl-25a9ae4b0007"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#003",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#001",
+    "catalog-portfolio-api/latest/guide/setup/README.md#003",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#001"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 149
+  },
+  "sg-42099676d759": {
+   "chunk_ids": [
+    "ck-d2b96ecb95cc0eca"
+   ],
+   "cluster_ids": [
+    "cl-71bb387df02a"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#004"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 327
+  },
+  "sg-4516a8bc7f0a": {
+   "chunk_ids": [
+    "ck-19c313a727a9b849"
+   ],
+   "cluster_ids": [
+    "cl-ad2e9580cd32"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#003",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#003",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#003",
+    "vendor-stockkeeper-api/latest/guide/alerts.md#003"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 131
+  },
+  "sg-476f07ffdfe4": {
+   "chunk_ids": [
+    "ck-06ba69c75cdd0efd"
+   ],
+   "cluster_ids": [
+    "cl-70906adf19a9",
+    "cl-88800eacede0",
+    "cl-9dec16124c3d"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#003",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#004",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#005",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#003",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#004",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#005"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 177
+  },
+  "sg-4887b976b008": {
+   "chunk_ids": [
+    "ck-5b035b353630ff33"
+   ],
+   "cluster_ids": [
+    "cl-a40fb5b47dee"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#012",
+    "payment-promise-gateway/latest/guide/README.md#012"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 191
+  },
+  "sg-48cf37a29926": {
+   "chunk_ids": [
+    "ck-f6fd257731651dad"
+   ],
+   "cluster_ids": [
+    "cl-0f2845e30e8d",
+    "cl-8fe8b5635f6a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#013",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#014",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#013",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#014"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 92
+  },
+  "sg-4937aee7e5f7": {
+   "chunk_ids": [
+    "ck-edccd0ce85826920"
+   ],
+   "cluster_ids": [
+    "cl-953a61f755ca"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#001",
+    "2p-revenue-optimizer-api/latest/guide/README.md#001"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 49
+  },
+  "sg-494ba44bc695": {
+   "chunk_ids": [
+    "ck-2b0579418c440004"
+   ],
+   "cluster_ids": [
+    "cl-32e05d0a4b6c"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#008",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#008"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 86
+  },
+  "sg-4a3dcb09f7c3": {
+   "chunk_ids": [
+    "ck-dd8bf0e5dc43a5a5"
+   ],
+   "cluster_ids": [
+    "cl-583ad3325800"
+   ],
+   "keys": [
+    "price-engine-api/latest/guide/contacto.md#002"
+   ],
+   "projects": [
+    "price-engine-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 263
+  },
+  "sg-4b1b965e50cf": {
+   "chunk_ids": [
+    "ck-ada54bcceca2bdca"
+   ],
+   "cluster_ids": [
+    "cl-769815cb372d"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#009",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#009"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 91
+  },
+  "sg-4c97d3c309dc": {
+   "chunk_ids": [
+    "ck-112566726e0c8bf0",
+    "ck-524c5b21f77c6bdc"
+   ],
+   "cluster_ids": [
+    "cl-4766821d51d2",
+    "cl-ff5bd40ca07d"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#001",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#002",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#002",
+    "catalog-portfolio-api/latest/guide/setup/README.md#001",
+    "catalog-portfolio-api/latest/guide/setup/README.md#002",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#002"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 172
+  },
+  "sg-4c9ac493b378": {
+   "chunk_ids": [
+    "ck-d2a47cb9bfc51ffd"
+   ],
+   "cluster_ids": [
+    "oa-3cbcb21f7bab"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products/list-category{category}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "eval_section",
+   "tokens": 101
+  },
+  "sg-4ce6fdfbda6b": {
+   "chunk_ids": [
+    "ck-c450629ba507b197"
+   ],
+   "cluster_ids": [
+    "cl-a423dd730c94"
+   ],
+   "keys": [
+    "unified-transaction-configs/v0.0.2/guide/howto.md#000"
+   ],
+   "projects": [
+    "unified-transaction-configs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 193
+  },
+  "sg-4f4accff629d": {
+   "chunk_ids": [
+    "ck-7f8fbf3dbd31f19f"
+   ],
+   "cluster_ids": [
+    "oa-a803a90389f4"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products/list{productId}/{sort}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 301
+  },
+  "sg-4f51fa6ab836": {
+   "chunk_ids": [
+    "ck-d6c6b6d3f62970b6"
+   ],
+   "cluster_ids": [
+    "cl-70ca94084bc6"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#003",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#003"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 205
+  },
+  "sg-50dc3c2b44de": {
+   "chunk_ids": [
+    "ck-79e5c9e8c7bb9c7b"
+   ],
+   "cluster_ids": [
+    "cl-a7b7b073a683",
+    "cl-e704436fae3b",
+    "cl-e85af758ed11"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#004",
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#005",
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#006",
+    "2p-revenue-optimizer-api/latest/guide/README.md#004",
+    "2p-revenue-optimizer-api/latest/guide/README.md#005",
+    "2p-revenue-optimizer-api/latest/guide/README.md#006"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 139
+  },
+  "sg-57d67cad68df": {
+   "chunk_ids": [
+    "ck-0ccfac81065eb02d"
+   ],
+   "cluster_ids": [
+    "cl-555a0e7b091d"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#001",
+    "catalog-portfolio-api/latest/guide/README.md#001"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 41
+  },
+  "sg-588e26fdca06": {
+   "chunk_ids": [
+    "ck-714dc32ad42f0588"
+   ],
+   "cluster_ids": [
+    "cl-5dbaf5a6dc24"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#006",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#006"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 11
+  },
+  "sg-592957efc7ea": {
+   "chunk_ids": [
+    "ck-c990befa14371174"
+   ],
+   "cluster_ids": [
+    "cl-8610b9353246"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#001",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#001"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 117
+  },
+  "sg-5c26df6e8cbf": {
+   "chunk_ids": [
+    "ck-64575bc6e142290b"
+   ],
+   "cluster_ids": [
+    "cl-f6387e70d33c"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#014"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 3024
+  },
+  "sg-5c26e8b101ba": {
+   "chunk_ids": [
+    "ck-505d10a8c472c348"
+   ],
+   "cluster_ids": [
+    "cl-54520cf7060d"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#002"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 81
+  },
+  "sg-5cb8680009cf": {
+   "chunk_ids": [
+    "ck-f529e0ba3199fca3"
+   ],
+   "cluster_ids": [
+    "oa-a0ab4cef8886"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|POST /whitelist/purge"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 191
+  },
+  "sg-5d8eeba2b2ff": {
+   "chunk_ids": [
+    "ck-4095bd9912895ce4"
+   ],
+   "cluster_ids": [
+    "cl-ffa2b92ed7f3"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#007"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 48
+  },
+  "sg-5e4f57e9a5fc": {
+   "chunk_ids": [
+    "ck-d79ef7a08996a8ed"
+   ],
+   "cluster_ids": [
+    "cl-0b17e623ad9d"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#013",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#013"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 137
+  },
+  "sg-5f7ab4027a1c": {
+   "chunk_ids": [
+    "ck-d3d51b691c2b9e0c"
+   ],
+   "cluster_ids": [
+    "cl-558cc3c72d1a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#012",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#012"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 118
+  },
+  "sg-60285722fb67": {
+   "chunk_ids": [
+    "ck-1410500783b16fb3",
+    "ck-17eb7946e5a900e5",
+    "ck-59089407891400bf"
+   ],
+   "cluster_ids": [
+    "cl-e2f54770e70d"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#015"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 586
+  },
+  "sg-604d77af424c": {
+   "chunk_ids": [
+    "ck-53632696712db1be",
+    "ck-7670fef69e3105ca",
+    "ck-77924ef083a72756"
+   ],
+   "cluster_ids": [
+    "cl-48309a2f6b77"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#001"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 657
+  },
+  "sg-611108a12a87": {
+   "chunk_ids": [
+    "ck-1df5ae8c49831b6d"
+   ],
+   "cluster_ids": [
+    "cl-b750bbdc9217"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#002",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#002",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#002",
+    "vendor-stockkeeper-api/latest/guide/api.md#002"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 174
+  },
+  "sg-6206cf4d3521": {
+   "chunk_ids": [
+    "ck-019a768e7f735842",
+    "ck-052cf6f58ca412cb",
+    "ck-136611699b35c70e",
+    "ck-1b9ef332811c9267",
+    "ck-245826a063f142a4",
+    "ck-24f5746ed048a1ec",
+    "ck-3661d6eb09e594ab",
+    "ck-6c54d470a4025bbd",
+    "ck-9563ac9e9dbdfc6c",
+    "ck-9ad1ffc84e577617",
+    "ck-d24981647908141a",
+    "ck-e9d4aaf5d2fdfa6a"
+   ],
+   "cluster_ids": [
+    "cl-65caa7510f09"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/guide/use-cases.md#000"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 2424
+  },
+  "sg-62d651f1d289": {
+   "chunk_ids": [
+    "ck-b207e92553a644bb"
+   ],
+   "cluster_ids": [
+    "cl-927a0cd7f660"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#001",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#001"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 44
+  },
+  "sg-664338b107bd": {
+   "chunk_ids": [
+    "ck-1f7500fcc683c446"
+   ],
+   "cluster_ids": [
+    "cl-0782f45b5873",
+    "cl-7e19b79d310b",
+    "cl-e4de00ea529f"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#007",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#008",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#009",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#007",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#008",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#009"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 185
+  },
+  "sg-67ff444b347a": {
+   "chunk_ids": [
+    "ck-af3ccc4e9c582c6d"
+   ],
+   "cluster_ids": [
+    "cl-bdab99a7fa4e"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#006",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#006",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#006",
+    "vendor-stockkeeper-api/latest/guide/alerts.md#006"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 134
+  },
+  "sg-680ba469a79d": {
+   "chunk_ids": [
+    "ck-10bb35d95a5a8d03"
+   ],
+   "cluster_ids": [
+    "cl-2ad7f76b331c"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#001",
+    "payment-promise-gateway/latest/guide/README.md#001"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 145
+  },
+  "sg-6832a2422e4a": {
+   "chunk_ids": [
+    "ck-1fac073cbdeae5a4"
+   ],
+   "cluster_ids": [
+    "cl-e3ddd6efdbf9",
+    "cl-e60addd361cc"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#011",
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#012",
+    "2p-revenue-optimizer-api/latest/guide/README.md#011",
+    "2p-revenue-optimizer-api/latest/guide/README.md#012"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 162
+  },
+  "sg-687c45f1976a": {
+   "chunk_ids": [
+    "ck-e25554613c57dba6"
+   ],
+   "cluster_ids": [
+    "cl-0bcaa3750a58"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#015",
+    "payment-promise-gateway/latest/guide/README.md#015"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 174
+  },
+  "sg-68ca1f8ecaa4": {
+   "chunk_ids": [
+    "ck-c4dfb2dc0a5c0709"
+   ],
+   "cluster_ids": [
+    "cl-058c36f7963c"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/database.md#000"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 462
+  },
+  "sg-697dc0205c7d": {
+   "chunk_ids": [
+    "ck-f5eb0650537d1070"
+   ],
+   "cluster_ids": [
+    "cl-75f0524410fd",
+    "cl-c3cce9d50620"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#004",
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#005",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#004",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#005",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#004",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#005",
+    "vendor-stockkeeper-api/latest/guide/important.md#004",
+    "vendor-stockkeeper-api/latest/guide/important.md#005"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 105
+  },
+  "sg-6a4b92b53729": {
+   "chunk_ids": [
+    "ck-c24b63fe906ee378"
+   ],
+   "cluster_ids": [
+    "cl-46c9d289fee4"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#005"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 400
+  },
+  "sg-6ac0fe276a17": {
+   "chunk_ids": [
+    "ck-72717830417e1f3e"
+   ],
+   "cluster_ids": [
+    "cl-aefcbd1824e5"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#004",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#004",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#004",
+    "vendor-stockkeeper-api/latest/guide/api.md#004"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 66
+  },
+  "sg-6c3ce5f20f19": {
+   "chunk_ids": [
+    "ck-e73b608dc55ff84d"
+   ],
+   "cluster_ids": [
+    "cl-c7cf372acb85",
+    "cl-d19086cdd83d"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/README.md#002",
+    "traffic-gate-api/latest/guide/README.md#003"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 137
+  },
+  "sg-6d9aa9ae3370": {
+   "chunk_ids": [
+    "ck-fc3cc723c9567ed0"
+   ],
+   "cluster_ids": [
+    "cl-7d86bd96638e",
+    "cl-bd940c179f00"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#001",
+    "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#002"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 205
+  },
+  "sg-6df7e7910227": {
+   "chunk_ids": [
+    "ck-4578804c98be6225"
+   ],
+   "cluster_ids": [
+    "oa-317595a414b9"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|POST /api/v1/fresh-products/orders"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 177
+  },
+  "sg-6e16db64f303": {
+   "chunk_ids": [
+    "ck-94b17877cc098a88"
+   ],
+   "cluster_ids": [
+    "oa-fcc892fbe9c9"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products/due-date/list{quantityOfDays}/{category}/{sort}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 202
+  },
+  "sg-6f532706bebf": {
+   "chunk_ids": [
+    "ck-a65d35c3e7dacc3c"
+   ],
+   "cluster_ids": [
+    "cl-c3fb6265ac02"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md#000",
+    "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_row.md#000"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 154
+  },
+  "sg-6fd71d19c368": {
+   "chunk_ids": [
+    "ck-209cc7c77240733b"
+   ],
+   "cluster_ids": [
+    "cl-04b17417a85f"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#003"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 85
+  },
+  "sg-717f166faa12": {
+   "chunk_ids": [
+    "ck-4e3647d5560abc07"
+   ],
+   "cluster_ids": [
+    "cl-f84224b0511a"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#003",
+    "2p-revenue-optimizer-api/latest/guide/README.md#003"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 179
+  },
+  "sg-761d44d0e677": {
+   "chunk_ids": [
+    "ck-2a6f8287945ca667"
+   ],
+   "cluster_ids": [
+    "oa-6ce27ab0e37c"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|POST /v1/blocked/ip"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "eval_section",
+   "tokens": 228
+  },
+  "sg-7b71b488952e": {
+   "chunk_ids": [
+    "ck-19bb96f7d7f8823f"
+   ],
+   "cluster_ids": [
+    "cl-f0e75fd43865"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#008",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#008",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#008",
+    "vendor-stockkeeper-api/latest/guide/important.md#008"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 427
+  },
+  "sg-7bc41b1491b7": {
+   "chunk_ids": [
+    "ck-529851e8927c7975"
+   ],
+   "cluster_ids": [
+    "cl-21aef4d0a7ca",
+    "cl-88d16ce80277",
+    "cl-d8ed7ccf0737",
+    "cl-dab2634d2e58"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#007",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#008",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#009",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#010",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#007",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#008",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#009",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#010"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 190
+  },
+  "sg-7cdb75c321e7": {
+   "chunk_ids": [
+    "ck-3d5ae0ff7904aa82"
+   ],
+   "cluster_ids": [
+    "cl-3230118eb2f0"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#009",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#009"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 180
+  },
+  "sg-7d5b0a756c1e": {
+   "chunk_ids": [
+    "ck-f54f1712488046a6"
+   ],
+   "cluster_ids": [
+    "cl-053b37fd3c91"
+   ],
+   "keys": [
+    "unified-transaction-configs/v0.0.2/guide/README.md#000"
+   ],
+   "projects": [
+    "unified-transaction-configs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 24
+  },
+  "sg-7f36c3515960": {
+   "chunk_ids": [
+    "ck-85e8eebde45c9932"
+   ],
+   "cluster_ids": [
+    "cl-7a846758f832",
+    "cl-dd85237abb42"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#001",
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#002",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#001",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#002",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#001",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#002",
+    "vendor-stockkeeper-api/latest/guide/important.md#001",
+    "vendor-stockkeeper-api/latest/guide/important.md#002"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 84
+  },
+  "sg-802243a89561": {
+   "chunk_ids": [
+    "ck-0e9636ac274306f6"
+   ],
+   "cluster_ids": [
+    "cl-1be0c6eca359"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#014",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#014"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 14
+  },
+  "sg-84d4ecaa5c86": {
+   "chunk_ids": [
+    "ck-564ab2ea6ab9e3c7"
+   ],
+   "cluster_ids": [
+    "oa-f65eaca5c4e3"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|PUT /api/v1/fresh-products/inboundorder"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 359
+  },
+  "sg-8662f6b25141": {
+   "chunk_ids": [
+    "ck-9dbf61c11cb1768a"
+   ],
+   "cluster_ids": [
+    "cl-ebbd282a62bc"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#013"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 3012
+  },
+  "sg-87503ec28c81": {
+   "chunk_ids": [
+    "ck-7358ba628c78ba20"
+   ],
+   "cluster_ids": [
+    "oa-4f696fb240d4"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|PUT /api/v1/fresh-products/orders{idOrder}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "eval_section",
+   "tokens": 195
+  },
+  "sg-88c2c024eaa0": {
+   "chunk_ids": [
+    "ck-d5421537ddf2fb6f"
+   ],
+   "cluster_ids": [
+    "cl-b180c8a3d68a"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/usage.md#001"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 30
+  },
+  "sg-88e72dd495ac": {
+   "chunk_ids": [
+    "ck-db935ece1d521528",
+    "ck-dcd7e3dfd3a6e44c",
+    "ck-fd5ec7799c66dc3a"
+   ],
+   "cluster_ids": [
+    "cl-20480dad0e65"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/important.md#007",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/important.md#007",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/important.md#007",
+    "vendor-stockkeeper-api/latest/guide/important.md#007"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 1878
+  },
+  "sg-88f905463ef8": {
+   "chunk_ids": [
+    "ck-de0c3945f43c94ed"
+   ],
+   "cluster_ids": [
+    "cl-2b7e4512a4b6"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#001",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#001",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#001",
+    "vendor-stockkeeper-api/latest/guide/alerts.md#001"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 216
+  },
+  "sg-8a0031840075": {
+   "chunk_ids": [
+    "ck-768e0f4a00f4efa4"
+   ],
+   "cluster_ids": [
+    "oa-172a383683b5"
+   ],
+   "keys": [
+    "price-engine-api/latest/specs/swagger.yaml|GET /sites/{site_id}/sellers/{seller_id}/services/{service_id}/coverage/v1"
+   ],
+   "projects": [
+    "price-engine-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 498
+  },
+  "sg-8a5c38d2ef57": {
+   "chunk_ids": [
+    "ck-5a81d9e786cc363d"
+   ],
+   "cluster_ids": [
+    "cl-6883fd7ecfe1"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#004"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 18
+  },
+  "sg-8e6149d985ea": {
+   "chunk_ids": [
+    "ck-bbcd73da9249ddb5"
+   ],
+   "cluster_ids": [
+    "cl-11cf183118ed",
+    "cl-2141f7c172a9",
+    "cl-80dfd4c26699"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#026",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#027",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#028",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#026",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#027",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#028"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 216
+  },
+  "sg-904e3e587193": {
+   "chunk_ids": [
+    "ck-6fcab0aa193a05e4"
+   ],
+   "cluster_ids": [
+    "cl-fbc95aa783af"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#003",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#003",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#003",
+    "vendor-stockkeeper-api/latest/guide/api.md#003"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 85
+  },
+  "sg-945b4fd97da6": {
+   "chunk_ids": [
+    "ck-d51d80b9d7c05534"
+   ],
+   "cluster_ids": [
+    "cl-9aaab14870a4"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/api.md#001",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/api.md#001",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/api.md#001",
+    "vendor-stockkeeper-api/latest/guide/api.md#001"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 72
+  },
+  "sg-961fe9d66016": {
+   "chunk_ids": [
+    "ck-627fe4c96334dec8"
+   ],
+   "cluster_ids": [
+    "cl-3fab18bad57e"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#003",
+    "payment-promise-gateway/latest/guide/README.md#003"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 120
+  },
+  "sg-978be140a1fb": {
+   "chunk_ids": [
+    "ck-e55968eccb06803b"
+   ],
+   "cluster_ids": [
+    "cl-9f282b376d13",
+    "cl-e9647b7c572b"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#021",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#022",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#021",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#022"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 94
+  },
+  "sg-985ca150301f": {
+   "chunk_ids": [
+    "ck-33db17790633e420"
+   ],
+   "cluster_ids": [
+    "cl-1894159a5469"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#008",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#008"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 11
+  },
+  "sg-9961deda6a9a": {
+   "chunk_ids": [
+    "ck-eeb946fa8d272f3e"
+   ],
+   "cluster_ids": [
+    "cl-67d336e7aeb0"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/README.md#001"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 109
+  },
+  "sg-9ce251c1989c": {
+   "chunk_ids": [
+    "ck-c9f827a9b74bd65a"
+   ],
+   "cluster_ids": [
+    "cl-14a81a2f9d8b",
+    "cl-166206ae6cba",
+    "cl-592eaf0394c2",
+    "cl-67685cf3745c",
+    "cl-6c7377cadbb1"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#021",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#022",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#023",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#024",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#025",
+    "payment-promise-gateway/latest/guide/README.md#021",
+    "payment-promise-gateway/latest/guide/README.md#022",
+    "payment-promise-gateway/latest/guide/README.md#023",
+    "payment-promise-gateway/latest/guide/README.md#024",
+    "payment-promise-gateway/latest/guide/README.md#025"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 246
+  },
+  "sg-9d7cc9c70f89": {
+   "chunk_ids": [
+    "ck-a21ce01a2c92adea",
+    "ck-de0cd3a9c80b2914"
+   ],
+   "cluster_ids": [
+    "cl-916d8eb8beef"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_header.md#000",
+    "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_header.md#000"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 344
+  },
+  "sg-a0a62c0191fa": {
+   "chunk_ids": [
+    "ck-9fed6a445303042d"
+   ],
+   "cluster_ids": [
+    "cl-1fbb179c2135"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#000",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 22
+  },
+  "sg-a0cd484ef0dd": {
+   "chunk_ids": [
+    "ck-697e55cffb6ae064"
+   ],
+   "cluster_ids": [
+    "cl-25c66f9f2c85",
+    "cl-d742d8f4cad2"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#002",
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/database.md#003"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 56
+  },
+  "sg-a10886ae0c6a": {
+   "chunk_ids": [
+    "ck-e4e6bbe2c9de4c89"
+   ],
+   "cluster_ids": [
+    "cl-55ef041e2015",
+    "cl-a0a80477d82b"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#017",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#018",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#017",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#018"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 168
+  },
+  "sg-a4732ac29331": {
+   "chunk_ids": [
+    "ck-0f84300b8cfcf774",
+    "ck-3164a847ad80f4f2",
+    "ck-5515124cc991957e"
+   ],
+   "cluster_ids": [
+    "cl-c6341c4b83f3"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#011"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 541
+  },
+  "sg-a5a995c09c6c": {
+   "chunk_ids": [
+    "ck-87152c822553a83b"
+   ],
+   "cluster_ids": [
+    "cl-14eec7f954e7"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#000"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 65
+  },
+  "sg-a6cadf30b777": {
+   "chunk_ids": [
+    "ck-3ee3836287cd97ee"
+   ],
+   "cluster_ids": [
+    "cl-becaa8690e9b"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/arch.md#002"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 486
+  },
+  "sg-a8a5a75fd029": {
+   "chunk_ids": [
+    "ck-e018df4378e68079"
+   ],
+   "cluster_ids": [
+    "oa-cd4d59ef7c92"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|POST /whitelist"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 211
+  },
+  "sg-a8fb0494f9e1": {
+   "chunk_ids": [
+    "ck-a79fc72b3b5435b5"
+   ],
+   "cluster_ids": [
+    "cl-17d570a6dd32"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#016",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#016"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 82
+  },
+  "sg-a911dcebd7a9": {
+   "chunk_ids": [
+    "ck-1c8fff096d57b236"
+   ],
+   "cluster_ids": [
+    "cl-d56ed825393b",
+    "cl-d5c16a29845a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#005",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#006",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#005",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#006"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 129
+  },
+  "sg-a915b25add6d": {
+   "chunk_ids": [
+    "ck-3255e597bd66f1aa"
+   ],
+   "cluster_ids": [
+    "cl-6a9dfc4cd57b"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/README.md#002"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 231
+  },
+  "sg-a96fe7e2ac09": {
+   "chunk_ids": [
+    "ck-38292c842f70a445"
+   ],
+   "cluster_ids": [
+    "cl-27ba2300cf33"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#024",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#024"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 65
+  },
+  "sg-aa06c2e63b2a": {
+   "chunk_ids": [
+    "ck-379c2a4ffb073c55",
+    "ck-d3eefde6a1cd5eb3"
+   ],
+   "cluster_ids": [
+    "cl-25c44ee49fb8"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#016"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 518
+  },
+  "sg-abece50886d1": {
+   "chunk_ids": [
+    "ck-a992c4f8c06844c9"
+   ],
+   "cluster_ids": [
+    "oa-0b0b37f8f3d9"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|POST /api/v1/fresh-products/inboundorder"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 359
+  },
+  "sg-ac1600e0130e": {
+   "chunk_ids": [
+    "ck-18c136b6decc40c0",
+    "ck-39f4a64f770731ce"
+   ],
+   "cluster_ids": [
+    "cl-7a764c7c4ea1"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/README.md#000",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#000",
+    "catalog-portfolio-api/latest/guide/setup/README.md#000",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 42
+  },
+  "sg-acc72a5c53c3": {
+   "chunk_ids": [
+    "ck-569dff541154f405"
+   ],
+   "cluster_ids": [
+    "cl-2bb555bc6f84"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#012",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#012"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 57
+  },
+  "sg-ad50a6ff5505": {
+   "chunk_ids": [
+    "ck-63148aff5de23d14"
+   ],
+   "cluster_ids": [
+    "cl-1fcf2bdc3a4a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#005",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#005"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 338
+  },
+  "sg-af6acba0615f": {
+   "chunk_ids": [
+    "ck-c11626c3d68b191b"
+   ],
+   "cluster_ids": [
+    "cl-0f5c58e68922"
+   ],
+   "keys": [
+    "price-engine-api/latest/guide/contacto.md#000"
+   ],
+   "projects": [
+    "price-engine-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 15
+  },
+  "sg-b074775182d8": {
+   "chunk_ids": [
+    "ck-cd44b77da9741a85"
+   ],
+   "cluster_ids": [
+    "cl-086942adb992",
+    "cl-4e589a915da3",
+    "cl-6f2498941cb5",
+    "cl-fa014ad12ee3"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#005",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#006",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#007",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#008",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#005",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#006",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#007",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#008"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 127
+  },
+  "sg-b1dfa069452e": {
+   "chunk_ids": [
+    "ck-7a5663600b23de88"
+   ],
+   "cluster_ids": [
+    "cl-485f09981fb8",
+    "cl-faef3821c31f"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#001",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#002",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#001",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#002"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 68
+  },
+  "sg-b2e0e2f62de3": {
+   "chunk_ids": [
+    "ck-354a21f6551127d8"
+   ],
+   "cluster_ids": [
+    "cl-430d40816481"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#005"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 370
+  },
+  "sg-b30fe2dd8228": {
+   "chunk_ids": [
+    "ck-f39f891b90b7ac3a"
+   ],
+   "cluster_ids": [
+    "cl-dca2a987ac72"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#002",
+    "payment-promise-gateway/latest/guide/README.md#002"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 64
+  },
+  "sg-b5c880fcfeda": {
+   "chunk_ids": [
+    "ck-a0e27f58cfef5924",
+    "ck-fc0e96ceba60f6c7"
+   ],
+   "cluster_ids": [
+    "cl-a63012b78abf",
+    "cl-b9500e737c1a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#014",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#015",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#007",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#014",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#015",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#007"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 249
+  },
+  "sg-b75cb4a22311": {
+   "chunk_ids": [
+    "ck-527e54fe2332ee7a"
+   ],
+   "cluster_ids": [
+    "oa-3d4b2bad7c23"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|GET /ping"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 72
+  },
+  "sg-b91e3546ccff": {
+   "chunk_ids": [
+    "ck-b3d5c2c009a5d142"
+   ],
+   "cluster_ids": [
+    "cl-d333656e722e"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/bigq.md#005"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 293
+  },
+  "sg-b9b7f6dd7459": {
+   "chunk_ids": [
+    "ck-1b9782afa96a96db"
+   ],
+   "cluster_ids": [
+    "cl-7e90526a8668"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#002"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 466
+  },
+  "sg-bb08e091641f": {
+   "chunk_ids": [
+    "ck-6ecaeadcbe6fcdc9"
+   ],
+   "cluster_ids": [
+    "cl-c8d444d34029"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#004",
+    "payment-promise-gateway/latest/guide/README.md#004"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 136
+  },
+  "sg-bb7c8823e553": {
+   "chunk_ids": [
+    "ck-d40ee59ea4b65080"
+   ],
+   "cluster_ids": [
+    "oa-b9ad6ad52d39"
+   ],
+   "keys": [
+    "zenith-keeper/1.1.6/specs/swagger.yaml|GET /api/v1/fresh-products/due-date{quantityOfDays}"
+   ],
+   "projects": [
+    "zenith-keeper"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 171
+  },
+  "sg-bbf9b8747e29": {
+   "chunk_ids": [
+    "ck-1ae7ef2ee9a5d585"
+   ],
+   "cluster_ids": [
+    "cl-b856dd3fe91d",
+    "cl-f36a0dd3f412"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md#002",
+    "order-workflow-api/5.6.2-hotfix-1/guide/services/jobs.md#003"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 65
+  },
+  "sg-bd7f26463f35": {
+   "chunk_ids": [
+    "ck-0c65cad6a59045c5"
+   ],
+   "cluster_ids": [
+    "cl-4a0dbd1e317e"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#014",
+    "payment-promise-gateway/latest/guide/README.md#014"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 177
+  },
+  "sg-be757ca04a53": {
+   "chunk_ids": [
+    "ck-593936ef8cc6744b"
+   ],
+   "cluster_ids": [
+    "cl-e2d82850b731"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#019",
+    "payment-promise-gateway/latest/guide/README.md#019"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 728
+  },
+  "sg-be93a462292a": {
+   "chunk_ids": [
+    "ck-578efa914227148e"
+   ],
+   "cluster_ids": [
+    "cl-fe7d9dac94fb"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#010",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#010"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 14
+  },
+  "sg-be96d76fcad9": {
+   "chunk_ids": [
+    "ck-61fe7f41bc1b2b07"
+   ],
+   "cluster_ids": [
+    "cl-55c956ca9b56"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#002",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#002"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 410
+  },
+  "sg-bedf22c8c13b": {
+   "chunk_ids": [
+    "ck-977fd4e8ada6e832"
+   ],
+   "cluster_ids": [
+    "cl-b4261730da59"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#007",
+    "2p-revenue-optimizer-api/latest/guide/README.md#007"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 68
+  },
+  "sg-bfcae30e66a9": {
+   "chunk_ids": [
+    "ck-a63602f1f3b43a20"
+   ],
+   "cluster_ids": [
+    "oa-93d07e1d0bd4"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|POST /v1/get-historic-blocks-by-ip"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 331
+  },
+  "sg-bff96b1344fc": {
+   "chunk_ids": [
+    "ck-1a77c50ed4eabb37"
+   ],
+   "cluster_ids": [
+    "cl-7c88c2e2fa86"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#004",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#004",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#004",
+    "vendor-stockkeeper-api/latest/guide/alerts.md#004"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 185
+  },
+  "sg-c032b1a2bb3d": {
+   "chunk_ids": [
+    "ck-2fa817312bbbcabb"
+   ],
+   "cluster_ids": [
+    "cl-518dfd90d585"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#003",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#003"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 116
+  },
+  "sg-c464bdf0c062": {
+   "chunk_ids": [
+    "ck-54b6207a9c68ce06"
+   ],
+   "cluster_ids": [
+    "cl-4940a54fd106"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#017",
+    "payment-promise-gateway/latest/guide/README.md#017"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 197
+  },
+  "sg-c64a96341e85": {
+   "chunk_ids": [
+    "ck-40cade886a92ae1e"
+   ],
+   "cluster_ids": [
+    "cl-74e202cc8794"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#000",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 29
+  },
+  "sg-c65da7f2bf17": {
+   "chunk_ids": [
+    "ck-d0086ca9e4d64e89"
+   ],
+   "cluster_ids": [
+    "cl-9785b7c8978f"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#001",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#001"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 63
+  },
+  "sg-c66ebbe6e3ce": {
+   "chunk_ids": [
+    "ck-d1324ab6d513358f"
+   ],
+   "cluster_ids": [
+    "cl-8061595a797d"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#003"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 336
+  },
+  "sg-c7d6da55e903": {
+   "chunk_ids": [
+    "ck-1c9cf96c62eeb8e5"
+   ],
+   "cluster_ids": [
+    "cl-154c2f6065d5"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#004",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#004"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 66
+  },
+  "sg-c8b738ceb1b1": {
+   "chunk_ids": [
+    "ck-91262d147de79472"
+   ],
+   "cluster_ids": [
+    "cl-abf302a5b505"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#000",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 19
+  },
+  "sg-c99a15416d52": {
+   "chunk_ids": [
+    "ck-b923ad0a0cbf6a27"
+   ],
+   "cluster_ids": [
+    "cl-da5052ffbfe4",
+    "cl-eb39b3fcb6ec"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#026",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#027",
+    "payment-promise-gateway/latest/guide/README.md#026",
+    "payment-promise-gateway/latest/guide/README.md#027"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 56
+  },
+  "sg-d0b39bcbfaf8": {
+   "chunk_ids": [
+    "ck-8e2c4aae97752189"
+   ],
+   "cluster_ids": [
+    "cl-1d1cf9410a96"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#005",
+    "catalog-portfolio-api/latest/guide/README.md#005"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 72
+  },
+  "sg-d0ce522af66c": {
+   "chunk_ids": [
+    "ck-d856ac7b09ba0730"
+   ],
+   "cluster_ids": [
+    "cl-b597cf1be845"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#007",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#007"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 259
+  },
+  "sg-d0d6dc836581": {
+   "chunk_ids": [
+    "ck-072791bcaf610359",
+    "ck-27fd01bda376fb06",
+    "ck-d7ea7ceca7e167a3"
+   ],
+   "cluster_ids": [
+    "cl-097c1611913e"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/processes.md#001"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 617
+  },
+  "sg-d1e84cb6e6ea": {
+   "chunk_ids": [
+    "ck-40b521469bbb1a9a"
+   ],
+   "cluster_ids": [
+    "cl-cf6448cf956c",
+    "cl-ee480c3535bd"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#010",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/architecture/README.md#011",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#010",
+    "catalog-portfolio-api/latest/guide/architecture/README.md#011"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 126
+  },
+  "sg-d4d8c72fbd8f": {
+   "chunk_ids": [
+    "ck-7215d0a1915b463d"
+   ],
+   "cluster_ids": [
+    "cl-d287782b3e18",
+    "cl-de2a721d072c"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#009",
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#010",
+    "payment-promise-gateway/latest/guide/README.md#009",
+    "payment-promise-gateway/latest/guide/README.md#010"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 143
+  },
+  "sg-d4e3bc30136f": {
+   "chunk_ids": [
+    "ck-d52946466ab9717d"
+   ],
+   "cluster_ids": [
+    "cl-9a17e6dbcee7"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#006",
+    "catalog-portfolio-api/latest/guide/README.md#006"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 96
+  },
+  "sg-d56e9d47ed28": {
+   "chunk_ids": [
+    "ck-2221bd858704add5"
+   ],
+   "cluster_ids": [
+    "cl-4cd37ba7dbbf"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#000",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 25
+  },
+  "sg-d6189ec2cc1b": {
+   "chunk_ids": [
+    "ck-7d4a78a8b21c6b3e"
+   ],
+   "cluster_ids": [
+    "cl-0f37fac115a3"
+   ],
+   "keys": [
+    "order-workflow-api/5.6.2-hotfix-1/guide/use-cases.md#002"
+   ],
+   "projects": [
+    "order-workflow-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_project",
+   "tokens": 423
+  },
+  "sg-d806ccb6ba99": {
+   "chunk_ids": [
+    "ck-706a70e6e53577ab"
+   ],
+   "cluster_ids": [
+    "cl-a8d8849590ae"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/0.2.2/guide/README.md#009",
+    "2p-revenue-optimizer-api/latest/guide/README.md#009"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 240
+  },
+  "sg-dab393804183": {
+   "chunk_ids": [
+    "ck-96a7d57e456887c6"
+   ],
+   "cluster_ids": [
+    "cl-b8309c6042e5"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/README.md#003",
+    "catalog-portfolio-api/latest/guide/api-reference/README.md#003"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 224
+  },
+  "sg-dbdc55f41181": {
+   "chunk_ids": [
+    "ck-5ff78eb00abd2981"
+   ],
+   "cluster_ids": [
+    "cl-81a35d3f32b1"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#005"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 166
+  },
+  "sg-dcde247bbe2a": {
+   "chunk_ids": [
+    "ck-016d8dc95cc8c990"
+   ],
+   "cluster_ids": [
+    "cl-e70e2835a5ba"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#010"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 335
+  },
+  "sg-e1041f99b4f9": {
+   "chunk_ids": [
+    "ck-45a962fa73abb05f"
+   ],
+   "cluster_ids": [
+    "cl-3c30c0e7f5ea"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/arch.md#001"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 200
+  },
+  "sg-e13ce242e603": {
+   "chunk_ids": [
+    "ck-32680de790e1eaf6"
+   ],
+   "cluster_ids": [
+    "cl-1f148d5d25a7"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/README.md#001"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 72
+  },
+  "sg-e19086a29dab": {
+   "chunk_ids": [
+    "ck-9cd2cdef83e39dd3"
+   ],
+   "cluster_ids": [
+    "cl-42f7fdf96895"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#004",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#004"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 12
+  },
+  "sg-e700660a1c25": {
+   "chunk_ids": [
+    "ck-12b550870d2ed002",
+    "ck-3f5ceed427342891",
+    "ck-5e31c8a1889f13b4",
+    "ck-8982ca38a27ba253"
+   ],
+   "cluster_ids": [
+    "cl-827d7887e39e"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/README.md#001"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 688
+  },
+  "sg-e78ced572569": {
+   "chunk_ids": [
+    "ck-4076c9ec2c113522"
+   ],
+   "cluster_ids": [
+    "cl-e9ffc3477153"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#003"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 67
+  },
+  "sg-e8a4c7b6e315": {
+   "chunk_ids": [
+    "ck-e3a62504006ce539"
+   ],
+   "cluster_ids": [
+    "cl-e607f7770ff5"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/explicabilidad/diarizacion.md#000"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 17
+  },
+  "sg-e9e93dedbf8b": {
+   "chunk_ids": [
+    "ck-4be8c7f82da09aa5"
+   ],
+   "cluster_ids": [
+    "cl-2d5ce5e9e4b8"
+   ],
+   "keys": [
+    "unified-transaction-configs/v0.0.2/guide/howto.md#001"
+   ],
+   "projects": [
+    "unified-transaction-configs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 95
+  },
+  "sg-ea52f211c4cb": {
+   "chunk_ids": [
+    "ck-870637245d02b804"
+   ],
+   "cluster_ids": [
+    "cl-099529e8a110",
+    "cl-1117c65c33bc"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#004",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#005",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#004",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#005"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 93
+  },
+  "sg-ea5e87fff32f": {
+   "chunk_ids": [
+    "ck-2a5397d0698524ba"
+   ],
+   "cluster_ids": [
+    "cl-90bf9f9d53ec"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#000",
+    "payment-promise-gateway/latest/guide/README.md#000"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 39
+  },
+  "sg-eb14bef3af8f": {
+   "chunk_ids": [
+    "ck-2caef84585bd20ec"
+   ],
+   "cluster_ids": [
+    "cl-aa2c4fe6c659"
+   ],
+   "keys": [
+    "price-engine-api/latest/guide/contacto.md#003"
+   ],
+   "projects": [
+    "price-engine-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 43
+  },
+  "sg-ebafad183ee8": {
+   "chunk_ids": [
+    "ck-1f3c1e373686b39d"
+   ],
+   "cluster_ids": [
+    "cl-1d534ac1d281"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#016",
+    "payment-promise-gateway/latest/guide/README.md#016"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 175
+  },
+  "sg-ebd38fd358d6": {
+   "chunk_ids": [
+    "ck-300e4fccc9cf0fe0",
+    "ck-6112a0bba6b13666",
+    "ck-8af623be1ea6d6b8",
+    "ck-a3aebbee0b623d5b",
+    "ck-d94976c297a352a7"
+   ],
+   "cluster_ids": [
+    "cl-e614603fefdc"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/waf_config.md#000"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 1327
+  },
+  "sg-ee570f4b643c": {
+   "chunk_ids": [
+    "ck-2257b2d972401647"
+   ],
+   "cluster_ids": [
+    "oa-fe9e5de9211c"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|POST /v1/get-blocks-by-ip"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 398
+  },
+  "sg-ef445fa35bed": {
+   "chunk_ids": [
+    "ck-974b53792ef9efb0"
+   ],
+   "cluster_ids": [
+    "cl-64133e870610"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/README.md#000"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 155
+  },
+  "sg-ef541313540f": {
+   "chunk_ids": [
+    "ck-3e0952405dfbae7d",
+    "ck-55f2790e80dd8e75",
+    "ck-de50f4e20e85740b"
+   ],
+   "cluster_ids": [
+    "cl-57d8469ec8f9"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/guide/sections/processes.md#002"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 762
+  },
+  "sg-f082813aab98": {
+   "chunk_ids": [
+    "ck-65fe9429ceafb41b"
+   ],
+   "cluster_ids": [
+    "oa-11c7c293d0cb"
+   ],
+   "keys": [
+    "traffic-gate-api/latest/specs/swagger.yaml|POST /whitelist/process"
+   ],
+   "projects": [
+    "traffic-gate-api"
+   ],
+   "source_type": "openapi",
+   "split": "train",
+   "tokens": 496
+  },
+  "sg-f1f0b7ff126a": {
+   "chunk_ids": [
+    "ck-7ef1f122d8e77541"
+   ],
+   "cluster_ids": [
+    "cl-1660da292bec"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#000",
+    "catalog-portfolio-api/latest/guide/README.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 38
+  },
+  "sg-f1f9fa0aee9c": {
+   "chunk_ids": [
+    "ck-1980cb9e138b2aac"
+   ],
+   "cluster_ids": [
+    "cl-052cd7b3dd6a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#001",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#001"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 57
+  },
+  "sg-f476056c70a4": {
+   "chunk_ids": [
+    "ck-faa211d8944da567"
+   ],
+   "cluster_ids": [
+    "cl-6c15bea40e7f"
+   ],
+   "keys": [
+    "payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md#020",
+    "payment-promise-gateway/latest/guide/README.md#020"
+   ],
+   "projects": [
+    "payment-promise-gateway"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 756
+  },
+  "sg-f5dab19583ef": {
+   "chunk_ids": [
+    "ck-e03ac4b5d12e8f60"
+   ],
+   "cluster_ids": [
+    "cl-e27438e53ce7"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#011",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#011"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 135
+  },
+  "sg-f61aa41d95d8": {
+   "chunk_ids": [
+    "ck-22435f0244f12024"
+   ],
+   "cluster_ids": [
+    "cl-0155d3538e27",
+    "cl-1aa713c7ec38",
+    "cl-b95df2f9285c"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#006",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#007",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#008",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#006",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#007",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#008"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 161
+  },
+  "sg-f9a71160525e": {
+   "chunk_ids": [
+    "ck-7ded3ac15411b3cf"
+   ],
+   "cluster_ids": [
+    "cl-24eff1e09cb8",
+    "cl-8b08f33e57cb"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#011",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/brand-management/README.md#012",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#011",
+    "catalog-portfolio-api/latest/guide/brand-management/README.md#012"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 98
+  },
+  "sg-fa69887c4470": {
+   "chunk_ids": [
+    "ck-62597615ef45d7b6"
+   ],
+   "cluster_ids": [
+    "cl-b3c442893505"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/troubleshooting/README.md#000",
+    "catalog-portfolio-api/latest/guide/troubleshooting/README.md#000"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 25
+  },
+  "sg-fbabfba5c39c": {
+   "chunk_ids": [
+    "ck-33cfebf1c4a683fa"
+   ],
+   "cluster_ids": [
+    "cl-adcbd3186fc4"
+   ],
+   "keys": [
+    "demand-forecast-docs/latest/guide/overview.md#008"
+   ],
+   "projects": [
+    "demand-forecast-docs"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 301
+  },
+  "sg-fc6a9b3229f2": {
+   "chunk_ids": [
+    "ck-4c2ec768937858ee"
+   ],
+   "cluster_ids": [
+    "cl-7c98f4fd6fbf"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/api-reference/brands.md#012",
+    "catalog-portfolio-api/latest/guide/api-reference/brands.md#012"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 10
+  },
+  "sg-fca3453c6a38": {
+   "chunk_ids": [
+    "ck-c4162d1c009f209c"
+   ],
+   "cluster_ids": [
+    "cl-e9d5902d3f40"
+   ],
+   "keys": [
+    "vendor-stockkeeper-api/0.0.10-stock-consumer/guide/alerts.md#000",
+    "vendor-stockkeeper-api/0.0.3-paused-seller/guide/alerts.md#000",
+    "vendor-stockkeeper-api/0.0.6-ep-restock-man/guide/alerts.md#000",
+    "vendor-stockkeeper-api/latest/guide/alerts.md#000"
+   ],
+   "projects": [
+    "vendor-stockkeeper-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 18
+  },
+  "sg-fe541e18b722": {
+   "chunk_ids": [
+    "ck-b8f4a0214b238978"
+   ],
+   "cluster_ids": [
+    "cl-70faa2a88de3",
+    "cl-955f1737435a"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#011",
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/setup/local-development.md#012",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#011",
+    "catalog-portfolio-api/latest/guide/setup/local-development.md#012"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "eval_section",
+   "tokens": 81
+  },
+  "sg-fee9dfefcc17": {
+   "chunk_ids": [
+    "ck-16bf38a6930b53d5"
+   ],
+   "cluster_ids": [
+    "cl-411c74de2d39"
+   ],
+   "keys": [
+    "2p-revenue-optimizer-api/latest/guide/pages/table_data_dictionary/rule_custom_field.md#000"
+   ],
+   "projects": [
+    "2p-revenue-optimizer-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 114
+  },
+  "sg-ffcd1d1d0547": {
+   "chunk_ids": [
+    "ck-91af07dc16454e6e"
+   ],
+   "cluster_ids": [
+    "cl-57be4852593c"
+   ],
+   "keys": [
+    "catalog-portfolio-api/0.0.1-test-bench-v2a/guide/README.md#002",
+    "catalog-portfolio-api/latest/guide/README.md#002"
+   ],
+   "projects": [
+    "catalog-portfolio-api"
+   ],
+   "source_type": "markdown",
+   "split": "train",
+   "tokens": 312
+  }
+ },
+ "params": {
+  "eval_project": "order-workflow-api",
+  "eval_section_fraction": 0.175,
+  "min_groups_per_stratum": 4,
+  "seed": 42,
+  "tolerance": 0.05
+ }
+}
