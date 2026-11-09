@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-379c2a4ffb073c55",
+ "chunk_sha": "be4ba41495a9188cf1f4342a7c31b9de747e04286f5754a6b8f4bc07c9efe9ae",
+ "key": "b8c1e23d2890f5c4b48b2bfa3249c7f102f9beb5c9b878702e60dc0594a2b97b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default saving method for datasets in the pipeline?\", \"answer\": \"Datasets are saved in memory by default.\", \"evidence\": \"To save on bigquery, you should do:\", \"short_answer\": null}, {\"question\": \"How can datasets be saved to BigQuery?\", \"answer\": \"By specifying the BigQueryTable class in the catalog.\", \"evidence\": \"To save on bigquery, you should do:\", \"short_answer\": null}, {\"question\": \"Which datasets are defined in a yml file in the marketplace?\", \"answer\": \"The dataset names and classes are defined in a yml file.\", \"evidence\": \"The catalog receives a dictionary of dataset names and dataset classes and handle all the saving/loading. In marketplace, the datasets are defined in a yml file.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-209cc7c77240733b",
+ "chunk_sha": "04b17417a85f17863716ed7f058454dc20d0479d664c7480b13fc8c2685afd94",
+ "key": "f8923a0cb76c2c3731d1718ce327b7f542e5b5ac533c5b2ee68e8431e8c457be",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is not supported by the fragment, as it only mentions 'order-orchestrator-test' as a BigQ Scope, not specifically for orchestrator testing.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

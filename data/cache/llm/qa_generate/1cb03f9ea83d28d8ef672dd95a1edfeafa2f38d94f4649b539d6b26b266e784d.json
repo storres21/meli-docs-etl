@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-f6fd257731651dad",
+ "chunk_sha": "d4476bee7c1be61434d8dda1ac4b17cb7e8ab4f14a98dce694fadb3e07ff6922",
+ "key": "1cb03f9ea83d28d8ef672dd95a1edfeafa2f38d94f4649b539d6b26b266e784d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What must be true before a brand can be activated in the catalog-portfolio-api?\", \"answer\": \"Before activation, brands must pass these validations: Main logo uploaded and processed, Valid category and site combination, Compliance with regulations service requirements, All required fields populated.\", \"evidence\": \"- Main logo uploaded and processed\\n- Valid category and site combination\\n- Compliance with regulations service requirements\\n- All required fields populated\", \"short_answer\": null}]}"
+}

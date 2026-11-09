@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-61fe7f41bc1b2b07",
+ "chunk_sha": "55c956ca9b56b738fecc7dc4e2577e8c02c15906e1ca9406dcb6d3f918b33fb9",
+ "key": "3423eb930e793b4c690d55a8ab97869b3421680177a88b5ffd1086b9d4340eae",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly stated in the provided JSON object, making it fully supported and accurate.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

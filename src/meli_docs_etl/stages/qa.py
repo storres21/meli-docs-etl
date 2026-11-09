@@ -31,7 +31,14 @@ from pathlib import Path
 from typing import Any
 
 from meli_docs_etl.config import Config, display_path
-from meli_docs_etl.llm import CachedLLM, CallFn, Prompt, load_prompt
+from meli_docs_etl.llm import (
+    GENERATION_FALLBACK,
+    CachedLLM,
+    CallFn,
+    LLMGenerationError,
+    Prompt,
+    load_prompt,
+)
 from meli_docs_etl.qa_utils import (
     CRITERIA,
     LANG_NAMES,
@@ -52,6 +59,7 @@ from meli_docs_etl.qa_utils import (
     n_llm_questions,
     openapi_questions,
     parse_accept,
+    parse_json,
     parse_judge,
     parse_questions,
     resolve_languages,
@@ -67,12 +75,13 @@ QA_FILE = "qa.jsonl"
 CANDIDATES_FILE = "qa_candidates.jsonl"
 HUMAN_LABELS_FILE = "qa_judge_labels.csv"
 HUMAN_REVIEW_FILE = "qa_review.md"
-PROMPTS = ("qa_generate", "qa_unanswerable", "qa_judge", "qa_judge_unanswerable")
+PROMPTS = ("qa_generate", "qa_unanswerable", "qa_retry", "qa_judge", "qa_judge_unanswerable")
 SPLIT_ORDER = {TRAIN: 0, EVAL_SECTION: 1, EVAL_PROJECT: 2}
 OPENAPI_TEMPLATE = "openapi_template.v1"
 
 # Motivos de descarte, en el orden del embudo.
 REASONS = (
+    "llm_error",
     "json_invalido",
     "evidencia_no_literal",
     "trivial",
@@ -106,8 +115,10 @@ class Progress:
     """Log de avance con ETA; solo las llamadas reales al proveedor cuentan para el tiempo
     (los aciertos de cache son instantáneos y se informan cada 50)."""
 
-    def __init__(self, phase: str, total: int, llm: CachedLLM) -> None:
-        self.phase, self.total, self.llm = phase, total, llm
+    def __init__(
+        self, phase: str, total: int, llm: CachedLLM, errors: list[dict[str, str]]
+    ) -> None:
+        self.phase, self.total, self.llm, self.errors = phase, total, llm, errors
         self.i = 0
         self.times: list[float] = []
 
@@ -115,8 +126,22 @@ class Progress:
         self, chunk_id: str, prompt: Prompt, model: str, chunk_text: str, **values: Any
     ) -> str | None:
         self.i += 1
+        return self.retry(chunk_id, prompt, model, chunk_text, **values)
+
+    def retry(
+        self, chunk_id: str, prompt: Prompt, model: str, chunk_text: str, **values: Any
+    ) -> str | None:
+        """Llamada extra del mismo trabajo (reintento): no avanza el contador."""
         calls, t0 = self.llm.calls, time.perf_counter()
-        out = self.llm.complete(prompt, model, chunk_id, chunk_text, **values)
+        try:
+            out = self.llm.complete(prompt, model, chunk_id, chunk_text, **values)
+        except LLMGenerationError as exc:
+            # Falló también el reintento: se registra y el llamador salta esta llamada.
+            log.warning("[%s] %s · %s: se salta (%s)", self.phase, chunk_id, prompt.id, exc)
+            self.errors.append(
+                {"fase": self.phase, "chunk_id": chunk_id, "prompt": prompt.id, "error": str(exc)}
+            )
+            raise
         if self.llm.calls > calls:
             self.times.append(time.perf_counter() - t0)
             eta = statistics.mean(self.times) * (self.total - self.i)
@@ -159,6 +184,7 @@ def generate(
     prompts: Mapping[str, Prompt],
     cfg: Config,
     funnel: Counter,
+    errors: list[dict[str, str]],
 ) -> list[Candidate]:
     q, model = cfg.qa, cfg.llm.generator_model
     out: list[Candidate] = []
@@ -184,6 +210,11 @@ def generate(
         if ch["source_type"] == "markdown"
         and (n := n_llm_questions(ch["n_tokens"], q.min_tokens, q.two_questions_min_tokens))
     ]
+    # En eval se piden más preguntas por ficha (train queda igual).
+    gen_jobs = [
+        (ch, max(n, q.eval_questions_per_chunk) if ch["split"] != TRAIN else n)
+        for ch, n in gen_jobs
+    ]
     un_jobs = [
         ch
         for ch in chunks
@@ -191,7 +222,7 @@ def generate(
         and selected_unanswerable(cfg.seed, ch["chunk_id"], q.unanswerable_ratio)
     ]
     jobs = [("llm", ch, n) for ch, n in gen_jobs] + [("unanswerable", ch, 1) for ch in un_jobs]
-    progress = Progress("generar", len(jobs), llm)
+    progress = Progress("generar", len(jobs), llm, errors)
     for kind, ch, n in jobs:
         prompt = prompts["qa_generate" if kind == "llm" else "qa_unanswerable"]
         lang = langs[ch["chunk_id"]][0]
@@ -204,15 +235,54 @@ def generate(
         }
         if kind == "llm":
             values["short_max"] = q.short_answer_max_words
-        raw = progress(ch["chunk_id"], prompt, model, ch["text"], **values)
+        try:
+            raw = progress(ch["chunk_id"], prompt, model, ch["text"], **values)
+        except LLMGenerationError:
+            funnel[(kind, "generadas")] += n
+            funnel[(kind, "llm_error")] += n
+            continue
         if raw is None:  # miss en replay: la etapa falla al final
             continue
         fields = ("question", "answer", "evidence") if kind == "llm" else ("question",)
         items, bad = parse_questions(raw, n, fields)
         funnel[(kind, "generadas")] += n
-        funnel[(kind, "json_invalido")] += bad
         gen = {"model": model, "prompt": prompt.id}
-        for it in items:
+        good, errors = _check(kind, items, bad, n, raw, fields, ch["text"])
+        retried: list[dict[str, Any]] = []
+        if errors:
+            # Un solo reintento con los errores concretos; pide solo las que faltan.
+            k = n - len(good)
+            system, user = prompt.render(**values)
+            try:
+                raw2 = progress.retry(
+                    ch["chunk_id"],
+                    prompts["qa_retry"],
+                    model,
+                    ch["text"],
+                    original_system=system,
+                    original_request=user,
+                    previous=raw,
+                    errors="\n".join(f"- {e}" for e in errors),
+                    kept="\n".join(f"- {it['question']}" for it in good) or "(none)",
+                    n=k,
+                )
+            except LLMGenerationError:
+                raw2 = ""
+                funnel[(kind, "llm_error")] += k
+            if raw2 is None:
+                continue
+            if raw2:
+                funnel[(kind, "reintentos")] += 1
+                retried, bad = parse_questions(raw2, k, fields)
+                ok, _ = _check(kind, retried, 0, k, raw2, fields, ch["text"])
+                funnel[(kind, "recuperadas")] += len(ok)
+            else:
+                bad = 0
+        else:
+            bad = 0
+        funnel[(kind, "json_invalido")] += bad
+        retry_gen = {**gen, "retry": prompts["qa_retry"].id}
+        for it, g in [(it, gen) for it in good] + [(it, retry_gen) for it in retried]:
             if kind == "llm":
                 extra = {
                     "answer": it["answer"],
@@ -225,8 +295,41 @@ def generate(
                     "evidence": [],
                     "missing_information": it.get("missing_information"),
                 }
-            out.append(_candidate(ch, kind, lang, it["question"], generator=gen, **extra))
+            out.append(_candidate(ch, kind, lang, it["question"], generator=g, **extra))
     return out
+
+
+def _check(
+    kind: str,
+    items: list[dict[str, Any]],
+    bad: int,
+    n: int,
+    raw: str,
+    fields: tuple[str, ...],
+    text: str,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """Preguntas sin errores y la lista de errores concretos (JSON inválido o, en `llm`,
+    evidencia que no aparece literal en la ficha) para el reintento."""
+    errors = []
+    if bad:
+        obj = parse_json(raw)
+        if obj is None or not isinstance(obj.get("questions"), list):
+            errors.append('The reply was not a valid JSON object with a "questions" list.')
+        else:
+            errors.append(
+                f"{bad} of the {n} requested question(s) were missing or lacked a non-empty "
+                f"string in a required field ({', '.join(fields)})."
+            )
+    good = []
+    for it in items:
+        if kind == "llm" and evidence_match(it["evidence"], text) is None:
+            errors.append(
+                f'Question "{it["question"]}": the evidence "{it["evidence"]}" does not appear '
+                "verbatim in the fragment."
+            )
+        else:
+            good.append(it)
+    return good, errors
 
 
 def cheap_filters(
@@ -283,13 +386,14 @@ def judge(
     llm: CachedLLM,
     prompts: Mapping[str, Prompt],
     cfg: Config,
+    errors: list[dict[str, str]],
 ) -> None:
     model, q = cfg.llm.judge_model, cfg.qa
     todo = sorted(
         (c for c in cands if c["qa_type"] != "openapi" and c["discard"] is None),
         key=lambda c: c["qa_id"],
     )
-    progress = Progress("juzgar", len(todo), llm)
+    progress = Progress("juzgar", len(todo), llm, errors)
     for c in todo:
         ch = by_id[c["chunk_id"]]
         values = {"project": ch["project"], "text": ch["text"], "question": c["question"]}
@@ -307,7 +411,11 @@ def judge(
         else:
             prompt = prompts["qa_judge"]
             values["answer"] = c["answer"]
-        raw = progress(ch["chunk_id"], prompt, model, ch["text"], **values)
+        try:
+            raw = progress(ch["chunk_id"], prompt, model, ch["text"], **values)
+        except LLMGenerationError:
+            c["discard"] = "llm_error"
+            continue
         if raw is None:
             continue
         c["judge"] = {"model": model, "prompt": prompt.id}
@@ -422,9 +530,10 @@ def run(cfg: Config, call: CallFn | None = None) -> Path:
     )
 
     funnel: Counter = Counter()
-    cands = generate(chunks, langs, llm, prompts, cfg, funnel)
+    errors: list[dict[str, str]] = []
+    cands = generate(chunks, langs, llm, prompts, cfg, funnel, errors)
     cross = cheap_filters(cands, by_id, cfg)
-    judge(cands, chunks, by_id, llm, prompts, cfg)
+    judge(cands, chunks, by_id, llm, prompts, cfg, errors)
     if llm.misses:
         raise QAError(
             f"Faltan {llm.misses} respuestas del LLM en la cache "
@@ -455,7 +564,9 @@ def run(cfg: Config, call: CallFn | None = None) -> Path:
     report = cfg.paths.reports_dir / "qa.md"
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(
-        render_report(records, cands, chunks, langs, leaks, cross, funnel, labels, prompts, cfg),
+        render_report(
+            records, cands, chunks, langs, leaks, cross, funnel, errors, labels, prompts, cfg
+        ),
         encoding="utf-8",
     )
     counts = Counter((r["split"], r["qa_type"]) for r in records)
@@ -518,6 +629,7 @@ def render_report(
     leaks: Mapping[str, Any],
     cross: list[dict[str, Any]],
     funnel: Counter,
+    errors: list[dict[str, str]],
     labels: list[dict[str, str]],
     prompts: Mapping[str, Prompt],
     cfg: Config,
@@ -584,8 +696,9 @@ def render_report(
     out += [
         "## 2. Embudo de descartes",
         "",
-        "Orden de los filtros: JSON inválido → evidencia no literal (solo `llm`) → trivial → "
-        "ambigua → casi-duplicada → juez. `openapi` es determinista: no pasa por los filtros "
+        "Orden de los filtros: error del LLM → JSON inválido → evidencia no literal (solo "
+        "`llm`) → trivial → ambigua → casi-duplicada → juez. `openapi` es determinista: no "
+        "pasa por los filtros "
         f"ni por el juez. Casi-duplicadas: Jaccard de palabras de contenido ≥ "
         f"{q.near_dup_jaccard}; el juez exige cada criterio ≥ {q.judge_min_score}.",
         "",
@@ -599,8 +712,30 @@ def render_report(
     out += _table(["Tipo", "Generadas", *REASONS, "Final"], rows)
     ws = sum(1 for c in cands if c.get("evidence_match") == "espacios" and c["discard"] is None)
     out += [
+        f"Errores de generación del LLM (`llm_error`: el proveedor falló también con el "
+        f"reintento {GENERATION_FALLBACK}; la llamada se saltó): {len(errors)}.",
+        "",
+    ]
+    if errors:
+        out += _table(
+            ["Fase", "chunk_id", "Prompt", "Error"],
+            [
+                [e["fase"], e["chunk_id"], e["prompt"], _short(e["error"], 120)]
+                for e in sorted(errors, key=lambda e: (e["fase"], e["chunk_id"], e["prompt"]))
+            ],
+        )
+    out += [
         f"Evidencia aceptada solo colapsando espacios en blanco: {ws} (el resto es literal "
         "exacta).",
+        "",
+        f"Reintentos (uno por trabajo, con el error concreto, cuando hubo JSON inválido o "
+        f"evidencia no literal; `{prompts['qa_retry'].id}`): "
+        + ", ".join(
+            f"{t} {funnel[(t, 'reintentos')]} trabajos → {funnel[(t, 'recuperadas')]} "
+            "preguntas recuperadas"
+            for t in ("llm", "unanswerable")
+        )
+        + f". En eval se piden {q.eval_questions_per_chunk} preguntas `llm` por ficha.",
         "",
     ]
 

@@ -2,61 +2,65 @@
 
 Generado por `meli-etl qa` desde `outputs/corpus.jsonl` (235 fichas). Salida: `outputs/qa.jsonl`. Proveedor `ollama`; generador `qwen2.5:7b`, juez `llama3.1:8b` (familias distintas para reducir la auto-aprobación); temperatura 0. Respuestas del LLM cacheadas en `data/cache/llm/` (la etapa se reproduce sin red).
 
-Prompts: `qa_generate.v1` (sha `baa607ec1a66`), `qa_unanswerable.v1` (sha `6e9652e6743d`), `qa_judge.v1` (sha `3a2a949cedf4`), `qa_judge_unanswerable.v1` (sha `0f4e48e4b7e7`); OpenAPI: plantillas deterministas `openapi_template.v1`.
+Prompts: `qa_generate.v1` (sha `baa607ec1a66`), `qa_unanswerable.v1` (sha `6e9652e6743d`), `qa_retry.v1` (sha `3dd1ae7c89dc`), `qa_judge.v1` (sha `3a2a949cedf4`), `qa_judge_unanswerable.v1` (sha `0f4e48e4b7e7`); OpenAPI: plantillas deterministas `openapi_template.v1`.
 
 ## 1. Conteos
 
 | Split | llm | openapi | unanswerable | Total |
 |---|---|---|---|---|
-| train | 72 | 39 | 23 | 134 |
-| eval_section | 17 | 15 | 9 | 41 |
-| eval_project | 6 | 0 | 2 | 8 |
-| **Total** | 95 | 54 | 34 | 183 |
+| train | 83 | 39 | 23 | 145 |
+| eval_section | 49 | 15 | 9 | 73 |
+| eval_project | 19 | 0 | 2 | 21 |
+| **Total** | 151 | 54 | 34 | 239 |
 
 **Por proyecto:**
 
 | Proyecto | train | eval_section | eval_project | Total |
 |---|---|---|---|---|
-| 2p-revenue-optimizer-api | 5 | 1 | 0 | 6 |
-| catalog-portfolio-api | 28 | 11 | 0 | 39 |
-| demand-forecast-docs | 10 | 6 | 0 | 16 |
-| order-workflow-api | 0 | 0 | 8 | 8 |
+| 2p-revenue-optimizer-api | 5 | 2 | 0 | 7 |
+| catalog-portfolio-api | 31 | 23 | 0 | 54 |
+| demand-forecast-docs | 13 | 17 | 0 | 30 |
+| order-workflow-api | 0 | 0 | 21 | 21 |
 | payment-promise-gateway | 17 | 0 | 0 | 17 |
 | price-engine-api | 3 | 0 | 0 | 3 |
-| traffic-gate-api | 25 | 5 | 0 | 30 |
+| traffic-gate-api | 28 | 9 | 0 | 37 |
 | unified-transaction-configs | 2 | 0 | 0 | 2 |
-| vendor-stockkeeper-api | 9 | 6 | 0 | 15 |
+| vendor-stockkeeper-api | 11 | 10 | 0 | 21 |
 | zenith-keeper | 35 | 12 | 0 | 47 |
 
 **Por idioma** (idioma de la pregunta = idioma de la ficha):
 
 | Idioma | llm | openapi | unanswerable | Total |
 |---|---|---|---|---|
-| en | 84 | 37 | 29 | 150 |
-| es | 11 | 17 | 5 | 33 |
+| en | 133 | 37 | 29 | 199 |
+| es | 18 | 17 | 5 | 40 |
 
-Origen del idioma: 133 preguntas de fichas es/en, 50 de fichas `unknown`/`mixed` resueltas con el idioma mayoritario de su proyecto, 0 con el default (`qa.default_language = en`).
+Origen del idioma: 186 preguntas de fichas es/en, 53 de fichas `unknown`/`mixed` resueltas con el idioma mayoritario de su proyecto, 0 con el default (`qa.default_language = en`).
 
 **Tipo de respuesta y verificador** (útil para RL con recompensa verificable):
 
 | answer_type | verifier | Preguntas |
 |---|---|---|
-| long | — | 89 |
+| long | — | 139 |
 | short | exact | 23 |
-| short | normalized | 40 |
+| short | normalized | 46 |
 | short | set | 31 |
 
 ## 2. Embudo de descartes
 
-Orden de los filtros: JSON inválido → evidencia no literal (solo `llm`) → trivial → ambigua → casi-duplicada → juez. `openapi` es determinista: no pasa por los filtros ni por el juez. Casi-duplicadas: Jaccard de palabras de contenido ≥ 0.8; el juez exige cada criterio ≥ 3.
+Orden de los filtros: error del LLM → JSON inválido → evidencia no literal (solo `llm`) → trivial → ambigua → casi-duplicada → juez. `openapi` es determinista: no pasa por los filtros ni por el juez. Casi-duplicadas: Jaccard de palabras de contenido ≥ 0.8; el juez exige cada criterio ≥ 3.
 
-| Tipo | Generadas | json_invalido | evidencia_no_literal | trivial | ambigua | casi_duplicada | casi_duplicada_entre_splits | juez_json_invalido | juez_respondible | juez_puntaje_bajo | Final |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| llm | 210 | 10 | 40 |  | 3 | 2 | 1 |  |  | 59 | 95 |
-| openapi | 54 |  |  |  |  |  |  |  |  |  | 54 |
-| unanswerable | 38 |  |  |  | 1 |  |  | 2 |  | 1 | 34 |
+| Tipo | Generadas | llm_error | json_invalido | evidencia_no_literal | trivial | ambigua | casi_duplicada | casi_duplicada_entre_splits | juez_json_invalido | juez_respondible | juez_puntaje_bajo | Final |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| llm | 320 |  | 7 | 49 | 2 | 5 | 6 | 1 |  |  | 99 | 151 |
+| openapi | 54 |  |  |  |  |  |  |  |  |  |  | 54 |
+| unanswerable | 38 |  |  |  |  | 1 |  |  | 2 |  | 1 | 34 |
 
-Evidencia aceptada solo colapsando espacios en blanco: 11 (el resto es literal exacta).
+Errores de generación del LLM (`llm_error`: el proveedor falló también con el reintento {'repeat_penalty': 1.15, 'num_predict': 512}; la llamada se saltó): 0.
+
+Evidencia aceptada solo colapsando espacios en blanco: 14 (el resto es literal exacta).
+
+Reintentos (uno por trabajo, con el error concreto, cuando hubo JSON inválido o evidencia no literal; `qa_retry.v1`): llm 74 trabajos → 66 preguntas recuperadas, unanswerable 0 trabajos → 0 preguntas recuperadas. En eval se piden 3 preguntas `llm` por ficha.
 
 ## 3. Casi-duplicadas entre splits (descartadas de eval)
 
@@ -64,7 +68,7 @@ Se conserva la de train (o la del split que va primero) y se descarta la de eval
 
 | Jaccard | Descartada | Split | Conservada | Split |
 |---|---|---|---|---|
-| 0.83 | What is the required parameter for the GET /{brandId} endpoint? | eval_section | What is the required parameter for the GET /{brandId}/activable endpoint? | train |
+| 0.83 | What is the required parameter for the `GET /{brandId}` endpoint? | eval_section | What is the required parameter for the GET /{brandId}/activable endpoint? | train |
 
 ## 4. Riesgo de fuga (`leak_risk = true`)
 
@@ -83,7 +87,7 @@ Preguntas de eval sobre fichas cuyo endpoint también aparece en una ficha de tr
 
 | Tipo | Juzgadas | faithfulness | clarity | usefulness | Respondible (descartada) | Aprobadas |
 |---|---|---|---|---|---|---|
-| llm | 154 | 3.23 | 4.48 | 4.44 | — | 62% |
+| llm | 250 | 3.22 | 4.50 | 4.38 | — | 60% |
 | unanswerable | 35 | — | 4.83 | 4.74 | 0 | 97% |
 
 ## 6. Acuerdo juez-humano
@@ -94,19 +98,19 @@ Sin etiquetas todavía. `meli-etl label-qa` exporta una muestra de 30 preguntas 
 
 ### llm
 
+`qa-01c28b7c3a70d5cf` · llm · eval_section · en · `ck-a65d35c3e7dacc3c` (2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md)
+
+- **Pregunta:** What data type is used for the 'site_id' field?
+- **Respuesta:** The 'site_id' field is of type json.
+- **Evidencia:** `| site_id | json | Null | Sites Ids |`
+- **Juez:** {'faithfulness': 5, 'clarity': 5, 'usefulness': 5}
+
 `qa-03b196b135b5b6c4` · llm · train · en · `ck-f39f891b90b7ac3a` (payment-promise-gateway/0.0.10-test-crc-migration/guide/README.md)
 
 - **Pregunta:** Which version of Java is used in the payment-promise-gateway project?
 - **Respuesta:** Java 17
 - **Evidencia:** `- **Language**: Java 17`
 - **reference_answer** (normalized): `"Java 17"`
-- **Juez:** {'faithfulness': 5, 'clarity': 5, 'usefulness': 5}
-
-`qa-055cfd2f44267f9f` · llm · eval_section · en · `ck-a65d35c3e7dacc3c` (2p-revenue-optimizer-api/0.2.2/guide/pages/table_data_dictionary/rule_row.md)
-
-- **Pregunta:** What type of key is the 'id' field in the rule_row table?
-- **Respuesta:** The 'id' field is an auto-increment primary key.
-- **Evidencia:** `| id | bigint | Not null | Auto-increment primary key |`
 - **Juez:** {'faithfulness': 5, 'clarity': 5, 'usefulness': 5}
 
 ### openapi

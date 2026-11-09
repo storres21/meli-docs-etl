@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3913ae4a5322a7b9",
+ "chunk_sha": "e92be2b5c2cdd0eee962461e9587c5189e8e9ec9c09e617f991d3d72a65f071c",
+ "key": "efeb1c9574f6d09622e4ea454fd21fa9ea268f4227e1c86c5dcc410f8eeba0e2",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the Metrics Dashboard provide?\", \"answer\": \"The Metrics Dashboard provides real-time application metrics, performance monitoring, and health status.\", \"evidence\": \"<p>Real-time application metrics, performance monitoring, and health status.</p>\", \"short_answer\": null}]}"
+}

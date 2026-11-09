@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-dcd7e3dfd3a6e44c",
+ "chunk_sha": "f7387c664d6c1e8841385c8b14633d012150fd8bfb0c54f03866a1dd2f0acbfa",
+ "key": "cdbdabb06e0d984839e0e6e40898b30bc8efc9fafa776430a5ab2cc7dc375dd6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the conciliation criteria for the first received item?\", \"answer\": \"The conciliation criteria for the first received item is 'OLDER_PO'.\", \"evidence\": \"\\\"conciliation_criteria\\\": \\\"OLDER_PO\\\"\"}, {\"question\": \"What is the SAP SKU of the second declared item?\", \"answer\": \"The SAP SKU of the second declared item is '930415'.\", \"evidence\": \"\\\"sap_sku\\\": \\\"930415\\\"\"}]}"
+}

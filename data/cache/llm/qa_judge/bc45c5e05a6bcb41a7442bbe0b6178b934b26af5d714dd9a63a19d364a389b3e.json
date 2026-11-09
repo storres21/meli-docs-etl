@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e4e6bbe2c9de4c89",
+ "chunk_sha": "89ead8b94fea544adba8e2a98f566cd8c5b4e5b84edb7c2f3df01e2534b56c16",
+ "key": "bc45c5e05a6bcb41a7442bbe0b6178b934b26af5d714dd9a63a19d364a389b3e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly listed in the documentation fragment under the 'Common Error Codes' section.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

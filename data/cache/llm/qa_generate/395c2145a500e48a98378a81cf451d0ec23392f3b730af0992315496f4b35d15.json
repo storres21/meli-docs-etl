@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-06ba69c75cdd0efd",
+ "chunk_sha": "d6da870f6f2b04c7ff02ae5cd3ecaacc1be36019a2cd227612f81d7ce1eeba91",
+ "key": "395c2145a500e48a98378a81cf451d0ec23392f3b730af0992315496f4b35d15",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can you check if the catalog-portfolio-api service is running?\", \"answer\": \"Use the command `curl http://localhost:8080/catalog/brands/ping` and expect the response 'pong'.\", \"evidence\": \"# Check service health\\ncurl http://localhost:8080/catalog/brands/ping\\n# Expected: \\\"pong\\\"\"}, {\"question\": \"What command can be used to verify the database connection to the 'brands_%' database?\", \"answer\": \"Run `mysql -h localhost -u your_username -p -e \\\"SHOW DATABASES LIKE 'brands_%';\\\"`.\", \"evidence\": \"# Check database exists\\nmysql -h localhost -u your_username -p -e \\\"SHOW DATABASES LIKE 'brands_%';\\\"\"}, {\"question\": \"Where should you look to verify the existence of configuration files?\", \"answer\": \"Check the directories `src/main/resources/development/` and `src/main/resources/production/`.\", \"evidence\": \"# Check if configuration files exist\\nls -la src/main/resources/development/\\nls -la src/main/resources/production/\"}]}"
+}

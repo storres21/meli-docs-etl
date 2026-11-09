@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-87152c822553a83b",
+ "chunk_sha": "14eec7f954e7bc371c1d8c023bc3f8e6dc0343c3dc4da062a1c9839bbef62205",
+ "key": "fd604275935b6151d4c04b76119f28a72297def94b654725cfa642bbfe51a6a5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the main goal of the Marketplace forecasting project?\", \"answer\": \"The project aims to forecast the demand of products in the marketplace, providing insights into TGMV and TSI for 9 product categories + total for each site.\", \"evidence\": \"> Marketplace forecasting is a project that aims to forecast the demand of products in the marketplace, providing insights into TGMV and TSI for 9 product categories + total for each site.\", \"short_answer\": null}]}"
+}

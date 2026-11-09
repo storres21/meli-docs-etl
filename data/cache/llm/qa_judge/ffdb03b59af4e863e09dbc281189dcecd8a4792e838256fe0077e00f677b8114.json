@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4095bd9912895ce4",
+ "chunk_sha": "ffa2b92ed7f3cf03ae9bb87c84a288924d66722f07467e2abe2da04bbf9d1009",
+ "key": "ffdb03b59af4e863e09dbc281189dcecd8a4792e838256fe0077e00f677b8114",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents facts not supported by the fragment, as it specifically mentions 'Retail Data Application' which is not mentioned as a wrapper.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

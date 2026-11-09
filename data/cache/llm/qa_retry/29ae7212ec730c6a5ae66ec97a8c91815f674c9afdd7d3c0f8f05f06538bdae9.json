@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fc3cc723c9567ed0",
+ "chunk_sha": "d8c23377ad9e457e19eba0ebb9dc42af278b0a88f4f8c07a4ad7fbd0190f346f",
+ "key": "29ae7212ec730c6a5ae66ec97a8c91815f674c9afdd7d3c0f8f05f06538bdae9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does $\\tilde{y}(t)$ represent?\", \"answer\": \"$\\tilde{y}(t)$ represents forecasts for $y(t)$, before reconciliation.\", \"evidence\": \"$\\tilde{y}(t)$ : forecasts for $y(t)$, before reconciliation\", \"short_answer\": null}]}"
+}

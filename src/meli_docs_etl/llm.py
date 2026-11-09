@@ -35,13 +35,20 @@ DEFAULT_URLS = {
 API_KEY_ENV = {"anthropic": "ANTHROPIC_API_KEY", "openai": "OPENAI_API_KEY"}
 ANTHROPIC_VERSION = "2023-06-01"
 _VAR = re.compile(r"\{\{(\w+)\}\}")
+# Único reintento ante un error de generación (p. ej. Ollama corta por repetición de tokens).
+GENERATION_FALLBACK = {"repeat_penalty": 1.15, "num_predict": 512}
 
-# (modelo, system, user) → texto de la respuesta.
-CallFn = Callable[[str, str, str], str]
+# (modelo, system, user) → texto de la respuesta; el reintento agrega `variant=` (opciones).
+CallFn = Callable[..., str]
 
 
 class LLMError(RuntimeError):
-    pass
+    """Error de conexión o configuración (servidor caído, modelo no encontrado): aborta."""
+
+
+class LLMGenerationError(LLMError):
+    """El proveedor respondió pero falló al generar (HTTP 5xx, p. ej. `token repeat limit
+    reached`): se reintenta una vez con GENERATION_FALLBACK y, si vuelve a fallar, se salta."""
 
 
 def sha256(text: str) -> str:
@@ -120,7 +127,8 @@ def _post(url: str, headers: Mapping[str, str], body: Mapping[str, Any], timeout
             return json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", "replace")[:500]
-        raise LLMError(f"HTTP {exc.code} de {url}: {detail}") from exc
+        error = LLMGenerationError if exc.code >= 500 else LLMError
+        raise error(f"HTTP {exc.code} de {url}: {detail}") from exc
     except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
         raise LLMError(f"No se pudo conectar con {url}: {exc}") from exc
 
@@ -136,7 +144,7 @@ def provider_call(cfg: LLMConfig, seed: int) -> CallFn:
         if not key:
             raise LLMError(f"Falta la variable de entorno {API_KEY_ENV[cfg.provider]}")
 
-    def ollama(model: str, system: str, user: str) -> str:
+    def ollama(model: str, system: str, user: str, variant: Mapping[str, Any] | None = None) -> str:
         body = {
             "model": model,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -147,20 +155,25 @@ def provider_call(cfg: LLMConfig, seed: int) -> CallFn:
                 "seed": seed,
                 "num_ctx": cfg.num_ctx,
                 "num_predict": cfg.max_tokens,
+                **(variant or {}),
             },
         }
         try:
             return _post(f"{base}/api/chat", {}, body, cfg.timeout_s)["message"]["content"]
+        except LLMGenerationError:
+            raise
         except LLMError as exc:
             raise LLMError(
                 f"{exc}\n¿Está corriendo Ollama (`ollama serve`) y descargado el modelo "
                 f"(`ollama pull {model}`)?"
             ) from exc
 
-    def anthropic(model: str, system: str, user: str) -> str:
+    def anthropic(
+        model: str, system: str, user: str, variant: Mapping[str, Any] | None = None
+    ) -> str:
         body = {
             "model": model,
-            "max_tokens": cfg.max_tokens,
+            "max_tokens": (variant or {}).get("num_predict", cfg.max_tokens),
             "temperature": cfg.temperature,
             "system": system,
             "messages": [{"role": "user", "content": user}],
@@ -169,11 +182,11 @@ def provider_call(cfg: LLMConfig, seed: int) -> CallFn:
         out = _post(f"{base}/v1/messages", headers, body, cfg.timeout_s)
         return "".join(b.get("text", "") for b in out["content"] if b.get("type") == "text")
 
-    def openai(model: str, system: str, user: str) -> str:
+    def openai(model: str, system: str, user: str, variant: Mapping[str, Any] | None = None) -> str:
         body = {
             "model": model,
             "temperature": cfg.temperature,
-            "max_tokens": cfg.max_tokens,
+            "max_tokens": (variant or {}).get("num_predict", cfg.max_tokens),
             "seed": seed,
             "response_format": {"type": "json_object"},
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -209,7 +222,14 @@ class CachedLLM:
             self._call = provider_call(self.cfg, self.seed)
         return self._call
 
-    def key(self, prompt: Prompt, model: str, system: str, user: str) -> str:
+    def key(
+        self,
+        prompt: Prompt,
+        model: str,
+        system: str,
+        user: str,
+        variant: Mapping[str, Any] | None = None,
+    ) -> str:
         payload = {
             "prompt": prompt.id,
             "prompt_sha": prompt.sha,
@@ -222,6 +242,8 @@ class CachedLLM:
             "num_ctx": self.cfg.num_ctx,
             "seed": self.seed,
         }
+        if variant:  # solo si hay variante: las claves sin reintento no cambian
+            payload["variant"] = dict(variant)
         return sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False))
 
     def path(self, prompt: Prompt, key: str) -> Path:
@@ -230,18 +252,32 @@ class CachedLLM:
     def complete(
         self, prompt: Prompt, model: str, chunk_id: str, chunk_text: str, **values: Any
     ) -> str | None:
+        """Respuesta (de cache o del proveedor). Ante un error de generación reintenta una vez
+        con GENERATION_FALLBACK (clave de cache propia); si vuelve a fallar levanta
+        LLMGenerationError. Los errores nunca se cachean."""
         system, user = prompt.render(**values)
-        key = self.key(prompt, model, system, user)
-        path = self.path(prompt, key)
         mode = self.cfg.cache_mode
-        if mode != "off" and path.exists():
-            self.hits += 1
-            return json.loads(path.read_text(encoding="utf-8"))["response"]
+        keys = [self.key(prompt, model, system, user, v) for v in (None, GENERATION_FALLBACK)]
+        if mode != "off":
+            for key in keys:
+                path = self.path(prompt, key)
+                if path.exists():
+                    self.hits += 1
+                    return json.loads(path.read_text(encoding="utf-8"))["response"]
         if mode == "replay":
             self.misses += 1
             return None
         self.calls += 1
-        response = self._client()(model, system, user)
+        try:
+            response = self._client()(model, system, user)
+            key, variant = keys[0], None
+        except LLMGenerationError as exc:
+            log.warning(
+                "%s · %s: %s; reintento con %s", chunk_id, prompt.id, exc, GENERATION_FALLBACK
+            )
+            self.calls += 1
+            response = self._client()(model, system, user, variant=GENERATION_FALLBACK)
+            key, variant = keys[1], GENERATION_FALLBACK
         if mode == "record":
             entry = {
                 "key": key,
@@ -254,11 +290,13 @@ class CachedLLM:
                     "max_tokens": self.cfg.max_tokens,
                     "num_ctx": self.cfg.num_ctx,
                     "seed": self.seed,
+                    **({"variant": dict(variant)} if variant else {}),
                 },
                 "chunk_id": chunk_id,
                 "chunk_sha": sha256(chunk_text),
                 "response": response,
             }
+            path = self.path(prompt, key)
             path.parent.mkdir(parents=True, exist_ok=True)
             tmp = path.with_suffix(".tmp")
             tmp.write_text(

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bbcd73da9249ddb5",
+ "chunk_sha": "87b48ba78cf93b6b4fa7ca1e7ac38ee6ad9722596acb5073e6d36e4c0ca20c01",
+ "key": "6d8e1fac044b5fb64770057a16e205c17e80edb371dc2eb4f528471322a68921",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly copied from the documentation, but it's not clear what 'this troubleshooting guide' refers to without additional context.\", \"faithfulness\": 3, \"clarity\": 3, \"usefulness\": 3}"
+}

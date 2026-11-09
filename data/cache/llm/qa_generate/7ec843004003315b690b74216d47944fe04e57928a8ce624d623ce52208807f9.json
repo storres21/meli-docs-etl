@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8982ca38a27ba253",
+ "chunk_sha": "a20b93b99af5e998203735329df426f0f7f4cc9e6402161f871b396887825e6a",
+ "key": "7ec843004003315b690b74216d47944fe04e57928a8ce624d623ce52208807f9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuándo se debe enviar una dirección IP a la whitelist en el scope api?\", \"answer\": \"Una dirección IP se debe enviar a whitelist si tuvo más de un usuario detrás en la última hora, si el usuario detrás de la dirección IP es un usuario considerado confiable por User Reputation, si tiene asociado un BigSeller, un CBT, pertenece a infraestructura RetailHub, o tiene una aplicación certificada o privada detrás.\", \"evidence\": \"- La dirección IP tuvo más de un usuario detrás en la última hora\\n- Si el usuario detrás de la dirección IP es un usuario considerado confiable por User Reputation\\n- La dirección IP tiene asociado un BigSeller\\n- La dirección IP tiene asociado un CBT.\\n- La dirección IP pertenece a infraestructura RetailHub.\\n- La dirección IP tiene una aplicación certificada o privada detrás\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-55b5c02067e28efc",
+ "chunk_sha": "1d59fb6859eb414a38652391b9c6a47cef28dfe94048a2573759651040a1f9e8",
+ "key": "8e05cf90ef542917ae5f3d32eeaa5b2662734f6084d1bd64b99231d2500fbc78",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default branch for the Gitflow workflow?\", \"answer\": \"The default branch for the Gitflow workflow is develop.\", \"evidence\": \"    \"    },{\"question\": \"What is the documentation link for the Gitflow workflow?\", \"answer\": \"The documentation link for the Gitflow workflow is https://release-process.retailcorp-cloud.io/#/lang-es/workflows/02_gitflow?id=branches-destacados.\", \"evidence\": \"        \"}]}"
+}

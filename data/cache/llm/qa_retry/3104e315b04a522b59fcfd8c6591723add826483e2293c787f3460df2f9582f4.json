@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3eefde6a1cd5eb3",
+ "chunk_sha": "d3fa823218f1056427a34a81f329f87163441afacb41ac9dcd75500822069e83",
+ "key": "3104e315b04a522b59fcfd8c6591723add826483e2293c787f3460df2f9582f4",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the role of the 'tasks.yml' file in the context of retailpipes and Retail Data Framework?\", \"answer\": \"It passes an entrypoint informing which file to execute.\", \"evidence\": \"On the cloud, retail will do something like `python <entrypoint file>`, executing what is inside it.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1980cb9e138b2aac",
+ "chunk_sha": "052cd7b3dd6a6e3a09cecbbe6e24122b538993202f72d0de2692fe267063f98d",
+ "key": "f7787002866fc9d585c6dde832643f489936dc0d29897539963fa2ad5266fb6e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the fact that the Troubleshooting Template is part of the troubleshooting guide, which is not explicitly stated in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

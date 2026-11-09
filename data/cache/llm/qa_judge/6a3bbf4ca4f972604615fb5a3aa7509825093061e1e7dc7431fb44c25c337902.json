@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5ff78eb00abd2981",
+ "chunk_sha": "81a35d3f32b11565459573e71c62c7196a391b8751579d45dc693255e6802799",
+ "key": "6a3bbf4ca4f972604615fb5a3aa7509825093061e1e7dc7431fb44c25c337902",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly stated in the documentation, but it's a very specific and obvious piece of information, so it's unlikely a developer would ask this question.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 1}"
+}

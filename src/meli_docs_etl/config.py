@@ -142,6 +142,8 @@ class QAConfig:
     min_tokens: int = 32
     # 2 preguntas LLM si la ficha supera esto; si no, 1.
     two_questions_min_tokens: int = 400
+    # Preguntas LLM por ficha en eval_section / eval_project (train usa la regla de arriba).
+    eval_questions_per_chunk: int = 3
     # Fracción de fichas con una pregunta sin respuesta.
     unanswerable_ratio: float = 0.2
     # Idioma si ni la ficha ni su proyecto tienen es/en.

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e552130e29b42ee3",
+ "chunk_sha": "c165fd4848728f9df86644137bee9f64c8f5b36b89a0ed528c823d542d32893e",
+ "key": "01fdbcb274b2b66eb657d38b3c2af4b0ccce31e6cb0260a4527d02e9b2aa63b9",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but the question is not unambiguous as it could be answered by any version of Gradle, not just 7.3 or higher.\", \"faithfulness\": 5, \"clarity\": 3, \"usefulness\": 2}"
+}

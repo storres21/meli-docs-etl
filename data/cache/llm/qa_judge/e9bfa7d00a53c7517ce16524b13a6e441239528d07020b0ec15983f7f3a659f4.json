@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-edccd0ce85826920",
+ "chunk_sha": "953a61f755caeb5fe6fae75c0590a3f288b4fd5cbcb64a387dd18930149e00db",
+ "key": "e9bfa7d00a53c7517ce16524b13a6e441239528d07020b0ec15983f7f3a659f4",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a direct quote from the documentation, but it doesn't address the specific project mentioned in the question.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 2}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3ee3836287cd97ee",
+ "chunk_sha": "becaa8690e9badea037851d89309f0d82cff0db9337b3b0db00ef4fb40a03e7f",
+ "key": "610b13fd93183c4dd1cbb457ddde7cb99e2b866cbdf07ea4cbc7e5ae83ff8609",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only mentions the scope 'x' without specifying 'front', and it doesn't mention the scope 'front' explicitly in the context of the question.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

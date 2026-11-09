@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1fac073cbdeae5a4",
+ "chunk_sha": "5dda5eb9b0cb735e676a500c83c97d6b2564a6c18c935f60d0192efcfdeb22ce",
+ "key": "c086cd294211333add42f7ef19c40e3054ce85fc527a9e83167130ebdabacb79",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Where can I find the available tags for the Dockerfile and Dockerfile.runtime for Java 17?\", \"answer\": \"You can find all available tags for your Dockerfile [here](https://github.com/vendorflow/vendorflow_java-mini#supported-tags) and for your Dockerfile.runtime [here](https://github.com/vendorflow/vendorflow_java-mini-runtime#supported-tags).\", \"evidence\": \"You can find all available tags for your `Dockerfile` [here](https://github.com/vendorflow/vendorflow_java-mini#supported-tags)\\nYou can find all available tags for your `Dockerfile.runtime` [here](https://github.com/vendorflow/vendorflow_java-mini-runtime#supported-tags)\", \"short_answer\": null}]}"
+}

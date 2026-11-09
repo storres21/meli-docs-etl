@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4095bd9912895ce4",
+ "chunk_sha": "ffa2b92ed7f3cf03ae9bb87c84a288924d66722f07467e2abe2da04bbf9d1009",
+ "key": "42d8c1dc20e97fafcac5af3be4ce4c9d9c71493026caa8db76d81731edbddd48",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the Retail Data Framework in the demand-forecast-docs project?\", \"answer\": \"It is used to build and deploy the project.\", \"evidence\": \"Retail Data Framework is used to build and deploy the project.\", \"short_answer\": null}, {\"question\": \"What specific application will be used with the Retail Data Framework?\", \"answer\": \"The Retail Data Application will be used.\", \"evidence\": \"More specifically, we will use the Retail Data Application.\", \"short_answer\": null}, {\"question\": \"What technologies does the Retail Data Framework wrap?\", \"answer\": \"It wraps docker and kubernetes.\", \"evidence\": \"It's a tool that wraps docker and kubernetes, and manages all projects here at RetailCorp.\", \"short_answer\": null}]}"
+}

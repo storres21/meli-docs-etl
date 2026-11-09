@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-209cc7c77240733b",
+ "chunk_sha": "04b17417a85f17863716ed7f058454dc20d0479d664c7480b13fc8c2685afd94",
+ "key": "4fb788ad2eb8f8729bf8e57a0047d385f39388e0a5e9166ed271c8295207587f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which scope is used for orchestrator testing in the order-workflow-api project?\", \"answer\": \"order-orchestrator-test\", \"evidence\": \"| order-orchestrator-test | batesting-orchestrator-testing.order-orchestrator-api | order-workflow-test-consumer | /pipeline/validate |\", \"short_answer\": \"order-orchestrator-test\"}, {\"question\": \"What is the path for validating the pipeline in the order-orchestrator-test scope?\", \"answer\": \"/pipeline/validate\", \"evidence\": \"| order-orchestrator-test | batesting-orchestrator-testing.order-orchestrator-api | order-workflow-test-consumer | /pipeline/validate |\", \"short_answer\": \"/pipeline/validate\"}, {\"question\": \"Which consumer is associated with the order-workflow-collector-webhooks scope?\", \"answer\": \"workflow-collector-webhooks-test\", \"evidence\": \"| order-workflow-collector-webhooks | gh-webhooks-test.workflow-collector-proxy | workflow-collector-webhooks-test | /branches/protect |\", \"short_answer\": \"workflow-collector-webhooks-test\"}]}"
+}

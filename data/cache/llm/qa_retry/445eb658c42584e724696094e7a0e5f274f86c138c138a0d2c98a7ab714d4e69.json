@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d6c6b6d3f62970b6",
+ "chunk_sha": "70ca94084bc623e20726002b8c22b87a8bcc42f0d79f3087383b168bcc58d7df",
+ "key": "445eb658c42584e724696094e7a0e5f274f86c138c138a0d2c98a7ab714d4e69",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the initial state of a brand when it is created?\", \"answer\": \"The initial state of a brand when it is created is New Brand.\", \"evidence\": \"A[New Brand] --> B[STAND_BY]\", \"short_answer\": null}]}"
+}

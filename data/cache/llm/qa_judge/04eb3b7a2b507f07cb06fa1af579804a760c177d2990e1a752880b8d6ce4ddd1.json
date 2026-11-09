@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3ee3836287cd97ee",
+ "chunk_sha": "becaa8690e9badea037851d89309f0d82cff0db9337b3b0db00ef4fb40a03e7f",
+ "key": "04eb3b7a2b507f07cb06fa1af579804a760c177d2990e1a752880b8d6ce4ddd1",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, which explicitly states that the 4 jobs that call the purge process run every hour.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

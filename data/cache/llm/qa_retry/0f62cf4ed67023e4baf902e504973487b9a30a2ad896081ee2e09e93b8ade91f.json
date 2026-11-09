@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a65d35c3e7dacc3c",
+ "chunk_sha": "c3fb6265ac0280b6aa92b76220d35951a3b82cc148a81c3de815d4d686544e60",
+ "key": "0f62cf4ed67023e4baf902e504973487b9a30a2ad896081ee2e09e93b8ade91f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the foreign key constraint for the 'rule_id' field?\", \"answer\": \"The 'rule_id' field is a foreign key referencing the 'id' field in the 'rule_header' table.\", \"evidence\": \"| rule_id | bigint | Not null | FOREIGN KEY REFERENCES rule_header(id) |\", \"short_answer\": null}, {\"question\": \"What data type is used for the 'site_id' field?\", \"answer\": \"The 'site_id' field is of type json.\", \"evidence\": \"| site_id | json | Null | Sites Ids |\", \"short_answer\": null}]}"
+}

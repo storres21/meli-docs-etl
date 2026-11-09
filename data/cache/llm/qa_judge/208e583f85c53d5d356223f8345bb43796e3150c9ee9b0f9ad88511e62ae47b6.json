@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b3d5c2c009a5d142",
+ "chunk_sha": "d333656e722e75e275abd66ac4add0b574f45e9efe68ecd344aa8fb156f3f2cd",
+ "key": "208e583f85c53d5d356223f8345bb43796e3150c9ee9b0f9ad88511e62ae47b6",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer accurately describes the trigger for pipeline validation in workflow-api, as stated in the documentation.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

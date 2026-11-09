@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8af623be1ea6d6b8",
+ "chunk_sha": "ac2e0af23a51032cde3f259c720ccab6984bd2372731a3e207b136bd311f70d0",
+ "key": "8ffc4ee77328c331b7b2f51672cd2002352e6c502d7700110404f9ddd9a140a9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué tipo de reglas contiene la WEB_ACL asociada a cada distribución de Cloudfront en el proyecto traffic-gate-api?\", \"answer\": \"La WEB_ACL agrupa entre otras reglas, unas reglas de ratelimit.\", \"evidence\": \"Cada distribución de Cloudfront, incluyendo las de APIs, tiene asignada una WEB_ACL, que agrupa entre otras reglas, unas reglas de ratelimit, las cuales permiten limitar el número de solicitudes hacia los recursos, en base al país de origen del tráfico.\", \"short_answer\": null}]}"
+}

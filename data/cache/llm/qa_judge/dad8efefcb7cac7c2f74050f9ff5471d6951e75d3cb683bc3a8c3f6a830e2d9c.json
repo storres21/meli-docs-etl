@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5ff78eb00abd2981",
+ "chunk_sha": "81a35d3f32b11565459573e71c62c7196a391b8751579d45dc693255e6802799",
+ "key": "dad8efefcb7cac7c2f74050f9ff5471d6951e75d3cb683bc3a8c3f6a830e2d9c",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it mentions the warning but not the exact syntax for package specification.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

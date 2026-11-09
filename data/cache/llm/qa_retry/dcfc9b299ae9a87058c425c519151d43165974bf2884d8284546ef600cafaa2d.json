@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e4e6bbe2c9de4c89",
+ "chunk_sha": "89ead8b94fea544adba8e2a98f566cd8c5b4e5b84edb7c2f3df01e2534b56c16",
+ "key": "dcfc9b299ae9a87058c425c519151d43165974bf2884d8284546ef600cafaa2d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the error message for a validation error?\", \"answer\": \"Request validation failed\", \"evidence\": \"| 400 | `validation_error` | Request validation failed |\", \"short_answer\": null}, {\"question\": \"Which status code is returned when a brand name already exists?\", \"answer\": \"409\", \"evidence\": \"| 409 | `brand_name_already_exists` | Brand name already exists in site |\", \"short_answer\": \"409\"}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-64575bc6e142290b",
+ "chunk_sha": "f6387e70d33c0eb574851e5ff6c9e05d1792e3a96ee12ae161a1747f6e501c99",
+ "key": "bfe4bb86bd0fa2e4edca5de36e4043a7e12061a06952a9810bbb96182879348f",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it mentions predict intervals, but it is not the final step in the pipeline.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

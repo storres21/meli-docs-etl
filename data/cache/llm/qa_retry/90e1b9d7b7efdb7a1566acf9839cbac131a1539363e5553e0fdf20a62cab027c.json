@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-971a0f1f6590eab7",
+ "chunk_sha": "e7587cce1a4d0d08954acf3fcfc31aee6634788b0a84e0d55b20ffffb7fee979",
+ "key": "90e1b9d7b7efdb7a1566acf9839cbac131a1539363e5553e0fdf20a62cab027c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does TGMV stand for in the project's objective?\", \"answer\": \"TGMV stands for Total Gross Merchandise Value.\", \"evidence\": \"This project has the objective to forecast and explain to the marketplace team the expected TGMV in the future and how the planned actions will impact it.\", \"short_answer\": null}, {\"question\": \"Where can one find explanations of different parts of the project?\", \"answer\": \"One can find explanations of different parts of the project by looking at the sidebar.\", \"evidence\": \"Take a look at the side bar to see explanations of different parts of the project.\", \"short_answer\": null}]}"
+}

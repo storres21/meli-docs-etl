@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-edccd0ce85826920",
+ "chunk_sha": "953a61f755caeb5fe6fae75c0590a3f288b4fd5cbcb64a387dd18930149e00db",
+ "key": "5d605c73f4685ce3bb8593941796b580dce080f7af60245449aa6f5cd3f3ced2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents a fact not supported by the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

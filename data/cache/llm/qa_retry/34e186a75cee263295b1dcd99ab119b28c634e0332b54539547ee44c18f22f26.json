@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a516ff5115ba2bdc",
+ "chunk_sha": "1d96000a2239c52910f590b73576ac65f322d333a32928fbc9854f1898a0883e",
+ "key": "34e186a75cee263295b1dcd99ab119b28c634e0332b54539547ee44c18f22f26",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command can be used to check JVM memory usage?\", \"answer\": \"jstat -gc $PID 5s and jstat -heap $PID can be used to monitor JVM memory.\", \"evidence\": \"```bash\\njstat -gc $PID 5s\\njstat -heap $PID\\n```\", \"short_answer\": null}]}"
+}

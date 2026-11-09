@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-112566726e0c8bf0",
+ "chunk_sha": "ad7e69644e46db602a657c09857073bed76f35e77493717ffbba7ebdda29d44c",
+ "key": "de3a23286f537cb70c266aac249a7056f923aba3d676f120db9b5d40a520413f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to clone the Catalog Portfolio API repository?\", \"answer\": \"Use the command `retailflow get catalog-portfolio-api` to clone the repository.\", \"evidence\": \"```bash\\n# Clone the repository\\nretailflow get catalog-portfolio-api\\n```\", \"short_answer\": null}]}"
+}

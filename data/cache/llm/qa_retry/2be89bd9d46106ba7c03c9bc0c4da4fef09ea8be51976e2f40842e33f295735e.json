@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3e6fa20e1f35fbb",
+ "chunk_sha": "b7d41a52ac1458cfe4bc3b8199cbb011900029f98208eeb8ba06768bc9de2a24",
+ "key": "2be89bd9d46106ba7c03c9bc0c4da4fef09ea8be51976e2f40842e33f295735e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What service is used to receive tasks from the Orchestrator and webhooks from EventCollector?\", \"answer\": \"A BigQ Consumer is used.\", \"evidence\": \"A BigQ Consumer is used to receive tasks from the [Orchestrator](http://retailcorp-docs.io/order-orchestrator-api/guide/) and webhooks from [EventCollector](https://retailcorp-docs.io/workflow-collector/0.1.3-rc-1/guide/#/usage)\", \"short_answer\": null}, {\"question\": \"What service is responsible for automatically creating versions based on a cron-like scheduler?\", \"answer\": \"The Jobs service is responsible.\", \"evidence\": \"The Jobs service is used to automatically create versions based on a cron-like scheduler.\", \"short_answer\": null}]}"
+}

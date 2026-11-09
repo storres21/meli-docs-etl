@@ -137,6 +137,8 @@ qa:
   min_tokens: 32
   # 1 pregunta LLM por ficha; 2 si la ficha supera esto.
   two_questions_min_tokens: 400
+  # En eval_section / eval_project se piden hasta estas preguntas LLM por ficha (train no cambia).
+  eval_questions_per_chunk: 3
   # Fracción de fichas (orden sha256(seed|chunk_id)) con una pregunta sin respuesta.
   unanswerable_ratio: 0.2
   # Idioma de la pregunta = idioma de la ficha; si es unknown/mixed, el mayoritario (es/en)

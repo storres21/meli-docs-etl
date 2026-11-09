@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9782afa96a96db",
+ "chunk_sha": "7e90526a8668117bb1b3e643b81a2e89a1f0a38d643c0c6704b41023da1aaebc",
+ "key": "dd0cd60acb5621fea6ac7674e1698cb658c372f371c2284596168003238d9ba3",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is a simplified version of the steps to create a feature branch, missing some details and not fully supported by the fragment.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

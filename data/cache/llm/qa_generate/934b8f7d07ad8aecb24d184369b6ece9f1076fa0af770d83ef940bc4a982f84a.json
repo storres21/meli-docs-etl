@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1c9cf96c62eeb8e5",
+ "chunk_sha": "154c2f6065d5f7ca237a6613f5a14f60ad6708223cb42bf307499fa4643cde7f",
+ "key": "934b8f7d07ad8aecb24d184369b6ece9f1076fa0af770d83ef940bc4a982f84a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the state of a brand that has been created but is not yet active?\", \"answer\": \"STAND_BY\", \"evidence\": \"- **STAND_BY**: Brand is created but not yet active. May be missing required logos or temporarily deactivated.\", \"short_answer\": null}, {\"question\": \"What happens when a brand meets all requirements and is fully functional?\", \"answer\": \"It becomes ACTIVE.\", \"evidence\": \"- **ACTIVE**: Brand is fully functional and visible in the system. All requirements are met.\", \"short_answer\": null}, {\"question\": \"What is the state of a brand that has been permanently removed?\", \"answer\": \"DELETED.\", \"evidence\": \"- **DELETED**: Brand has been permanently removed (irreversible action).\", \"short_answer\": null}]}"
+}

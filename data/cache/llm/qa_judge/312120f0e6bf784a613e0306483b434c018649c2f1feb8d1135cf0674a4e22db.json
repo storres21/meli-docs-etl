@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4076c9ec2c113522",
+ "chunk_sha": "e9ffc3477153c5ec97b72e9695fb19c03b5a1bd905dbbf9b9f0106ba2f9f840c",
+ "key": "312120f0e6bf784a613e0306483b434c018649c2f1feb8d1135cf0674a4e22db",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it's a very short and simple question.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

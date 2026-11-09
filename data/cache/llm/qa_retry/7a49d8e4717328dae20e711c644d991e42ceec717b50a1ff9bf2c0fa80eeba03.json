@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-cd44b77da9741a85",
+ "chunk_sha": "0782fa987606ecf5e245b370a78e7f826a7c83b19e964b30f9eac45e59fab4e0",
+ "key": "7a49d8e4717328dae20e711c644d991e42ceec717b50a1ff9bf2c0fa80eeba03",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What principle ensures that components in the catalog-portfolio-api have a single responsibility?\", \"answer\": \"Single responsibility principle.\", \"evidence\": \"- Single responsibility principle\", \"short_answer\": null}, {\"question\": \"How is statelessness implemented in the catalog-portfolio-api to enhance scalability?\", \"answer\": \"Stateless service design.\", \"evidence\": \"- Stateless service design\", \"short_answer\": null}]}"
+}

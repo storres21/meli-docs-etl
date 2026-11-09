@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a3aebbee0b623d5b",
+ "chunk_sha": "23c5cf467599384cb5eb58573128c43c590c51df9807ed2a1d78a1c98ab42eb6",
+ "key": "2d94fb4d6614d6f1a1309e345096427396d404184e5e5892481213652c8d69d0",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué protege la WEB_ACL configurada en el WAF de AWS para las distribuciones de CloudFront de RetailHub?\", \"answer\": \"Las Web_ACL agrupan un conjunto de reglas que determinan la forma en como debe ser evaluado el tráfico entrante para bloquear o autorizar las solicitudes que busquen acceder a las apps.\", \"evidence\": \"Estas Web_ACL agrupan un conjunto de reglas que determinan la forma en como debe ser evaluado el tráfico entrante para bloquear o autorizar las solicitudes que busquen acceder a las apps.\", \"short_answer\": null}]}"
+}

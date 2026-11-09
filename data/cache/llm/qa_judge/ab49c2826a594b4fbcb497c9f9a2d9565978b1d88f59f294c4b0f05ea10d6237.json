@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-af3ccc4e9c582c6d",
+ "chunk_sha": "bdab99a7fa4ebb0a7aa543ec81348084041883014bbbd8b027b9fbb256618550",
+ "key": "ab49c2826a594b4fbcb497c9f9a2d9565978b1d88f59f294c4b0f05ea10d6237",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is not supported by the documentation fragment, which specifically states that if the item's status does not allow updating the stock quantity, a ticket should not be raised to block the publication.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

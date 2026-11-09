@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4095bd9912895ce4",
+ "chunk_sha": "ffa2b92ed7f3cf03ae9bb87c84a288924d66722f07467e2abe2da04bbf9d1009",
+ "key": "6963e630b807f3ab0de272a037622c246c3b78c63c4a6626ad002362c48b80b8",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents no facts, but the fragment does not explicitly state that the Retail Data Application is the 'specific application' to be used.\", \"faithfulness\": 4, \"clarity\": 2, \"usefulness\": 4}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a8c7f433d24d2ef8",
+ "chunk_sha": "9efad602fe026e0c39b2c966fa335e709f5edace10f60db9b33c2852771c35fa",
+ "key": "3470d60503289917f51d3836e07d1ed73d8128cbf78dca95c191298d0a833d65",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to run the application locally after setting up the configuration file?\", \"answer\": \"Run the command `mvn spring-boot:run`.\", \"evidence\": \"`mvn spring-boot:run`\", \"short_answer\": null}, {\"question\": \"What file needs to be created to provide the private key for communication with gh-proxy?\", \"answer\": \"Create a file named `workflow-gh-proxy.key` in `src/main/resources/` and add the full private key in that file.\", \"evidence\": \"create a file in `src/main/resources/workflow-gh-proxy.key` and add the full private key in that file.\", \"short_answer\": null}, {\"question\": \"What is the first step to run the unit and integration tests locally?\", \"answer\": \"Run the command `mvn test`.\", \"evidence\": \"`mvn test`\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-45f4b1af2c304b5f",
+ "chunk_sha": "2d98ac8c4e7f2dab1cbcb4a284c32c70a1505b3439d80c9b011a170edefbea11",
+ "key": "07d2e0bd7520610e4fa8a843dbcacada30c4652827427e7e349de5533758311b",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the fact that the user is 'your_user' for the Prod environment, when the documentation actually only mentions 'your_user' for the Host, but does not specify the user for the Prod environment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

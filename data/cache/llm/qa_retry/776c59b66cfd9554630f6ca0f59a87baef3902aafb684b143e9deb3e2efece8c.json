@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-17eb7946e5a900e5",
+ "chunk_sha": "307ab5f52a4674de30df52222304f27bf97f3a81f2e21282879ba1ba448695ec",
+ "key": "776c59b66cfd9554630f6ca0f59a87baef3902aafb684b143e9deb3e2efece8c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the 'fh' parameter in the provided code snippet?\", \"answer\": \"The 'fh' parameter is used both for preprocessing and forecasting.\", \"evidence\": \"The forecast horizon parameter \"}, \"fh\" ]}"
+}

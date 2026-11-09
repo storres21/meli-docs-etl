@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e552130e29b42ee3",
+ "chunk_sha": "c165fd4848728f9df86644137bee9f64c8f5b36b89a0ed528c823d542d32893e",
+ "key": "eb1d7c3a941bb2fd6f83188fda46aa4d3d046da9bf603446aac9dfb8fac4ba66",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What version of Java is required for the catalog-portfolio-api project?\", \"answer\": \"JDK 17 or higher\", \"evidence\": \"- **Java**: JDK 17 or higher\", \"short_answer\": \"JDK 17 or higher\"}]}"
+}

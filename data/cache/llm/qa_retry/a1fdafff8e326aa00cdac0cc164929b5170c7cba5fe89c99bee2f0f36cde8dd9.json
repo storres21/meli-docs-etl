@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8e2c4aae97752189",
+ "chunk_sha": "1d1cf9410a9656da231bca47c643485adfa90a59744043cf904b9f8205b52e86",
+ "key": "a1fdafff8e326aa00cdac0cc164929b5170c7cba5fe89c99bee2f0f36cde8dd9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the port number used to start the development server?\", \"answer\": \"The port number used is 3000.\", \"evidence\": \"`--port 3000`\", \"short_answer\": null}]}"
+}

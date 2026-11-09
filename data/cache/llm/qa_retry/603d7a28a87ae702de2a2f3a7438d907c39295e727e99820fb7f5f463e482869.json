@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-593936ef8cc6744b",
+ "chunk_sha": "e2d82850b73103636e288582c9847764bfd0d9c79e3e8cc7f49ee331e1df399c",
+ "key": "603d7a28a87ae702de2a2f3a7438d907c39295e727e99820fb7f5f463e482869",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the GET /payment_promise/active endpoint?\", \"answer\": \"Gets the user's active payment promise.\", \"evidence\": \"# 2. GET /payment_promise/active\\n# Gets the user's active payment promise\", \"short_answer\": null}]}"
+}

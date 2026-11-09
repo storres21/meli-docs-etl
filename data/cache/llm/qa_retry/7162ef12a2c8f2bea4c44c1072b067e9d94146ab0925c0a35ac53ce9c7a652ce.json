@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a17defb43fe9c9d5",
+ "chunk_sha": "ffc98cf1ae1ef0deac6e9dbf8ba858aa8259e4f0b97b1270e2a32238733aefe8",
+ "key": "7162ef12a2c8f2bea4c44c1072b067e9d94146ab0925c0a35ac53ce9c7a652ce",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How are the environments separated in the Retail Data Framework?\", \"answer\": \"The environments are separated using tags in retail task-images and parameters in the code. The _dev_ tag is used for development and testing, _hml_ for staging, and _prd_ for production.\", \"evidence\": \"The tag _dev_ is used for development and testing, _hml_ for staging, and _prd_ for production.\", \"short_answer\": null}]}"
+}

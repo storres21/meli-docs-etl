@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b8f4a0214b238978",
+ "chunk_sha": "7ee726b81a52172822d6babe8bca4e5bc3d1b9bf04b4e9de1c000d1c861afaa2",
+ "key": "4766f8b997a58372a8ad05202a8634c927937f6456d0f80c50c0fbb81f96c79c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the first step to configure IntelliJ IDEA for the catalog-portfolio-api project?\", \"answer\": \"Import project as Gradle project\", \"evidence\": \"1. Import project as Gradle project\", \"short_answer\": null}]}"
+}

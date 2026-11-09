@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d6c6b6d3f62970b6",
+ "chunk_sha": "70ca94084bc623e20726002b8c22b87a8bcc42f0d79f3087383b168bcc58d7df",
+ "key": "51d55d7232bf8f738e6411d781ee76c2877a32709abf0d3c2b216320a206a427",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents a state that is not explicitly mentioned in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

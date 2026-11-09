@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-354a21f6551127d8",
+ "chunk_sha": "430d408164819b7979c4c807a719fc46ec31740735f49e3d7893cc2698253627",
+ "key": "0ff1eb904e7e6976ca5d5274fc0e0c33679f55aa69ac6bf88d71ff498adce00a",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it describes a specific scenario where the workflow exits, but it does not cover all possible cases.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

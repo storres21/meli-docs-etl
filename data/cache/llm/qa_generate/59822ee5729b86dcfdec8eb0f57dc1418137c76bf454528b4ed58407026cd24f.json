@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-abd0b025127b255d",
+ "chunk_sha": "4e7d25803d84c8990b548df8768e8492d94eb9dc62396a1b4e42d0dc55e4cee5",
+ "key": "59822ee5729b86dcfdec8eb0f57dc1418137c76bf454528b4ed58407026cd24f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the Ingest module in the data pipeline?\", \"answer\": \"The Ingest module is responsible for ingesting the timeseries and holidays data.\", \"evidence\": \"The `Ingest` module is responsible for ingesting the timeseries and holidays data.\", \"short_answer\": null}, {\"question\": \"Where can the forecast classes be found in the project structure?\", \"answer\": \"The forecast classes can be found at `src/app/pipes/forecasting`.\", \"evidence\": \"The forecast classes can be found at `src/app/pipes/forecasting`. \", \"short_answer\": null}, {\"question\": \"What is the role of the Postprocess module in the data pipeline?\", \"answer\": \"The Postprocess module is responsible for preparing the data for stakeholders, by creating the tables in the format we have agreed with them.\", \"evidence\": \"The `Postprocess` module is responsible for preparing the data for stakeholders, by creating the tables in the format we have agreed with them.\", \"short_answer\": null}]}"
+}

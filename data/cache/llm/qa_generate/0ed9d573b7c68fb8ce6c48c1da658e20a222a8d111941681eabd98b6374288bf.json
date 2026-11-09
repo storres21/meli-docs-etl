@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-dc155f31e8ba1142",
+ "chunk_sha": "6b060392140cb70af8ea2724d0036bec0ad73bab3795473b6b3c5dc866b26162",
+ "key": "0ed9d573b7c68fb8ce6c48c1da658e20a222a8d111941681eabd98b6374288bf",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to install the current project and create a poetry environment?\", \"answer\": \"The command is `poetry install`.\", \"evidence\": \"`poetry install`\", \"short_answer\": \"poetry install\"}]}"
+}

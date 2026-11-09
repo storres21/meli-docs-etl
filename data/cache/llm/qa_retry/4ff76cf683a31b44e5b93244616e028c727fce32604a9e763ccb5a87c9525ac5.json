@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b8f4a0214b238978",
+ "chunk_sha": "7ee726b81a52172822d6babe8bca4e5bc3d1b9bf04b4e9de1c000d1c861afaa2",
+ "key": "4ff76cf683a31b44e5b93244616e028c727fce32604a9e763ccb5a87c9525ac5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should the Project SDK be set to in IntelliJ IDEA?\", \"answer\": \"Set Project SDK to Java 17\", \"evidence\": \"2. Set Project SDK to Java 17\", \"short_answer\": null}, {\"question\": \"Which extensions are recommended to be installed in VS Code?\", \"answer\": \"Install recommended extensions: Java Extension Pack, Gradle for Java, MySQL\", \"evidence\": \"Install recommended extensions:\\n- Java Extension Pack\\n- Gradle for Java\\n- MySQL\", \"short_answer\": null}]}"
+}

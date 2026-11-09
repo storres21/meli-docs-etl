@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-45f4b1af2c304b5f",
+ "chunk_sha": "2d98ac8c4e7f2dab1cbcb4a284c32c70a1505b3439d80c9b011a170edefbea11",
+ "key": "2368399ba39e5696fe5288899c8bdc0e877027f7044e2eb3ed543f970fca96c6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the port for the Stage environment in vendor-stockkeeper-api?\", \"answer\": \"The port for the Stage environment is 6612.\", \"evidence\": \"- **Port:** 6612\", \"short_answer\": null}, {\"question\": \"What is the user for the Prod environment in vendor-stockkeeper-api?\", \"answer\": \"The user for the Prod environment is your_user.\", \"evidence\": \"- **User:** your_user\", \"short_answer\": null}]}"
+}

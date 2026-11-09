@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0a6c63e488b63957",
+ "chunk_sha": "6494107cb535c3208b22c126d48eaac8ad5f7ae06647fbd08012f84f0e43c62e",
+ "key": "c86111e69216a0e9f2b47bc04cf64d69dd99dccb3370133723d5e845aeb8fd5e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the word 'impacte' which is not present in the documentation fragment, and also uses the word 'en' which is not present in the original text.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

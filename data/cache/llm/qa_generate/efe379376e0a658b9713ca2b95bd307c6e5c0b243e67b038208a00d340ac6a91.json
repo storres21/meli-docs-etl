@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4076c9ec2c113522",
+ "chunk_sha": "e9ffc3477153c5ec97b72e9695fb19c03b5a1bd905dbbf9b9f0106ba2f9f840c",
+ "key": "efe379376e0a658b9713ca2b95bd307c6e5c0b243e67b038208a00d340ac6a91",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What tool is used to manage the dependencies of the project in demand-forecast-docs?\", \"answer\": \"Poetry is used to manage the dependencies of the project.\", \"evidence\": \"Poetry is used to manage the dependencies of the project.\", \"short_answer\": null}, {\"question\": \"How does Poetry save the information about installed packages and their versions?\", \"answer\": \"Poetry saves all the info in a `poetry.lock` file.\", \"evidence\": \"Poetry uses the `pyproject.toml` to identify which packages and versions it should install. Them, it saves all the info in a `poetry.lock` file.\", \"short_answer\": null}, {\"question\": \"What is the purpose of using Poetry in the project?\", \"answer\": \"We use it to keep track of python library dependencies and to install local environments.\", \"evidence\": \"Poetry is used to manage the dependencies of the project. We use it to keep track of python library dependencies and to install local environments.\", \"short_answer\": null}]}"
+}

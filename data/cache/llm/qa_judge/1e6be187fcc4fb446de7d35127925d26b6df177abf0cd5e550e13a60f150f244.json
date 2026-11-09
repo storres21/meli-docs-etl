@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-eeb946fa8d272f3e",
+ "chunk_sha": "67d336e7aeb06abc718fece04859bc0d620b29f3c69e089bf54fcd829dceaeca",
+ "key": "1e6be187fcc4fb446de7d35127925d26b6df177abf0cd5e550e13a60f150f244",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the purpose of backports, which is only partially supported by the fragment.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

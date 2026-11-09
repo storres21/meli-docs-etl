@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-697e55cffb6ae064",
+ "chunk_sha": "ecb8143903fc48bec92fb9018a519db6ccb333e5359a33b5038bc6c6b47f2900",
+ "key": "417a0f2a7e516ec5ae705d4f98e56c29ee296b4bde9cb869478037d8361e3d6e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the schema used in the production database for the order-workflow-api project?\", \"answer\": \"The schema used in the production database is fulfillment.\", \"evidence\": \"| Type | Schema | Cluster |\\n| --- | --- | --- |\\n| MySQL | fulfillment | orderworkflowapi00 |\", \"short_answer\": \"fulfillment\"}]}"
+}

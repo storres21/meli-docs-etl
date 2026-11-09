@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5e31c8a1889f13b4",
+ "chunk_sha": "a4fd5c8be05a9e8746f5fe87ee912289145ea597f8e1e65071737c1d35ba4206",
+ "key": "f038f5e03df279855d4ca0b4acf2a8229bdb7156741fe6732f9ef3d38a8307a7",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents facts not supported by the documentation fragment, specifically that the scope 'front' is associated with GUI or frontend applications, when the fragment only mentions that 'front' is one of the possible values for the scope.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

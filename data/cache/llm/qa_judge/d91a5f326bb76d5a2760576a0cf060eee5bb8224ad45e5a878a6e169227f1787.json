@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-379c2a4ffb073c55",
+ "chunk_sha": "be4ba41495a9188cf1f4342a7c31b9de747e04286f5754a6b8f4bc07c9efe9ae",
+ "key": "d91a5f326bb76d5a2760576a0cf060eee5bb8224ad45e5a878a6e169227f1787",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it mentions that the dataset names and classes are defined in a yml file, but it does not specify that the datasets themselves are defined in the yml file.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

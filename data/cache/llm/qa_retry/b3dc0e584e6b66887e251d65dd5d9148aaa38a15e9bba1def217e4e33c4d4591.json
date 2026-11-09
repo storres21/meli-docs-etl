@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-505d10a8c472c348",
+ "chunk_sha": "54520cf7060dc30a448361712aa0a7f1f6f9757bb84cd6116c9b35afa7ab1196",
+ "key": "b3dc0e584e6b66887e251d65dd5d9148aaa38a15e9bba1def217e4e33c4d4591",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which BigQ scope is associated with the order-orchestrator consumer?\", \"answer\": \"order-orchestrator\", \"evidence\": \"| order-orchestrator | batesting-orchestrator.order-orchestrator-api | order-orchestrator-consumer | /pipeline/validate |\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7670fef69e3105ca",
+ "chunk_sha": "49a20062adf4ecfb812f659a123374e581f684f708d7347866f31ac666ed367d",
+ "key": "c4f50ba1f37bd3c20c7089bded5f52e187a02f7ad722781cd9cea4f2c2b078d2",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What API is responsible for editing workflow messages?\", \"answer\": \"Configs API is responsible for editing workflow messages.\", \"evidence\": \"C as Configs API\\nC->>W: Edit workflow message\", \"short_answer\": \"Configs API\"}]}"
+}

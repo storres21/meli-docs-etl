@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-32553fc9a5bb4f77",
+ "chunk_sha": "c36dd1f6921b9d4ef186bf0817c61d1fec876ae0c4de9f7f69740e37cdfd7e83",
+ "key": "1886779f451558a95358baa0b5b82c04a5f55e34542789318f366e7d53b76b03",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it is not the only step to confirm the item was correctly paused, as the fragment mentions checking the item's status as one of the steps, but not the only one.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

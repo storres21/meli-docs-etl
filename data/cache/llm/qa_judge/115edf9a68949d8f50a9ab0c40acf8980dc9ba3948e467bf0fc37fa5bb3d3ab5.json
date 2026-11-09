@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-85e8eebde45c9932",
+ "chunk_sha": "3ba078324929090a8d70f96c7675e1f7b528680145ca3b8fd705e86ff63e9f83",
+ "key": "115edf9a68949d8f50a9ab0c40acf8980dc9ba3948e467bf0fc37fa5bb3d3ab5",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it mentions the importance of verifying test items, but the fragment does not explicitly state that it is about 'movement' or 'test items'.\", \"faithfulness\": 3, \"clarity\": 3, \"usefulness\": 2}"
+}

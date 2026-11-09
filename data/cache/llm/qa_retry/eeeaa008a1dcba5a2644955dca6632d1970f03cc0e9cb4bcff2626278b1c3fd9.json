@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-354a21f6551127d8",
+ "chunk_sha": "430d408164819b7979c4c807a719fc46ec31740735f49e3d7893cc2698253627",
+ "key": "eeeaa008a1dcba5a2644955dca6632d1970f03cc0e9cb4bcff2626278b1c3fd9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What happens if the version branch does not exist for a cron job?\", \"answer\": \"The workflow exits.\", \"evidence\": \"Note right of W: Exit when branch does not exist or MAX_RETRY reached\", \"short_answer\": null}, {\"question\": \"Which API is used to get the last version of the workflow type config?\", \"answer\": \"Build API is used to get the last version.\", \"evidence\": \"W->>B: Get last version\", \"short_answer\": null}, {\"question\": \"What is the result of a successful nightly cron job?\", \"answer\": \"The workflow returns 200 to RetailCorp.\", \"evidence\": \"W-->>F: Return 200\", \"short_answer\": null}]}"
+}

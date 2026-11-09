@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1ae7ef2ee9a5d585",
+ "chunk_sha": "2c302e659f14530d411ff509dd7f831f92fa19e66631ce349d7e6a1bf52868c4",
+ "key": "f6cdbbb7189c722f9a09475092f3171b6dbc00bbbe1782c3cf185e3eec3f5ed6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the cron job name for the midday task in the production environment?\", \"answer\": \"The cron job name for the midday task in the production environment is production-cron.\", \"evidence\": \"| midday | 0 12 * * * | /cron/midday |\", \"short_answer\": null}, {\"question\": \"How often does the nightly cron job run in the production environment?\", \"answer\": \"The nightly cron job runs every night at 8:00 PM.\", \"evidence\": \"| nightly | 0 20 * * * | /cron/nightly |\", \"short_answer\": null}, {\"question\": \"Is there any cron job configured for the test environment?\", \"answer\": \"No cron jobs are configured for the test environment.\", \"evidence\": \"#### Test\\n_Not configured_\", \"short_answer\": null}]}"
+}

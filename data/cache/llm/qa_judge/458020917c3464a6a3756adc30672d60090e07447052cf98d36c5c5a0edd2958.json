@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-17eb7946e5a900e5",
+ "chunk_sha": "307ab5f52a4674de30df52222304f27bf97f3a81f2e21282879ba1ba448695ec",
+ "key": "458020917c3464a6a3756adc30672d60090e07447052cf98d36c5c5a0edd2958",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the documentation fragment, which explicitly states that the 'fh' parameter is used both for preprocessing and forecasting.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

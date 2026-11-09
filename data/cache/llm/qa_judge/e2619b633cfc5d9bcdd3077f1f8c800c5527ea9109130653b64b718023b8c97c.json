@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1ae7ef2ee9a5d585",
+ "chunk_sha": "2c302e659f14530d411ff509dd7f831f92fa19e66631ce349d7e6a1bf52868c4",
+ "key": "e2619b633cfc5d9bcdd3077f1f8c800c5527ea9109130653b64b718023b8c97c",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the time 8:00 PM, which is not supported by the documentation.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

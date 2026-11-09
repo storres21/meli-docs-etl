@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8982ca38a27ba253",
+ "chunk_sha": "a20b93b99af5e998203735329df426f0f7f4cc9e6402161f871b396887825e6a",
+ "key": "c080a6ec6875fa04d777eb1ad61d5e5a05517acd746443ffdb2ca89d63cd9dc2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only mentions one of the two conditions for a certified or private application.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

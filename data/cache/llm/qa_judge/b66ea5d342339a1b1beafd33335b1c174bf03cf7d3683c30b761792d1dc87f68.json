@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-974b53792ef9efb0",
+ "chunk_sha": "64133e87061007423d67a62d4948abc68b93310be818d494b8c6ad98ded9399d",
+ "key": "b66ea5d342339a1b1beafd33335b1c174bf03cf7d3683c30b761792d1dc87f68",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the concept of 'toda la información posible', which is not explicitly mentioned in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

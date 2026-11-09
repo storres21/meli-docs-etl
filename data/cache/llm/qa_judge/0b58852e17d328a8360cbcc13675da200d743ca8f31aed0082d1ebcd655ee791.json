@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3913ae4a5322a7b9",
+ "chunk_sha": "e92be2b5c2cdd0eee962461e9587c5189e8e9ec9c09e617f991d3d72a65f071c",
+ "key": "0b58852e17d328a8360cbcc13675da200d743ca8f31aed0082d1ebcd655ee791",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the term 'performance monitoring' which is not explicitly mentioned in the fragment, and also uses the phrase 'real-time application metrics' which is a paraphrased version of the original text.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

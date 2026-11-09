@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d51d80b9d7c05534",
+ "chunk_sha": "9aaab14870a4151f4dda34aef1ff6d92097bce016140df945435d5bc226580a7",
+ "key": "e1f5bd3a9d82c5247afe4e4835619d54a8af23207c9b2eb82341d157820cfaa5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How many base URLs are provided for the vendor-stockkeeper-api on the TechZone Platform?\", \"answer\": \"Two base URLs are provided for the vendor-stockkeeper-api on the TechZone Platform: one for production and one for staging.\", \"evidence\": \"- **TechZone Platform:** `vendor-stockkeeper.techzonesystems.com` / `vendor-stockkeeper-stage.techzonesystems.com`\", \"short_answer\": null}]}"
+}

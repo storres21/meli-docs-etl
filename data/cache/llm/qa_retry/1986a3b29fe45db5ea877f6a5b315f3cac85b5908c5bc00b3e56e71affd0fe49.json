@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19bb96f7d7f8823f",
+ "chunk_sha": "f0e75fd43865e99b667d6f751acba21bf1ae670bc833f5ce9d2a4e1f2613326c",
+ "key": "1986a3b29fe45db5ea877f6a5b315f3cac85b5908c5bc00b3e56e71affd0fe49",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What API is used to consult the items and validate if they are test items?\", \"answer\": \"We go to consult the items API to be able to consult its tags and validate if it is a test item or not.\", \"evidence\": \"with this we go to consult the items api to be able to consult its tags and validate if it is a test item or not.\", \"short_answer\": null}, {\"question\": \"What is the endpoint used to search for materials in the feed flow?\", \"answer\": \"The endpoint used is 'https://1p-materials.techzoneoffice.com/materials/facade/search'.\", \"evidence\": \"curl --location 'https://1p-materials.techzoneoffice.com/materials/facade/search?limit=100&offset=0' \", \"short_answer\": \"https://1p-materials.techzoneoffice.com/materials/facade/search\"}]}"
+}

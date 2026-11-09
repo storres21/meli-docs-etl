@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-06ba69c75cdd0efd",
+ "chunk_sha": "d6da870f6f2b04c7ff02ae5cd3ecaacc1be36019a2cd227612f81d7ce1eeba91",
+ "key": "a215a917b70d7cfc2dae9f4c929dca6f40d2159e444b740a5efac7e1731134c5",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the command, which is not supported by the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

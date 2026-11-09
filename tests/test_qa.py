@@ -11,7 +11,13 @@ from pathlib import Path
 import pytest
 
 from meli_docs_etl.config import Config, load_config
-from meli_docs_etl.llm import CachedLLM, LLMError, load_prompt
+from meli_docs_etl.llm import (
+    GENERATION_FALLBACK,
+    CachedLLM,
+    LLMError,
+    LLMGenerationError,
+    load_prompt,
+)
 from meli_docs_etl.qa_utils import (
     cohen_kappa,
     evidence_match,
@@ -416,3 +422,78 @@ def test_provider_errors_are_explicit(cfg: Config) -> None:
     )
     with pytest.raises(LLMError, match="ollama serve"):
         stage.run(off)
+
+
+def test_eval_chunks_ask_more_questions_and_retry_gets_the_concrete_error(cfg: Config) -> None:
+    fake = FakeLLM()
+    prompts: list[str] = []
+    bad_ev = "The refunds worker retries every half minute."
+
+    def call(model: str, system: str, user: str) -> str:
+        prompts.append(user)
+        doc = _doc(user)
+        if "Your previous reply was" in user or "Proposed answer:" in user:
+            return fake(model, system, user)
+        if (
+            "refunds worker" in doc
+            and "Write exactly" in user
+            and "NOT in the fragment" not in user
+        ):
+            # Pide 3 (eval): devuelve 2, una con evidencia inventada.
+            assert "Write exactly 3 question(s)" in user
+            ok = json.loads(fake(model, system, user))["questions"][0]
+            wrong = {**ok, "question": "Which variable sets the refunds queue size in alpha?"}
+            return json.dumps({"questions": [ok, {**wrong, "evidence": bad_ev}]})
+        return fake(model, system, user)
+
+    stage.run(cfg, call=call)
+    retry = [u for u in prompts if "Your previous reply was" in u and "refunds worker" in _doc(u)]
+    assert len(retry) == 1  # un solo reintento
+    assert f'the evidence "{bad_ev}" does not appear verbatim' in retry[0]
+    assert "1 of the 3 requested question(s) were missing" in retry[0]
+    assert "Write exactly 2 new question(s)" in retry[0]
+    # train sigue pidiendo 1.
+    train_gen = [u for u in prompts if "billing worker" in _doc(u) and "Write exactly" in u]
+    assert any("Write exactly 1 question(s)" in u for u in train_gen)
+    cands = [c for c in candidates(cfg) if c["chunk_id"] == "ck-e1" and c["qa_type"] == "llm"]
+    assert {c["generator"].get("retry") for c in cands} == {None, "qa_retry.v1"}
+    assert all(c["evidence"][0] != bad_ev for c in cands)
+
+
+def test_generation_errors_retry_once_then_skip_and_count(cfg: Config) -> None:
+    fake = FakeLLM()
+    calls: list[tuple[str, dict | None]] = []  # generación (sin reintento de qa_retry)
+    err = (
+        "HTTP 500 de http://localhost:11434/api/chat: "
+        '{"error":"prediction aborted, token repeat limit reached"}'
+    )
+
+    def call(model: str, system: str, user: str, variant: dict | None = None) -> str:
+        doc = _doc(user)
+        gen = "Write exactly" in user and "NOT in the fragment" not in user
+        gen = gen and "Your previous reply" not in user
+        if gen:
+            calls.append((doc, variant))
+        if gen and "invoices worker" in doc:
+            raise LLMGenerationError(err)  # falla siempre: se salta
+        if gen and "refunds worker" in doc and variant is None:
+            raise LLMGenerationError(err)  # se recupera con la variante
+        return fake(model, system, user)
+
+    stage.run(cfg, call=call)  # no aborta
+    assert [v for d, v in calls if "invoices worker" in d] == [None, GENERATION_FALLBACK]
+    assert not [c for c in candidates(cfg) if c["chunk_id"] == "ck-t2" and c["qa_type"] == "llm"]
+    report = (cfg.paths.reports_dir / "qa.md").read_text(encoding="utf-8")
+    assert "llm_error" in report and "| generar | ck-t2 | qa_generate.v1 |" in report
+    assert "token repeat limit" in report
+    # La respuesta recuperada se cachea con la variante en la clave; los errores no.
+    entries = [
+        json.loads(p.read_text(encoding="utf-8"))
+        for p in (cfg.paths.llm_cache_dir / "qa_generate").glob("*.json")
+    ]
+    assert not any("ck-t2" == e["chunk_id"] for e in entries)
+    (rec,) = [e for e in entries if e["chunk_id"] == "ck-e1"]
+    assert rec["params"]["variant"] == GENERATION_FALLBACK
+    assert rec["key"] != CachedLLM(cfg.llm, cfg.paths.llm_cache_dir, cfg.seed).key(
+        load_prompt(cfg.paths.prompts_dir, "qa_generate", "v1"), "m", "s", "u"
+    )

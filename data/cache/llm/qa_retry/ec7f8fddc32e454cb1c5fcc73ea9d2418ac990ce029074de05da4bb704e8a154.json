@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-dc155f31e8ba1142",
+ "chunk_sha": "6b060392140cb70af8ea2724d0036bec0ad73bab3795473b6b3c5dc866b26162",
+ "key": "ec7f8fddc32e454cb1c5fcc73ea9d2418ac990ce029074de05da4bb704e8a154",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can you check the Python version using the poetry environment?\", \"answer\": \"You can run `poetry run python --version`.\", \"evidence\": \"`poetry run python --version`, for example\", \"short_answer\": null}, {\"question\": \"What does running `poetry install` do?\", \"answer\": \"It installs the current project and creates a poetry environment.\", \"evidence\": \"`poetry install` on the terminal. You should see that it has created a customized python environment for you.\", \"short_answer\": null}, {\"question\": \"What command is used to run Python with the poetry environment?\", \"answer\": \"The command is `poetry run python`.\", \"evidence\": \"`poetry run python --version`, for example\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-edccd0ce85826920",
+ "chunk_sha": "953a61f755caeb5fe6fae75c0590a3f288b4fd5cbcb64a387dd18930149e00db",
+ "key": "903d6c52332b346eb484064ed560064c149ba8a302a9c3ed77a59de4b666464e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can I report issues or suggest improvements for the 2p-revenue-optimizer-api project?\", \"answer\": \"Please address any questions and comments to [VendorFlow Issue Tracker](https://github.com/vendorflow/vendorflow/issues).\", \"evidence\": \"Please address any questions and comments to [VendorFlow Issue Tracker](https://github.com/vendorflow/vendorflow/issues).\", \"short_answer\": null}, {\"question\": \"Which version of Spring Boot is used in the provided model?\", \"answer\": \"The provided model is based on Spring Boot, but the specific version is not mentioned.\", \"evidence\": \"We provide a basic model for JDK 17 / Spring based web applications.\", \"short_answer\": null}, {\"question\": \"What is the primary purpose of the provided Spring Boot App model?\", \"answer\": \"The primary purpose is to serve as a basic model for JDK 17 / Spring based web applications.\", \"evidence\": \"# Spring Boot App model for JDK 17 / Spring based web applications.\", \"short_answer\": null}]}"
+}

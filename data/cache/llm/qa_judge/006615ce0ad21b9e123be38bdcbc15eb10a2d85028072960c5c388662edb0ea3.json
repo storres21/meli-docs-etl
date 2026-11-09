@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4095bd9912895ce4",
+ "chunk_sha": "ffa2b92ed7f3cf03ae9bb87c84a288924d66722f07467e2abe2da04bbf9d1009",
+ "key": "006615ce0ad21b9e123be38bdcbc15eb10a2d85028072960c5c388662edb0ea3",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer partially contradicts the fragment, as it mentions the project, but the fragment only mentions RetailCorp.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

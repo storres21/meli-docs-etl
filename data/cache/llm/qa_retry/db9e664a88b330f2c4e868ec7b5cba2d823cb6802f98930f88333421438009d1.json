@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6112a0bba6b13666",
+ "chunk_sha": "bbf7e4fff2d465243d12c73d8c396eda080af33dca4e4857233094e6d9e449ae",
+ "key": "db9e664a88b330f2c4e868ec7b5cba2d823cb6802f98930f88333421438009d1",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué países se consideran sospechosos en la configuración WAF AWS de traffic-gate-api?\", \"answer\": \"Los países sospechosos incluyen: 🇨🇳 China, 🇩🇰 Denmark, 🇫🇷 France, 🇩🇪 Germany, 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Great Britain, 🇭🇰 Hong Kong, 🇮🇳 India, 🇮🇩 Indonesia, 🇯🇵 Japan, 🇳🇱 Netherlands, 🇪🇸 Spain, 🇹🇷 Turkey, 🇷🇺 Russia, 🇷🇴 Rumania, 🇸🇬 Singapur, 🇺🇦 Ukraine, 🇻🇳 Vietnam.\", \"evidence\": \"* Países sospechosos: * 🇨🇳 China * 🇩🇰 Denmark * 🇫🇷 France * 🇩🇪 Germany * 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Great Britain * 🇭🇰 Hong Kong * 🇮🇳 India * 🇮🇩 Indonesia * 🇯🇵 Japan * 🇳🇱 Netherlands * 🇪🇸 Spain * 🇹🇷 Turkey * 🇷🇺 Russia * 🇷🇴 Rumania * 🇸🇬 Singapur * 🇺🇦 Ukraine * 🇻🇳 Vietnam\", \"short_answer\": null}]}"
+}

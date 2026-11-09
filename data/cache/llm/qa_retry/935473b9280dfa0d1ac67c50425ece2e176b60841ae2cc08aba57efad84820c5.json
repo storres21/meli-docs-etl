@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6fcab0aa193a05e4",
+ "chunk_sha": "fbc95aa783af942435b43d04f077bb85fdd8ff854f27c6e0e22ebc1fdf868c2c",
+ "key": "935473b9280dfa0d1ac67c50425ece2e176b60841ae2cc08aba57efad84820c5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the content type for the Restock Consumer API call?\", \"answer\": \"The content type for the Restock Consumer API call is application/json.\", \"evidence\": \"--header 'Content-Type: application/json' \", \"short_answer\": null}]}"
+}

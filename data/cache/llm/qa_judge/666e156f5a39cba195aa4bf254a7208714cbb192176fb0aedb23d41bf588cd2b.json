@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3f5ceed427342891",
+ "chunk_sha": "fe845c5968c8d7e296a1005a1383b2774a612ed3e30fa5ee5578f0debffdb2d4",
+ "key": "666e156f5a39cba195aa4bf254a7208714cbb192176fb0aedb23d41bf588cd2b",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it mentions the enrichment of metadata, but does not specify the exact information consulted from the Knowledge APIs.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

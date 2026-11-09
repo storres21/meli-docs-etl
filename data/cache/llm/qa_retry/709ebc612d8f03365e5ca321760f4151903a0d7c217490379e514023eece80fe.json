@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-af3ccc4e9c582c6d",
+ "chunk_sha": "bdab99a7fa4ebb0a7aa543ec81348084041883014bbbd8b027b9fbb256618550",
+ "key": "709ebc612d8f03365e5ca321760f4151903a0d7c217490379e514023eece80fe",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be done if the item's status does not allow updating the stock quantity?\", \"answer\": \"Raise a ticket in Shield to request the publication be blocked to prevent potential out-of-stock sales.\", \"evidence\": \"If the item has available units and the status allows sales without stock (any status other than deleted), a ticket should be raised in Shield to request the publication be blocked to prevent potential out-of-stock sales.\", \"short_answer\": null}, {\"question\": \"What are the steps to identify the issue when a Validation stock ERROR updating item alert occurs?\", \"answer\": \"Identify in the **vendor-stockkeeper-api** logs the item whose status could not be updated and determine why it could not be done (e.g., due to a status that does not allow updating the item such as under_review, deleted...).\", \"evidence\": \"1. Identify in the **vendor-stockkeeper-api** logs the item whose status could not be updated and determine why it could not be done (e.g., due to a status that does not allow updating the item such as under_review, deleted...).\", \"short_answer\": null}]}"
+}

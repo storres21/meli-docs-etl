@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7ef1f122d8e77541",
+ "chunk_sha": "1660da292bec410cfdb45b8eb2b71be7ecf5b2f8688092bcf4786752797fac44",
+ "key": "b8973360057262066554ede7b7a3b447c79159a02387ecbba7ebf87a094cf8bc",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What type of API is the RetailFlow Catalog Portfolio API?\", \"answer\": \"It is a comprehensive REST API.\", \"evidence\": \"* A comprehensive REST API for managing brands, logos, collectors, and resources in the curated portfolio platform.\", \"short_answer\": null}]}"
+}

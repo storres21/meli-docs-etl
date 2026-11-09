@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b8f4a0214b238978",
+ "chunk_sha": "7ee726b81a52172822d6babe8bca4e5bc3d1b9bf04b4e9de1c000d1c861afaa2",
+ "key": "33f8bd5d2d476afa8b2742db462923ebdbf8d88aeef5354760886d2d00c1b76a",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is the first step to configure IntelliJ IDEA, but it's not the first step to configure IntelliJ IDEA according to the documentation fragment, which starts with importing the project as a Gradle project.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

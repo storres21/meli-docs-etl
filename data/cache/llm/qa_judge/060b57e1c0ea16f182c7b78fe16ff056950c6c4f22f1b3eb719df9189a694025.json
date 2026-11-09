@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d51d80b9d7c05534",
+ "chunk_sha": "9aaab14870a4151f4dda34aef1ff6d92097bce016140df945435d5bc226580a7",
+ "key": "060b57e1c0ea16f182c7b78fe16ff056950c6c4f22f1b3eb719df9189a694025",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the concept of 'production' and 'staging' which are not explicitly mentioned in the fragment, and only mentions 'prod' and 'stage' as abbreviations.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

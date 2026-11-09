@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a79fc72b3b5435b5",
+ "chunk_sha": "17d570a6dd323b659140ac5d5566f1037d0bc64e01337bbd2424fe9af2c6df2a",
+ "key": "e1cd8452114ac4520de8cf9c2ce7096d4927b037b093b5d76a4bbab4e303f654",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can one test an API endpoint with authentication headers?\", \"answer\": \"To test an API endpoint with authentication headers, use the `-H` option followed by the header value in the `curl` command.\", \"evidence\": \"`curl -H \"}, \"short_answer: null}]}'}<tool_call>\\nuser/WebAPI documentation often includes examples of commands to test API endpoints. Can you provide an example from the given documentation that demonstrates testing an API endpoint with verbose output?\",\n\n\n{\"questions\": [{\"question\": \"What command is used to test API endpoints with timing information?\", \"answer\": \"The `curl` command with the `-w` option is used to test API endpoints with timing information.\", \"evidence\": \"`curl -w @curl-format.txt`\", \"short_answer\": null}]}] \n\n}"
+}

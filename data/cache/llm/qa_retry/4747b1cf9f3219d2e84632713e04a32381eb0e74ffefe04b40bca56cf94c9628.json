@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-77924ef083a72756",
+ "chunk_sha": "c241e180a89b84474d8a6c6904337595308effce11b7e585929c2cfe840f16c7",
+ "key": "4747b1cf9f3219d2e84632713e04a32381eb0e74ffefe04b40bca56cf94c9628",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What sequence of steps does the Workflow API follow after activating the workflow for an app?\", \"answer\": \"The Workflow API retrieves workflow settings, gets all stable branches, protects branches and activates required checks, and sets the default branch as configured.\", \"evidence\": \"- W->>D: Get workflow settings\\n  W->>G: Get all stable branches\\n  W->>G: Protect branch and activate required checks\\n  W-->G: Set default branch as configured\", \"short_answer\": null}, {\"question\": \"Which API is used to get all stable branches for the Workflow API to process?\", \"answer\": \"The Github Proxy API is used to get all stable branches.\", \"evidence\": \"- W->>G: Get all stable branches\", \"short_answer\": null}, {\"question\": \"What is the final action taken by the Workflow API after processing all branches?\", \"answer\": \"The Workflow API sets the default branch as configured.\", \"evidence\": \"- W-->G: Set default branch as configured\", \"short_answer\": null}]}"
+}

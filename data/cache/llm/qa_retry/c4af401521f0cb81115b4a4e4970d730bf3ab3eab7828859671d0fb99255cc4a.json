@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4e3647d5560abc07",
+ "chunk_sha": "f84224b0511a185bffea7cee5147f0e8c9274e94826e53973793279e7576e316",
+ "key": "c4af401521f0cb81115b4a4e4970d730bf3ab3eab7828859671d0fb99255cc4a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How are properties loaded for a given SCOPE?\", \"answer\": \"Properties of application.yml are always loaded and complemented with application-<SCOPE_SUFFIX>.yml properties. If a property is in both files, the one that is configured in application-<SCOPE_SUFFIX>.yml has preference over the property of application.yml.\", \"evidence\": \"The properties of **application.yml** are always loaded and at the same time they are complemented with **application-<SCOPE_SUFFIX>.yml** properties. If a property is in both files, the one that is configured in **application-<SCOPE_SUFFIX>.yml** has preference over the property of **application.yml**.\", \"short_answer\": null}]}"
+}

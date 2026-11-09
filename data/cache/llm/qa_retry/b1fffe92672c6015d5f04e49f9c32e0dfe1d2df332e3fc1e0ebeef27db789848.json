@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-eeb946fa8d272f3e",
+ "chunk_sha": "67d336e7aeb06abc718fece04859bc0d620b29f3c69e089bf54fcd829dceaeca",
+ "key": "b1fffe92672c6015d5f04e49f9c32e0dfe1d2df332e3fc1e0ebeef27db789848",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the Workflow API protect for important branches?\", \"answer\": \"The Workflow API protects important branches by setting minimum approvers and required checks.\", \"evidence\": \"* Protect the important branches setting:\\n    * Minimum approvers\\n    * Required checks\", \"short_answer\": null}, {\"question\": \"What is the Workflow API's role in keeping branches in sync?\", \"answer\": \"The Workflow API helps keep branches in sync by creating backports.\", \"evidence\": \"* Create backports to help keeping the branches in sync. (e.g.: from master to develop after merging a PR)\", \"short_answer\": null}]}"
+}

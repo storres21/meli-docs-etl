@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-12b550870d2ed002",
+ "chunk_sha": "cd13246c4c84fa0e2a2e6b40f5ee642bfecb38728ba2e15d4940f850449adf2c",
+ "key": "ed6d90e7c33f9aa9ce508b23f3cf8347fbda935f45e439d33a046bebe6557b3b",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is a direct copy of the documentation fragment, but it lacks the specific scope (PCI or PCI GLOBAL) which is crucial for the correct answer.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

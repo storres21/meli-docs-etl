@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d2b96ecb95cc0eca",
+ "chunk_sha": "71bb387df02af23dd27020bd90ce5ef6db947a0ec4ae628ba79e7839f6e1f0ec",
+ "key": "d941c1cb706cbe89c6c864672f03fdb4283ea45023824db14af34ee9b672664b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the base forecast for the month?\", \"answer\": \"The base total forecast for the month is \\\\\\n\\\\[\\\\tilde{x}_{i}(t \\\\in month) = \\\\sum\\\\limits_{t \\\\in month} \\\\tilde{x}_i(t) \\\\\\\\.\\\\]\", \"evidence\": \"$\\\\tilde{x}_{i}(t \\\\in month) = \\\\sum\\\\limits_{t \\\\in month} \\\\tilde{x}_i(t) \\\\cdot$\", \"short_answer\": null}, {\"question\": \"How are the daily forecasts reconciled to match the given total value?\", \"answer\": \"Daily forecasts are reconciled by multiplying them with the ratio of the given total value to the base total forecast for the month.\", \"evidence\": \"$\\\\hat{x}_i(t) = \\\\tilde{x}_i(t) \\\\cdot \\\\frac{x_i(t\\\\in month)}{\\\\tilde{x}_i(t \\\\in month)}$\", \"short_answer\": null}]}"
+}

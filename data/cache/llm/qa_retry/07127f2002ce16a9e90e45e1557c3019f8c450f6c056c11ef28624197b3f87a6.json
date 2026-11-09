@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-72717830417e1f3e",
+ "chunk_sha": "aefcbd1824e509614e7efb9159d05beac2d2639bfab22def7dc48f76b7a7663e",
+ "key": "07127f2002ce16a9e90e45e1557c3019f8c450f6c056c11ef28624197b3f87a6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the ID value in the JSON payload for the Feed Consumer?\", \"answer\": \"The ID value in the JSON payload is `389`. \", \"evidence\": \"```json\\n\"    },\"id\\\": 389\\n```\", \"short_answer): 389\"], \n\"evidence\": \"```json\\n\"    }"
+}

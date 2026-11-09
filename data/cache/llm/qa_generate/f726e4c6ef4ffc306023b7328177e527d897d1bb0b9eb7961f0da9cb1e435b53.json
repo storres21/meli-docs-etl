@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-faa211d8944da567",
+ "chunk_sha": "6c15bea40e7fdd215373c3e8292173252ad8f0991f5c0d4bc81cba89add7d092",
+ "key": "f726e4c6ef4ffc306023b7328177e527d897d1bb0b9eb7961f0da9cb1e435b53",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the available payment methods for a bulk amount of 18,996.54?\", \"answer\": \"The available payment methods are CASH, DEBIT, and ACCOUNT_MONEY.\", \"evidence\": \"```json\\n\\\"payment_methods\\\": [\\n    {\\n        \\\"method_name\\\": \\\"CASH\\\",\\n        \\\"max_allowed\\\": 18996.54,\\n        \\\"min_allowed\\\": 0.1\\n    },\\n    {\\n        \\\"method_name\\\": \\\"DEBIT\\\",\\n        \\\"max_allowed\\\": 18996.54,\\n        \\\"min_allowed\\\": 0.1\\n    },\\n    {\\n        \\\"method_name\\\": \\\"ACCOUNT_MONEY\\\",\\n        \\\"max_allowed\\\": 18996.54,\\n        \\\"min_allowed\\\": 0.1\\n    }\\n  ]```\", \"short_answer\": null}, {\"question\": \"What is the vertical for the active payment promise?\", \"answer\": \"The vertical for the active payment promise is 'consumer'.\", \"evidence\": \"```json\\n\\\"vertical\\\": \\\"consumer\\\"`\", \"short_answer\": null}, {\"question\": \"What is the response for a successful PUT request to /forgiveness_proposal?\", \"answer\": \"The response indicates the success of the PUT request.\", \"evidence\": \"```json\\n{ \\\"success\\\": true }`\", \"short_answer\": null}]}"
+}

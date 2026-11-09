@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d856ac7b09ba0730",
+ "chunk_sha": "b597cf1be8458f9e57d418539aa1ca1c335fc06ebf40e508736afc0c6d6bcf63",
+ "key": "a7f20a67510448ce275d5749efa78aa1c6dc1f0454f0ede16193ddd2c60598ae",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What type of value is expected for the `brandId` parameter?\", \"answer\": \"The `brandId` parameter is expected to be an integer.\", \"evidence\": \"| `brandId` | integer | Yes | Brand ID |\", \"short_answer\": null}, {\"question\": \"What is the status of a brand in the example response?\", \"answer\": \"The status of the brand in the example response is 'STAND_BY'.\", \"evidence\": \"  \"  }]}"
+}

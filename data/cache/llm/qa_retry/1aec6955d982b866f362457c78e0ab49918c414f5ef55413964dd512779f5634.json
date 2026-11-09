@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-32553fc9a5bb4f77",
+ "chunk_sha": "c36dd1f6921b9d4ef186bf0817c61d1fec876ae0c4de9f7f69740e37cdfd7e83",
+ "key": "1aec6955d982b866f362457c78e0ab49918c414f5ef55413964dd512779f5634",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should you check to confirm the item was correctly paused?\", \"answer\": \"You should check the item's status using the api core item endpoint with item_id and check \",\"status\":\"\", \"evidence\": \"You should confirm that the item was correctly paused by **checking the item's status**.\", \"short_answer\": null}]}"
+}

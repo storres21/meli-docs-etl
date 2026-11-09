@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-79e5c9e8c7bb9c7b",
+ "chunk_sha": "016b4bbb872a37a9da6e3538742c39bb015d13e0722254ee77cb328808928838",
+ "key": "f9b4b683fa22ce2a7b5ab4c5e144ebe524932176c175e048282425b9dde9a0ee",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which web servers can be used with Spring Boot in this project?\", \"answer\": \"Tomcat, Jetty, and Undertow can be used with Spring Boot in this project.\", \"evidence\": \"* Tomcat (`spring-boot-starter-tomcat`)\\n* Jetty (`spring-boot-starter-jetty`)\\n* Undertow (`spring-boot-starter-undertow`)\", \"short_answer\": null}, {\"question\": \"What class initializes the Spring context and generates SCOPE_SUFFIX in the main application?\", \"answer\": \"The Application class initializes the Spring context and generates SCOPE_SUFFIX in the main application.\", \"evidence\": \"The main class for this app is Application, where Spring context is initialized and SCOPE_SUFFIX is generated.\", \"short_answer\": null}, {\"question\": \"Where are basic exception handling mechanisms provided for in this project?\", \"answer\": \"Basic exception handling mechanisms are provided in the ControllerExceptionHandler class.\", \"evidence\": \"We also provide basic handling for exceptions in ControllerExceptionHandler class.\", \"short_answer\": null}]}"
+}

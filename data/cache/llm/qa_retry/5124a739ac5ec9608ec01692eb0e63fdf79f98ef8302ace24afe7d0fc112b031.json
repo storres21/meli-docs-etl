@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b3d5c2c009a5d142",
+ "chunk_sha": "d333656e722e75e275abd66ac4add0b574f45e9efe68ecd344aa8fb156f3f2cd",
+ "key": "5124a739ac5ec9608ec01692eb0e63fdf79f98ef8302ace24afe7d0fc112b031",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the JSON representation of a Pipeline object?\", \"answer\": \"A `Pipeline` object is represented by the following JSON:\", \"evidence\": \"```\\n {\\n    \",\"short_answer\": null}, {\"question\": \"Which field in the Pipeline JSON object indicates the user who initiated the pipeline?\", \"answer\": \"The `user` field in the Pipeline JSON object indicates the user who initiated the pipeline.\", \"evidence\": \" \"}, {\"question\": \"What is the value of the `application_name` field in the Pipeline JSON object?\", \"answer\": \"The `application_name` field in the Pipeline JSON object has the value `order-workflow-api`.\", \"evidence\": \" \"}]}"
+}

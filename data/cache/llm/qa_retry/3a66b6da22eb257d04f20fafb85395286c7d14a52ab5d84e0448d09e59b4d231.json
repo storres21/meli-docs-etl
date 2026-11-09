@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-45a962fa73abb05f",
+ "chunk_sha": "3c30c0e7f5ea0cbf6f1085221e4ff5aa2fcade2527b1f7f710374f30a7fcb997",
+ "key": "3a66b6da22eb257d04f20fafb85395286c7d14a52ab5d84e0448d09e59b4d231",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué módulo expone servicios web para consultar el historial de bloqueos sobre una dirección IP?\", \"answer\": \"El módulo Blacklist expone servicios web para consultar el historial de bloqueos sobre una dirección IP.\", \"evidence\": \"- Módulo Blacklist:\", \"short_answer\": null}, {\"question\": \"¿Qué hace el módulo Job en la aplicación traffic-gate-api?\", \"answer\": \"El módulo Job define los servicios web encargados de procesar las direcciones IPs bloqueadas por alguna regla de traffic-gate y determinar si se continúa con el bloqueo o se autoriza el tráfico mediante whitelists.\", \"evidence\": \"- Módulo Job: Este define los servicios web encargados de procesar las direcciones IPs bloqueadas por alguna regla de traffic-gate y determinar si se continúa con el bloqueo o se autoriza el tráfico mediante whitelists.\", \"short_answer\": null}, {\"question\": \"¿Qué módulo permite retirar el bloqueo a una o más direcciones IPs en un scope específico?\", \"answer\": \"El módulo Whitelist permite retirar el bloqueo a una o más direcciones IPs en un scope específico.\", \"evidence\": \"- Módulo Whitelist:\", \"short_answer\": null}]}"
+}

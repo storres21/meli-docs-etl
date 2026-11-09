@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6fcab0aa193a05e4",
+ "chunk_sha": "fbc95aa783af942435b43d04f077bb85fdd8ff854f27c6e0e22ebc1fdf868c2c",
+ "key": "29236d29e89c9747943cf48812117d6766fa5d5f797425dd4412a2065df4451d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the API endpoint for Restock Consumer in the vendor-stockkeeper-api project?\", \"answer\": \"The API endpoint is https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/restock-new.\", \"evidence\": \"curl --location 'https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/restock-new' \", \"short_answer\": null}, {\"question\": \"What HTTP method is used to invoke the Restock Consumer service?\", \"answer\": \"The HTTP method used is POST.\", \"evidence\": null, \"short_answer\": null}, {\"question\": \"What is the required header for the Restock Consumer API call?\", \"answer\": \"The required header is 'x-api-scope: stage'.\", \"evidence\": \"--header 'x-api-scope: stage' \", \"short_answer\": null}]}"
+}

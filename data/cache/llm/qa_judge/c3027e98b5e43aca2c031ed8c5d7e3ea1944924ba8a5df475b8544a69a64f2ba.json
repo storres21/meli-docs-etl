@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d51d80b9d7c05534",
+ "chunk_sha": "9aaab14870a4151f4dda34aef1ff6d92097bce016140df945435d5bc226580a7",
+ "key": "c3027e98b5e43aca2c031ed8c5d7e3ea1944924ba8a5df475b8544a69a64f2ba",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the term 'TechZone Platform' which is not present in the documentation fragment, and also does not specify that it refers to the base URLs.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

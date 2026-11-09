@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8982ca38a27ba253",
+ "chunk_sha": "a20b93b99af5e998203735329df426f0f7f4cc9e6402161f871b396887825e6a",
+ "key": "06a6f29341c31de144a9bb12225e245d2cd59467d8d67ea193202774e22a6561",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué tipo de aplicación debe tener una dirección IP para ser enviada a la whitelist?\", \"answer\": \"Una dirección IP debe tener una aplicación certificada o privada detrás para ser enviada a la whitelist.\", \"evidence\": \"- La dirección IP tiene una aplicación certificada o privada detrás\", \"short_answer\": null}, {\"question\": \"¿Qué es un BigSeller y bajo qué criterio se considera a una dirección IP asociada a uno?\", \"answer\": \"Un BigSeller es un criterio bajo el cual se considera a una dirección IP asociada a uno para enviarla a la whitelist.\", \"evidence\": \"- La dirección IP tiene asociado un BigSeller\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d2b96ecb95cc0eca",
+ "chunk_sha": "71bb387df02af23dd27020bd90ce5ef6db947a0ec4ae628ba79e7839f6e1f0ec",
+ "key": "3b4154633a424ff1550f46ca9ac5ccbe7da099b6e8ff689c5d12161e32950fa7",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the specific value of 0.75, which is not derived from the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

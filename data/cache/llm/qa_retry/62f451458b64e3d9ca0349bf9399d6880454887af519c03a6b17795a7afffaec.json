@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9782afa96a96db",
+ "chunk_sha": "7e90526a8668117bb1b3e643b81a2e89a1f0a38d643c0c6704b41023da1aaebc",
+ "key": "62f451458b64e3d9ca0349bf9399d6880454887af519c03a6b17795a7afffaec",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the steps to create a feature branch?\", \"answer\": \"To create a feature branch, first, checkout to develop, pull the latest changes, and create the new branch.\", \"evidence\": \"And create the new branch\\n```sh\\ngit checkout -b feature/your_functionality\\n```\", \"short_answer\": null}]}"
+}

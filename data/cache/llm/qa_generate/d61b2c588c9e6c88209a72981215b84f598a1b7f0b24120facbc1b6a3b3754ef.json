@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-77924ef083a72756",
+ "chunk_sha": "c241e180a89b84474d8a6c6904337595308effce11b7e585929c2cfe840f16c7",
+ "key": "d61b2c588c9e6c88209a72981215b84f598a1b7f0b24120facbc1b6a3b3754ef",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What API is responsible for activating the workflow for an app?\", \"answer\": \"Configs API sends an Activate workflow message to Workflow API.\", \"evidence\": \"- C as Configs API\\n  C->>W: Activate workflow message\", \"short_answer\": null}, {\"question\": \"What action does the Workflow API take after receiving the activate workflow message?\", \"answer\": \"It retrieves the workflow settings from the Database.\", \"evidence\": \"- W->>D: Get workflow settings\", \"short_answer\": null}, {\"question\": \"What does the Workflow API do after getting the workflow settings?\", \"answer\": \"It retrieves all stable branches from the Github Proxy.\", \"evidence\": \"- W->>G: Get all stable branches\", \"short_answer\": null}]}"
+}

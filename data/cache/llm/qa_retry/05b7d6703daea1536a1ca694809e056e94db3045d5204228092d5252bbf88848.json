@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-f6fd257731651dad",
+ "chunk_sha": "d4476bee7c1be61434d8dda1ac4b17cb7e8ab4f14a98dce694fadb3e07ff6922",
+ "key": "05b7d6703daea1536a1ca694809e056e94db3045d5204228092d5252bbf88848",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What error occurs if the required logos are not uploaded?\", \"answer\": \"Common errors and their meanings:\\n- logos_missing: Required logos not uploaded\", \"evidence\": \"- logos_missing: Required logos not uploaded\", \"short_answer\": null}, {\"question\": \"What error indicates that the business rules validation failed?\", \"answer\": \"Common errors and their meanings:\\n- validation_failed: Business rules validation failed\", \"evidence\": \"- validation_failed: Business rules validation failed\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-64575bc6e142290b",
+ "chunk_sha": "f6387e70d33c0eb574851e5ff6c9e05d1792e3a96ee12ae161a1747f6e501c99",
+ "key": "05c3a031771bc83ea24c32996e9026888cfe647fdafd373161d25900ed4b593a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the final step in the ProphetverseVerticalForecastingPipeline?\", \"answer\": \"The final step is to predict intervals.\", \"evidence\": \"step__predict_intervals[predict_intervals]\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-627fe4c96334dec8",
+ "chunk_sha": "3fab18bad57e438cd08459a22760d05c2fa36e44c93e9687c4f4dea65a8b2433",
+ "key": "c9d42b2646a5bcebf43e3aee08b98cccb340126481b3d7aca78a952fa88a85ef",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What directory contains the command objects in the project?\", \"answer\": \"Command objects are stored in the entities/commands/ directory.\", \"evidence\": \"|   ├── commands/   # Command objects\", \"short_answer\": null}]}"
+}

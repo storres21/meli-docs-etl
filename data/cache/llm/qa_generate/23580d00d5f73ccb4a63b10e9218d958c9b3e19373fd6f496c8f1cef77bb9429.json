@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-ada54bcceca2bdca",
+ "chunk_sha": "769815cb372de6acfb83bd9d3fcec26f904b346e856dfacd5cc8150cf1892d29",
+ "key": "23580d00d5f73ccb4a63b10e9218d958c9b3e19373fd6f496c8f1cef77bb9429",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be done if the connection pool is exhausted?\", \"answer\": \"Increase pool size or fix connection leaks.\", \"evidence\": \"| Increase pool size or fix connection leaks |\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e552130e29b42ee3",
+ "chunk_sha": "c165fd4848728f9df86644137bee9f64c8f5b36b89a0ed528c823d542d32893e",
+ "key": "23b5b7a8ccd17f697f81b1ab809c387e3e8bead68216e8948803f83b199db813",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but the question is not unambiguous as it assumes the fragment is the only source of information.\", \"faithfulness\": 5, \"clarity\": 3, \"usefulness\": 5}"
+}

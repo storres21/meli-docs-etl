@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b3954b06dc891cd4",
+ "chunk_sha": "25a9ae4b00072d98ad7145fdfe6d6eb50c0bc88afa8585a4067ef2e7d2d114ec",
+ "key": "e9b1747e8de1b054dd07e58a67e8bdfdb0a273617dd33ae214a61f4dd5f43892",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What version of Java JDK is required for the project?\", \"answer\": \"Java JDK 17 or higher.\", \"evidence\": \"- **Java JDK 17** or higher\", \"short_answer\": null}, {\"question\": \"Is it necessary to use the Gradle wrapper?\", \"answer\": \"No, but you can use Gradle 7.3 or higher.\", \"evidence\": \"- **Gradle 7.3** or higher (or use the wrapper)\", \"short_answer\": null}, {\"question\": \"Which version of MySQL is needed for the project?\", \"answer\": \"MySQL 8.0 or higher.\", \"evidence\": \"- **MySQL 8.0** or higher\", \"short_answer\": null}]}"
+}

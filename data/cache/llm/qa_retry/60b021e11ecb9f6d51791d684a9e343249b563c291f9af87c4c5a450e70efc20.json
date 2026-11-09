@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-85e8eebde45c9932",
+ "chunk_sha": "3ba078324929090a8d70f96c7675e1f7b528680145ca3b8fd705e86ff63e9f83",
+ "key": "60b021e11ecb9f6d51791d684a9e343249b563c291f9af87c4c5a450e70efc20",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of verifying items in inventory flows before executing actions?\", \"answer\": \"To avoid affecting the item API and, therefore, the inventory.\", \"evidence\": \"Before executing any action on the inventory flows, it is crucial to ensure that both the inbound and outbound movement contain all their test items. This check is fundamental to avoid affecting the item API and, therefore, the inventory.\", \"short_answer\": null}]}"
+}

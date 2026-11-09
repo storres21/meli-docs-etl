@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-87152c822553a83b",
+ "chunk_sha": "14eec7f954e7bc371c1d8c023bc3f8e6dc0343c3dc4da062a1c9839bbef62205",
+ "key": "c04e4e328ed314115747473be577e11808c04fd3b376776cc2678b1436b412c4",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How many product categories does the project focus on for demand forecasting?\", \"answer\": \"The project focuses on 9 product categories.\", \"evidence\": \"> providing insights into TGMV and TSI for 9 product categories + total for each site.\", \"short_answer\": null}, {\"question\": \"What does TGMV stand for in the context of the project?\", \"answer\": \"TGMV stands for Total Gross Merchandise Value.\", \"evidence\": null, \"short_answer\": \"Total Gross Merchandise Value\"}, {\"question\": \"What is the scope of the demand forecasting project in terms of product categories?\", \"answer\": \"The project covers 9 specific product categories plus a total for each site.\", \"evidence\": \"> providing insights into TGMV and TSI for 9 product categories + total for each site.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-45f4b1af2c304b5f",
+ "chunk_sha": "2d98ac8c4e7f2dab1cbcb4a284c32c70a1505b3439d80c9b011a170edefbea11",
+ "key": "f0cf5847d7ec87a8440a0c0f15b04c8b01e758f1cc0e1eb03c80b613443be08c",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but the question is not unambiguous as it does not specify which 'Test' environment it is referring to.\", \"faithfulness\": 5, \"clarity\": 3, \"usefulness\": 3}"
+}

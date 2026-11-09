@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d51d80b9d7c05534",
+ "chunk_sha": "9aaab14870a4151f4dda34aef1ff6d92097bce016140df945435d5bc226580a7",
+ "key": "b53176df1e9634cd45684d59bbdd79c84b7d0e7c210bd1fac9970e4909af0139",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the base URLs for the vendor-stockkeeper-api in production and staging environments on the TechZone Platform?\", \"answer\": \"The base URLs for the vendor-stockkeeper-api in production and staging environments on the TechZone Platform are vendor-stockkeeper.techzonesystems.com and vendor-stockkeeper-stage.techzonesystems.com, respectively.\", \"evidence\": \"- **TechZone Platform:** `vendor-stockkeeper.techzonesystems.com` / `vendor-stockkeeper-stage.techzonesystems.com`\", \"short_answer\": null}, {\"question\": \"Are there different base URLs for the vendor-stockkeeper-api in Postman for production and staging environments?\", \"answer\": \"Yes, the base URLs for the vendor-stockkeeper-api in Postman for production and staging environments are vendor-stockkeeper.techzoneoffice.com and vendor-stockkeeper-stage.techzoneoffice.com, respectively.\", \"evidence\": \"- **Postman:** `vendor-stockkeeper.techzoneoffice.com` / `vendor-stockkeeper-stage.techzoneoffice.com`\", \"short_answer\": null}]}"
+}

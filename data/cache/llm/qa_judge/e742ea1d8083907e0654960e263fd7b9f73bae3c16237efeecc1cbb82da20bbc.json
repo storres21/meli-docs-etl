@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7670fef69e3105ca",
+ "chunk_sha": "49a20062adf4ecfb812f659a123374e581f684f708d7347866f31ac666ed367d",
+ "key": "e742ea1d8083907e0654960e263fd7b9f73bae3c16237efeecc1cbb82da20bbc",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it only mentions protecting the TO Workflow branch in the second loop, but not in the first loop, which also iterates over stable branches.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

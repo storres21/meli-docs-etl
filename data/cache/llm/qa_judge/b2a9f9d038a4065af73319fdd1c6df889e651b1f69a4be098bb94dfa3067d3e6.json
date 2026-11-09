@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-209cc7c77240733b",
+ "chunk_sha": "04b17417a85f17863716ed7f058454dc20d0479d664c7480b13fc8c2685afd94",
+ "key": "b2a9f9d038a4065af73319fdd1c6df889e651b1f69a4be098bb94dfa3067d3e6",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is not fully supported by the fragment, as it only specifies the path for the order-orchestrator-test scope, but the question asks for the path for validating the pipeline in the order-orchestrator-test scope, which is not explicitly mentioned.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

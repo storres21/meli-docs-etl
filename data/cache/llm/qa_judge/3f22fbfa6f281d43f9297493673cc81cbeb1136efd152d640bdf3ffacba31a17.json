@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1410500783b16fb3",
+ "chunk_sha": "37cc32997990ac7a3c0beea20b38bbe6bc3c924467fd3ec3ce4c4a16b4fe33f5",
+ "key": "3f22fbfa6f281d43f9297493673cc81cbeb1136efd152d640bdf3ffacba31a17",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the use of `ProphetVerticalIniciativaPipeline` for data preparation, which is actually the forecasting pipeline.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

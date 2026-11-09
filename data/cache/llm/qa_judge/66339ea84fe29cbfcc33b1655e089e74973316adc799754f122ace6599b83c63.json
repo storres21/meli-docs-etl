@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3e6fa20e1f35fbb",
+ "chunk_sha": "b7d41a52ac1458cfe4bc3b8199cbb011900029f98208eeb8ba06768bc9de2a24",
+ "key": "66339ea84fe29cbfcc33b1655e089e74973316adc799754f122ace6599b83c63",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only mentions a MySQL database is used to store workflow configuration, but not the automatic version creation schedule.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

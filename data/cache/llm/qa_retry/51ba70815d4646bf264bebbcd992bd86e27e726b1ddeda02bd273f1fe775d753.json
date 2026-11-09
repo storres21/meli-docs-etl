@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3ee3836287cd97ee",
+ "chunk_sha": "becaa8690e9badea037851d89309f0d82cff0db9337b3b0db00ef4fb40a03e7f",
+ "key": "51ba70815d4646bf264bebbcd992bd86e27e726b1ddeda02bd273f1fe775d753",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuántas veces al día se ejecutan los jobs que llaman el proceso de purga de las whitelist?\", \"answer\": \"Los 4 jobs que llaman el proceso de purga de las whitelist se ejecutan cada hora.\", \"evidence\": \"- **POST /whitelist/purge?scope=x** Este servicio consulta las direcciones IPs que han sido agregadas a una whitelist para el scope x, y evalúa seguir autorizando el tráfico a tales IPs o eliminarlas de la whitelist\", \"short_answer\": null}, {\"question\": \"¿Qué ocurre si una dirección IP es bloqueada por reglas de ratelimit asociadas al scope front?\", \"answer\": \"La dirección IP bloqueada por reglas de ratelimit asociadas al scope front se envía a una cola de mensajes para su posterior análisis.\", \"evidence\": \"- **POST /whitelist?scope=x** Este servicio consulta las direcciones IPs bloqueadas por reglas de ratelimit asociadas al scope x, y las envía a una cola de mensajes para su posterior análisis\", \"short_answer\": null}]}"
+}

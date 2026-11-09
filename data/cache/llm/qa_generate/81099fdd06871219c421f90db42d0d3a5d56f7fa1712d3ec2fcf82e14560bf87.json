@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5ff78eb00abd2981",
+ "chunk_sha": "81a35d3f32b11565459573e71c62c7196a391b8751579d45dc693255e6802799",
+ "key": "81099fdd06871219c421f90db42d0d3a5d56f7fa1712d3ec2fcf82e14560bf87",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to add or update packages in the project?\", \"answer\": \"The `poetry add package` command is used to add or update packages.\", \"evidence\": \"`poetry add package` command on the terminal.\", \"short_answer\": null}, {\"question\": \"What should be used around the package specification when adding a package with constraints?\", \"answer\": \"Always use ' ' before and after the package specification to avoid terminal mistakes.\", \"evidence\": \"When using those constraints, try to always use \\\" \\\" before and after the package specificacion because the terminal can mistake it with some special characters.\", \"short_answer\": null}, {\"question\": \"What should developers avoid doing to manage dependencies?\", \"answer\": \"Developers should avoid changing the versions in the `pyproject.toml` file directly.\", \"evidence\": \"Avoid changing the versions in the `pyproject.toml` file directly, because when we do `poetry add`, poetry automatically takes care of the dependencies inter-dependencies.\", \"short_answer\": null}]}"
+}

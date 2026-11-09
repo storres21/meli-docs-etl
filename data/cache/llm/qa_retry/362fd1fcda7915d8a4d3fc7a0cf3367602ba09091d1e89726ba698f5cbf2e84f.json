@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-ada54bcceca2bdca",
+ "chunk_sha": "769815cb372de6acfb83bd9d3fcec26f904b346e856dfacd5cc8150cf1892d29",
+ "key": "362fd1fcda7915d8a4d3fc7a0cf3367602ba09091d1e89726ba698f5cbf2e84f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the symptoms of slow queries?\", \"answer\": \"High response times.\", \"evidence\": \"| High response times |\", \"short_answer\": null}, {\"question\": \"What should be reviewed to address lock timeouts?\", \"answer\": \"Review transaction boundaries.\", \"evidence\": \"| Review transaction boundaries |\", \"short_answer\": null}]}"
+}

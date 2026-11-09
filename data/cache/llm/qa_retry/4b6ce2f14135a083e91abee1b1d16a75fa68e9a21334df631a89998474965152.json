@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0b18883b531bf53b",
+ "chunk_sha": "4dcff934f9dd3f2b51f49dce183aebb59197271f60971bcbb63a0e7394acc696",
+ "key": "4b6ce2f14135a083e91abee1b1d16a75fa68e9a21334df631a89998474965152",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when a workflow already exists during insertion?\", \"answer\": \"HTTP 409 CONFLICT\", \"evidence\": \"- alt not workflowExists\\n        W-->>U: Return HTTP 201 CREATED\\n    else\\n        W-->>U: Return HTTP 409 CONFLICT\", \"short_answer\": null}, {\"question\": \"What sequence of steps is followed when updating a workflow?\", \"answer\": \"Search workflow, then update workflow if it exists, returning HTTP 200 OK or HTTP 400 BAD REQUEST.\", \"evidence\": \"- alt workflowExists\\n        W->>D: Update workflow\\n        activate D\\n        D-->>W: Return OK\\n        deactivate D\\n        W-->>U: Return HTTP 200 OK\\n    else\\n        W-->>U: Return HTTP 400 BAD REQUEST\", \"short_answer\": null}, {\"question\": \"What action is performed when a user requests a workflow?\", \"answer\": \"The system searches for the workflow in the database and returns the result to the user.\", \"evidence\": \"- U->>W: Request a workflow\\n    activate W\\n    W->>D: Search workflow\\n    activate D\\n    D-->>W: Return result\\n    deactivate D\\n    W-->>U: Return result\", \"short_answer\": null}]}"
+}

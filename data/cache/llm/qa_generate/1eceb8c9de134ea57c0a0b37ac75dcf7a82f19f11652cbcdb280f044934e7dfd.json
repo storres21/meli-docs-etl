@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7d4a78a8b21c6b3e",
+ "chunk_sha": "0f37fac115a3df183a4066379cb24591775832509d33f3619fd018ad736ec829",
+ "key": "1eceb8c9de134ea57c0a0b37ac75dcf7a82f19f11652cbcdb280f044934e7dfd",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the first step in the pipeline validation process?\", \"answer\": \"Orchestrator sends a request to BigQ to start workflow validation.\", \"evidence\": \"- O->>B: Workflow validation start\", \"short_answer\": null}, {\"question\": \"What happens if the pipeline being validated is a fork pull request?\", \"answer\": \"The workflow runs fork validations.\", \"evidence\": \"- alt isForkPullRequestFlow\\n            W->>W: Run fork validations\", \"short_answer\": null}, {\"question\": \"What is the final step in the pipeline validation process?\", \"answer\": \"Orchestrator sets the pull request status check.\", \"evidence\": \"- W->>G: Set pull request status check\", \"short_answer\": null}]}"
+}

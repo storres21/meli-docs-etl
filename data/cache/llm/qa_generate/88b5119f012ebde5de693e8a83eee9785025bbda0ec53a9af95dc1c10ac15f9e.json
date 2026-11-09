@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-505d10a8c472c348",
+ "chunk_sha": "54520cf7060dc30a448361712aa0a7f1f6f9757bb84cd6116c9b35afa7ab1196",
+ "key": "88b5119f012ebde5de693e8a83eee9785025bbda0ec53a9af95dc1c10ac15f9e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which consumer uses the /pipeline/validate path in the production scope?\", \"answer\": \"order-orchestrator-consumer\", \"evidence\": \"| order-orchestrator | batesting-orchestrator.order-orchestrator-api | order-orchestrator-consumer | /pipeline/validate |\", \"short_answer\": null}, {\"question\": \"What is the path for the /branches/protect endpoint in the production scope?\", \"answer\": \"/branches/protect\", \"evidence\": \"| order-workflow-collector-webhooks | gh-webhooks.workflow-collector-proxy | workflow-collector-webhooks | /branches/protect |\", \"short_answer\": null}]}"
+}

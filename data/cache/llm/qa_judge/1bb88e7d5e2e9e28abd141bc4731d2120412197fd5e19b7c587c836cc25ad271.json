@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-697e55cffb6ae064",
+ "chunk_sha": "ecb8143903fc48bec92fb9018a519db6ccb333e5359a33b5038bc6c6b47f2900",
+ "key": "1bb88e7d5e2e9e28abd141bc4731d2120412197fd5e19b7c587c836cc25ad271",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it only specifies the schema for the test database, not the test database itself.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

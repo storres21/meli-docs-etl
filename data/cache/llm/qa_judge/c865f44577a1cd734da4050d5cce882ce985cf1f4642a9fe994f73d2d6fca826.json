@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3f5ceed427342891",
+ "chunk_sha": "fe845c5968c8d7e296a1005a1383b2774a612ed3e30fa5ee5578f0debffdb2d4",
+ "key": "c865f44577a1cd734da4050d5cce882ce985cf1f4642a9fe994f73d2d6fca826",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a paraphrased version of the documentation, but it lacks specificity and accuracy regarding the criteria evaluated by Traffic Gate.\", \"faithfulness\": 3, \"clarity\": 2, \"usefulness\": 2}"
+}

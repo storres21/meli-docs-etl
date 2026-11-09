@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-354a21f6551127d8",
+ "chunk_sha": "430d408164819b7979c4c807a719fc46ec31740735f49e3d7893cc2698253627",
+ "key": "082226a6b99f6ca95ea557a67b4bd0f39c14ba6f6ac4649f4c96d06b3deb07fb",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it only mentions the successful completion of the nightly cron job, but does not explicitly state the return value.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

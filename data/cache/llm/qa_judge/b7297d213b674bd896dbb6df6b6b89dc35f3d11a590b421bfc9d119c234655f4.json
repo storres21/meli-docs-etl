@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-593936ef8cc6744b",
+ "chunk_sha": "e2d82850b73103636e288582c9847764bfd0d9c79e3e8cc7f49ee331e1df399c",
+ "key": "b7297d213b674bd896dbb6df6b6b89dc35f3d11a590b421bfc9d119c234655f4",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer accurately reflects the purpose of the GET /payment_promise/active endpoint as described in the documentation.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

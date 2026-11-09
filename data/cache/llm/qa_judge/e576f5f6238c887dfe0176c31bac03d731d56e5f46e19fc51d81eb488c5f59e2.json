@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b8f4a0214b238978",
+ "chunk_sha": "7ee726b81a52172822d6babe8bca4e5bc3d1b9bf04b4e9de1c000d1c861afaa2",
+ "key": "e576f5f6238c887dfe0176c31bac03d731d56e5f46e19fc51d81eb488c5f59e2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the fact that the extensions are 'recommended' and does not accurately reflect the documentation, which only lists the extensions to be installed.\", \"faithfulness\": 1, \"clarity\": 3, \"usefulness\": 1}"
+}

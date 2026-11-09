@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fd5ec7799c66dc3a",
+ "chunk_sha": "79456c1d6896fb2333a7adc8d71692a0c6ff9b841ee054a246a838d091813218",
+ "key": "cc141db0d952188927ed30267581241dbfb3252f2fedd441e29683258c467e89",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What API endpoint is used to check if an item is a test item?\", \"answer\": \"The item API is used to check if an item is a test item.\", \"evidence\": \"`curl --location 'https://internal-api.techzone.com/items/MLA1737779958?caller.scopes=admin&include_attributes=all'`\", \"short_answer\": null}]}"
+}

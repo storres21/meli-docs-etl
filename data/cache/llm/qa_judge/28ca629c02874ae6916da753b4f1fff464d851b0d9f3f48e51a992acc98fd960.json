@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b395a58545ed242e",
+ "chunk_sha": "640311c55f90bea050b698a6eb1c705e6431bc32b6f3a52730017ef8c4514950",
+ "key": "28ca629c02874ae6916da753b4f1fff464d851b0d9f3f48e51a992acc98fd960",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it is not the only link provided for the Jenkins activity.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

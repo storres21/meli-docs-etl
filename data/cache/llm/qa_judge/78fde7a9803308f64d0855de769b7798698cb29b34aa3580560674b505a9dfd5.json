@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-85e8eebde45c9932",
+ "chunk_sha": "3ba078324929090a8d70f96c7675e1f7b528680145ca3b8fd705e86ff63e9f83",
+ "key": "78fde7a9803308f64d0855de769b7798698cb29b34aa3580560674b505a9dfd5",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it does not fully capture the purpose of the verification.\", \"faithfulness\": 3, \"clarity\": 1, \"usefulness\": 2}"
+}

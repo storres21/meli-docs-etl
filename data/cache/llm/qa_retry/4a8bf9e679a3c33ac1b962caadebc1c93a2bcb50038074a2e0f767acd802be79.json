@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b395a58545ed242e",
+ "chunk_sha": "640311c55f90bea050b698a6eb1c705e6431bc32b6f3a52730017ef8c4514950",
+ "key": "4a8bf9e679a3c33ac1b962caadebc1c93a2bcb50038074a2e0f767acd802be79",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the URL for the New Relic dashboard of the order-workflow-api application?\", \"answer\": \"https://one.newrelic.com/launcher/nr1-core.explorer?pane=eyJuZXJkbGV0SWQiOiJhcG0tbmVyZGxldHMub3ZlcnZpZXciLCJlbnRpdHlJZCI6Ik9UZzVOVGcyZkVGUVRYeEJVRkJNU1VOQlZFbFBUbnd6TURrME1USXlPRFkifQ==&sidebars[0]=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5hY3Rpb25zIiwiZW50aXR5SWQiOiJPVGc1TlRnMmZFRlFUWHhCVUZCTVNVTkJWRWxQVG53ek1EazBNVEl5T0RZIiwic2VsZWN0ZWROZXJkbGV0Ijp7Im5lcmRsZXRJZCI6ImFwbS1uZXJkbGV0cy5vdmVydmlldyJ9fQ==\", \"evidence\": \"<a href=\\\"https://one.newrelic.com/launcher/nr1-core.explorer?pane=eyJuZXJkbGV0SWQiOiJhcG0tbmVyZGxldHMub3ZlcnZpZXciLCJlbnRpdHlJZCI6Ik9UZzVOVGcyZkVGUVRYeEJVRkJNU1VOQlZFbFBUbnd6TURrME1USXlPRFkifQ==&sidebars[0]=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5hY3Rpb25zIiwiZW50aXR5SWQiOiJPVGc1TlRnMmZFRlFUWHhCVUZCTVNVTkJWRWxQVG53ek1EazBNVEl5T0RZIiwic2VsZWN0ZWROZXJkbGV0Ijp7Im5lcmRsZXRJZCI6ImFwbS1uZXJkbGV0cy5vdmVydmlldyJ9fQ==\\\" rel=\\\"nofollow\\\">\", \"short_answer\": null}]}"
+}

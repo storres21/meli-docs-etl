@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-96a7d57e456887c6",
+ "chunk_sha": "b8309c6042e541c1508a4b72d9ee4cd6324651297d84b75377a9a8aecec85c23",
+ "key": "86f25470f684a5d3bcaa7c76245cdbaee258174a9bd97a45519b4b8a5860fa9c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the endpoint to check if a brand can be activated?\", \"answer\": \"The endpoint to check if a brand can be activated is `/catalog/brands/{brandId}/activable`.\", \"evidence\": \"`GET /catalog/brands/{brandId}/activable` | Check if brand can be activated\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7670fef69e3105ca",
+ "chunk_sha": "49a20062adf4ecfb812f659a123374e581f684f708d7347866f31ac666ed367d",
+ "key": "dac2560f76417e4f0ecb4edcdcf93bb0898dcb3b9a0806337074e6b8bf6aa375",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What action does the Workflow API take after getting TO workflow settings?\", \"answer\": \"The Workflow API sets the default branch as master.\", \"evidence\": \"W-->>G: Set default branch as master\", \"short_answer\": null}, {\"question\": \"What does the Workflow API do for each stable branch after unprotecting the FROM Workflow branch?\", \"answer\": \"The Workflow API protects the TO Workflow branch.\", \"evidence\": \"W->>G: Protect TO Workflow  branch\", \"short_answer\": null}, {\"question\": \"How many stable branches are looped over in the sequence diagram?\", \"answer\": \"The sequence diagram loops over all stable branches.\", \"evidence\": \"loop forAllStableBranches\", \"short_answer\": null}]}"
+}

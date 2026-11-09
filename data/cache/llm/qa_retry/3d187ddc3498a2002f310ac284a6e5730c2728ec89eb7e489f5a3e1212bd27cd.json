@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0a6c63e488b63957",
+ "chunk_sha": "6494107cb535c3208b22c126d48eaac8ad5f7ae06647fbd08012f84f0e43c62e",
+ "key": "3d187ddc3498a2002f310ac284a6e5730c2728ec89eb7e489f5a3e1212bd27cd",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Según qué documentación se debe realizar el PUT correspondiente?\", \"answer\": \"Según la documentación de transaction flow orchestrator.\", \"evidence\": \"- Realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/)\", \"short_answer\": null}]}"
+}

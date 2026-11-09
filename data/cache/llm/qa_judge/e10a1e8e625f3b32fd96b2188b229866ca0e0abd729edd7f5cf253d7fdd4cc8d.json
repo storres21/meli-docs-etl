@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b3954b06dc891cd4",
+ "chunk_sha": "25a9ae4b00072d98ad7145fdfe6d6eb50c0bc88afa8585a4067ef2e7d2d114ec",
+ "key": "e10a1e8e625f3b32fd96b2188b229866ca0e0abd729edd7f5cf253d7fdd4cc8d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents facts not supported by the fragment, as it implies the use of Gradle wrapper is optional, but the fragment only mentions using Gradle 7.3 or higher (or the wrapper).\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

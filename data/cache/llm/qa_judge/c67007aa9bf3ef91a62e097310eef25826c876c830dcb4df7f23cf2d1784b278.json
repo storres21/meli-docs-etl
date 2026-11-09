@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4076c9ec2c113522",
+ "chunk_sha": "e9ffc3477153c5ec97b72e9695fb19c03b5a1bd905dbbf9b9f0106ba2f9f840c",
+ "key": "c67007aa9bf3ef91a62e097310eef25826c876c830dcb4df7f23cf2d1784b278",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer partially paraphrases the fragment, but omits the key detail that Poetry uses the `pyproject.toml` file to identify dependencies.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

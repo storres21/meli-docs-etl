@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7ded3ac15411b3cf",
+ "chunk_sha": "58e5f6642750d67c767a9b9bdd41cb8745f15bdccc9cafee33734bec23ab8844",
+ "key": "9f2e5c42815efff9eecd31b91161e79d4c4cdd5aa0af06ddb8fd0237f2d5bcc9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the API endpoint to update a brand's name and priority?\", \"answer\": \"The API endpoint to update a brand's name and priority is `https://api.mp.internal.retailflow.com/catalog/brands/123`.\", \"evidence\": \"```bash\\ncurl -X PUT \\\"https://api.mp.internal.retailflow.com/catalog/brands/123\\\" \\\\\", \"short_answer\": null}]}"
+}

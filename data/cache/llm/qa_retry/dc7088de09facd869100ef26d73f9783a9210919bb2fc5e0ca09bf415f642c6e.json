@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-61fe7f41bc1b2b07",
+ "chunk_sha": "55c956ca9b56b738fecc7dc4e2577e8c02c15906e1ca9406dcb6d3f918b33fb9",
+ "key": "dc7088de09facd869100ef26d73f9783a9210919bb2fc5e0ca09bf415f642c6e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the types of logos included in the brand model example?\", \"answer\": \"The brand model example includes two types of logos: cover and main.\", \"evidence\": \"\\\"type\\\": \\\"cover\\\",\\n            \\\"type\\\": \\\"main\\\"\"}, {\"question\": \"What is the status of the McDonald's brand in the example?\", \"answer\": \"The status of the McDonald's brand is ACTIVE.\", \"evidence\": \"\\\"status\\\": \\\"ACTIVE\\\"\"}]}"
+}

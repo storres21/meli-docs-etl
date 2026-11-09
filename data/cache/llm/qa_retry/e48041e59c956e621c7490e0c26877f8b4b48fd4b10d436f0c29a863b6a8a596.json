@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-524c5b21f77c6bdc",
+ "chunk_sha": "2459d26edf6c7e69e01a636d1d7cd76296c5fbf50f998c7834ebcd808a4c2a18",
+ "key": "e48041e59c956e621c7490e0c26877f8b4b48fd4b10d436f0c29a863b6a8a596",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be done after using the RetailFlow CLI to clone the repository?\", \"answer\": \"The user should navigate into the cloned repository directory using `cd catalog-portfolio-api`.\", \"evidence\": \"`cd catalog-portfolio-api`\", \"short_answer\": null}]}"
+}

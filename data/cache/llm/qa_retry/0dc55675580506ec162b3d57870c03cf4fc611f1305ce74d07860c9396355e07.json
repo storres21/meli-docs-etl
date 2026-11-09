@@ -1,0 +1,20 @@
+{
+ "chunk_id": "ck-27fd01bda376fb06",
+ "chunk_sha": "ee28280a568336676877dcebb38f6d0a340c0ed2dff1b0591b506073c9552e9c",
+ "key": "0dc55675580506ec162b3d57870c03cf4fc611f1305ce74d07860c9396355e07",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0,
+  "variant": {
+   "num_predict": 512,
+   "repeat_penalty": 1.15
+  }
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué información se guarda sobre la ejecución de esta tarea?\", \"answer\": \"Se guarda el estado de la ejecución de esta tarea, incluyendo un valor lógico si la operación fue exitosa o no y el scope recibido.\", \"evidence\": \"\\\"Se guarda el estado de la ejecución de esta tarea, incluyendo un valor lógico si la operación fue exitosa o no y el scope recibido.\\\",\", \"short_answer\": null}]}"
+}

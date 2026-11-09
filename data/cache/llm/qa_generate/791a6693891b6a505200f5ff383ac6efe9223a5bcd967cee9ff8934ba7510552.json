@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3f5ceed427342891",
+ "chunk_sha": "fe845c5968c8d7e296a1005a1383b2774a612ed3e30fa5ee5578f0debffdb2d4",
+ "key": "791a6693891b6a505200f5ff383ac6efe9223a5bcd967cee9ff8934ba7510552",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuándo se debe enviar a whitelist una dirección IP bloqueada por un ratelimit en el scope front?\", \"answer\": \"Una dirección IP se debe enviar a whitelist si tuvo más de un usuario detrás en la última hora, tiene asociado un BigSeller, un CBT, pertenece a infraestructura RetailHub o pertenece a un bot bueno.\", \"evidence\": \"- La dirección IP tuvo más de un usuario detrás en la última hora\\n- La dirección IP tiene asociado un BigSeller\\n- La dirección IP tiene asociado un CBT.\\n- La dirección IP pertenece a infraestructura RetailHub.\\n- La dirección IP pertenece a un bot bueno.\", \"short_answer\": null}, {\"question\": \"¿Qué es lo que Traffic Gate evalúa para decidir si una IP debe ser enviada a whitelist?\", \"answer\": \"Traffic Gate evalúa si las direcciones IP afectadas por ratelimit cumplen algún criterio que determine si alguna de ellas se deba enviar a whitelist o no.\", \"evidence\": \"Traffic Gate se encarga de evaluar cada cierto tiempo, si las direcciones IP afectadas por ratelimit cumplen algún criterio que determine que alguna de ellas se deba enviar a whitelist o no.\", \"short_answer\": null}, {\"question\": \"¿Qué información adicional recopila Traffic Gate para evaluar a las direcciones IP?\", \"answer\": \"Traffic Gate enriquece la metadata de la IP, con información consultada desde las Knowledge APIs del ecosistema de Anomaly.\", \"evidence\": \"Traffic Gate se encarga de evaluar cada cierto tiempo, si las direcciones IP afectadas por ratelimit cumplen algún criterio que determine que alguna de ellas se deba enviar a whitelist o no. Para ello, traffic gate enriquece la metadata de la IP, con información consultada desde las Knowledge APIs del ecosistema de Anomaly (isBot, isRetailHub, isCloud, users-analysis, users-behind, mobile-applications-behind).\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e552130e29b42ee3",
+ "chunk_sha": "c165fd4848728f9df86644137bee9f64c8f5b36b89a0ed528c823d542d32893e",
+ "key": "069aa676a49a8d04021cc246458c65330d7e2f338b77f19572cab83361a935e1",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which version of Gradle is needed for the catalog-portfolio-api project?\", \"answer\": \"7.3 or higher\", \"evidence\": \"- **Gradle**: 7.3 or higher\", \"short_answer\": \"7.3 or higher\"}, {\"question\": \"What is the required version of MySQL for the catalog-portfolio-api project?\", \"answer\": \"8.0 or higher\", \"evidence\": \"- **MySQL**: 8.0 or higher\", \"short_answer\": \"8.0 or higher\"}]}"
+}

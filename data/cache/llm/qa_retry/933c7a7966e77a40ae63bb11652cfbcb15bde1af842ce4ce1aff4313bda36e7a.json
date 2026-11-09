@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5e31c8a1889f13b4",
+ "chunk_sha": "a4fd5c8be05a9e8746f5fe87ee912289145ea597f8e1e65071737c1d35ba4206",
+ "key": "933c7a7966e77a40ae63bb11652cfbcb15bde1af842ce4ce1aff4313bda36e7a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_retry.v1",
+ "prompt_sha": "3dd1ae7c89dc6be39898a3ca8e17ecaddae983005db7de1b3277184462f48620",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué valores puede tener el scope en las reglas de ratelimit del proyecto traffic-gate-api?\", \"answer\": \"front, api, pci, pci_global\", \"evidence\": \"Se tienen 4 posibles valores para el scope: front, api, pci, pci_global.\", \"short_answer\": null}, {\"question\": \"¿Para qué tipo de aplicaciones se asocia el scope front en las reglas de ratelimit del proyecto traffic-gate-api?\", \"answer\": \"Son aplicaciones tipo GUI o frontend.\", \"evidence\": \"El scope es un parámetro que determina el tipo de aplicaciones que están siendo protegidas por un conjunto de reglas de ratelimit, es decir, si son aplicaciones tipo GUI o frontend, APIs o apps de retailhubpay.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-cd44b77da9741a85",
+ "chunk_sha": "0782fa987606ecf5e245b370a78e7f826a7c83b19e964b30f9eac45e59fab4e0",
+ "key": "d1475032657268b2701e7b1bea552a17a8718ba9233d6ebcbeae94497d857a72",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly mentioned in the documentation fragment, but it's a very basic and obvious implementation detail.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 3}"
+}
