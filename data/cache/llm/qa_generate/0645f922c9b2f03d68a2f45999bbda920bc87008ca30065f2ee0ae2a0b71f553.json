@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-06ba69c75cdd0efd",
+ "chunk_sha": "d6da870f6f2b04c7ff02ae5cd3ecaacc1be36019a2cd227612f81d7ce1eeba91",
+ "key": "0645f922c9b2f03d68a2f45999bbda920bc87008ca30065f2ee0ae2a0b71f553",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can you verify the service is running using a ping command?\", \"answer\": \"Use the curl command to check the service health by sending a ping request to http://localhost:8080/catalog/brands/ping. The expected response is 'pong'.\", \"evidence\": \"# Check service health\\ncurl http://localhost:8080/catalog/brands/ping\\n# Expected: \\\"pong\\\"\"}]}"
+}

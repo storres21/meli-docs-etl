@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0c65cad6a59045c5",
+ "chunk_sha": "4a0dbd1e317e217a2cecc7a8bcf60e120b3f1d6ea04c1798aca76ce37b6812c9",
+ "key": "66ec7189fc573cf3c5c4691728dc2df48cefa936032a783f8cceb0b9928656ce",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the Controller do after receiving the POST /payment_promise request?\", \"answer\": \"The Controller validates the request body and then creates a promise.\", \"evidence\": \"Controller->>Controller: validateRequestBody(promiseCommand)\\nController->>Service: createPromise(promiseCommand)\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19c313a727a9b849",
+ "chunk_sha": "ad2e9580cd329e4fd44394b47fae670e5d289bb4032c12b6381ba7b1e26c5e10",
+ "key": "6273d41435bdd0b99bf453c595805c40172d1bb2c4c68535f37565fcb7d465aa",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should you do first to resolve the 'Error restock' alert in vendor-stockkeeper-api?\", \"answer\": \"Identify in the **vendor-stockkeeper-api** logs which item could not be restocked correctly and determine the reason for this.\", \"evidence\": \"1. Identify in the **vendor-stockkeeper-api** logs which item could not be restocked correctly and determine the reason for this.\", \"short_answer\": null}]}"
+}

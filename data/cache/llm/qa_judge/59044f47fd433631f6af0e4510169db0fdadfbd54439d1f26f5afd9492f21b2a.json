@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3e0952405dfbae7d",
+ "chunk_sha": "a801e2eeab905756c6d651512b096250e0c65ee0f552f3dcb82398cf67d18da1",
+ "key": "59044f47fd433631f6af0e4510169db0fdadfbd54439d1f26f5afd9492f21b2a",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only mentions the API name without specifying its purpose, and the question is somewhat ambiguous as it doesn't specify what 'pertenece a la infraestructura de RetailHub' means.\", \"faithfulness\": 3, \"clarity\": 2, \"usefulness\": 4}"
+}

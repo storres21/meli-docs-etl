@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-27fd01bda376fb06",
+ "chunk_sha": "ee28280a568336676877dcebb38f6d0a340c0ed2dff1b0591b506073c9552e9c",
+ "key": "481a59ab7cac62625b9fa0b1a03bea42dcfd6aa50228c7ed611bfc0ab292d2ed",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not mention a specific time limit for updating the execution table.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

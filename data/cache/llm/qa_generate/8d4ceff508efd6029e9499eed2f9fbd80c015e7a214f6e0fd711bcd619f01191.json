@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1410500783b16fb3",
+ "chunk_sha": "37cc32997990ac7a3c0beea20b38bbe6bc3c924467fd3ec3ce4c4a16b4fe33f5",
+ "key": "8d4ceff508efd6029e9499eed2f9fbd80c015e7a214f6e0fd711bcd619f01191",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How do you load holiday data using the HolidaysDatasetPipe?\", \"answer\": \"You can use the HolidaysDatasetPipe to load holiday data by running the pipe and loading the catalog.\", \"evidence\": \"`pipe = HolidaysDatasetPipe(site_id=\"},\"RAB\",{\"forecast=\":\"MKP_site\"},\"`{\",\"pipe.run()\",\"pipe.catalog.load(\",\"holidays_df\",\"), pipe.catalog.load(\",\"campaign_dummies\",\")\"],\"short_answer\": null}"
+}

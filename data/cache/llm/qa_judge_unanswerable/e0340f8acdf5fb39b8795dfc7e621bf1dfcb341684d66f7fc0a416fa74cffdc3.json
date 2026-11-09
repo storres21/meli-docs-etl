@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-112566726e0c8bf0",
+ "chunk_sha": "ad7e69644e46db602a657c09857073bed76f35e77493717ffbba7ebdda29d44c",
+ "key": "e0340f8acdf5fb39b8795dfc7e621bf1dfcb341684d66f7fc0a416fa74cffdc3",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention environment variables for database configuration, but it does provide a Quick Start section with a command to configure the database.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

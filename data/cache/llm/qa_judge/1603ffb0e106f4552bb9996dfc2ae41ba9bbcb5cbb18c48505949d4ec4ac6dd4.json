@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d0086ca9e4d64e89",
+ "chunk_sha": "9785b7c8978f9e72e47ccbcb0397964b1bcb9d6af03f009845f51de1eeaec941",
+ "key": "1603ffb0e106f4552bb9996dfc2ae41ba9bbcb5cbb18c48505949d4ec4ac6dd4",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the word 'framework' after 'Java', which is not present in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

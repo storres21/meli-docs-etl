@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-188acb23df0bc741",
+ "chunk_sha": "271110df9c83a79b504caa2f89150905266e1c08f9fb671cf5c7665d4b59f3eb",
+ "key": "0373808870819006e3227a8b0366bc733367773607726191085bfbae430a0635",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What can lead to inventory errors according to the documentation?\", \"answer\": \"Lack of test items can lead to inventory errors.\", \"evidence\": \"- **Error Prevention**: Lack of test items can lead to inventory errors.\", \"short_answer\": null}]}"
+}

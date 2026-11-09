@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19bb96f7d7f8823f",
+ "chunk_sha": "f0e75fd43865e99b667d6f751acba21bf1ae670bc833f5ce9d2a4e1f2613326c",
+ "key": "22058a6509a1172bf124f8458e627d9ba3c9956dfb6abfa242cd5d876da9bbbe",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the fragment, but it includes a field that is not mentioned as being used to query materials.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-24f5746ed048a1ec",
+ "chunk_sha": "2dd284594ddf69862a3e28a99a2b6ee55e0dce70190f8f76bb82abe0f0e609dd",
+ "key": "3541ba5c1e63adfe0497f6c4bcdc58224ceab23c619e6e4d1a867b63f90c57ec",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP response does the FreshProductsController send if the product is found but has no batches?\", \"answer\": \"The controller sends HTTP 404.\", \"evidence\": \"S-->>C: ProductNotHaveBatchException\\nC-->>M: HTTP 404\", \"short_answer\": null}]}"
+}

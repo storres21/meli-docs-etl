@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3f5ceed427342891",
+ "chunk_sha": "fe845c5968c8d7e296a1005a1383b2774a612ed3e30fa5ee5578f0debffdb2d4",
+ "key": "0ff111043ab6c52daf8fa0668ace0d05100099bad3a6cdb73d114b602720a87c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuáles son los criterios para enviar una dirección IP a whitelist si está bloqueada por un ratelimit en el scope front?\", \"answer\": \"La dirección IP se debe enviar a whitelist si tuvo más de un usuario detrás en la última hora, tiene asociado un BigSeller, un CBT, pertenece a infraestructura RetailHub o pertenece a un bot bueno.\", \"evidence\": \"- La dirección IP tuvo más de un usuario detrás en la última hora\\n- La dirección IP tiene asociado un BigSeller\\n- La dirección IP tiene asociado un CBT.\\n- La dirección IP pertenece a infraestructura RetailHub.\\n- La dirección IP pertenece a un bot bueno.\", \"short_answer\": null}]}"
+}

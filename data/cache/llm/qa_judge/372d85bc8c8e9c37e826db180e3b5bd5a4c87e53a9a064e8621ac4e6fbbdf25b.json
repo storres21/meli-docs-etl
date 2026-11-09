@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6e877bbfc08315d4",
+ "chunk_sha": "b9ce32f19a236fd3d88990e8c196d80680d2e41517cbbbbf7a03e941125e886a",
+ "key": "372d85bc8c8e9c37e826db180e3b5bd5a4c87e53a9a064e8621ac4e6fbbdf25b",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it omits the step of confirming the item's status and raising a ticket if necessary.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

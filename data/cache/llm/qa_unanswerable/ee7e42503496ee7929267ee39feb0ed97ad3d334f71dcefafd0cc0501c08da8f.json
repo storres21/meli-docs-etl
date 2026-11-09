@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7ded3ac15411b3cf",
+ "chunk_sha": "58e5f6642750d67c767a9b9bdd41cb8745f15bdccc9cafee33734bec23ab8844",
+ "key": "ee7e42503496ee7929267ee39feb0ed97ad3d334f71dcefafd0cc0501c08da8f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the expected response status code when a brand is successfully activated?\", \"missing_information\": \"expected response status code for successful activation\"}]}"
+}

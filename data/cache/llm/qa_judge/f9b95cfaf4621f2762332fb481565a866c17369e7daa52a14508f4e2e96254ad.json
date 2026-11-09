@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-f6fd257731651dad",
+ "chunk_sha": "d4476bee7c1be61434d8dda1ac4b17cb7e8ab4f14a98dce694fadb3e07ff6922",
+ "key": "f9b95cfaf4621f2762332fb481565a866c17369e7daa52a14508f4e2e96254ad",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a direct copy of the documentation fragment, but it's not a question that can be answered with a single sentence, making it unclear and not useful.\", \"faithfulness\": 5, \"clarity\": 2, \"usefulness\": 1}"
+}

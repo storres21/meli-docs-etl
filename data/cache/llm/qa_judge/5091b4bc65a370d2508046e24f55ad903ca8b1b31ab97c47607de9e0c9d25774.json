@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-052cf6f58ca412cb",
+ "chunk_sha": "9fe31776ed3f4fd80a3745272cda7f15d2da1815be078215b3a90d0e769fa044",
+ "key": "5091b4bc65a370d2508046e24f55ad903ca8b1b31ab97c47607de9e0c9d25774",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it correctly identifies the HTTP method as GET, but incorrectly omits the sort parameter in the URL.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

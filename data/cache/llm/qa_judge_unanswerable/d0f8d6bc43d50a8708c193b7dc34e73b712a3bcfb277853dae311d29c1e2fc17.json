@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1ae7ef2ee9a5d585",
+ "chunk_sha": "2c302e659f14530d411ff509dd7f831f92fa19e66631ce349d7e6a1bf52868c4",
+ "key": "d0f8d6bc43d50a8708c193b7dc34e73b712a3bcfb277853dae311d29c1e2fc17",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not mention any timeout for the production-cron jobs, only the scheduled execution times.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

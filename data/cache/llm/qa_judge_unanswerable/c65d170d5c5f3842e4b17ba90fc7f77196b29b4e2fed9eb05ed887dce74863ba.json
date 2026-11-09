@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bbcd73da9249ddb5",
+ "chunk_sha": "87b48ba78cf93b6b4fa7ca1e7ac38ee6ad9722596acb5073e6d36e4c0ca20c01",
+ "key": "c65d170d5c5f3842e4b17ba90fc7f77196b29b4e2fed9eb05ed887dce74863ba",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention manual database backup procedures or recommendations for certain environments.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

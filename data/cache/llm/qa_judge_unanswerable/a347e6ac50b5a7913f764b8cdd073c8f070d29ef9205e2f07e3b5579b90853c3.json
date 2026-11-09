@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fd5ec7799c66dc3a",
+ "chunk_sha": "79456c1d6896fb2333a7adc8d71692a0c6ff9b841ee054a246a838d091813218",
+ "key": "a347e6ac50b5a7913f764b8cdd073c8f070d29ef9205e2f07e3b5579b90853c3",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly describe the process for marking an item as a test item in the item API, but it does mention how to identify test items by checking their tags.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

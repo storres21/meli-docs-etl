@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-300e4fccc9cf0fe0",
+ "chunk_sha": "06bf905f8e7a7d47e10b55ac3517e4d6e003410d55aca9cd8cf273c4a047f26d",
+ "key": "d413040cd03b50b8e1c6f154c90348d87a66bf70d283b721501a709c1366c3a4",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the time of inactivity before the rate limit rule for countries NO-RETAILHUB applies.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

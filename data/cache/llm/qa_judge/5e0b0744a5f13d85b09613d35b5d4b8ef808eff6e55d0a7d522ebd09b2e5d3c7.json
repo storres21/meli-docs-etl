@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6fcab0aa193a05e4",
+ "chunk_sha": "fbc95aa783af942435b43d04f077bb85fdd8ff854f27c6e0e22ebc1fdf868c2c",
+ "key": "5e0b0744a5f13d85b09613d35b5d4b8ef808eff6e55d0a7d522ebd09b2e5d3c7",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is a direct copy from the documentation fragment, but it lacks the context that it's a curl command.\", \"faithfulness\": 4, \"clarity\": 4, \"usefulness\": 5}"
+}

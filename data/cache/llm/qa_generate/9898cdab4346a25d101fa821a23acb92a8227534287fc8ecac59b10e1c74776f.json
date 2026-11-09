@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7a5663600b23de88",
+ "chunk_sha": "3089ac338663719ef65df35e0500b08991636e16597310268a73dd4b2b7bf91d",
+ "key": "9898cdab4346a25d101fa821a23acb92a8227534287fc8ecac59b10e1c74776f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the base URLs for the production and development environments of the catalog-portfolio-api?\", \"answer\": \"The production base URL is https://api.mp.internal.retailflow.com/catalog/brands and the development base URL is http://api.mp.internal.retailflow.com/catalog/brands.\", \"evidence\": \"Production: https://api.mp.internal.retailflow.com/catalog/brands\\nDevelopment: http://api.mp.internal.retailflow.com/catalog/brands\", \"short_answer\": null}]}"
+}

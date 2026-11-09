@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-245826a063f142a4",
+ "chunk_sha": "2ecbffc27df21e65a253762e89d2084b89fc1a2c0776c14756a957c5a3529a4d",
+ "key": "9e009df5b140e1ee1bd2e8496abf4bbafd17b13ff3221aeee02d71ef737ada94",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only specifies the HTTP status code for the 'PurchaseOrderNotExistException' in the 'else' branch, but not for the 'Order' branch.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

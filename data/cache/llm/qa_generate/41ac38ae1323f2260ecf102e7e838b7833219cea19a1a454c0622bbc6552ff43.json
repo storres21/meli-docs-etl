@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3164a847ad80f4f2",
+ "chunk_sha": "6b769766c0655581e9ac4419f8015808f3c985cffe1bcae5cf01b9b0f7061830",
+ "key": "41ac38ae1323f2260ecf102e7e838b7833219cea19a1a454c0622bbc6552ff43",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the `{{ ENV }}` in the workflow task-image version?\", \"answer\": \"It serves as a placeholder for the environment variable value, which is replaced at the moment of creating the workflow plan.\", \"evidence\": \"version: \\\">=0.0.1, {{ ENV }}\\\"\", \"short_answer\": null}]}"
+}

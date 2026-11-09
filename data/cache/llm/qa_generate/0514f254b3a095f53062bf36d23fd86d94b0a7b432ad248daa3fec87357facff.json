@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-af3ccc4e9c582c6d",
+ "chunk_sha": "bdab99a7fa4ebb0a7aa543ec81348084041883014bbbd8b027b9fbb256618550",
+ "key": "0514f254b3a095f53062bf36d23fd86d94b0a7b432ad248daa3fec87357facff",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be done if an item has available units and the status allows sales without stock when encountering a validation stock ERROR updating item?\", \"answer\": \"Raise a ticket in Shield to request the publication be blocked to prevent potential out-of-stock sales.\", \"evidence\": \"If the item has available units and the status allows sales without stock (any status other than deleted), a ticket should be raised in Shield to request the publication be blocked to prevent potential out-of-stock sales.\", \"short_answer\": null}]}"
+}

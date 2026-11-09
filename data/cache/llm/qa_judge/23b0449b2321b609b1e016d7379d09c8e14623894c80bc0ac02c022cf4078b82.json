@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fd5ec7799c66dc3a",
+ "chunk_sha": "79456c1d6896fb2333a7adc8d71692a0c6ff9b841ee054a246a838d091813218",
+ "key": "23b0449b2321b609b1e016d7379d09c8e14623894c80bc0ac02c022cf4078b82",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it mentions checking the tags, but it only mentions the 'test_item' tag, whereas the fragment lists multiple tags that identify a test item.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

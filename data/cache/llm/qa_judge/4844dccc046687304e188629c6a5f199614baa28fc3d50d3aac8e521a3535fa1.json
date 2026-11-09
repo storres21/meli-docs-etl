@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b8f4a0214b238978",
+ "chunk_sha": "7ee726b81a52172822d6babe8bca4e5bc3d1b9bf04b4e9de1c000d1c861afaa2",
+ "key": "4844dccc046687304e188629c6a5f199614baa28fc3d50d3aac8e521a3535fa1",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly stated in the documentation fragment.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

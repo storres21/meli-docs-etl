@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1c9cf96c62eeb8e5",
+ "chunk_sha": "154c2f6065d5f7ca237a6613f5a14f60ad6708223cb42bf307499fa4643cde7f",
+ "key": "a5c81c34cc440f0b64720c20cedcedd9f0c440ee249fee27462228b4796a04d1",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly describe the process for transitioning a brand from the STAND_BY state to the ACTIVE state, but it does mention the possible states and transitions in a state diagram.\", \"answered\": false, \"clarity\": 4, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1f3c1e373686b39d",
+ "chunk_sha": "1d534ac1d281d9914bf0026d39e7677d0334d2342a629fb610a7e673e431f71e",
+ "key": "0993511b01a28162f1010855242a400ad3ec5fda0f0036874a4ca6178698a0d1",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What happens if the proposal is already confirmed or rejected?\", \"missing_information\": \"The behavior for an already confirmed or rejected proposal is not specified.\"}]}"
+}

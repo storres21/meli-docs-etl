@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e25554613c57dba6",
+ "chunk_sha": "0bcaa3750a58adca2716cb608c0d94000c56e054c7789f1b2154956722693313",
+ "key": "865f33d3769afff8dfdbbfae705a4d4a7bb0cd3caddacb2df189e3329a741f7e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the POST /forgiveness_proposal endpoint do?\", \"answer\": \"It creates a late fee forgiveness proposal, allowing the initiation of the late payment interest forgiveness process.\", \"evidence\": \"### 5. POST /forgiveness_proposal\\n**Description**: Creates a late fee forgiveness proposal. Allows initiating the process of forgiving late payment interest.\", \"short_answer\": null}]}"
+}

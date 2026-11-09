@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-de50f4e20e85740b",
+ "chunk_sha": "b5133952cdde6c040b53233dbc58edc80cb1146e32615bd012af56c1c34d5548",
+ "key": "f586d5945173dbcd866501179ad74a0c62519c9424193bcd686c8a3327b81dcd",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the concept of 'whitelist' as a process, which is not mentioned in the fragment.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

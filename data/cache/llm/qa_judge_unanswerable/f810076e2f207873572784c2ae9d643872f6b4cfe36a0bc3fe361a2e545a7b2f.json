@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1f3c1e373686b39d",
+ "chunk_sha": "1d534ac1d281d9914bf0026d39e7677d0334d2342a629fb610a7e673e431f71e",
+ "key": "f810076e2f207873572784c2ae9d643872f6b4cfe36a0bc3fe361a2e545a7b2f",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly address the scenario where a proposal is already confirmed or rejected.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

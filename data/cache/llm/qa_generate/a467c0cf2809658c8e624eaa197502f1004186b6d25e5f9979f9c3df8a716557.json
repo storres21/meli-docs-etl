@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1f3c1e373686b39d",
+ "chunk_sha": "1d534ac1d281d9914bf0026d39e7677d0334d2342a629fb610a7e673e431f71e",
+ "key": "a467c0cf2809658c8e624eaa197502f1004186b6d25e5f9979f9c3df8a716557",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the PUT /forgiveness_proposal endpoint confirm?\", \"answer\": \"It confirms an existing late fee forgiveness proposal and finalizes the forgiveness process.\", \"evidence\": \"**Description**: Confirms an existing late fee forgiveness proposal. Finalizes the forgiveness process previously initiated.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-db935ece1d521528",
+ "chunk_sha": "a6b88eb27f5f97d2fb7348d2dfd20b0ff9e930360487ac5250c57f33fcc80814",
+ "key": "7bb4cb08cf82319fd2b1893b8926766319a6701a7ff7da5776d4fb65a9aa4fe1",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the purpose of the conciliation step, which is only to check for test items, and omits the specific URL provided in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

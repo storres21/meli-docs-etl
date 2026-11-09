@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fd5ec7799c66dc3a",
+ "chunk_sha": "79456c1d6896fb2333a7adc8d71692a0c6ff9b841ee054a246a838d091813218",
+ "key": "e00ff050bb4af72923640f234c78445c15cd3f9e3bdd6cc31e8c3b874fedabf6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the process for marking an item as a test item in the item API?\", \"missing_information\": \"The documentation does not describe the process for marking an item as a test item.\"}]}"
+}

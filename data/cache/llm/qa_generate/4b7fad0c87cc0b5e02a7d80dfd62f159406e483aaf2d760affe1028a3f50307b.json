@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7215d0a1915b463d",
+ "chunk_sha": "17c344d648cf497f49ba5222004f9820670aaedadda3230806cadb3cfa2dd04e",
+ "key": "4b7fad0c87cc0b5e02a7d80dfd62f159406e483aaf2d760affe1028a3f50307b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the HTTP method for the endpoint that retrieves active payment promises?\", \"answer\": \"The endpoint for retrieving active payment promises uses the GET method.\", \"evidence\": \"2. `GET /payment_promise/active`\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-24f5746ed048a1ec",
+ "chunk_sha": "2dd284594ddf69862a3e28a99a2b6ee55e0dce70190f8f76bb82abe0f0e609dd",
+ "key": "8127ac5e2f6a2f7b0cf0d7d736246c53eb32492e7706e08ba7c4298cb103f536",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer contradicts the documentation fragment, which specifies that the controller sends HTTP 404 for ProductNotFoundException, not ProductNotHaveBatchException.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

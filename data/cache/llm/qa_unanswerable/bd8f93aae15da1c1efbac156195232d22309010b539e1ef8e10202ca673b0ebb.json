@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-10bb35d95a5a8d03",
+ "chunk_sha": "2ad7f76b331c7de926ae545c8e9c282ebf6d890b461d8d0dc3b3d879c800ad88",
+ "key": "bd8f93aae15da1c1efbac156195232d22309010b539e1ef8e10202ca673b0ebb",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default timeout for the API requests in the Payment Promise Gateway?\", \"missing_information\": \"Timeout values for API requests are not mentioned.\"}]}"
+}

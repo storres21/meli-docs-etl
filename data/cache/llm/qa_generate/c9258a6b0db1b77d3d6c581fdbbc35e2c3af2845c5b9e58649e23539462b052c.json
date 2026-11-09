@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0b1793af1f5ee7eb",
+ "chunk_sha": "48e8a042200e89894b08cd0c3e8b59a5e9b4aace4db358b22cc4e60322f03d92",
+ "key": "c9258a6b0db1b77d3d6c581fdbbc35e2c3af2845c5b9e58649e23539462b052c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What kind of documentation can be found in the catalog-portfolio-api guide?\", \"answer\": \"The documentation includes complete API documentation, architecture guides, setup instructions, business logic, code examples, and troubleshooting.\", \"evidence\": \"- **Complete API Documentation**: All endpoints with request/response examples\\n- **Architecture Guides**: System design and component interactions\\n- **Setup Instructions**: Local development and deployment guides\\n- **Business Logic**: Brand lifecycle and validation processes\\n- **Code Examples**: Working code snippets and integration examples\\n- **Troubleshooting**: Common issues and solutions\", \"short_answer\": null}]}"
+}

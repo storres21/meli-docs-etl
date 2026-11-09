@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-569dff541154f405",
+ "chunk_sha": "2bb555bc6f8457f4ccb618dcab17fa8d9bd1999e78f2e7ac79ba2ac17902f14c",
+ "key": "3995da0dbfe2f57b5d820bda6d8cec9dd5c6558c9b0f8de4031c3a55fdb557ef",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the word 'maximum' which is not present in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

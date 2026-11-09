@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5ff78eb00abd2981",
+ "chunk_sha": "81a35d3f32b11565459573e71c62c7196a391b8751579d45dc693255e6802799",
+ "key": "ee1d7d2f84553921cabfe1fa9220b9373c9c066c8f122631e97cd5f8ed1ca5f2",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to add or update packages in the project?\", \"answer\": \"The `poetry add package` command is used to add or update packages.\", \"evidence\": \"`poetry add package` command on the terminal.\", \"short_answer\": null}]}"
+}

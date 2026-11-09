@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-870637245d02b804",
+ "chunk_sha": "29b482d849f439e26d87ffb36c20338c6c1fda9805611388db14fa784dabc634",
+ "key": "b9658a0088f021fcd3437a3f66f568d609a5312116795b14b4d7219bfdfb5b03",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the documentation fragment, but it is not the only way to run the service in development mode.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

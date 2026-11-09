@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bd5c1404e5e28dbc",
+ "chunk_sha": "dd500f9a683fbb11719b6a2dfd6e33755f53cc15df5ab791a0ead83d91f13084",
+ "key": "e8a8d6a54ba9fdfc532cbba7d5a058cb5d302958cb9c1191796f3c4422002a34",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The question is about a specific status code, but the provided documentation does not explicitly mention the status code returned when a brand is activable.\", \"answered\": false, \"clarity\": 0, \"usefulness\": 0}"
+}

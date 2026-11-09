@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-edccd0ce85826920",
+ "chunk_sha": "953a61f755caeb5fe6fae75c0590a3f288b4fd5cbcb64a387dd18930149e00db",
+ "key": "11078b55ba9770197769b4d37d88a286260fd6659bcfcdb9918a3aa5fb342a97",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What version of Java is supported by the provided Spring Boot App model?\", \"answer\": \"JDK 17 is supported by the provided Spring Boot App model.\", \"evidence\": \"# Spring Boot App model for JDK 17 / Spring based web applications.\", \"short_answer\": null}]}"
+}

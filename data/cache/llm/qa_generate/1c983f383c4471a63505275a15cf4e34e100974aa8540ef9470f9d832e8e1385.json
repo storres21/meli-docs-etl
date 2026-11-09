@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-209cc7c77240733b",
+ "chunk_sha": "04b17417a85f17863716ed7f058454dc20d0479d664c7480b13fc8c2685afd94",
+ "key": "1c983f383c4471a63505275a15cf4e34e100974aa8540ef9470f9d832e8e1385",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the path for the order-orchestrator-test scope in BigQ?\", \"answer\": \"/pipeline/validate\", \"evidence\": \"| order-orchestrator-test | batesting-orchestrator-testing.order-orchestrator-api | order-workflow-test-consumer | /pipeline/validate\", \"short_answer\": \"/pipeline/validate\"}]}"
+}

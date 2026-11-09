@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-112566726e0c8bf0",
+ "chunk_sha": "ad7e69644e46db602a657c09857073bed76f35e77493717ffbba7ebdda29d44c",
+ "key": "f26e04fe5c27f93d98aa1ff4ad79607c57ca63e105e146a78d53eb9f0d27af81",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the environment variables needed for the database configuration?\", \"missing_information\": \"The fragment does not mention any specific environment variables required for database configuration.\"}]}"
+}

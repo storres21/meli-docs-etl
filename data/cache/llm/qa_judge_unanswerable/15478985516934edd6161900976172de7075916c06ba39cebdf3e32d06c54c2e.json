@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7ded3ac15411b3cf",
+ "chunk_sha": "58e5f6642750d67c767a9b9bdd41cb8745f15bdccc9cafee33734bec23ab8844",
+ "key": "15478985516934edd6161900976172de7075916c06ba39cebdf3e32d06c54c2e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the expected response status code for a successful brand activation.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

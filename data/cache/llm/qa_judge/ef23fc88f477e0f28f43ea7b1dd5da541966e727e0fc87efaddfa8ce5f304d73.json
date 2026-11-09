@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2a5397d0698524ba",
+ "chunk_sha": "90bf9f9d53ecfed424dd6b738b53ec56bf0140ff2371bc82eed1d008774c77fd",
+ "key": "ef23fc88f477e0f28f43ea7b1dd5da541966e727e0fc87efaddfa8ce5f304d73",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the phrase 'payment-related self-service operations' which is not explicitly mentioned in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

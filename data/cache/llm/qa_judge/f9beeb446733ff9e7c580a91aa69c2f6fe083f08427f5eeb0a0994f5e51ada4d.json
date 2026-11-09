@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-ada54bcceca2bdca",
+ "chunk_sha": "769815cb372de6acfb83bd9d3fcec26f904b346e856dfacd5cc8150cf1892d29",
+ "key": "f9beeb446733ff9e7c580a91aa69c2f6fe083f08427f5eeb0a0994f5e51ada4d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is a direct quote from the documentation fragment, but it's not a single correct answer as the question is asking for a single action to take, whereas the fragment provides two possible solutions.\", \"faithfulness\": 4, \"clarity\": 2, \"usefulness\": 4}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-016d8dc95cc8c990",
+ "chunk_sha": "e70e2835a5ba15ffbf6b22af752743efeb29e71312ce752f3ba20b690ac93a08",
+ "key": "0a1b1c983aef40b7515ad245d7c545118ccc9821f64414a0a41657d6c475b773",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the different tags used for in the `rda prepare` command?\", \"answer\": \"Tags are used to differentiate development (DEV), staging (HML) and production (PRD) environments.\", \"evidence\": \"We can also add tags to the version. Indeed, we use it to differentiate development (DEV), staging (HML) and production (PRD) environments.\", \"short_answer\": null}]}"
+}

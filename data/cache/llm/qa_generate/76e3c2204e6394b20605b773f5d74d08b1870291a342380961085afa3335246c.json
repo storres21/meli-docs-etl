@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-40b521469bbb1a9a",
+ "chunk_sha": "662f4dcc9ace58cc6cb6e844a2183a1abcd368da6db17c7984987eaa902fcb20",
+ "key": "76e3c2204e6394b20605b773f5d74d08b1870291a342380961085afa3335246c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What external API is used for logo storage and management in the Brand Lifecycle Flow?\", \"answer\": \"Pictures API is used for logo storage and management.\", \"evidence\": \"- **Pictures API**: Logo storage and management\", \"short_answer\": null}]}"
+}

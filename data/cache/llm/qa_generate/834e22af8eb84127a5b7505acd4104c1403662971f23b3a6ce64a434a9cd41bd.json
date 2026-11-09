@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b923ad0a0cbf6a27",
+ "chunk_sha": "c6c6dd4bfd0c18ed44d681847c51624438f77643c2655c6520dd87036b44d01c",
+ "key": "834e22af8eb84127a5b7505acd4104c1403662971f23b3a6ce64a434a9cd41bd",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should developers do when changing endpoints in the Payment Promise Gateway?\", \"answer\": \"Update API documentation when changing endpoints.\", \"evidence\": \"3. Update API documentation when changing endpoints\", \"short_answer\": null}]}"
+}

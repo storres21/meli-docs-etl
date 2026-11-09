@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-90cad04a2ac5d710",
+ "chunk_sha": "61fb3da73b680bd5ac951f58def5d4c6e9cbde794550c2ddce3633f783cdc942",
+ "key": "f3e4189eaf440c302e2ba778615a0455fd31bacdad38849a1ff3674e61bdc090",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the GET /offers endpoint retrieve for the user?\", \"answer\": \"It retrieves the offers or remedies available to the user.\", \"evidence\": \"### 3. GET /offers\\n**Description**: Retrieves the offers or remedies available to the user.\", \"short_answer\": null}]}"
+}

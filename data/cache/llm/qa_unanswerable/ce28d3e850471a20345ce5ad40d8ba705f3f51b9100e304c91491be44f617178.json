@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-245826a063f142a4",
+ "chunk_sha": "2ecbffc27df21e65a253762e89d2084b89fc1a2c0776c14756a957c5a3529a4d",
+ "key": "ce28d3e850471a20345ce5ad40d8ba705f3f51b9100e304c91491be44f617178",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the maximum number of products that can be included in a single order update request?\", \"missing_information\": \"The maximum number of products allowed in a single order update request is not specified.\"}]}"
+}

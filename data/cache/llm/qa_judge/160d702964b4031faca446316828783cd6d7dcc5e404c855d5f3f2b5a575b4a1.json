@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2e9527b424188883",
+ "chunk_sha": "3057666d013d83a5bf51e5bbbf3eb726c058bf264f43fb814cb4d9a5709b55f8",
+ "key": "160d702964b4031faca446316828783cd6d7dcc5e404c855d5f3f2b5a575b4a1",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the phrase 'understand the system design' which is not present in the fragment, and also rephrases the original text.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1ae7ef2ee9a5d585",
+ "chunk_sha": "2c302e659f14530d411ff509dd7f831f92fa19e66631ce349d7e6a1bf52868c4",
+ "key": "5bd07f0e80f6246938a95ad6b274c9945a40a9c33635b8021b6f5dee41bdb216",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the timeout for the production-cron jobs in the order-workflow-api?\", \"missing_information\": \"Timeout for the production-cron jobs is not mentioned.\"}]}"
+}

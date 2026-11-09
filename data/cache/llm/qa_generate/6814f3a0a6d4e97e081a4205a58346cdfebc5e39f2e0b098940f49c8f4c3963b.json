@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-136611699b35c70e",
+ "chunk_sha": "ee2bd6fc458dd7a24640a781a96b1e5ebaab41849f08ec6db3958bc7b494317f",
+ "key": "6814f3a0a6d4e97e081a4205a58346cdfebc5e39f2e0b098940f49c8f4c3963b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when an inbound order is successfully added?\", \"answer\": \"HTTP 201\", \"evidence\": \"C-->>M: HTTP 201\", \"short_answer\": \"HTTP 201\"}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0a6c63e488b63957",
+ "chunk_sha": "6494107cb535c3208b22c126d48eaac8ad5f7ae06647fbd08012f84f0e43c62e",
+ "key": "fbe0ece02c444920163e298305108945c1c54738d19c6386dd69ec19c81bf1f5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué es necesario hacer para que una actualización impacte en el mobile-flow-manager?\", \"answer\": \"Es necesario hacer un merge a master en el repositorio de [unified transaction configs](https://github.com/globalpay/unified-transaction-configs) y realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/).\", \"evidence\": \"- Hacer un merge a master en el repositorio de [unified transaction configs](https://github.com/globalpay/unified-transaction-configs)\\n- Realizar el PUT correspondiente según [la documentación de transaction flow orchestrator](http://globalpaydocs.io/transaction-flow-orchestrator/)\", \"short_answer\": null}]}"
+}

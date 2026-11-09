@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-de0cd3a9c80b2914",
+ "chunk_sha": "916d8eb8beef22baf47670407752c9d3105c48973ce2169338a6ead8740a148e",
+ "key": "0b73156e27017c7f8174983edad46c8716b73af27fba595c08d3ea71febafa1d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, as it explicitly states that the 'id' field is the auto-increment primary key.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

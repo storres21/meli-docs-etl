@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-245826a063f142a4",
+ "chunk_sha": "2ecbffc27df21e65a253762e89d2084b89fc1a2c0776c14756a957c5a3529a4d",
+ "key": "e5782ddbe1f672bff96142fd8bc7276c10987e5f9787c09a2e60aa51b858dd60",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when the order does not exist?\", \"answer\": \"HTTP 404\", \"evidence\": \"S-->>C: PurchaseOrderNotExistException\\nC-->>M: HTTP 404\", \"short_answer\": \"HTTP 404\"}]}"
+}

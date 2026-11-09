@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d52946466ab9717d",
+ "chunk_sha": "9a17e6dbcee7b4a4f7e357ff1137098fd9d7ec9fc94cff6922969b1927bafba1",
+ "key": "5f1ee5e3d1519e860ff78f39b65b6c139fab02839822ee3078b1237fe3bf792d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it's a direct quote, so it's not adding any value.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 2}"
+}

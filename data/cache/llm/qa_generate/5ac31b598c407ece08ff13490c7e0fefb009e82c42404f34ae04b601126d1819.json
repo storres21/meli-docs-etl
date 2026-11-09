@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-16bf38a6930b53d5",
+ "chunk_sha": "411c74de2d3991650eeed94553a07c0d9097294e58c50d2f5dd042e13f8c9940",
+ "key": "5ac31b598c407ece08ff13490c7e0fefb009e82c42404f34ae04b601126d1819",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What type of key is the 'id' field in the rule_custom_field table?\", \"answer\": \"The 'id' field is an auto-increment primary key.\", \"evidence\": \"| id | bigint | Not null | Auto-increment primary key |\", \"short_answer\": null}]}"
+}

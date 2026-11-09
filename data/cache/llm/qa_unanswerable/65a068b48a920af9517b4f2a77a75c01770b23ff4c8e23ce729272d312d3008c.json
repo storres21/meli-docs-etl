@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-40a2d38030357ea6",
+ "chunk_sha": "a7a0406d6453259d10b05792f0ee1ff16554c17391c85df03914b98d157efabd",
+ "key": "65a068b48a920af9517b4f2a77a75c01770b23ff4c8e23ce729272d312d3008c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the process for integrating the VendorFlow CLI commands into the Spring Boot application for generating API specs?\", \"missing_information\": \"The documentation does not specify the integration process or steps for using VendorFlow CLI commands within the Spring Boot application.\"}]}"
+}

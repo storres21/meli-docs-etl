@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-056f0721899bb056",
+ "chunk_sha": "7d1e008fb4b3a3b2d1b6105d50594fd502fecd5864106941aa83f99b9c1b4f0b",
+ "key": "af235590f739f781a03688fc26601ca41796de108f63afbaaa6307c76a9c4652",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default value for the `offset` parameter if it is not provided in the request?\", \"missing_information\": \"The default value for the `offset` parameter is not specified.\"}] }"
+}

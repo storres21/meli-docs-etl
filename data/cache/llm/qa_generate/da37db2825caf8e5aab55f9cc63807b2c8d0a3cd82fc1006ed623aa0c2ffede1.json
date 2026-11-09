@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2e9527b424188883",
+ "chunk_sha": "3057666d013d83a5bf51e5bbbf3eb726c058bf264f43fb814cb4d9a5709b55f8",
+ "key": "da37db2825caf8e5aab55f9cc63807b2c8d0a3cd82fc1006ed623aa0c2ffede1",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should a developer do after setting up the catalog-portfolio-api?\", \"answer\": \"After completing the setup, proceed to understand the system design, start using the API endpoints, and learn about brand operations.\", \"evidence\": \"- [Architecture Overview](../architecture/) - Understand the system design\\n- [API Reference](../api-reference/) - Start using the API endpoints\\n- [Brand Management](../brand-management/) - Learn about brand operations\", \"short_answer\": null}]}"
+}

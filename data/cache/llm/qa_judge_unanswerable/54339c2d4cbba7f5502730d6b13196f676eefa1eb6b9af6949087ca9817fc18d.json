@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7670fef69e3105ca",
+ "chunk_sha": "49a20062adf4ecfb812f659a123374e581f684f708d7347866f31ac666ed367d",
+ "key": "54339c2d4cbba7f5502730d6b13196f676eefa1eb6b9af6949087ca9817fc18d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation focuses on the workflow activation, deactivation, and editing processes, but does not explicitly address communication failures between the Workflow API and the Database or Github Proxy.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

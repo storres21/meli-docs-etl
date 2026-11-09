@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3ee3836287cd97ee",
+ "chunk_sha": "becaa8690e9badea037851d89309f0d82cff0db9337b3b0db00ef4fb40a03e7f",
+ "key": "98d5025cf9520aa2552106ccb8a00ec4a73a647dbf77952e4574054e8a84ab76",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuántos jobs tiene configurado Traffic Gate en RetailHub y para qué sirven?\", \"answer\": \"Traffic Gate tiene configurados 8 jobs en RetailHub, dos por cada uno de los 4 scopes (front, api, pci y pci_global). Estos jobs se encargan de ejecutar periódicamente dos servicios web: uno para enviar a whitelist y otro para purgar las IPs de whitelist.\", \"evidence\": \"- Traffic Gate expone dos servicios web que se requieren ejecutar de manera periódica:\", \"short_answer\": null}]}"
+}

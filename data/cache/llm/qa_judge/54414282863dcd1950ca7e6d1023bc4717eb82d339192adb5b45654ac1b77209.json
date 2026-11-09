@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-eef3096a062dd023",
+ "chunk_sha": "a217086a9bddf58f73e65322eaeedd1c67a83dd39a2067d0152ce2a5a61b0fd6",
+ "key": "54414282863dcd1950ca7e6d1023bc4717eb82d339192adb5b45654ac1b77209",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it's not the most precise way to phrase it.\", \"faithfulness\": 4, \"clarity\": 4, \"usefulness\": 5}"
+}

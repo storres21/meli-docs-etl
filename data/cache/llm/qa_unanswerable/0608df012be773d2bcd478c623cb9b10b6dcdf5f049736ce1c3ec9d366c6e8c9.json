@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1c9cf96c62eeb8e5",
+ "chunk_sha": "154c2f6065d5f7ca237a6613f5a14f60ad6708223cb42bf307499fa4643cde7f",
+ "key": "0608df012be773d2bcd478c623cb9b10b6dcdf5f049736ce1c3ec9d366c6e8c9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the process for transitioning a brand from the STAND_BY state to the ACTIVE state?\", \"missing_information\": \"The process for transitioning a brand from STAND_BY to ACTIVE is not described.\"}]}"
+}

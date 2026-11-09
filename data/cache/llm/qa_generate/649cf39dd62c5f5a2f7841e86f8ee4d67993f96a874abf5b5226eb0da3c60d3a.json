@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-dd8bf0e5dc43a5a5",
+ "chunk_sha": "583ad3325800d31dfc8da26da278f56c6190489013d78c94ea1fb225a7702796",
+ "key": "649cf39dd62c5f5a2f7841e86f8ee4d67993f96a874abf5b5226eb0da3c60d3a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Quién es el líder del equipo de Operaciones Comerciales y Soporte en el proyecto price-engine-api?\", \"answer\": \"El líder del equipo de Operaciones Comerciales y Soporte es Marco Valencia.\", \"evidence\": \"- Marco Valencia :: [marco.valencia@commerce-hub.com](mailto:marco.valencia@commerce-hub.com)\", \"short_answer\": \"Marco Valencia\"}]}"
+}

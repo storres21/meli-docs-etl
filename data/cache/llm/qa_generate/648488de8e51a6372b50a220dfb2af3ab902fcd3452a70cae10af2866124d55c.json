@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e73b608dc55ff84d",
+ "chunk_sha": "a89c741fc662c8e98f208a4fbe346de4c9b7676701c42be10e7ca79f03a82256",
+ "key": "648488de8e51a6372b50a220dfb2af3ab902fcd3452a70cae10af2866124d55c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cómo puedo contactar para preguntas sobre monitores y alertas en Traffic Gate API?\", \"answer\": \"Puedes escribir a monitoreo@retailhub.com o a observabilitysec_externals@retailhub.com.\", \"evidence\": \"* [monitoreo@retailhub.com](monitoreo@retailhub.com)\\n* [observabilitysec_externals@retailhub.com](observabilitysec_externals@retailhub.com)\", \"short_answer\": null}]}"
+}

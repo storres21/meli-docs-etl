@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-f6fd257731651dad",
+ "chunk_sha": "d4476bee7c1be61434d8dda1ac4b17cb7e8ab4f14a98dce694fadb3e07ff6922",
+ "key": "7da9327b174a9157d881cbc8f888e4d4b0a0aad3dd5ef5c5f5e79b66b478819f",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not mention a timeout for the validation process before a brand is considered inactive.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

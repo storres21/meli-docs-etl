@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bd5c1404e5e28dbc",
+ "chunk_sha": "dd500f9a683fbb11719b6a2dfd6e33755f53cc15df5ab791a0ead83d91f13084",
+ "key": "a63c30b13dc8338561c75bc22afd9d7aac232b62d40f756135da38ba21a2c763",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it's a very basic question that doesn't require the documentation to be answered.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 3}"
+}

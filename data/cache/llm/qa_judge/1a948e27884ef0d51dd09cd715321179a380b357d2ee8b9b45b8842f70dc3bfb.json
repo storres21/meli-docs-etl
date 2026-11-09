@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d24981647908141a",
+ "chunk_sha": "7e0326f96bd3e5c0e9c0768aafdc8254bd9d847186f2a79bc56d96aba6aeca0a",
+ "key": "1a948e27884ef0d51dd09cd715321179a380b357d2ee8b9b45b8842f70dc3bfb",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it's a direct copy-paste, which doesn't demonstrate any understanding of the question.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c107abf9cc49e201",
+ "chunk_sha": "f8ed2c3810231ad428ed7b6d364ae46c1ddd3dd506fdf8aad32a1b7cf824a1f2",
+ "key": "5bc2451b5d655cbb675b8718c1a95f84e63a301c0521fc7731ad7f859a9a6558",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What SQL query can be used to check if a brand with a specific ID exists?\", \"answer\": \"The query `SELECT * FROM brand WHERE id = 123;` can be used to check if a brand with a specific ID exists.\", \"evidence\": \"-- Check brand exists\\nSELECT * FROM brand WHERE id = 123;\", \"short_answer\": null}]}"
+}

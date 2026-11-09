@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d79ef7a08996a8ed",
+ "chunk_sha": "0b17e623ad9d656397d2ff600f6e2a491713856c979051cd82e42150f5f35e4a",
+ "key": "4fddb8961f661b0be81ddbe72fbb967a960d232526bb86e3d48cbc3d3b1cd356",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer accurately describes the required parameter for the endpoint, but fails to mention that it's a path parameter.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d1324ab6d513358f",
+ "chunk_sha": "8061595a797dcd8ffe3f5835713b4b69672347d806bada4e672ecb6fb10d2e63",
+ "key": "46f61f6d5a83a455565d5b273eb9f3f705ca21240821066bd53d646df9e66d74",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the two reconciliation strategies mentioned for the temporal hierarchy in the project?\", \"answer\": \"Top-down and forecast proportions are the two reconcilation strategies mentioned.\", \"evidence\": \"The reconciliation should treat the month level as correct. There are two reconcilation strategies that accomplish this: top-down and forecast proportions.\", \"short_answer\": null}]}"
+}

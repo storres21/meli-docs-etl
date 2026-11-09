@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e25554613c57dba6",
+ "chunk_sha": "0bcaa3750a58adca2716cb608c0d94000c56e054c7789f1b2154956722693313",
+ "key": "33d31c509ed92e442531875186858aeda47966c3d4434b8f6594cbb33ecc6d16",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a direct summary of the endpoint's description, but it invents the phrase 'late payment interest forgiveness process' which is not explicitly mentioned in the fragment.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

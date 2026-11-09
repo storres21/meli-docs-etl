@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-63148aff5de23d14",
+ "chunk_sha": "1fcf2bdc3a4afe9ac5508ccc2f2285411ad579a866d6361dcdf467482e7f6adf",
+ "key": "6559f0c6f58a8068584524c353095e3cf2189d563cc0e01e4b5962d5905c340d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it mentions uniqueness within the site, but does not explicitly state that the format of the name field is a string.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

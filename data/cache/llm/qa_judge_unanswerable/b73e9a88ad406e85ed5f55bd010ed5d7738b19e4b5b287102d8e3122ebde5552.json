@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-706a70e6e53577ab",
+ "chunk_sha": "a8d8849590ae91f5a073e871b4cd4cf64795e1257f11592a6cd80e0396a57db4",
+ "key": "b73e9a88ad406e85ed5f55bd010ed5d7738b19e4b5b287102d8e3122ebde5552",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention updating an existing API specification in the VendorFlow web, only uploading and viewing specifications.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

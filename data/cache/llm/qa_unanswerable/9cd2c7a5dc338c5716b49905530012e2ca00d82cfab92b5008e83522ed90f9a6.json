@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c990befa14371174",
+ "chunk_sha": "8610b9353246ca5b5569d3a08d062d6a7156c294d205eeb1febb49cd98afccc6",
+ "key": "9cd2c7a5dc338c5716b49905530012e2ca00d82cfab92b5008e83522ed90f9a6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the specific validation rules applied to brand names during the creation process?\", \"missing_information\": \"Specific validation rules for brand names are not mentioned.\"}]}"
+}

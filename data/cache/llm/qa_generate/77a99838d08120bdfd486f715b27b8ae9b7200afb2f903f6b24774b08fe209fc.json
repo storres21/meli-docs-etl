@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e9d4aaf5d2fdfa6a",
+ "chunk_sha": "ce054657ad116fc193adab036a1686714120afb566f9ad0352d8095e061ea70e",
+ "key": "77a99838d08120bdfd486f715b27b8ae9b7200afb2f903f6b24774b08fe209fc",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when a product is found but has no batches?\", \"answer\": \"HTTP 404 is returned.\", \"evidence\": \"S-->>C: ProductNotHaveBatchException\\nC-->>M: HTTP 404\", \"short_answer\": null}]}"
+}

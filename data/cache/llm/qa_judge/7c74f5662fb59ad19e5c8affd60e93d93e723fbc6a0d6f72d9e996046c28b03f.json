@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e8ef9fa78035fb3f",
+ "chunk_sha": "f136f557cdda835c2daaa2efe99cd33c5282eef6241725d2865aa8cffd79de98",
+ "key": "7c74f5662fb59ad19e5c8affd60e93d93e723fbc6a0d6f72d9e996046c28b03f",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer partially invents the action 'query forgiveness status' which is not explicitly mentioned in the Late Fee Management section.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

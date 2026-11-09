@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3255e597bd66f1aa",
+ "chunk_sha": "6a9dfc4cd57b11542dcd15226f3d1ba95d0cf48b1a914cc25dec2af90c3cce98",
+ "key": "508eff4a487e519db1f343b964272d3a12bc4a7a788d70b449b3485906dd5748",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the first step to contribute to the documentation?\", \"answer\": \"First, check the Retail Data Framework Documentation Service Guide.\", \"evidence\": \"- Set your local machine according to [this instructions](https://docs.google.com/document/d/1VB35N1_txqnNN5CuYbE5CJTeRSi9fgXg8DGfw38iGsN/edit).\", \"short_answer\": null}]}"
+}

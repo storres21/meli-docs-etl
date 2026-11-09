@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-354a21f6551127d8",
+ "chunk_sha": "430d408164819b7979c4c807a719fc46ec31740735f49e3d7893cc2698253627",
+ "key": "58f3931db9df1e363c58612b2cab500ee7ccd1138783e6157ab12d6e361dfa4c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What happens if the version branch does not exist or MAX_RETRY is reached during the cron execution?\", \"answer\": \"The workflow returns an error 500.\", \"evidence\": \"W-->>F: Return error 500\", \"short_answer\": null}]}"
+}

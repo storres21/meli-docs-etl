@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-af3ccc4e9c582c6d",
+ "chunk_sha": "bdab99a7fa4ebb0a7aa543ec81348084041883014bbbd8b027b9fbb256618550",
+ "key": "294aaa0b7de7df1d3ecbd9ee43e0a37092f374870ca76d0ee5f805d916af2d57",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it omits the first step of identifying the item and determining why the update failed.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

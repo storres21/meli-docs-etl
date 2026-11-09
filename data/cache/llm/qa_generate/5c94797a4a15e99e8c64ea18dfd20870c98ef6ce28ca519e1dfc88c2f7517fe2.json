@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b3d5c2c009a5d142",
+ "chunk_sha": "d333656e722e75e275abd66ac4add0b574f45e9efe68ecd344aa8fb156f3f2cd",
+ "key": "5c94797a4a15e99e8c64ea18dfd20870c98ef6ce28ca519e1dfc88c2f7517fe2",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does workflow-api fetch from Orchestrator when receiving a 'start work' message?\", \"answer\": \"The full `Pipeline` information.\", \"evidence\": \"Upon receiving a \\\"start work\\\" message from the bigq topic `batesting-orchestrator.order-orchestrator-api` containing a Pipeline ID, **workflow-api** fetches the full `Pipeline` information from [Orchestrator](http://retailcorp-docs.io/order-orchestrator-api/guide/).\", \"short_answer\": null}]}"
+}

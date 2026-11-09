@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a17defb43fe9c9d5",
+ "chunk_sha": "ffc98cf1ae1ef0deac6e9dbf8ba858aa8259e4f0b97b1270e2a32238733aefe8",
+ "key": "63ccac2e5520e79b92c958bb803d96a877387fb8a5b361ee7ece3510669550ce",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly describe the steps to switch between environments in the Retail Data Framework.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

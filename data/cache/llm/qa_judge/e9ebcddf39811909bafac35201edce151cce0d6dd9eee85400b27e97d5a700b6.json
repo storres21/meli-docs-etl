@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-40a2d38030357ea6",
+ "chunk_sha": "a7a0406d6453259d10b05792f0ee1ff16554c17391c85df03914b98d157efabd",
+ "key": "e9ebcddf39811909bafac35201edce151cce0d6dd9eee85400b27e97d5a700b6",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents a specific service name, whereas the fragment only mentions VendorFlow Specs Hub as a new service from VendorFlow.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

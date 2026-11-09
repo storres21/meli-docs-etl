@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e4e6bbe2c9de4c89",
+ "chunk_sha": "89ead8b94fea544adba8e2a98f566cd8c5b4e5b84edb7c2f3df01e2534b56c16",
+ "key": "d35146c3915cfc9b77f38098da60539df5b4ae096033ca661ab51d851313fffe",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the error code for a brand not found?\", \"answer\": \"The error code for a brand not found is 404.\", \"evidence\": \"| 404 | `brand_not_found` | Brand ID does not exist |\", \"short_answer\": null}]}"
+}

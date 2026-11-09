@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-9224202064e22e37",
+ "chunk_sha": "6f7fc299cd82d5e49e12bdd6a6c6d41f350b65f3e40896c125fa36b7bd259182",
+ "key": "a041ac8309eb3c60d7083cbfe7dcbf567e3b0d0779022a6b9236964ca6f47675",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the required header for the DELETE /{brandId} endpoint?\", \"answer\": \"The required header is X-Client-Id, which must be whitelisted.\", \"evidence\": \"| X-Client-Id | string | Yes | Client ID (must be whitelisted) |\", \"short_answer\": null}]}"
+}

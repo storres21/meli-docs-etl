@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4be8c7f82da09aa5",
+ "chunk_sha": "2d5ce5e9e4b89b77cce2078d3c13fd50c9fbcc140ca7c616cd87aecd6d0fedde",
+ "key": "369835aff3df93f7b7cc7bb16531382ed98354395a157da9763cdaacfa3c0d78",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Dónde se crea la carpeta que contiene el archivo users.json?\", \"answer\": \"Se crea la carpeta en el lugar correspondiente (`$AMBIENTE/$TIPO_ARCHIVO/$SO/$POITYPE/$VERSION/$SITE/$GRUPO_USUARIOS`).\", \"evidence\": \"`$AMBIENTE/$TIPO_ARCHIVO/$SO/$POITYPE/$VERSION/$SITE/$GRUPO_USUARIOS`\", \"short_answer\": null}]}"
+}

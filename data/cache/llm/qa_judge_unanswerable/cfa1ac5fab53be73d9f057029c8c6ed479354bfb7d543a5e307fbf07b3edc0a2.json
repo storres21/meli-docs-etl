@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19c313a727a9b849",
+ "chunk_sha": "ad2e9580cd329e4fd44394b47fae670e5d289bb4032c12b6381ba7b1e26c5e10",
+ "key": "cfa1ac5fab53be73d9f057029c8c6ed479354bfb7d543a5e307fbf07b3edc0a2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention common reasons for the error restock to occur, but it does provide general guidance on how to resolve the issue.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

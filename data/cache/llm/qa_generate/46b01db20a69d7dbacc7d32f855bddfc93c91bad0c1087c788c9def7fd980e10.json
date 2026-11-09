@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-79e5c9e8c7bb9c7b",
+ "chunk_sha": "016b4bbb872a37a9da6e3538742c39bb015d13e0722254ee77cb328808928838",
+ "key": "46b01db20a69d7dbacc7d32f855bddfc93c91bad0c1087c788c9def7fd980e10",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which web server is configured for the 2p-revenue-optimizer-api project?\", \"answer\": \"The project is configured with Jetty.\", \"evidence\": \"### Web Server\\nThis project is configured with Jetty\", \"short_answer\": null}]}"
+}

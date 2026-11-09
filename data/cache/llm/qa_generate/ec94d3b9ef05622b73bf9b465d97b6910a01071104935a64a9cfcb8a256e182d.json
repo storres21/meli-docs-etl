@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c9f827a9b74bd65a",
+ "chunk_sha": "1f0efa40748b5fbc8fb0d951a1e4008e900b905e494d1302c4010e2e1cc30727",
+ "key": "ec94d3b9ef05622b73bf9b465d97b6910a01071104935a64a9cfcb8a256e182d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What environment variable is required to run the project locally?\", \"answer\": \"SCOPE=dev or SCOPE=local\", \"evidence\": \"- You need to set `SCOPE=dev` or `SCOPE=local` environment variable to be able to run the project locally.\", \"short_answer\": null}]}"
+}

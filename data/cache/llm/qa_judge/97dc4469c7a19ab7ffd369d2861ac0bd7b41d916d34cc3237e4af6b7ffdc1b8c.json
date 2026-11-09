@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-9d571658d13d71ec",
+ "chunk_sha": "5c0fd5fff2154c9d5c236ffc04a16e70dae9cc89c259d96262cab57bb7153eec",
+ "key": "97dc4469c7a19ab7ffd369d2861ac0bd7b41d916d34cc3237e4af6b7ffdc1b8c",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the term 'diarización' which is not present in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5154c0938a5ba8e8",
+ "chunk_sha": "08bdb94b946e553ca7e021c38bc53e06192cbfcff83c1b15ad59feb88b951499",
+ "key": "b66b92bc5bd2ee30893a1f299f1d3c993a46652abbc24bdcd118b05df940060e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is incorrect because the Brand Controller is located in the Controllers Layer, not directly below the Catalog Portfolio API.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

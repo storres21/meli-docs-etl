@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-06ba69c75cdd0efd",
+ "chunk_sha": "d6da870f6f2b04c7ff02ae5cd3ecaacc1be36019a2cd227612f81d7ce1eeba91",
+ "key": "1e38810c430b3376a48febd9e3536fe57107a5e327b93de91695dce9c06da26b",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly address the scenario where the service is not running and the ping endpoint is not responding, but it does provide a health check section that suggests verifying the service is running.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

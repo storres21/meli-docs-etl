@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bbcd73da9249ddb5",
+ "chunk_sha": "87b48ba78cf93b6b4fa7ca1e7ac38ee6ad9722596acb5073e6d36e4c0ca20c01",
+ "key": "1a8627e66f7fc1f9f245d5416ed2ee0b0008b7d78cb32f8df55276bed23f00a4",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is a direct copy of the documentation fragment, but it's not a question that a developer would realistically ask.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 1}"
+}

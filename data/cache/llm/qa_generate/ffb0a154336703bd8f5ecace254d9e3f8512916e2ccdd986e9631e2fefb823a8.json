@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c990befa14371174",
+ "chunk_sha": "8610b9353246ca5b5569d3a08d062d6a7156c294d205eeb1febb49cd98afccc6",
+ "key": "ffb0a154336703bd8f5ecace254d9e3f8512916e2ccdd986e9631e2fefb823a8",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the main aspects covered in the brand management section of the Catalog Portfolio API?\", \"answer\": \"The main aspects covered are brand lifecycle, creation, updates, activation, and validation.\", \"evidence\": \"- [Brand Lifecycle](lifecycle.md) - Complete brand state management and transitions\\n- [Creating Brands](creation.md) - Step-by-step brand creation process\\n- [Brand Updates](updates.md) - Updating existing brand information\\n- [Brand Activation](activation.md) - Brand activation process and requirements\\n- [Brand Validation](validation.md) - Validation rules and business logic\", \"short_answer\": null}]}"
+}

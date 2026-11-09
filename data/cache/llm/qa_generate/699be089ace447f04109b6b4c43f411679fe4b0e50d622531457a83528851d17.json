@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9782afa96a96db",
+ "chunk_sha": "7e90526a8668117bb1b3e643b81a2e89a1f0a38d643c0c6704b41023da1aaebc",
+ "key": "699be089ace447f04109b6b4c43f411679fe4b0e50d622531457a83528851d17",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the 'feature' branch in the gitflow model?\", \"answer\": \"The 'feature' branch is used to develop new features and merge them to develop.\", \"evidence\": \"The 'feature' branch is used to develop new features and merge them to develop.\", \"short_answer\": null}, {\"question\": \"What command is used to create a new branch from develop?\", \"answer\": \"The command to create a new branch from develop is `git checkout -b feature/your_functionality`.\", \"evidence\": \"And create the new branch\\n```sh\\ngit checkout -b feature/your_functionality\\n```\\n\", \"short_answer\": null}]}"
+}

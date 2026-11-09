@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4e3647d5560abc07",
+ "chunk_sha": "f84224b0511a185bffea7cee5147f0e8c9274e94826e53973793279e7576e316",
+ "key": "61f53b83b023ced81b002150be3b98117366b385951f668f3cd9143e0120e484",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What environment variable should be set to run the application locally from an IDE?\", \"answer\": \"SCOPE=local\", \"evidence\": \"If you want to run the application from your development IDE, you need to configure the environment variable **SCOPE=local** in the app launcher.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b395a58545ed242e",
+ "chunk_sha": "640311c55f90bea050b698a6eb1c705e6431bc32b6f3a52730017ef8c4514950",
+ "key": "61bf8536b49a07d893265a32cdd1fafd139a93d7b05c3bca72bdd57786d5b850",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the documentation fragment, but it is not the only link provided for the Datadog dashboard.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

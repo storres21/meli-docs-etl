@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19c313a727a9b849",
+ "chunk_sha": "ad2e9580cd329e4fd44394b47fae670e5d289bb4032c12b6381ba7b1e26c5e10",
+ "key": "7e87ddbadcc960ecace17d7aafe00cb1cb8492faeafd64bfbfa27647f83ca0b5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the common reasons for the error restock to occur?\", \"missing_information\": \"The fragment does not specify common reasons for the error restock to occur.\"}]}"
+}

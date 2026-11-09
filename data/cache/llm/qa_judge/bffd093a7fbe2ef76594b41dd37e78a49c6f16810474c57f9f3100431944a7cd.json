@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-77924ef083a72756",
+ "chunk_sha": "c241e180a89b84474d8a6c6904337595308effce11b7e585929c2cfe840f16c7",
+ "key": "bffd093a7fbe2ef76594b41dd37e78a49c6f16810474c57f9f3100431944a7cd",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly stated in the sequence diagram, where the Workflow API is the participant that receives the 'Activate workflow message' from the Configs API.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

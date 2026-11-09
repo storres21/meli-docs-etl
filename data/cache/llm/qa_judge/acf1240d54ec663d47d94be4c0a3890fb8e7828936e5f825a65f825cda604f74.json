@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-019a768e7f735842",
+ "chunk_sha": "e6eea8cdcba2a281f7fd3130d944fd6670dc4c7980c952a620511a87d70ed976",
+ "key": "acf1240d54ec663d47d94be4c0a3890fb8e7828936e5f825a65f825cda604f74",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is not supported by the fragment, as it specifies HTTP 404 for ProductTypeNotFoundException, not ProductListEmptyException.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

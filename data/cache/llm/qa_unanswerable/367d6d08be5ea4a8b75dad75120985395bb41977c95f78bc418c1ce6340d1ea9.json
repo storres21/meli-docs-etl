@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6c54d470a4025bbd",
+ "chunk_sha": "a4dc7d761410fcebcd33c5c18be7a170fc3b3c08745a640dcd3607ebd69d47be",
+ "key": "367d6d08be5ea4a8b75dad75120985395bb41977c95f78bc418c1ce6340d1ea9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the timeout for the database query in the `findBatchsByProductId` method?\", \"missing_information\": \"timeout for database query\"}]}"
+}

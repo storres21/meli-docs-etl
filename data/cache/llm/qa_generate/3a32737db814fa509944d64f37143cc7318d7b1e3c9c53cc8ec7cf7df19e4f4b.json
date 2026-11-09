@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-052cf6f58ca412cb",
+ "chunk_sha": "9fe31776ed3f4fd80a3745272cda7f15d2da1815be078215b3a90d0e769fa044",
+ "key": "3a32737db814fa509944d64f37143cc7318d7b1e3c9c53cc8ec7cf7df19e4f4b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP method and URL are used to retrieve a list of batches based on due date, quantity of days, and category?\", \"answer\": \"The GET method is used with the URL /due-date/list{quantityOfDays}/{category}.\", \"evidence\": \"GET /due-date/list{quantityOfDays}/{category}\", \"short_answer\": null}]}"
+}

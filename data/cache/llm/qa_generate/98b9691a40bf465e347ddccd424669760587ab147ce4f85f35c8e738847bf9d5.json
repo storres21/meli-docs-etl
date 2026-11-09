@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3eefde6a1cd5eb3",
+ "chunk_sha": "d3fa823218f1056427a34a81f329f87163441afacb41ac9dcd75500822069e83",
+ "key": "98b9691a40bf465e347ddccd424669760587ab147ce4f85f35c8e738847bf9d5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the 'orchestrate' function do in the context of retailpipes and Retail Data Framework?\", \"answer\": \"It executes a specific pipeline based on the 'pipeline_name' parameter passed in 'tasks.yml'.\", \"evidence\": \"To overcome it, we have an \"},{\"question\": \"How does the 'orchestrate' function simplify the process of deploying tasks?\", \"answer\": \"It allows using a single file for all tasks (and in some cases the same task-image).\", \"evidence\": \"Then, we can use a single file for all tasks (and in some cases the same task-image), which simplifies the process of deploying.\"}]}"
+}

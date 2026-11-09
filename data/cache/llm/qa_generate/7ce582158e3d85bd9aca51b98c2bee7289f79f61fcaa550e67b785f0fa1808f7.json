@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9ef332811c9267",
+ "chunk_sha": "34188ba7dcb9c6e6f1a82df7ffe1dc58f621e7cd6a858eeadf7fc91c56a8a301",
+ "key": "7ce582158e3d85bd9aca51b98c2bee7289f79f61fcaa550e67b785f0fa1808f7",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when a product is out of stock?\", \"answer\": \"HTTP 404 is returned when a product is out of stock.\", \"evidence\": \"S-->>C: ProductsWithoutStockException\\nC-->>M: HTTP 404\", \"short_answer\": null}]}"
+}

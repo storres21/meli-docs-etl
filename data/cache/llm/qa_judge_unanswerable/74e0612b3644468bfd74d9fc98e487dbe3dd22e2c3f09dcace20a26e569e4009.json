@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5b035b353630ff33",
+ "chunk_sha": "a40fb5b47deec4de1f62ca43da035592eabc7192c14f23d97bc8a9c32c3aecc6",
+ "key": "74e0612b3644468bfd74d9fc98e487dbe3dd22e2c3f09dcace20a26e569e4009",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly address the scenario where the user does not have any active payment promises.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

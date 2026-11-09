@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7670fef69e3105ca",
+ "chunk_sha": "49a20062adf4ecfb812f659a123374e581f684f708d7347866f31ac666ed367d",
+ "key": "b212849d34aacc20352759a3ae225f38406f222466c7f825d0d62c9cda85aba7",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What actions does the Workflow API take after receiving an edit workflow message request?\", \"answer\": \"The Workflow API retrieves settings from and updates branches in the database, unprotects and protects branches, and sets the default branch as master.\", \"evidence\": \"W->>D: Get FROM workflow settings\\nW->>D: Get TO workflow settings\\nloop forAllStableBranches\\nW->>G: Unprotect FROM Workflow branch\\nW-->G: Set default branch as master\\nloop forAllStableBranches\\nW->>G: Protect TO Workflow  branch\\nW-->G: Set TO Workflow default branch\", \"short_answer\": null}]}"
+}

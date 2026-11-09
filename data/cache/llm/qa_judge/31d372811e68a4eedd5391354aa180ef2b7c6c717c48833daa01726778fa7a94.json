@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0c65cad6a59045c5",
+ "chunk_sha": "4a0dbd1e317e217a2cecc7a8bcf60e120b3f1d6ea04c1798aca76ce37b6812c9",
+ "key": "31d372811e68a4eedd5391354aa180ef2b7c6c717c48833daa01726778fa7a94",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the action of 'creating a promise' which is not explicitly mentioned in the fragment.\", \"faithfulness\": 2, \"clarity\": 5, \"usefulness\": 5}"
+}

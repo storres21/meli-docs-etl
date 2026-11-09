@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3e0952405dfbae7d",
+ "chunk_sha": "a801e2eeab905756c6d651512b096250e0c65ee0f552f3dcb82398cf67d18da1",
+ "key": "e5f9c28308d8fa48c81f7dce962c1f9f95c6a595fd97af06f80e92e504ab15d9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué API se utiliza para determinar si una dirección IP pertenece a la infraestructura de RetailHub?\", \"answer\": \"Se utiliza la API IsRetailHub para verificar si la dirección IP pertenece a la infraestructura de RetailHub.\", \"evidence\": \"- Primero se envía a IsRetailHub API para saber si la dirección IP pertenece a infraestructura RetailHub.\", \"short_answer\": null}]}"
+}

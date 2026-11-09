@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-706a70e6e53577ab",
+ "chunk_sha": "a8d8849590ae91f5a073e871b4cd4cf64795e1257f11592a6cd80e0396a57db4",
+ "key": "5a799de48c97697b62e8adba1e3bb0b9bf64ed738d79ee01dfdcc9282b187130",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents steps that are not supported by the fragment, specifically the last two steps.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

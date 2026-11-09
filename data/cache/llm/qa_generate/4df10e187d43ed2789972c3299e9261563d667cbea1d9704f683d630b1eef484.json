@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c450629ba507b197",
+ "chunk_sha": "a423dd730c948b2a5c98ddc1a08ef1dc586f0ed1ecf123e3e58aa66f62a84bc3",
+ "key": "4df10e187d43ed2789972c3299e9261563d667cbea1d9704f683d630b1eef484",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué estructura debe seguir el PR para cargar configuración?\", \"answer\": \"Mediante un PR a este [mismo repositorio](https://github.com/globalpay/unified-transaction-configs) respetando la estructura de directorio planteada.\", \"evidence\": \"Mediante un PR a este [mismo repositorio](https://github.com/globalpay/unified-transaction-configs) respetando la estructura de directior planteada.\", \"short_answer\": null}]}"
+}

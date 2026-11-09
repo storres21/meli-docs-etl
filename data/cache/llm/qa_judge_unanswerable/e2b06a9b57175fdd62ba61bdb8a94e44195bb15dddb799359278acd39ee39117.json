@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-10bb35d95a5a8d03",
+ "chunk_sha": "2ad7f76b331c7de926ae545c8e9c282ebf6d890b461d8d0dc3b3d879c800ad88",
+ "key": "e2b06a9b57175fdd62ba61bdb8a94e44195bb15dddb799359278acd39ee39117",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not mention the default timeout for API requests, and the question is not addressed in any of the fragments.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

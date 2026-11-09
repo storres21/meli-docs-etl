@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-32680de790e1eaf6",
+ "chunk_sha": "1f148d5d25a7a955fa5d7b3fa1945a1bae0b2e7f566057f9323c81b7100d89d2",
+ "key": "84e8134f042bb8e29c502c188469067c9af00e2ab3b7f0c4a9912a726d5dda51",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Who is the intended audience for this documentation?\", \"answer\": \"The intended audience is the team of data scientists working on the project, but other roles such as PL, PM, or anyone interested are welcome to read it and ask questions.\", \"evidence\": \"The public of this documentation is the team of data scientists that work on the project. However, if you are a PL, PM, or any other role that is interested in the project, you are welcome to read it and ask questions.\", \"short_answer\": null}]}"
+}

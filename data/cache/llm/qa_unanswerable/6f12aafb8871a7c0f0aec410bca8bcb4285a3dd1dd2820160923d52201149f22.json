@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-58bf4e9331365e51",
+ "chunk_sha": "f4205e67d38ad28e8b280447aacc8cd534d1b094f0033d77b8214781af9d7606",
+ "key": "6f12aafb8871a7c0f0aec410bca8bcb4285a3dd1dd2820160923d52201149f22",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default timeout for this API call?\", \"missing_information\": \"timeout value or behavior\"}]}"
+}

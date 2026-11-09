@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-db935ece1d521528",
+ "chunk_sha": "a6b88eb27f5f97d2fb7348d2dfd20b0ff9e930360487ac5250c57f33fcc80814",
+ "key": "10a440fc812a0dfc0ffb7ff371c3bd223fc609229cc5b656326cec5186692e59",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What must be done before sending any inbound in the restock flow?\", \"answer\": \"Before sending any inbound, we must first get that inbound and go to inbound conciliation to check if the items have the tags that identify an item as a test item.\", \"evidence\": \"Before we send any kind of inbound we must first get that inbound and go to inbound conciliation to check if the items have the tags that identify an item as a test item.\", \"short_answer\": null}]}"
+}

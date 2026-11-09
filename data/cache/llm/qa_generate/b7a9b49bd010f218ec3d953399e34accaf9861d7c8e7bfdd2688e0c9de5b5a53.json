@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c24b63fe906ee378",
+ "chunk_sha": "46c9d289fee4208a532d02324cd6429049a06481e3d8c104165b445644a81cde",
+ "key": "b7a9b49bd010f218ec3d953399e34accaf9861d7c8e7bfdd2688e0c9de5b5a53",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the endpoint used for operation validation consumer?\", \"answer\": \"The endpoint is https://vendor-stockkeeper-test.techzoneoffice.com/stock-operations/3pl/validation/restock-consumer.\", \"evidence\": \"--location 'https://vendor-stockkeeper-test.techzoneoffice.com/stock-operations/3pl/validation/restock-consumer'\"}]}"
+}

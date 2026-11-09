@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0f84300b8cfcf774",
+ "chunk_sha": "566e3896a690f1f8e83488b0f11e73560d28ef934c51f7d000d037103cb5cd73",
+ "key": "090d94f4fc27a78cedca3cd27e2685610cc9337723fa41fcbc2008f7578055ef",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is too broad and invents the concept of 'different environments' not present in the fragment.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

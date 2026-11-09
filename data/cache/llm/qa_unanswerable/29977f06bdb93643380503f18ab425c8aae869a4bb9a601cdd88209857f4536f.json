@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5154c0938a5ba8e8",
+ "chunk_sha": "08bdb94b946e553ca7e021c38bc53e06192cbfcff83c1b15ad59feb88b951499",
+ "key": "29977f06bdb93643380503f18ab425c8aae869a4bb9a601cdd88209857f4536f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the database schema used for the MySQL Database mentioned in the architecture diagram?\", \"missing_information\": \"The database schema is not specified in the architecture diagram.\"}] }"
+}

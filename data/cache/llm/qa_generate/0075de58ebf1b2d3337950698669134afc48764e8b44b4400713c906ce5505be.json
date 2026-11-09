@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-de0cd3a9c80b2914",
+ "chunk_sha": "916d8eb8beef22baf47670407752c9d3105c48973ce2169338a6ead8740a148e",
+ "key": "0075de58ebf1b2d3337950698669134afc48764e8b44b4400713c906ce5505be",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the primary key of the rule_header table?\", \"answer\": \"The primary key of the rule_header table is the id field.\", \"evidence\": \"| id | bigint | Not null | Auto-increment primary key |\", \"short_answer\": null}]}"
+}

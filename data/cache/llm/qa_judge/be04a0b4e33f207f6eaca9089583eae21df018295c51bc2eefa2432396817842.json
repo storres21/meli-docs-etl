@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fc3cc723c9567ed0",
+ "chunk_sha": "d8c23377ad9e457e19eba0ebb9dc42af278b0a88f4f8c07a4ad7fbd0190f346f",
+ "key": "be04a0b4e33f207f6eaca9089583eae21df018295c51bc2eefa2432396817842",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly stated in the notation section of the documentation, but it's a very basic and obvious question.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 1}"
+}

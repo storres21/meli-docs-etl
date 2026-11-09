@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1df5ae8c49831b6d",
+ "chunk_sha": "b750bbdc9217075b8dc0bd1b3c14cae9b54e9792d392874c0088c75af408b811",
+ "key": "ff42afcfb82125d2e8bde3392a27db9b4084b1e2869f917deda290e3e838e751",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the path for the POST operation to feed consumer in the vendor-stockkeeper-api?\", \"answer\": \"/fp/inventory/operations/feed\", \"evidence\": \"| POST | [Feed Consumer](#vendor-branch-search) | `/fp/inventory/operations/feed` |\", \"short_answer\": null}]}"
+}

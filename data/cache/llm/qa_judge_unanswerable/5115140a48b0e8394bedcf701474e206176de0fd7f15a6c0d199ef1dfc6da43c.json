@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a3aebbee0b623d5b",
+ "chunk_sha": "23c5cf467599384cb5eb58573128c43c590c51df9807ed2a1d78a1c98ab42eb6",
+ "key": "5115140a48b0e8394bedcf701474e206176de0fd7f15a6c0d199ef1dfc6da43c",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the specific rules used in the Web_ACL, but it does describe the process of obtaining and evaluating blocked IP addresses.\", \"answered\": false, \"clarity\": 4, \"usefulness\": 5}"
+}

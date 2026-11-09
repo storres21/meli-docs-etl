@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d7ea7ceca7e167a3",
+ "chunk_sha": "d617188903387802d5b371869cc52a629d6a7875479bcba4ca89c3774c9dcfc4",
+ "key": "0c3cdc4ff9c48447a6b3b19ec0907ef2bdf7b6d7b27d25cd9baf422ef6337231",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it correctly describes the action of sending requests to Vegeta-API, but it omits the loop that encodes each IP in RetailHub-BigQ.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

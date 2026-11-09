@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b207e92553a644bb",
+ "chunk_sha": "927a0cd7f6601ab126078ed845102481291b0219d49cab207c7d77f56f8f9994",
+ "key": "ae6e78d1b5b8e27f1240e44014ca6afe4d3d7a3849befaf88c41a0bae4ab9ef0",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is required for accessing all API endpoints in catalog-portfolio-api?\", \"answer\": \"Proper authentication is required for accessing all API endpoints.\", \"evidence\": \"All API endpoints require proper authentication.\", \"short_answer\": null}]}"
+}

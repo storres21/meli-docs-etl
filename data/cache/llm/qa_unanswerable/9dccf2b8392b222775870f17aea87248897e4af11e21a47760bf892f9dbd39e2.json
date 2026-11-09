@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9ef332811c9267",
+ "chunk_sha": "34188ba7dcb9c6e6f1a82df7ffe1dc58f621e7cd6a858eeadf7fc91c56a8a301",
+ "key": "9dccf2b8392b222775870f17aea87248897e4af11e21a47760bf892f9dbd39e2",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What happens if the product repository returns false instead of true when trying to insert the purchase order?\", \"missing_information\": \"The behavior when the product repository fails to insert the purchase order is not specified.\"}]}"
+}

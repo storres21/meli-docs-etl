@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1c0ceb96492a4c65",
+ "chunk_sha": "ff56dbced0e87f173c6a288dde7017d0e040f365ceb6d8e5446fed99d16207f1",
+ "key": "45f18cf60849c058c3abd955e088b672a0c5e45c6d111fd570a79b1d403c95fa",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es la limitación máxima de tamaño del JSON en el proyecto unified-transaction-configs?\", \"answer\": \"El JSON no debe pesar más de 50kb, esta limitación es por KVS.\", \"evidence\": \"- El JSON no debe pesar más de 50kb, esta limitación es por KVS\", \"short_answer\": null}]}"
+}

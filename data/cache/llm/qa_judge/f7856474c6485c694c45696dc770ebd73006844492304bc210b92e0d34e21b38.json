@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-de0c3945f43c94ed",
+ "chunk_sha": "2b7e4512a4b6f3619e44bf9a91e730212184aa7823b552047d9d095c70fba651",
+ "key": "f7856474c6485c694c45696dc770ebd73006844492304bc210b92e0d34e21b38",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the name of the alert, which is not explicitly stated in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

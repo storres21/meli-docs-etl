@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fc0e96ceba60f6c7",
+ "chunk_sha": "129247191e047cb5b8d680c5dcbab5c6d600264ca990f936313b89a4149d92c8",
+ "key": "f195a89309cf0f095a9587f5a6e18738e680a3c21b8cd6c39f8072fe6d21d819",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the fragment, but it only addresses the first part of the question, which is to check if MySQL is running, not to verify the credentials.\", \"faithfulness\": 4, \"clarity\": 4, \"usefulness\": 5}"
+}

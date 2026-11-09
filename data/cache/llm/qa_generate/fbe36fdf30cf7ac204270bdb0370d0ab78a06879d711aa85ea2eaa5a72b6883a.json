@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3d51b691c2b9e0c",
+ "chunk_sha": "558cc3c72d1abc8bdab59a421ce8f5d21d3bd0ce82f1fab4153ada2c430c6533",
+ "key": "fbe36fdf30cf7ac204270bdb0370d0ab78a06879d711aa85ea2eaa5a72b6883a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What causes the `validation_failed` error code?\", \"answer\": \"Business rules failed, such as category issues or invalid data.\", \"evidence\": \"| `validation_failed` | Business rules failed | Category issues, invalid data |\", \"short_answer\": null}]}"
+}

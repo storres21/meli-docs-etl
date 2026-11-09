@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-056f0721899bb056",
+ "chunk_sha": "7d1e008fb4b3a3b2d1b6105d50594fd502fecd5864106941aa83f99b9c1b4f0b",
+ "key": "6a3bb00394236fbe8bab2fa4b19e584d014e7653f3386bcf1b25a70967e93da6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the possible values for the 'status' parameter in the GET / endpoint?\", \"answer\": \"The possible values for the 'status' parameter are ACTIVE and STAND_BY.\", \"evidence\": \"`status` | string | No | Filter by status (ACTIVE, STAND_BY) |\", \"short_answer\": null}, {\"question\": \"What is the default value for the 'limit' parameter in the GET / endpoint?\", \"answer\": \"The default value for the 'limit' parameter is 50.\", \"evidence\": \"`limit` | integer | No | Number of items to return (default: 50, max: 200) |\", \"short_answer\": null}]}"
+}

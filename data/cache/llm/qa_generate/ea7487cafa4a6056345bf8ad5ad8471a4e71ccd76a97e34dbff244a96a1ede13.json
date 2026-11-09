@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-fc0e96ceba60f6c7",
+ "chunk_sha": "129247191e047cb5b8d680c5dcbab5c6d600264ca990f936313b89a4149d92c8",
+ "key": "ea7487cafa4a6056345bf8ad5ad8471a4e71ccd76a97e34dbff244a96a1ede13",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command can be used to check if MySQL is running and to verify the credentials?\", \"answer\": \"Use the command: sudo systemctl status mysql\", \"evidence\": \"Solution: Check MySQL is running and credentials are correct\\nCommand: sudo systemctl status mysql\", \"short_answer\": null}]}"
+}

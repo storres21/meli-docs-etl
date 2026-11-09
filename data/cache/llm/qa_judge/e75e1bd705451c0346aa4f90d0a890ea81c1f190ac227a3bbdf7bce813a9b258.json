@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a0e27f58cfef5924",
+ "chunk_sha": "b7d5e467436c049bfd4d98675b7f8ab78beb69997430e1d83c55bbbe70509ee1",
+ "key": "e75e1bd705451c0346aa4f90d0a890ea81c1f190ac227a3bbdf7bce813a9b258",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is a direct quote from the documentation, but it's not a single correct answer as the question implies there's only one solution.\", \"faithfulness\": 4, \"clarity\": 2, \"usefulness\": 4}"
+}

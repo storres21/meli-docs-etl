@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-016d8dc95cc8c990",
+ "chunk_sha": "e70e2835a5ba15ffbf6b22af752743efeb29e71312ce752f3ba20b690ac93a08",
+ "key": "29fc43987ed043531e4cb317da113154bb372525f23e0e96a1313c3f7ad7173a",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it only mentions DEV, HML, and PRD tags, not explicitly stating that they are used to differentiate development, staging, and production environments.\", \"faithfulness\": 2, \"clarity\": 5, \"usefulness\": 5}"
+}

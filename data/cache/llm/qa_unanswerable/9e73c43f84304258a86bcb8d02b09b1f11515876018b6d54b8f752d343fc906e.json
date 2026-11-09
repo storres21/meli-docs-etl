@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c107abf9cc49e201",
+ "chunk_sha": "f8ed2c3810231ad428ed7b6d364ae46c1ddd3dd506fdf8aad32a1b7cf824a1f2",
+ "key": "9e73c43f84304258a86bcb8d02b09b1f11515876018b6d54b8f752d343fc906e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default logging level if none is specified in the log4j2.xml file?\", \"missing_information\": \"The default logging level is not mentioned.\"}]}"
+}

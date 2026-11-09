@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5154c0938a5ba8e8",
+ "chunk_sha": "08bdb94b946e553ca7e021c38bc53e06192cbfcff83c1b15ad59feb88b951499",
+ "key": "2ef1350ce52a48ad7cde467601da1c42ae14d0ee213ade9bf16ca5e991590f35",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What layer is located between the Catalog Portfolio API and the Brand Controller?\", \"answer\": \"The Service Layer is located between the Catalog Portfolio API and the Brand Controller.\", \"evidence\": \"Controller --> Service[Service Layer]\", \"short_answer\": null}]}"
+}

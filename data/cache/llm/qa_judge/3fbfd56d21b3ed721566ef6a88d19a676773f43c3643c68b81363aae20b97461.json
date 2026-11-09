@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2fa817312bbbcabb",
+ "chunk_sha": "518dfd90d58520cd860aab3b1db6d69c8ccf786ee0415bdedee566594a0992bb",
+ "key": "3fbfd56d21b3ed721566ef6a88d19a676773f43c3643c68b81363aae20b97461",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the purpose of Javalin, as the fragment only states it is a lightweight REST API framework.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

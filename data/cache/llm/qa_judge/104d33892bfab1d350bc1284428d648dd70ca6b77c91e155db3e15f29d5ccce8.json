@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-dcd7e3dfd3a6e44c",
+ "chunk_sha": "f7387c664d6c1e8841385c8b14633d012150fd8bfb0c54f03866a1dd2f0acbfa",
+ "key": "104d33892bfab1d350bc1284428d648dd70ca6b77c91e155db3e15f29d5ccce8",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the fragment, as the first item in the received list indeed has a status of 'ok'.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

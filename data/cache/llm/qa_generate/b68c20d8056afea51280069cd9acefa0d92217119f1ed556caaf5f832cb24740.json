@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bbcd73da9249ddb5",
+ "chunk_sha": "87b48ba78cf93b6b4fa7ca1e7ac38ee6ad9722596acb5073e6d36e4c0ca20c01",
+ "key": "b68c20d8056afea51280069cd9acefa0d92217119f1ed556caaf5f832cb24740",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be included when reporting issues?\", \"answer\": \"Include error messages, request/response examples, environment details, and configuration.\", \"evidence\": \"When reporting issues, include:\\n1. **Error messages** from application logs\\n2. **Request/response** examples\\n3. **Environment details** (Java version, MySQL version)\\n4. **Configuration** (sanitized, no passwords)\", \"short_answer\": null}]}"
+}

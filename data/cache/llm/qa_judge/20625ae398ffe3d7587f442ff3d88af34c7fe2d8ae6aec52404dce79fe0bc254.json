@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0b1793af1f5ee7eb",
+ "chunk_sha": "48e8a042200e89894b08cd0c3e8b59a5e9b4aace4db358b22cc4e60322f03d92",
+ "key": "20625ae398ffe3d7587f442ff3d88af34c7fe2d8ae6aec52404dce79fe0bc254",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the term 'brand lifecycle and validation processes' which is not explicitly mentioned in the fragment, and also includes 'architecture guides' which is a vague term that could be interpreted as a subset of 'system design and component interactions'\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

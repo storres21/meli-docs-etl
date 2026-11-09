@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-9ad1ffc84e577617",
+ "chunk_sha": "a8869b22e6d081b5b45d6f6173807c669ba5d0c56ecd159ced9eebd7de94eede",
+ "key": "7fc92d21ef5dc21c1a4faa7c5cd21e767e6ce802105b328f2c55f9cff489c12a",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is directly stated in the Mermaid sequence diagram, making it a straightforward question.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-706a70e6e53577ab",
+ "chunk_sha": "a8d8849590ae91f5a073e871b4cd4cf64795e1257f11592a6cd80e0396a57db4",
+ "key": "fb546cbb73902e56da3e03f99175b5419e05524b731103f56737ac339c761b66",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the steps to use the Specs Hub plugin for VendorFlow CLI?\", \"answer\": \"The steps are: install the Specs Hub plugin, install the OpenAPI plugin and initialize a basic configuration, generate your first API specification, validate your API specification, upload your first specification, and view your specification in VendorFlow web.\", \"evidence\": \"1. [Installing the Specs Hub plugin for VendorFlow CLI.](https://vendorflow-docs.io/specs-hub/latest/guide/#/tutorial/install-specs-hub-flowcloudcli)\\n2. [Installing the OpenAPI plugin and initializing a basic configuration.](https://vendorflow-docs.io/specs-hub/latest/guide/#/tutorial/install-open-api)\\n3. [Generating your first API specification.](https://vendorflow-docs.io/specs-hub/latest/guide/#/tutorial/generate-open-api-spec)\\n4. [Validating your API specification.](https://vendorflow-docs.io/specs-hub/latest/guide/#/tutorial/validate-specs)\\n5. [Uploading your first specification.](https://vendorflow-docs.io/specs-hub/latest/guide/#/tutorial/upload-spec)\\n6. [Viewing your specification in VendorFlow web.](https://vendorflow-docs.io/specs-hub/latest/guide/#/tutorial/view-spec)\", \"short_answer\": null}]}"
+}

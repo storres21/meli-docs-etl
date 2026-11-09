@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e4e6bbe2c9de4c89",
+ "chunk_sha": "89ead8b94fea544adba8e2a98f566cd8c5b4e5b84edb7c2f3df01e2534b56c16",
+ "key": "e77708b6409b4002273ed990b59aa4fdfdea03ba01c6a9da6f6c43dcb85dd4b0",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the possible values for the 'cause' field in the error response format.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

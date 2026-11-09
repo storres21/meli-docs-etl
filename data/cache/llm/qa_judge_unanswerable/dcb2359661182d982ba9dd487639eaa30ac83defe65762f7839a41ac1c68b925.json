@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9ef332811c9267",
+ "chunk_sha": "34188ba7dcb9c6e6f1a82df7ffe1dc58f621e7cd6a858eeadf7fc91c56a8a301",
+ "key": "dcb2359661182d982ba9dd487639eaa30ac83defe65762f7839a41ac1c68b925",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly cover the scenario where the product repository returns false, making it unclear how the system would handle this situation.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7ded3ac15411b3cf",
+ "chunk_sha": "58e5f6642750d67c767a9b9bdd41cb8745f15bdccc9cafee33734bec23ab8844",
+ "key": "93a359a760af8022ff7e96911da1c373ac1fa3472aca756ccb56c3bfb3b5b1c5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to activate a brand?\", \"answer\": \"The command to activate a brand is `curl -X PUT \"  }]}"
+}

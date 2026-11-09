@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-06ba69c75cdd0efd",
+ "chunk_sha": "d6da870f6f2b04c7ff02ae5cd3ecaacc1be36019a2cd227612f81d7ce1eeba91",
+ "key": "b3a1cf1a09fcf76bee7b224aa49ce0f24af65e5ed65311db3e25ccdefb812e8d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer accurately describes the process for verifying the service is running, as specified in the documentation.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

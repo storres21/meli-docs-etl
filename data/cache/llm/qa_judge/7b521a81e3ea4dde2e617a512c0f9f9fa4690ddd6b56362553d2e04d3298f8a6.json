@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1b9ef332811c9267",
+ "chunk_sha": "34188ba7dcb9c6e6f1a82df7ffe1dc58f621e7cd6a858eeadf7fc91c56a8a301",
+ "key": "7b521a81e3ea4dde2e617a512c0f9f9fa4690ddd6b56362553d2e04d3298f8a6",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only specifies HTTP 404 for WarehousesWithoutStockException, not ProductsWithoutStockException.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

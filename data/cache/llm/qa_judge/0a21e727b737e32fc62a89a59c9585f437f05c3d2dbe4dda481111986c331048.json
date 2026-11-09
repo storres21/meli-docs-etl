@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-abd0b025127b255d",
+ "chunk_sha": "4e7d25803d84c8990b548df8768e8492d94eb9dc62396a1b4e42d0dc55e4cee5",
+ "key": "0a21e727b737e32fc62a89a59c9585f437f05c3d2dbe4dda481111986c331048",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer directly contradicts the documentation, which states the forecast classes are at `src/app/pipes/forecasting`, not `src/app/pipes/forecasting`.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

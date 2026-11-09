@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19bb96f7d7f8823f",
+ "chunk_sha": "f0e75fd43865e99b667d6f751acba21bf1ae670bc833f5ce9d2a4e1f2613326c",
+ "key": "5137d6245dac8c42718c014e5a9f575ee508d4caf71d9bceba56cac299d39995",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the timeout for the API call to query the materials?\", \"missing_information\": \"timeout value or default timeout setting for API calls\"}]}"
+}

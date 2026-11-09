@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-cd10501906d41a8f",
+ "chunk_sha": "666571d167dd350fc40ee672d4902be89f449d21a3022023baa50dbfb6c66f89",
+ "key": "e737039a676da7d414efb4aaa15aa38d630c53bb676a7ea0c69ac30cabb7666e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer does not specify the endpoints, which is not mentioned in the provided documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

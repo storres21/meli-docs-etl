@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2caef84585bd20ec",
+ "chunk_sha": "aa2c4fe6c659914ecda7891252b97791a50a1b3e96a54e6ae06dfea12d00f8a2",
+ "key": "2b66e5e8ce111d5e637cb3ce2a1a877e56dafa6472c10826bef63059ca522509",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es el canal de comunicación para problemas productivos y caídas en War Room Slack?\", \"answer\": \"El canal público de War Room Slack para problemas productivos y caídas es #war_room_operations.\", \"evidence\": \"#war_room_operations\\n_De uso exclusivo para problemas productivos, caídas, etc._\", \"short_answer\": \"#war_room_operations\"}]}"
+}

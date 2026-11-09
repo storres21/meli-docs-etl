@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-55f2790e80dd8e75",
+ "chunk_sha": "7056644c8f38e2b796cf5f1944fd74c119013e5397a0f9970b3299fce480ab7e",
+ "key": "35f5332d82e28769bf8a36ded7ac784f6826ba26ffe97136c97480c5f5feb2c6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué endpoint se utiliza para el procesamiento de IPs y whitelist en traffic-gate-api?\", \"answer\": \"El endpoint utilizado es POST /whitelist/process.\", \"evidence\": \"Este se ejecuta desde el endpoint POST /whitelist/process\", \"short_answer\": null}]}"
+}

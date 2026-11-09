@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6e877bbfc08315d4",
+ "chunk_sha": "b9ce32f19a236fd3d88990e8c196d80680d2e41517cbbbbf7a03e941125e886a",
+ "key": "a71130d416b801015c2a87ab6b3a5692b1b1df29f0c41f398f5c23015726c895",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should you do first to resolve the validation stock alert?\", \"answer\": \"Review the **vendor-stockkeeper-api** logs with the **stream-prod** scope to identify the item and SKU.\", \"evidence\": \"1. You should review the **vendor-stockkeeper-api** logs with the **stream-prod** scope to easily identify the item and SKU associated with the potential out-of-stock sale.\", \"short_answer\": null}]}"
+}

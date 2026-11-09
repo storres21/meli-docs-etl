@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a8c7f433d24d2ef8",
+ "chunk_sha": "9efad602fe026e0c39b2c966fa335e709f5edace10f60db9b33c2852771c35fa",
+ "key": "f4216fea78676653b9fed3ffb64af267c6b10da1880b6b658be9f339a0e1596b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What files and commands are needed to run the application locally?\", \"answer\": \"First, copy `application-local.yml.dist` and rename it to `application-local.yml`. Then run `mvn spring-boot:run`.\", \"evidence\": \"Copy the file`application-local.yml.dist` located in the `resources` directory\\nand rename it to `application-local.yml`.\", \"short_answer\": null}]}"
+}

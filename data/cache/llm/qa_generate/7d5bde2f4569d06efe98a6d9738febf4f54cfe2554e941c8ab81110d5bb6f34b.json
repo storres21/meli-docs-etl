@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b395a58545ed242e",
+ "chunk_sha": "640311c55f90bea050b698a6eb1c705e6431bc32b6f3a52730017ef8c4514950",
+ "key": "7d5bde2f4569d06efe98a6d9738febf4f54cfe2554e941c8ab81110d5bb6f34b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the URL for the Jenkins activity stream of the order-workflow-api project?\", \"answer\": \"https://order-ci.retailcorp-cloud.io/blue/organizations/jenkins/order-workflow-api/activity/\", \"evidence\": \"<a href=\\\"https://order-ci.retailcorp-cloud.io/blue/organizations/jenkins/order-workflow-api/activity/\\\" rel=\\\"nofollow\\\">\", \"short_answer\": null}, {\"question\": \"Where can one find the Datadog dashboard for monitoring the order-workflow-api application?\", \"answer\": \"https://app.datadoghq.com/dashboard/rs7-pqm-yzt/retailcorp-application-dynamic?from_ts=1594745330764&live=true&to_ts=1597337330764&tpl_var_application=order-workflow-api\", \"evidence\": \"<a href=\\\"https://app.datadoghq.com/dashboard/rs7-pqm-yzt/retailcorp-application-dynamic?from_ts=1594745330764&live=true&to_ts=1597337330764&tpl_var_application=order-workflow-api\\\" rel=\\\"nofollow\\\">\", \"short_answer\": null}]}"
+}

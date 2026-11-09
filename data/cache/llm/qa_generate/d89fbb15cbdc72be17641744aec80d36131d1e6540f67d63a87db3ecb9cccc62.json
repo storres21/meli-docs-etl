@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2a5397d0698524ba",
+ "chunk_sha": "90bf9f9d53ecfed424dd6b738b53ec56bf0140ff2371bc82eed1d008774c77fd",
+ "key": "d89fbb15cbdc72be17641744aec80d36131d1e6540f67d63a87db3ecb9cccc62",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the role of the Payment Promise Gateway in GreatMart's payment system?\", \"answer\": \"It handles payment-related self-service operations and acts as an intermediary layer between the frontend applications and the core payment services.\", \"evidence\": \"# Payment Promise Gateway\\nA middleware service that handles payment-related self-service operations for GreatMart's payment system. This service acts as an intermediary layer between the frontend applications and the core payment services.\", \"short_answer\": null}]}"
+}

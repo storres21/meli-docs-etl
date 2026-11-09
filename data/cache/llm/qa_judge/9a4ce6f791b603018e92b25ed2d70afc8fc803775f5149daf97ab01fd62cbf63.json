@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-55b5c02067e28efc",
+ "chunk_sha": "1d59fb6859eb414a38652391b9c6a47cef28dfe94048a2573759651040a1f9e8",
+ "key": "9a4ce6f791b603018e92b25ed2d70afc8fc803775f5149daf97ab01fd62cbf63",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents a workflow type 'Libflow' not mentioned in the documentation.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

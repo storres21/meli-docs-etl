@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-300e4fccc9cf0fe0",
+ "chunk_sha": "06bf905f8e7a7d47e10b55ac3517e4d6e003410d55aca9cd8cf273c4a047f26d",
+ "key": "877b4d3ea2cc36418884b57f3e4a1703dc851dc7c22e4f809a47a2d755f5c8b9",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a direct copy of the documentation fragment, but it lacks the specific reference to the WAF AWS rule.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

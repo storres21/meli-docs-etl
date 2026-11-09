@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bd5c1404e5e28dbc",
+ "chunk_sha": "dd500f9a683fbb11719b6a2dfd6e33755f53cc15df5ab791a0ead83d91f13084",
+ "key": "6f9a71618e04f530c4fe6eb7ad4dafa5552d74128e40b710fb2eb5706cfdeac4",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the required parameter for the GET /{brandId}/activable endpoint?\", \"answer\": \"The required parameter is brandId, which is an integer.\", \"evidence\": \"| `brandId` | integer | Yes | Brand ID |\", \"short_answer\": null}]}"
+}

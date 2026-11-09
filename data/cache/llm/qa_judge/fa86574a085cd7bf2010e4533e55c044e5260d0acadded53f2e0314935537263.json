@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-977fd4e8ada6e832",
+ "chunk_sha": "b4261730da5999d88fd8aec557f2b05eaaa85c4d421dce3c8a087a74d560c211",
+ "key": "fa86574a085cd7bf2010e4533e55c044e5260d0acadded53f2e0314935537263",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the purpose of OpenAPI, which is only mentioned as a tool for automating the generation of specifications, not for generating documentation.\", \"faithfulness\": 2, \"clarity\": 5, \"usefulness\": 5}"
+}

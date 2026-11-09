@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e8ef9fa78035fb3f",
+ "chunk_sha": "f136f557cdda835c2daaa2efe99cd33c5282eef6241725d2865aa8cffd79de98",
+ "key": "a1fab894f70a7d618f4d410d818006442e37e5b8747c1f3dbd023439076b59b7",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What actions can be performed under Late Fee Management?\", \"answer\": \"Create forgiveness proposals, confirm forgiveness proposals, query forgiveness status.\", \"evidence\": \"- Create forgiveness proposals\\n- Confirm forgiveness proposals\\n- Query forgiveness status\", \"short_answer\": null}]}"
+}

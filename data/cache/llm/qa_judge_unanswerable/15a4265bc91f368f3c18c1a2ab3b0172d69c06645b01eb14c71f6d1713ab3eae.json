@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c107abf9cc49e201",
+ "chunk_sha": "f8ed2c3810231ad428ed7b6d364ae46c1ddd3dd506fdf8aad32a1b7cf824a1f2",
+ "key": "15a4265bc91f368f3c18c1a2ab3b0172d69c06645b01eb14c71f6d1713ab3eae",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly state the default logging level if none is specified in the log4j2.xml file, but it does show how to enable debug logging.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

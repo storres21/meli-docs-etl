@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8982ca38a27ba253",
+ "chunk_sha": "a20b93b99af5e998203735329df426f0f7f4cc9e6402161f871b396887825e6a",
+ "key": "b4c6e56d7704471014c73853fb34a68bb96a083a419dcf18b9424d0fae755856",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents a conjunction (and) where the fragment lists disjunctive criteria.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1410500783b16fb3",
+ "chunk_sha": "37cc32997990ac7a3c0beea20b38bbe6bc3c924467fd3ec3ce4c4a16b4fe33f5",
+ "key": "02bf7e4be83caf6c1c8e2670ebd19bfff5095a38f80d2faf4e0fb9bcf9d526cf",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the default values for the `site_id` and `forecast` parameters in the `HolidaysDatasetPipe`?\", \"missing_information\": \"Default values for `site_id` and `forecast` parameters are not mentioned.\"}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-19bb96f7d7f8823f",
+ "chunk_sha": "f0e75fd43865e99b667d6f751acba21bf1ae670bc833f5ce9d2a4e1f2613326c",
+ "key": "2fcd570df525ea935b2116d76aa2984ca9560202527debd7c8f5b5734d813935",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What fields are used to query materials in the feed flow?\", \"answer\": \"sap_sku, material_id, site_id, seller_id\", \"evidence\": \"These are used to query **materials** either by sap sku or material id.\", \"short_answer\": \"sap_sku, material_id, site_id, seller_id\"}]}"
+}

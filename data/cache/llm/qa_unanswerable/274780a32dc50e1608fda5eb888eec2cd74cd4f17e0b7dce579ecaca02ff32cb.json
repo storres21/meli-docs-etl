@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-706a70e6e53577ab",
+ "chunk_sha": "a8d8849590ae91f5a073e871b4cd4cf64795e1257f11592a6cd80e0396a57db4",
+ "key": "274780a32dc50e1608fda5eb888eec2cd74cd4f17e0b7dce579ecaca02ff32cb",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the steps to update an existing API specification in the VendorFlow web?\", \"missing_information\": \"Steps for updating an existing API specification are not mentioned.\"}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-de0c3945f43c94ed",
+ "chunk_sha": "2b7e4512a4b6f3619e44bf9a91e730212184aa7823b552047d9d095c70fba651",
+ "key": "7a6a9d7ba38c1cb23978ebe4f3a619b5551e95397c093c2d4a357b9ae4dbd8f3",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What happens when something goes wrong while trying to restock publications with a negative quantity?\", \"answer\": \"An alert named 'Stockkeeper-api - Error restocking item (negative quantity)' is triggered.\", \"evidence\": \"| Stockkeeper-api - Error restocking item (negative quantity) | This alert happens when something goes wrong while trying to restock publications and this publication has negative quantity | [Link](https://app.datadoghq.com/monitors/150073893) |\", \"short_answer\": null}]}"
+}

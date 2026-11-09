@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d7ea7ceca7e167a3",
+ "chunk_sha": "d617188903387802d5b371869cc52a629d6a7875479bcba4ca89c3774c9dcfc4",
+ "key": "ad73893c5d20bae25a1e21ac9c62f53a5ee81f8e594c4b2edfedec4616c6f2df",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué hace el componente RSA después de obtener las reglas de la base de datos?\", \"answer\": \"RSA envía solicitudes a Vegeta-API para obtener las IPs bloqueadas por regla y encola cada IP en RetailHub-BigQ.\", \"evidence\": \"rsa ->> vegapi : Obtener IPs bloqueadas en el WAF por regla\", \"short_answer\": null}]}"
+}

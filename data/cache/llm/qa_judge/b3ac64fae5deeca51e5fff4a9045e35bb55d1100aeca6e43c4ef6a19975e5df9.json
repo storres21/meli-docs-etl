@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-593936ef8cc6744b",
+ "chunk_sha": "e2d82850b73103636e288582c9847764bfd0d9c79e3e8cc7f49ee331e1df399c",
+ "key": "b3ac64fae5deeca51e5fff4a9045e35bb55d1100aeca6e43c4ef6a19975e5df9",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it correctly identifies the Authorization header as required, but incorrectly omits the x-caller-id header, which is also required in one of the examples.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

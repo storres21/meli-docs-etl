@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-32553fc9a5bb4f77",
+ "chunk_sha": "c36dd1f6921b9d4ef186bf0817c61d1fec876ae0c4de9f7f69740e37cdfd7e83",
+ "key": "b67e843f3ae83ee1e8f5ce331b7699e7b5ab09bdd5e725d3050b5f1b2bec5db9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should you do if the item was not correctly paused?\", \"answer\": \"Raise a ticket in Shield to request the publication be blocked.\", \"evidence\": \"You should raise a ticket in Shield to request the publication be blocked to prevent potential out-of-stock sales.\", \"short_answer\": null}]}"
+}

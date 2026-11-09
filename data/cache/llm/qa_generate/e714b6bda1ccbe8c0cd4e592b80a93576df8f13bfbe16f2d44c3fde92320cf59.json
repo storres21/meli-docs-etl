@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-72717830417e1f3e",
+ "chunk_sha": "aefcbd1824e509614e7efb9159d05beac2d2639bfab22def7dc48f76b7a7663e",
+ "key": "e714b6bda1ccbe8c0cd4e592b80a93576df8f13bfbe16f2d44c3fde92320cf59",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the HTTP method and URL used by the Feed Consumer?\", \"answer\": \"The HTTP method is `POST` and the URL is `https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/feed`. \", \"evidence\": \"```bash\\ncurl --location 'https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/feed' ```\", \"short_answer\": null}]}"
+}

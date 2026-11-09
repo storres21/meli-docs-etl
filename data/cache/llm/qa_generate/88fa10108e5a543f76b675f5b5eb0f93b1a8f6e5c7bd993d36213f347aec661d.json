@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1ae7ef2ee9a5d585",
+ "chunk_sha": "2c302e659f14530d411ff509dd7f831f92fa19e66631ce349d7e6a1bf52868c4",
+ "key": "88fa10108e5a543f76b675f5b5eb0f93b1a8f6e5c7bd993d36213f347aec661d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the cron jobs configured for the production environment in the order-workflow-api project?\", \"answer\": \"There are two cron jobs configured for the production environment: one runs at midday and another at nightly.\", \"evidence\": \"| midday | 0 12 * * * | /cron/midday |\\n| nightly | 0 20 * * * | /cron/nightly |\", \"short_answer\": null}]}"
+}

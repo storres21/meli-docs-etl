@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1980cb9e138b2aac",
+ "chunk_sha": "052cd7b3dd6a6e3a09cecbbe6e24122b538993202f72d0de2692fe267063f98d",
+ "key": "402a95e89a58390bad934d4347bb158b54054b66e38d9bdd3642fc04b2aa8c71",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the phrase 'from setup issues to runtime errors' which is not present in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

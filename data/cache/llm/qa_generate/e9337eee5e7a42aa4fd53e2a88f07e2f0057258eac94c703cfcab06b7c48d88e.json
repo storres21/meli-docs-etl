@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-eef3096a062dd023",
+ "chunk_sha": "a217086a9bddf58f73e65322eaeedd1c67a83dd39a2067d0152ce2a5a61b0fd6",
+ "key": "e9337eee5e7a42aa4fd53e2a88f07e2f0057258eac94c703cfcab06b7c48d88e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP method is used to upload a brand logo?\", \"answer\": \"POST /catalog/brands/{brandId}/logos is used to upload a brand logo.\", \"evidence\": \"| `POST` | `/catalog/brands/{brandId}/logos` | Upload brand logo |\", \"short_answer\": null}]}"
+}

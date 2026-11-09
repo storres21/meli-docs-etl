@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1c8fff096d57b236",
+ "chunk_sha": "daf14acc8b8a64c7e1a781d1a7c21383d610131a45de7bff35cf233e9c3aaae5",
+ "key": "72ed81e32f01e3fa98c81e509f65d49ed9ce75424ed5ed93977e68a5b6742a7c",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it correctly identifies the method, but the fragment only mentions creating or updating, not both.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a17defb43fe9c9d5",
+ "chunk_sha": "ffc98cf1ae1ef0deac6e9dbf8ba858aa8259e4f0b97b1270e2a32238733aefe8",
+ "key": "9b98691e33a0e82ad7cc3c7f1a421aa3b311ee951c486e6888f751cf61f64220",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the three environments used in the Retail Data Framework?\", \"answer\": \"The three environments are Development (DEV), Staging (HML), and Production (PRD).\", \"evidence\": \"We create 3 environments (made by rules in the code that change which tables/artifacts we used): Development (DEV), Staging (HML) and Production (PRD).\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7a5663600b23de88",
+ "chunk_sha": "3089ac338663719ef65df35e0500b08991636e16597310268a73dd4b2b7bf91d",
+ "key": "14a8716655b7bf0b324f4088771dec46e8920922ff3f0c6765c2761aab25eba9",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the term 'base URLs' which is not present in the documentation fragment, and also does not mention the term 'catalog-portfolio-api' which is the project name.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

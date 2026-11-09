@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c9820a6661b243b7",
+ "chunk_sha": "74a61e531566abb203ac3eadc81bfa6d0811bb3f364abf8ff96a5d652b817c61",
+ "key": "e39bb324d6888f809768d98a718af18400e5afa0adc78f353edb47aba6481cee",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it correctly mentions metadata update and verification, but omits the specific endpoint and API involved in the removal process.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

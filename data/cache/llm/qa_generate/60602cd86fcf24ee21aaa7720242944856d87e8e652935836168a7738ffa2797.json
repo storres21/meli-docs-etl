@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-cd10501906d41a8f",
+ "chunk_sha": "666571d167dd350fc40ee672d4902be89f449d21a3022023baa50dbfb6c66f89",
+ "key": "60602cd86fcf24ee21aaa7720242944856d87e8e652935836168a7738ffa2797",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the rate limit for requests to the Brand Endpoints in catalog-portfolio-api?\", \"answer\": \"The rate limit is 1000 requests per minute.\", \"evidence\": \"- **Limit**: 1000 requests per minute\", \"short_answer\": null}]}"
+}

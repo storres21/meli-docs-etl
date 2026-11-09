@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-12b550870d2ed002",
+ "chunk_sha": "cd13246c4c84fa0e2a2e6b40f5ee642bfecb38728ba2e15d4940f850449adf2c",
+ "key": "814c7143b373253f1a16ad400c37d2204ac88dcd90985e6be53b42fdfd018c0a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué criterios deben cumplirse para que una dirección IP bloqueada por un ratelimit en el scope PCI se envíe a whitelist?\", \"answer\": \"Una dirección IP bloqueada por un ratelimit aplicado al scope PCI se debe enviar a whitelist si cumple alguno de los siguientes criterios: La dirección IP tuvo más de un usuario detrás en la última hora, si el usuario detrás de la dirección IP es un usuario considerado confiable por User Reputation, la dirección IP tiene asociado un BigSeller, la dirección IP tiene asociado un CBT, la dirección IP pertenece a infraestructura RetailHub, la dirección IP tiene una aplicación certificada o privada detrás, la dirección IP pertenece a un bot bueno.\", \"evidence\": \"- La dirección IP tuvo más de un usuario detrás en la última hora\\n- Si el usuario detrás de la dirección IP es un usuario considerado confiable por User Reputation\\n- La dirección IP tiene asociado un BigSeller\\n- La dirección IP tiene asociado un CBT.\\n- La dirección IP pertenece a infraestructura RetailHub.\\n- La dirección IP tiene una aplicación certificada o privada detrás\\n- La dirección IP pertenece a un bot bueno.\", \"short_answer\": null}]}"
+}

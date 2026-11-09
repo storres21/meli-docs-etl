@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5154c0938a5ba8e8",
+ "chunk_sha": "08bdb94b946e553ca7e021c38bc53e06192cbfcff83c1b15ad59feb88b951499",
+ "key": "c88443488bf396987c6377606f6098b7cd98f8fb214f8fc4e0dcb02afee11fa3",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the database schema used for the MySQL Database, but it does mention database migrations which could imply a change to the schema.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

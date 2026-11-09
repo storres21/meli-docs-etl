@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0f84300b8cfcf774",
+ "chunk_sha": "566e3896a690f1f8e83488b0f11e73560d28ef934c51f7d000d037103cb5cd73",
+ "key": "acdecce7b61c32407d196cd4a29dd5da09987da29ad7ea012831569c5a9d2b03",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the `ENV` parameter represent in the workflow?\", \"answer\": \"The `ENV` is a parameter that we define when we run the workflow. It can be parametrized to specify different environments like DEV, HML, PRD.\", \"evidence\": \"`ENV` is a parameter that we define when we run the workflow. We can actually parametrize whatever we want, given that we provide a value at preparation time.\", \"short_answer\": null}]}"
+}

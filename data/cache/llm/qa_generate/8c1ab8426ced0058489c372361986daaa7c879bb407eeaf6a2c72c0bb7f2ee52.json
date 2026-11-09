@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-529851e8927c7975",
+ "chunk_sha": "c77fe20524926598730e3644b38d20842845c12782637cb07591bfa1387ff09c",
+ "key": "8c1ab8426ced0058489c372361986daaa7c879bb407eeaf6a2c72c0bb7f2ee52",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the rate limit for the API?\", \"answer\": \"The rate limit is 1000 requests per minute per client.\", \"evidence\": \"- **Rate Limit**: 1000 requests per minute per client\", \"short_answer\": null}]}"
+}

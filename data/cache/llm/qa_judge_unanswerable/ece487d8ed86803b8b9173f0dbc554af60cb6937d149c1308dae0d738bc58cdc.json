@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8982ca38a27ba253",
+ "chunk_sha": "a20b93b99af5e998203735329df426f0f7f4cc9e6402161f871b396887825e6a",
+ "key": "ece487d8ed86803b8b9173f0dbc554af60cb6937d149c1308dae0d738bc58cdc",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The question is not directly addressed by any of the provided documentation fragments, which focus on the criteria for whitelisting and the architecture of the Traffic Gate API, but not on the procedure for requesting whitelisting.\", \"answered\": false, \"clarity\": 0, \"usefulness\": 0}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bd5c1404e5e28dbc",
+ "chunk_sha": "dd500f9a683fbb11719b6a2dfd6e33755f53cc15df5ab791a0ead83d91f13084",
+ "key": "a936108a4ed740feea966a940d6a90bfa2218bf49b1fe96e512c1c71c6843a3f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What status code is returned when a brand is activable?\", \"missing_information\": \"HTTP status code\"}]}"
+}

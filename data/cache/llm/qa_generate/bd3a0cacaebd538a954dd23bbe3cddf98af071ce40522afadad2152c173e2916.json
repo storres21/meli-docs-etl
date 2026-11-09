@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6112a0bba6b13666",
+ "chunk_sha": "bbf7e4fff2d465243d12c73d8c396eda080af33dca4e4857233094e6d9e449ae",
+ "key": "bd3a0cacaebd538a954dd23bbe3cddf98af071ce40522afadad2152c173e2916",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuáles son los países sancionados por OFAC en la configuración WAF AWS de traffic-gate-api?\", \"answer\": \"Los países sancionados por OFAC son: 🇮🇷 Iran, 🇰🇵 North Korea, 🇨🇺 Cuba, 🇸🇾 Siria.\", \"evidence\": \"* Países sancionados por OFAC: * 🇮🇷 Iran * 🇰🇵 North Korea * 🇨🇺 Cuba * 🇸🇾 Siria\", \"short_answer\": null}]}"
+}

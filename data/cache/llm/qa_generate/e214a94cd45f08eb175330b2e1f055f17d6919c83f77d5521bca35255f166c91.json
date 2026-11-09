@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c9820a6661b243b7",
+ "chunk_sha": "74a61e531566abb203ac3eadc81bfa6d0811bb3f364abf8ff96a5d652b817c61",
+ "key": "e214a94cd45f08eb175330b2e1f055f17d6919c83f77d5521bca35255f166c91",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué hace el proceso de purga en relación con las direcciones IP en la whitelist?\", \"answer\": \"El proceso de purga actualiza la metadata de las direcciones IP en whitelist y verifica si deben permanecer o ser removidas.\", \"evidence\": \"Este proceso es ejecutado periódicamente desde un job configurado en RetailHub, para hacer un llamado cada hora al endpoint POST /whitelist/purge, y se encarga de actualizar la metadata de las direcciones IP actualmente en whitelist para determinar cuál de ellas debería dejar de estar en whitelist.\", \"short_answer\": null}]}"
+}

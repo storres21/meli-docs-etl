@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-9dbf61c11cb1768a",
+ "chunk_sha": "ebbd282a62bc21fdfc286de5c4b77931f2d3f2c4745e2d8df49c7bc73728e922",
+ "key": "d0be40285963675211ba68bd65d17185c53d739e607e293610e578375a12a64e",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the first step in the data pipeline for ingesting Marketplace data?\", \"answer\": \"The first step is to get data from BigQuery.\", \"evidence\": \"step__get_data_from_bigquery[get_data_from_bigquery]\", \"short_answer\": null}, {\"question\": \"Which datasets are generated after the 'make_series' step?\", \"answer\": \"The 'make_series' step generates the 'series' dataset.\", \"evidence\": \"dataset__series[series]\", \"short_answer\": null}]}"
+}

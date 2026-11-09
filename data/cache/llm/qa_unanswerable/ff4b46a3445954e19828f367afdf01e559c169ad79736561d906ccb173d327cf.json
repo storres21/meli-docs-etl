@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3ee3836287cd97ee",
+ "chunk_sha": "becaa8690e9badea037851d89309f0d82cff0db9337b3b0db00ef4fb40a03e7f",
+ "key": "ff4b46a3445954e19828f367afdf01e559c169ad79736561d906ccb173d327cf",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es el tiempo de espera máximo para que un job de Traffic Gate se ejecute antes de que se considere un timeout?\", \"missing_information\": \"tiempo de espera o timeout para los jobs de Traffic Gate\"}]}"
+}

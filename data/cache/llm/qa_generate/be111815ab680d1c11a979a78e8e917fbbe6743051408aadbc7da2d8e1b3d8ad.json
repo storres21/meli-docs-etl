@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-90365a5da1944b8b",
+ "chunk_sha": "c98864ab8363fd5cb59344fe6857c6609afe0e689437bc6588c289464d816410",
+ "key": "be111815ab680d1c11a979a78e8e917fbbe6743051408aadbc7da2d8e1b3d8ad",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the Controller do after receiving the GET /payment_promise/form request?\", \"answer\": \"The Controller extracts the userId and siteId from the request and calls the Service's getPromiseForm method with these parameters.\", \"evidence\": \"Controller->>Controller: Extract userId from request\\nController->>Controller: Extract siteId from request\\nController->>Service: getPromiseForm(userId, siteId)\", \"short_answer\": null}]}"
+}

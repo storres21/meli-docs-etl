@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c450629ba507b197",
+ "chunk_sha": "a423dd730c948b2a5c98ddc1a08ef1dc586f0ed1ecf123e3e58aa66f62a84bc3",
+ "key": "88248248da5872c56a8091ccc37a69eb0df3529ca4b4ce0be0df4a2f51a12ce6",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is identical to the first sentence of the documentation fragment, but it doesn't provide any additional information or clarify the structure of the directory.\", \"faithfulness\": 3, \"clarity\": 1, \"usefulness\": 1}"
+}

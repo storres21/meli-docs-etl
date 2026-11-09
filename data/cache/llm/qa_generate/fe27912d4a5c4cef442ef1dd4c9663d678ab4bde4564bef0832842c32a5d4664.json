@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-22435f0244f12024",
+ "chunk_sha": "818e8424ec930addaad6982d2460e6ce2ee6bb239b186aa3425d359c68471b9d",
+ "key": "fe27912d4a5c4cef442ef1dd4c9663d678ab4bde4564bef0832842c32a5d4664",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the requirements for creating a brand in the catalog-portfolio-api?\", \"answer\": \"The name must be unique, the site must be valid, the category must be a valid category ID, and the type must be either 'lighthouse' or 'standard'.\", \"evidence\": \"- **Name**: Must be unique within the site\\n- **Site**: Must be a valid RetailFlow site (MLA, MLB, MLC, etc.)\\n- **Category**: Must be a valid category ID from the regulations service\\n- **Type**: Must be either \\\"lighthouse\\\" or \\\"standard\\\"\"}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5515124cc991957e",
+ "chunk_sha": "0620ab28c81753e0dd7e59813f24c1350f62d1ae7822512cb89effc5c18c957d",
+ "key": "0116768713d2197aa0487ff783835b1fb28a57006f9b6de99468c0551042bc23",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to create a workflow plan?\", \"answer\": \"The command used is `rda workflow prepare`.\", \"evidence\": \"We run `rda workflow prepare` (also specifying some other parameters, such as the name and version), to create a **workflow plan**.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-90365a5da1944b8b",
+ "chunk_sha": "c98864ab8363fd5cb59344fe6857c6609afe0e689437bc6588c289464d816410",
+ "key": "e9783e862e0803b547ec7fd368327dc44951165079840bd9d461f990515fc766",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer accurately describes the Controller's actions after receiving the GET /payment_promise/form request, as per the provided documentation.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

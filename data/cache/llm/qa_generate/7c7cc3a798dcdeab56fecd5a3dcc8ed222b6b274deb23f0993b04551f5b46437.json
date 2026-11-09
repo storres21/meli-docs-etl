@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-9d571658d13d71ec",
+ "chunk_sha": "5c0fd5fff2154c9d5c236ffc04a16e70dae9cc89c259d96262cab57bb7153eec",
+ "key": "7c7cc3a798dcdeab56fecd5a3dcc8ed222b6b274deb23f0993b04551f5b46437",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Where can the implementation of diarización be found?\", \"answer\": \"The implementation can be found in the file located at https://github.com/retailcorpsrc/retail_demand-forecast/blob/6a6612004f7a329935f791777bf9b428cd307eac/src/marketplace/sktime/transformations/temporal_forecast_proportions.py#L4.\", \"evidence\": \"The implementation can be found [in this file](https://github.com/retailcorpsrc/retail_demand-forecast/blob/6a6612004f7a329935f791777bf9b428cd307eac/src/marketplace/sktime/transformations/temporal_forecast_proportions.py#L4).\", \"short_answer\": null}]}"
+}

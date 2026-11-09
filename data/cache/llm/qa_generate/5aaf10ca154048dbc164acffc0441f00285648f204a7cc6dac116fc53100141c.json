@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d856ac7b09ba0730",
+ "chunk_sha": "b597cf1be8458f9e57d418539aa1ca1c335fc06ebf40e508736afc0c6d6bcf63",
+ "key": "5aaf10ca154048dbc164acffc0441f00285648f204a7cc6dac116fc53100141c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the required parameter for the GET /{brandId} endpoint?\", \"answer\": \"The required parameter is `brandId`, which is an integer.\", \"evidence\": \"| `brandId` | integer | Yes | Brand ID |\", \"short_answer\": null}]}"
+}

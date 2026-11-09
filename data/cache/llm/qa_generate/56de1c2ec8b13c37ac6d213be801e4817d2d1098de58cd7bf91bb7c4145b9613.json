@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a3aebbee0b623d5b",
+ "chunk_sha": "23c5cf467599384cb5eb58573128c43c590c51df9807ed2a1d78a1c98ab42eb6",
+ "key": "56de1c2ec8b13c37ac6d213be801e4817d2d1098de58cd7bf91bb7c4145b9613",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cómo se distribuyen las aplicaciones de RetailHub en Amazon Cloud Front?\", \"answer\": \"Las aplicaciones de RetailHub están desplegadas en diferentes servidores de Amazon Cloud Front y distribuidas en cuentas de acuerdo al tipo de aplicación (front o api) y al nombre del dominio.\", \"evidence\": \"Las aplicaciones de RetailHub están desplegadas en diferentes servidores de Amazon Cloud Front y distribuidas en tales cuentas de acuerdo al tipo de aplicación (front o api) y al nombre del dominio.\", \"short_answer\": null}]}"
+}

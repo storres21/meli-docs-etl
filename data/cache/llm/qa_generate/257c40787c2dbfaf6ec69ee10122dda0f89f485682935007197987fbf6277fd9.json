@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-300e4fccc9cf0fe0",
+ "chunk_sha": "06bf905f8e7a7d47e10b55ac3517e4d6e003410d55aca9cd8cf273c4a047f26d",
+ "key": "257c40787c2dbfaf6ec69ee10122dda0f89f485682935007197987fbf6277fd9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es la tasa de ratelimit para países No RetailHub en el WAF AWS de traffic-gate-api?\", \"answer\": \"Esta regla limita el tráfico proveniente de países No RetailHub a 200 solicitudes cada 5 minutos.\", \"evidence\": \"Esta regla limita el tráfico proveniente de países No RetailHub (Países donde RetailHub no opera o no tiene infraestructura), a 200 solicitudes cada 5 minutos.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0ccfac81065eb02d",
+ "chunk_sha": "555a0e7b091d47ca1f6220652e64fc1a0f0dfb517bb332008d24e8eafed0f306",
+ "key": "941a700866d2970c05c5bc1331e9dcd096fd92886dc3376cb713c974107042e5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does this documentation provide for developers working with the Catalog Portfolio API service?\", \"answer\": \"Comprehensive guides for setup instructions, API references, architecture details, and troubleshooting guides.\", \"evidence\": \"This documentation provides comprehensive guides for developers working with the Catalog Portfolio API service.\", \"short_answer\": null}]}"
+}

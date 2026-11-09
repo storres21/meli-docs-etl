@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5b035b353630ff33",
+ "chunk_sha": "a40fb5b47deec4de1f62ca43da035592eabc7192c14f23d97bc8a9c32c3aecc6",
+ "key": "367713c62fbdf8bb7255a10610925dfb5603a0582e5e66982a06e7ba7c44899b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the Controller do after receiving the GET /payment_promise/active request?\", \"answer\": \"The Controller extracts the user ID from the request and calls the Service's getActivePromise method.\", \"evidence\": \"Controller->>Controller: Extract userId from request\\nController->>Service: getActivePromise(userId)\", \"short_answer\": null}]}"
+}

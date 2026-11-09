@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-45a962fa73abb05f",
+ "chunk_sha": "3c30c0e7f5ea0cbf6f1085221e4ff5aa2fcade2527b1f7f710374f30a7fcb997",
+ "key": "e90c24c220657dfd15f6f6f46246034de3326b56619b8bc205de68843d011998",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuántos módulos principales tiene la aplicación traffic-gate-api y qué hacen?\", \"answer\": \"La aplicación traffic-gate-api tiene 3 módulos principales que procesan direcciones IPs y consultan información relacionada con su estado (bloqueadas o en whitelist).\", \"evidence\": \"- Módulo Job:** Este define los servicios web encargados de procesar las direcciones IPs bloqueadas por alguna regla de traffic-gate y determinar si se continúa con el bloqueo o se autoriza el tráfico mediante whitelists。\\n- **Módulo Blacklist:** Expone servicios web para consultar el historial de bloqueos sobre una dirección IP\\n- **Módulo Whitelist:** Expone un servicio web para retirar el bloqueo a una o más direcciones IPs (agregar a whitelist), en un scope específico。\", \"short_answer\": null}]}"
+}

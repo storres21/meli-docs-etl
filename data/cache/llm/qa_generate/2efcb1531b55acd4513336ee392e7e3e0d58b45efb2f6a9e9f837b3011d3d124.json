@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-40a2d38030357ea6",
+ "chunk_sha": "a7a0406d6453259d10b05792f0ee1ff16554c17391c85df03914b98d157efabd",
+ "key": "2efcb1531b55acd4513336ee392e7e3e0d58b45efb2f6a9e9f837b3011d3d124",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What service does 2p-revenue-optimizer-api use for managing API specs?\", \"answer\": \"VendorFlow Specs Hub is used for managing API specs.\", \"evidence\": \"To simplify the management and maintainability of your API specs, we present [VendorFlow Specs Hub](https://vendorflow-docs.io/specs-hub/latest/guide/#/).\", \"short_answer\": null}]}"
+}

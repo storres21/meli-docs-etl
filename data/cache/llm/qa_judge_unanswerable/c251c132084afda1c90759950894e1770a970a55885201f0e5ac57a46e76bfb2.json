@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-12b550870d2ed002",
+ "chunk_sha": "cd13246c4c84fa0e2a2e6b40f5ee642bfecb38728ba2e15d4940f850449adf2c",
+ "key": "c251c132084afda1c90759950894e1770a970a55885201f0e5ac57a46e76bfb2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The question is not fully specified, as it does not clarify what is meant by 'solicitar la inclusión' (requesting inclusion) and what is the desired outcome.\", \"answered\": false, \"clarity\": 2, \"usefulness\": 3}"
+}

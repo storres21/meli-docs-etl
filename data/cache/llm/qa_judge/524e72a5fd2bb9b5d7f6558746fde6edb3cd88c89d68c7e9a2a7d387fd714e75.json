@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5ff78eb00abd2981",
+ "chunk_sha": "81a35d3f32b11565459573e71c62c7196a391b8751579d45dc693255e6802799",
+ "key": "524e72a5fd2bb9b5d7f6558746fde6edb3cd88c89d68c7e9a2a7d387fd714e75",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it mentions the `poetry add package` command, but it does not specify that the package name should be provided.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

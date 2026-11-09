@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b3954b06dc891cd4",
+ "chunk_sha": "25a9ae4b00072d98ad7145fdfe6d6eb50c0bc88afa8585a4067ef2e7d2d114ec",
+ "key": "a3d9d31c2089dc8f187164a4e2c519452b939c6c4579afb43ad6149c201ebe0d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What version of Java JDK is required for the catalog-portfolio-api local development setup?\", \"answer\": \"Java JDK 17 or higher must be installed.\", \"evidence\": \"- **Java JDK 17** or higher\", \"short_answer\": null}]}"
+}

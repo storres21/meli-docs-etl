@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-27fd01bda376fb06",
+ "chunk_sha": "ee28280a568336676877dcebb38f6d0a340c0ed2dff1b0591b506073c9552e9c",
+ "key": "602b04321f78ffaeff743cd44f543aab0bf65a092f8686241e5940df2e1693ea",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué tabla se actualiza con el estado de la ejecución de la tarea de encolamiento de IPs bloqueadas por ratelimit?\", \"answer\": \"Se actualiza sobre la tabla execution.\", \"evidence\": \"\\\"Esta actualización se realiza sobre la tabla execution.\\\",\", \"short_answer\": null}]}"
+}

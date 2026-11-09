@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d6c6b6d3f62970b6",
+ "chunk_sha": "70ca94084bc623e20726002b8c22b87a8bcc42f0d79f3087383b168bcc58d7df",
+ "key": "bf2cebfd6924a0bbbfc60af3b87f22fe158219d7c6551d2614ea8b35e68dd925",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the possible states of a brand in the catalog-portfolio-api?\", \"answer\": \"A brand can be in one of the following states: STAND_BY, ACTIVE, or DELETED.\", \"evidence\": \"Brands can exist in three possible states:\\n\\n```mermaid\\ngraph TD\\n    A[New Brand] --> B[STAND_BY]\\n    B --> C[ACTIVE]\\n    C --> B\\n    B --> D[DELETED]\\n    C --> D\\n```\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-379c2a4ffb073c55",
+ "chunk_sha": "be4ba41495a9188cf1f4342a7c31b9de747e04286f5754a6b8f4bc07c9efe9ae",
+ "key": "b90f07ab9018b8eb0c4bc31c97f815eedf801b3f62f6f77e99f0349057edc1a3",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, as it mentions passing a BigQueryTable instance to the catalog, but it does not specify that this is done through the catalog.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

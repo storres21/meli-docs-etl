@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d2a47cb9bfc51ffd",
+ "chunk_sha": "65335b964ff826543ad7151ce305ec9b44c8f958679cecc4daf99e5fe71f02e5",
+ "key": "4682e241282c500aebc9aabe9cb52ad733b39660389d37ef89fc0e10858e25e9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the default sorting order for the products list when no additional parameters are provided?\", \"missing_information\": \"The default sorting order is not specified.\"}]}"
+}

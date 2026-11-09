@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-40b521469bbb1a9a",
+ "chunk_sha": "662f4dcc9ace58cc6cb6e844a2183a1abcd368da6db17c7984987eaa902fcb20",
+ "key": "c7f21368dd3a3da6f9d9858062061efaefefa8de264732cbae2c16324f1d63db",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but the question is not perfectly clear as it assumes the context of the Brand Lifecycle Flow.\", \"faithfulness\": 5, \"clarity\": 3, \"usefulness\": 5}"
+}

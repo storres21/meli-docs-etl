@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-33cfebf1c4a683fa",
+ "chunk_sha": "adcbd3186fc41d048a20e2a2f3bb648c787d9206e5c0c2f0bb74caaec671d637",
+ "key": "431fc5c890d71716f184520faa3e49b0aa14db25b1804b38677c7f0ad3760c22",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the phrase 'run tasks' which is not present in the documentation fragment, and also uses the word 'later' which is not in the original text.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

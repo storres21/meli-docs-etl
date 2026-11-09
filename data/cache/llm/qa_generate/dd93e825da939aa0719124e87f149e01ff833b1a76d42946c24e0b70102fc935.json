@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4076c9ec2c113522",
+ "chunk_sha": "e9ffc3477153c5ec97b72e9695fb19c03b5a1bd905dbbf9b9f0106ba2f9f840c",
+ "key": "dd93e825da939aa0719124e87f149e01ff833b1a76d42946c24e0b70102fc935",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What tool is used to manage the dependencies of the project in demand-forecast-docs?\", \"answer\": \"Poetry is used to manage the dependencies of the project.\", \"evidence\": \"Poetry is used to manage the dependencies of the project.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-072791bcaf610359",
+ "chunk_sha": "7e16ebd7bcde48231ca4adec9e615eec0640187abfd3eff2dfb8e48714f4d2c8",
+ "key": "0aa78228967d310198098565e2e1648d494e478357ee5c46a98aff4afd6a38e5",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué ocurre después de obtener las reglas habilitadas del WAF en el paso 1?\", \"answer\": \"Se consulta a Vegeta para obtener las IPs bloqueadas por cada regla específica.\", \"evidence\": \"2. Por cada una de las reglas obtenidas en el paso anterior, consulta a Vegeta al endpoint *rates/blocked?rate_id* para obtener las IPs bloqueadas por una regla específica, enviando como parámetro el ID de la regla.\", \"short_answer\": null}]}"
+}

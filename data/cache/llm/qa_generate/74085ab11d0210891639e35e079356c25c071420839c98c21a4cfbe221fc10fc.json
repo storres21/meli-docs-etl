@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e03ac4b5d12e8f60",
+ "chunk_sha": "e27438e53ce7b27fd7db54e951d69524090be87c4cc97b389dd161306abab4e8",
+ "key": "74085ab11d0210891639e35e079356c25c071420839c98c21a4cfbe221fc10fc",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should a developer do when encountering a 401 Unauthorized error?\", \"answer\": \"Check authentication.\", \"evidence\": \"| `401` | Unauthorized | Missing/invalid auth | Check authentication |\", \"short_answer\": null}]}"
+}

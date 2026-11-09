@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-072791bcaf610359",
+ "chunk_sha": "7e16ebd7bcde48231ca4adec9e615eec0640187abfd3eff2dfb8e48714f4d2c8",
+ "key": "eae67193594445b63707c12fe3cf20f4b41400ef28f014a5ed8489d9710b42b4",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents a step that is not described in the fragment, which is about querying Vegeta after obtaining the rules, not after obtaining the blocked IPs\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-f6fd257731651dad",
+ "chunk_sha": "d4476bee7c1be61434d8dda1ac4b17cb7e8ab4f14a98dce694fadb3e07ff6922",
+ "key": "02c178e70494425ffae295ab1dba986e3288e1c3aef2c85570e5bf3e464eb4b0",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the timeout for the validation process before a brand is considered inactive?\", \"missing_information\": \"timeout\"}]}"
+}

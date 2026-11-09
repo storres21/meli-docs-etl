@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1f7500fcc683c446",
+ "chunk_sha": "d4b7b30645ae6d56e5c8941217bb0d8e42217c9dffd3dcc6c0b90f05cf8c7a7f",
+ "key": "ff0bfa28bc6317eb5d711b11eb0ea271ea430d2c9ff1aa1476a1b217e3280cfc",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to run all tests in the catalog-portfolio-api project?\", \"answer\": \"./gradlew test\", \"evidence\": \"./gradlew test\", \"short_answer\": null}]}"
+}

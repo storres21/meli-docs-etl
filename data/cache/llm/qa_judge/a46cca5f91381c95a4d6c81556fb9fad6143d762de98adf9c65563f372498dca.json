@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b207e92553a644bb",
+ "chunk_sha": "927a0cd7f6601ab126078ed845102481291b0219d49cab207c7d77f56f8f9994",
+ "key": "a46cca5f91381c95a4d6c81556fb9fad6143d762de98adf9c65563f372498dca",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it only mentions that authentication is required, but does not specify that it is required for all API endpoints.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3d5ae0ff7904aa82",
+ "chunk_sha": "3230118eb2f06cc9acfe23026cd874cecfc955e1d0e24ebee55f45ec1ff24545",
+ "key": "30c14fdf104b773b201309ca7b691f0f56ec3699f18ab25a3fc5f2c5505a4871",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, which explicitly states that the required path parameter is `brandId`, an integer.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

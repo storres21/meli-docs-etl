@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-10bb35d95a5a8d03",
+ "chunk_sha": "2ad7f76b331c7de926ae545c8e9c282ebf6d890b461d8d0dc3b3d879c800ad88",
+ "key": "e5d9d857613efaf092799671701ef35f697d01cd48c3da3ccf4fb6b8d9e5043d",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the purpose of Business Objects (BO) as 'represent and manipulate data', which is not explicitly stated in the provided fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-112566726e0c8bf0",
+ "chunk_sha": "ad7e69644e46db602a657c09857073bed76f35e77493717ffbba7ebdda29d44c",
+ "key": "b8301294081e90876580c2c1af301fd2c309e14d3ac39828e7196fed66113b0a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can one download the Quick Start Template for the Catalog Portfolio API?\", \"answer\": \"Use the command `retailflow get catalog-portfolio-api` to download the Quick Start Template.\", \"evidence\": \"```bash\\n# Clone the repository\\nretailflow get catalog-portfolio-api\\n```\", \"short_answer\": null}]}"
+}

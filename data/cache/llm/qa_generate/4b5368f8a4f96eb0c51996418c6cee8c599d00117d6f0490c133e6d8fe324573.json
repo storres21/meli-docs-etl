@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1a77c50ed4eabb37",
+ "chunk_sha": "7c88c2e2fa8698d5470b8a2b7cd9a33e1576021b42386a6b3194c588b44b9e1e",
+ "key": "4b5368f8a4f96eb0c51996418c6cee8c599d00117d6f0490c133e6d8fe324573",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What steps should be taken to resolve the 'Error restocking item (negative quantity)' alert?\", \"answer\": \"Identify the item in the logs, notify Envio Pack, identify the issue, resolve it, and possibly perform a manual restock or release a new version.\", \"evidence\": \"To resolve this alert, you need to do the following:\\n1. Identify in the **vendor-stockkeeper-api** logs which item is associated with the negative restock attempt.\\n2. Notify to **Envio Pack** that the restock could not be completed correctly.\\n3. Proceed to identify what happened (why a restock is executed that leaves the available quantities below 0).\\n4. Resolve the issue.\\n5. It may be necessary to perform a manual restock via the database or, in the most extreme case, release a new version.\", \"short_answer\": null}]}"
+}

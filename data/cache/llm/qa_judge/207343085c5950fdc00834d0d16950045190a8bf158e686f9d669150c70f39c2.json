@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1f7500fcc683c446",
+ "chunk_sha": "d4b7b30645ae6d56e5c8941217bb0d8e42217c9dffd3dcc6c0b90f05cf8c7a7f",
+ "key": "207343085c5950fdc00834d0d16950045190a8bf158e686f9d669150c70f39c2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is directly stated in the documentation fragment under the 'Running Tests' section.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

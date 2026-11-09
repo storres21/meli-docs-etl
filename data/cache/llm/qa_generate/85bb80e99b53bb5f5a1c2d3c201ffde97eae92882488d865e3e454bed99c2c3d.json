@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-977fd4e8ada6e832",
+ "chunk_sha": "b4261730da5999d88fd8aec557f2b05eaaa85c4d421dce3c8a087a74d560c211",
+ "key": "85bb80e99b53bb5f5a1c2d3c201ffde97eae92882488d865e3e454bed99c2c3d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What tool is used for generating API documentation in the 2p-revenue-optimizer-api project?\", \"answer\": \"OpenAPI is used to generate API documentation.\", \"evidence\": \"This project uses OpenAPI to automate the generation of machine and human readable specifications for JSON APIs written using Spring.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a02bf37950ffb8d2",
+ "chunk_sha": "7af5f932bf00ec955efb0bd19f5fc244e7996d9a5e089504edf857195058743a",
+ "key": "7ef434aded07aa91abe8d38af6177575bf1cf055098bcceb8fec72ffff434f68",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the GET /payment_promise/active endpoint do?\", \"answer\": \"It queries the user's active payment promise.\", \"evidence\": \"- Queries the user's active payment promise\", \"short_answer\": null}]}"
+}

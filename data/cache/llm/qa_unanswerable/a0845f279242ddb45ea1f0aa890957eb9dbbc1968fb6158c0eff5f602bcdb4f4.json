@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8982ca38a27ba253",
+ "chunk_sha": "a20b93b99af5e998203735329df426f0f7f4cc9e6402161f871b396887825e6a",
+ "key": "a0845f279242ddb45ea1f0aa890957eb9dbbc1968fb6158c0eff5f602bcdb4f4",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es el procedimiento para solicitar la inclusión de una dirección IP en la whitelist?\", \"missing_information\": \"El procedimiento para solicitar la inclusión de una dirección IP en la whitelist no se menciona.\"}] }"
+}

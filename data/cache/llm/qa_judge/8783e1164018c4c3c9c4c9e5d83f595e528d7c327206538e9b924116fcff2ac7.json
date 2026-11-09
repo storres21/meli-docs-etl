@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4be8c7f82da09aa5",
+ "chunk_sha": "2d5ce5e9e4b89b77cce2078d3c13fd50c9fbcc140ca7c616cd87aecd6d0fedde",
+ "key": "8783e1164018c4c3c9c4c9e5d83f595e528d7c327206538e9b924116fcff2ac7",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a direct quote from the documentation, but it doesn't answer the question of where the folder is created, it only describes its location.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 3}"
+}

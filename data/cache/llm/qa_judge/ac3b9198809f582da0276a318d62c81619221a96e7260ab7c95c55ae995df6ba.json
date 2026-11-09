@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-22435f0244f12024",
+ "chunk_sha": "818e8424ec930addaad6982d2460e6ce2ee6bb239b186aa3425d359c68471b9d",
+ "key": "ac3b9198809f582da0276a318d62c81619221a96e7260ab7c95c55ae995df6ba",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the requirement for the type to be either 'lighthouse' or 'standard', which is only mentioned in the context of the 'Type' field, not as a standalone requirement.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

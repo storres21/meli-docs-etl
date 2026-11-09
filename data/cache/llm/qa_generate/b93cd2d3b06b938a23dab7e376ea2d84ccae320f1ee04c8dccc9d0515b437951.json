@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-8af623be1ea6d6b8",
+ "chunk_sha": "ac2e0af23a51032cde3f259c720ccab6984bd2372731a3e207b136bd311f70d0",
+ "key": "b93cd2d3b06b938a23dab7e376ea2d84ccae320f1ee04c8dccc9d0515b437951",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuántas solicitudes puede recibir el tráfico de países de RetailHub cada 5 minutos?\", \"answer\": \"1000 solicitudes\", \"evidence\": \"* 🇦🇷 Argentina\\n* 🇧🇴 Bolivia\\n* 🇧🇷 Brazil\\n* 🇨🇱 Chile\\n* 🇨🇴 Colombia\\n* 🇨🇷 Costa Rica\\n* 🇩🇴 Dominican Republic\\n* 🇪🇨 Ecuador\\n* 🇬🇹 Guatemala\\n* 🇭🇳 Honduras\\n* 🇲🇽 Mexico\\n* 🇳🇮 Nicaragua\\n* 🇵🇦 Panama\\n* 🇵🇾 Paraguay\\n* 🇵🇪 Peru\\n* 🇸🇻 Salvador\\n* 🇺🇾 Uruguay\\n* 🇻🇪 Venezuela\", \"short_answer\": null}]}"
+}

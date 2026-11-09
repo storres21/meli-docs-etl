@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a17defb43fe9c9d5",
+ "chunk_sha": "ffc98cf1ae1ef0deac6e9dbf8ba858aa8259e4f0b97b1270e2a32238733aefe8",
+ "key": "ff38e40672f044ddcf8f07168dee233f775338d1798049cf7b3d9ab7db4b4875",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the specific steps to switch between environments in the Retail Data Framework?\", \"missing_information\": \"The fragment does not provide detailed steps to switch between environments.\"}]}"
+}

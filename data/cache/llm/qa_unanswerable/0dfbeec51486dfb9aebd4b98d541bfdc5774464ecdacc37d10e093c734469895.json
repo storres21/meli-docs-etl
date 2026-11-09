@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-300e4fccc9cf0fe0",
+ "chunk_sha": "06bf905f8e7a7d47e10b55ac3517e4d6e003410d55aca9cd8cf273c4a047f26d",
+ "key": "0dfbeec51486dfb9aebd4b98d541bfdc5774464ecdacc37d10e093c734469895",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es el tiempo de inactividad antes de que la regla de ratelimitación para países NO-RETAILHUB comience a aplicarse?\", \"missing_information\": \"tiempo de inactividad\"}]}"
+}

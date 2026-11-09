@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3eefde6a1cd5eb3",
+ "chunk_sha": "d3fa823218f1056427a34a81f329f87163441afacb41ac9dcd75500822069e83",
+ "key": "ebf324d134b214dc917df519e29d5c137a0647f20108e39ca7e3c8407bab06fd",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is partially supported by the fragment, but it does not fully capture the purpose of the 'orchestrate' function.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

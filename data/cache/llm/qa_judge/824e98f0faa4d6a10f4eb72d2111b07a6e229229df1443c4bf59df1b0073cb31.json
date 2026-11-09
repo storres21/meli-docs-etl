@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0a6c63e488b63957",
+ "chunk_sha": "6494107cb535c3208b22c126d48eaac8ad5f7ae06647fbd08012f84f0e43c62e",
+ "key": "824e98f0faa4d6a10f4eb72d2111b07a6e229229df1443c4bf59df1b0073cb31",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is a verbatim copy of the documentation fragment, but it's not a direct answer to the question, it's more like a restatement of the conditions for an update to impact.\", \"faithfulness\": 5, \"clarity\": 1, \"usefulness\": 1}"
+}

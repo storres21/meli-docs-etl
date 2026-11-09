@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-4095bd9912895ce4",
+ "chunk_sha": "ffa2b92ed7f3cf03ae9bb87c84a288924d66722f07467e2abe2da04bbf9d1009",
+ "key": "13d78291e6b58618cb10fc6359fd64827ff93bf820df14fc0b2ec5d6b8003323",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What tool is used to build and deploy the project in demand-forecast-docs?\", \"answer\": \"Retail Data Framework is used to build and deploy the project.\", \"evidence\": \"Retail Data Framework is used to build and deploy the project.\", \"short_answer\": null}]}"
+}

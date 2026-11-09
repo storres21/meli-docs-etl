@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1a77c50ed4eabb37",
+ "chunk_sha": "7c88c2e2fa8698d5470b8a2b7cd9a33e1576021b42386a6b3194c588b44b9e1e",
+ "key": "cdb3c77e32dc38880956f35289d3beb279ff0ef115599cbcb614ff30b2bbfc71",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the phrase 'possibly perform a manual restock or release a new version' which is not present in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

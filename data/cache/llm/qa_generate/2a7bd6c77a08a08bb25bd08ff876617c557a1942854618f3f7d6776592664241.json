@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-7d4a78a8b21c6b3e",
+ "chunk_sha": "0f37fac115a3df183a4066379cb24591775832509d33f3619fd018ad736ec829",
+ "key": "2a7bd6c77a08a08bb25bd08ff876617c557a1942854618f3f7d6776592664241",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the first step in the pipeline validation process?\", \"answer\": \"Orchestrator sends a request to BigQ to start workflow validation.\", \"evidence\": \"- O->>B: Workflow validation start\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-abd0b025127b255d",
+ "chunk_sha": "4e7d25803d84c8990b548df8768e8492d94eb9dc62396a1b4e42d0dc55e4cee5",
+ "key": "1ef543d1336d1b509aa1a25b0f9dd06ce16a6674b15a66e3068c0f891209b30a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the purpose of the Ingest module in the data pipeline?\", \"answer\": \"The Ingest module is responsible for ingesting the timeseries and holidays data.\", \"evidence\": \"The `Ingest` module is responsible for ingesting the timeseries and holidays data.\", \"short_answer\": null}, {\"question\": \"Where can the forecast classes be found in the project structure?\", \"answer\": \"The forecast classes can be found at `src/app/pipes/forecasting`.\", \"evidence\": \"The forecast classes can be found at `src/app/pipes/forecasting`. \", \"short_answer\": null}]}"
+}

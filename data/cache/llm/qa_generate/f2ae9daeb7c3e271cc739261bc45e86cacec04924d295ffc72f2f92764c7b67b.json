@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-379c2a4ffb073c55",
+ "chunk_sha": "be4ba41495a9188cf1f4342a7c31b9de747e04286f5754a6b8f4bc07c9efe9ae",
+ "key": "f2ae9daeb7c3e271cc739261bc45e86cacec04924d295ffc72f2f92764c7b67b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can datasets be saved on BigQuery?\", \"answer\": \"To save datasets on BigQuery, you should pass a BigQueryTable instance to the catalog.\", \"evidence\": \"To save on bigquery, you should do:\\n\\n```python\\nfrom retailpipes.rda.datasets import BigQueryTable\\nfrom marketplace.pipes.main import catalog\\nfrom retailpipes import Context, Pipeline\\nfrom marketplace.pipes.ingest import HolidaysDatasetPipe, IngestMarketplaceData\\nfrom marketplace.pipes.forecasting.vertical_iniciativa_pipeline import (\\n    ProphetVerticalIniciativaPipeline,\\n)\\nfrom marketplace.pipes.preprocessing import PreprocessExogenous, PreprocessTarget\\n\\npipe =  (\\n    IngestMarketplaceData(catalog=catalog)\\n    + HolidaysDatasetPipe()\\n    + PreprocessExogenous()\\n    + PreprocessTarget()\\n    + ProphetVerticalIniciativaPipeline()\\n    )\\n\\nwith Context(\\n         site_id=\\\"RAB\\\",\\n         target=\\\"tsi\\\",\\n         processing_date=\\\"2023-10-20\\\",\\n         fh=100,\\n         method=\\\"bu\\\"): pipe.run()\\n```\", \"short_answer\": null}]}"
+}

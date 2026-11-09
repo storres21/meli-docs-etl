@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-55b5c02067e28efc",
+ "chunk_sha": "1d59fb6859eb414a38652391b9c6a47cef28dfe94048a2573759651040a1f9e8",
+ "key": "e32a836ce2c05921d11b85c52cc87b8dfb73b6fb2f00a2a9816b8e0da7c5208f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the two types of workflows currently used in the project?\", \"answer\": \"The two types of workflows currently used are Gitflow and Libflow.\", \"evidence\": \"- Gitflow\\n- Libflow\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-64575bc6e142290b",
+ "chunk_sha": "f6387e70d33c0eb574851e5ff6c9e05d1792e3a96ee12ae161a1747f6e501c99",
+ "key": "18fc7f3dd8101593d0be2213253ec046ed4ba44e8bee0f1d425fc5397b305f6c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the first step in the Explicabilidad pipeline?\", \"answer\": \"The first step is to get data from BigQuery.\", \"evidence\": \"step__get_data_from_bigquery[get_data_from_bigquery]\", \"short_answer\": null}]}"
+}

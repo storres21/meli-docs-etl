@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d79ef7a08996a8ed",
+ "chunk_sha": "0b17e623ad9d656397d2ff600f6e2a491713856c979051cd82e42150f5f35e4a",
+ "key": "604408dd821235115b459d0bba663c3aafd5b92f92e5c5424889ba24ce495235",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the required parameter for the `PUT /{brandId}/activate` endpoint?\", \"answer\": \"The required parameter is `brandId`, which is an integer representing the Brand ID.\", \"evidence\": \"| Parameter | Type | Required | Description |\\n| --- | --- | --- | --- |\\n| `brandId` | integer | Yes | Brand ID |\", \"short_answer\": null}]}"
+}

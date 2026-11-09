@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-136611699b35c70e",
+ "chunk_sha": "ee2bd6fc458dd7a24640a781a96b1e5ebaab41849f08ec6db3958bc7b494317f",
+ "key": "8c3e5fe5cd16fa197080872e00097c25bd4c85ef046a7eb05df17b1173230832",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is directly stated in the sequence diagram as the response to a successful inbound order addition.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

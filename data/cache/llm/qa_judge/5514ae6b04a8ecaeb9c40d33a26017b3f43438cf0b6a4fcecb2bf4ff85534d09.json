@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d94976c297a352a7",
+ "chunk_sha": "9359bede6f1de463cc54ec65cad2aa2ea8cd0c4b992e419f54d2052880f4870e",
+ "key": "5514ae6b04a8ecaeb9c40d33a26017b3f43438cf0b6a4fcecb2bf4ff85534d09",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the name 'WAF' which is not explicitly mentioned in the fragment, and also implies it's a general setting, whereas the fragment specifies it's for the 'Ratelimit USA' section.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

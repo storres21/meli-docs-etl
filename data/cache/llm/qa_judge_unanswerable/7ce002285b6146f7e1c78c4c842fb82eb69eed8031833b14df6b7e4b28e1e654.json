@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c990befa14371174",
+ "chunk_sha": "8610b9353246ca5b5569d3a08d062d6a7156c294d205eeb1febb49cd98afccc6",
+ "key": "7ce002285b6146f7e1c78c4c842fb82eb69eed8031833b14df6b7e4b28e1e654",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the specific validation rules for brand names during creation, but it does mention validation rules in general.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

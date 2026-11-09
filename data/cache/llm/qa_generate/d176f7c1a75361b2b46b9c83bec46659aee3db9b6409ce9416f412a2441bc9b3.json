@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-019a768e7f735842",
+ "chunk_sha": "e6eea8cdcba2a281f7fd3130d944fd6670dc4c7980c952a620511a87d70ed976",
+ "key": "d176f7c1a75361b2b46b9c83bec46659aee3db9b6409ce9416f412a2441bc9b3",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when the product list is empty?\", \"answer\": \"HTTP 404\", \"evidence\": \"S-->>C: ProductListEmptyException\\nC-->>M: HTTP 404\", \"short_answer\": null}]}"
+}

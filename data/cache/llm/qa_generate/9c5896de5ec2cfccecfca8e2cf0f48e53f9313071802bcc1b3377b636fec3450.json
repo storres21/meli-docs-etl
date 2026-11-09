@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d2b96ecb95cc0eca",
+ "chunk_sha": "71bb387df02af23dd27020bd90ce5ef6db947a0ec4ae628ba79e7839f6e1f0ec",
+ "key": "9c5896de5ec2cfccecfca8e2cf0f48e53f9313071802bcc1b3377b636fec3450",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How are daily forecasts reconciled in the context of temporal hierarchies?\", \"answer\": \"Daily forecasts are reconciled by multiplying them by the ratio of the given total value to the base total forecast for the month.\", \"evidence\": \"To reconcile the daily forecasts, we multiply them by the ratio of $x_i(t\\text{\\\\in month})$ and $\\tilde{x}_i(t \\text{\\\\in month})$:\"}, {\"question\": \"What is the result of applying the reconciliation method to a toy example with a 300 dollar investment?\", \"answer\": \"The base forecasts for the month are scaled down by 0.75 to achieve a total of 300 dollars.\", \"evidence\": \"This could be achieved by multiplying the base forecasts of the given month by $300/400 = 0.75$.\",\"short_answer\": \"0.75\"}]}"
+}

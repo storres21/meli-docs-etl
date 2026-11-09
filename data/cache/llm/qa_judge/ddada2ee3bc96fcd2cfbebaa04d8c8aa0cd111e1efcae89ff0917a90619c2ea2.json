@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-12b550870d2ed002",
+ "chunk_sha": "cd13246c4c84fa0e2a2e6b40f5ee642bfecb38728ba2e15d4940f850449adf2c",
+ "key": "ddada2ee3bc96fcd2cfbebaa04d8c8aa0cd111e1efcae89ff0917a90619c2ea2",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents a criterion ('la dirección IP tiene asociado un CBT') that is not present in the documentation fragment for SCOPE PCI.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

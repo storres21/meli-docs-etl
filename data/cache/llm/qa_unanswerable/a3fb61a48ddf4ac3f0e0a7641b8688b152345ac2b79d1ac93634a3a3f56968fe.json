@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-27fd01bda376fb06",
+ "chunk_sha": "ee28280a568336676877dcebb38f6d0a340c0ed2dff1b0591b506073c9552e9c",
+ "key": "a3fb61a48ddf4ac3f0e0a7641b8688b152345ac2b79d1ac93634a3a3f56968fe",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es el tiempo máximo de espera para que se realice la actualización en la tabla execution?\", \"missing_information\": \"tiempo máximo de espera para la actualización en la tabla execution\"}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e2287e18d68f482e",
+ "chunk_sha": "e2bff26d2a4a580cbed6dd289b03211c00db2fe8f4fb03424cc29ce297933846",
+ "key": "af563a522d266f15382b7cb02a7382dce18b9037fdd1478e854f79f24194043c",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué campo es clave primaria en la entidad EXECUTION?\", \"answer\": \"id\", \"evidence\": \"int id PK\", \"short_answer\": \"id\"}]}"
+}

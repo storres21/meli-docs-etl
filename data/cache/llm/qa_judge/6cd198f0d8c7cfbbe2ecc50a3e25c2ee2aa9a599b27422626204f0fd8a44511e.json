@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-9563ac9e9dbdfc6c",
+ "chunk_sha": "7898e7b676ee2e1754620befdf808500391590e9261ecc0cb33e02401bd27a31",
+ "key": "6cd198f0d8c7cfbbe2ecc50a3e25c2ee2aa9a599b27422626204f0fd8a44511e",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is partially supported by the fragment, as it correctly identifies the HTTP status code for the 'else' branch, but does not specify the condition for it to be triggered.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

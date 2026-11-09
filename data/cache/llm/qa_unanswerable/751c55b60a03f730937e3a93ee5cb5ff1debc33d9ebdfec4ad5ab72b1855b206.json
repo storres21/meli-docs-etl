@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-bbcd73da9249ddb5",
+ "chunk_sha": "87b48ba78cf93b6b4fa7ca1e7ac38ee6ad9722596acb5073e6d36e4c0ca20c01",
+ "key": "751c55b60a03f730937e3a93ee5cb5ff1debc33d9ebdfec4ad5ab72b1855b206",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the steps to perform a manual backup of the database, and is it recommended for certain environments?\", \"missing_information\": \"Steps for manual database backup and backup recommendations\"}]}"
+}

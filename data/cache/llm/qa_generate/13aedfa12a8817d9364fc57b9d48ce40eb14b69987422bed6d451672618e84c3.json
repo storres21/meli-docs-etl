@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-17eb7946e5a900e5",
+ "chunk_sha": "307ab5f52a4674de30df52222304f27bf97f3a81f2e21282879ba1ba448695ec",
+ "key": "13aedfa12a8817d9364fc57b9d48ce40eb14b69987422bed6d451672618e84c3",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are the parameters passed to the Context object in the provided code snippet?\", \"answer\": \"The parameters are site_id, target, processing_date, fh, and method.\", \"evidence\": \"from retailpipes import Context\\nwith Context(\\n         site_id=\\\"RAB\\\",\\n         target=\\\"tsi\\\",\\n         processing_date=\\\"2023-10-20\\\",\\n         fh=100,\\n         method=\\\"bu\\\"):\",\"short_answer\": null}]}"
+}

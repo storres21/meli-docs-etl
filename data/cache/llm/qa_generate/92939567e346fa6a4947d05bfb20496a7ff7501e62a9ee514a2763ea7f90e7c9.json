@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-3d5ae0ff7904aa82",
+ "chunk_sha": "3230118eb2f06cc9acfe23026cd874cecfc955e1d0e24ebee55f45ec1ff24545",
+ "key": "92939567e346fa6a4947d05bfb20496a7ff7501e62a9ee514a2763ea7f90e7c9",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the required path parameter for the `PUT /{brandId}` endpoint?\", \"answer\": \"The required path parameter is `brandId`, which is an integer.\", \"evidence\": \"| `brandId` | integer | Yes | Brand ID |\", \"short_answer\": null}]}"
+}

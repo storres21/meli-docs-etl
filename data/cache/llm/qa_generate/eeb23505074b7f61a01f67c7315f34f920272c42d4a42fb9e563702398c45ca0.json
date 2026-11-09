@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0f2a4350128086f0",
+ "chunk_sha": "ec15e114359ae608b514420bce5b4272885457f678a8bca95cb5a83c6e70b0d3",
+ "key": "eeb23505074b7f61a01f67c7315f34f920272c42d4a42fb9e563702398c45ca0",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should a developer do after setting up the local development environment for catalog-portfolio-api?\", \"answer\": \"They should learn about available endpoints, understand brand operations, and explore system design.\", \"evidence\": \"1. [API Reference](../api-reference/) - Learn about available endpoints\\n2. [Brand Management](../brand-management/) - Understand brand operations\\n3. [Architecture](../architecture/) - Explore system design\", \"short_answer\": null}]}"
+}

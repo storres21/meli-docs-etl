@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-056f0721899bb056",
+ "chunk_sha": "7d1e008fb4b3a3b2d1b6105d50594fd502fecd5864106941aa83f99b9c1b4f0b",
+ "key": "f34d5ece240e9b0ab9a2b8b041e4a6989dd9c355255f5f82afc9d05fb25e633a",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the default value for the `offset` parameter.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

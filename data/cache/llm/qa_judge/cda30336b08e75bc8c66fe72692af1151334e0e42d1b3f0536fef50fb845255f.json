@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-b923ad0a0cbf6a27",
+ "chunk_sha": "c6c6dd4bfd0c18ed44d681847c51624438f77643c2655c6520dd87036b44d01c",
+ "key": "cda30336b08e75bc8c66fe72692af1151334e0e42d1b3f0536fef50fb845255f",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but the question is not perfectly clear as it assumes the context of 'changing endpoints' which is not explicitly mentioned in the fragment.\", \"faithfulness\": 5, \"clarity\": 3, \"usefulness\": 5}"
+}

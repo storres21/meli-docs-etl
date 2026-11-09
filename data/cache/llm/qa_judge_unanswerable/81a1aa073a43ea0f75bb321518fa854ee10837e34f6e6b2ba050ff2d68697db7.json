@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-245826a063f142a4",
+ "chunk_sha": "2ecbffc27df21e65a253762e89d2084b89fc1a2c0776c14756a957c5a3529a4d",
+ "key": "81a1aa073a43ea0f75bb321518fa854ee10837e34f6e6b2ba050ff2d68697db7",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the maximum number of products that can be included in a single order update request.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

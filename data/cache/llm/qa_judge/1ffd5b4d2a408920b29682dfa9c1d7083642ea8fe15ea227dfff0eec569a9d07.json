@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-38292c842f70a445",
+ "chunk_sha": "27ba2300cf337d5961397d56effca0df1538c68df2bd37cdb909eab6030c5b35",
+ "key": "1ffd5b4d2a408920b29682dfa9c1d7083642ea8fe15ea227dfff0eec569a9d07",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer is fully supported by the fragment, but it's a very specific and narrow interpretation of the general guideline.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 2}"
+}

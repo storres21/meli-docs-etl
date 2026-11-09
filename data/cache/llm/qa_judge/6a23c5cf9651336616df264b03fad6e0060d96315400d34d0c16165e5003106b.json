@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d3d51b691c2b9e0c",
+ "chunk_sha": "558cc3c72d1abc8bdab59a421ce8f5d21d3bd0ce82f1fab4153ada2c430c6533",
+ "key": "6a23c5cf9651336616df264b03fad6e0060d96315400d34d0c16165e5003106b",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer invents the phrase 'such as category issues or invalid data' which is not present in the documentation fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

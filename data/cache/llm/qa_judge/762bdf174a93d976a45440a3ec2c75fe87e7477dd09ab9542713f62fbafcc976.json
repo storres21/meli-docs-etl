@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-971a0f1f6590eab7",
+ "chunk_sha": "e7587cce1a4d0d08954acf3fcfc31aee6634788b0a84e0d55b20ffffb7fee979",
+ "key": "762bdf174a93d976a45440a3ec2c75fe87e7477dd09ab9542713f62fbafcc976",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the word 'planned' instead of the correct word 'planned actions' from the fragment.\", \"faithfulness\": 3, \"clarity\": 5, \"usefulness\": 5}"
+}

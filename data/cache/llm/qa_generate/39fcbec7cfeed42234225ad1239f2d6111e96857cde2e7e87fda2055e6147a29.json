@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d52946466ab9717d",
+ "chunk_sha": "9a17e6dbcee7b4a4f7e357ff1137098fd9d7ec9fc94cff6922969b1927bafba1",
+ "key": "39fcbec7cfeed42234225ad1239f2d6111e96857cde2e7e87fda2055e6147a29",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What theme is used in the documentation?\", \"answer\": \"The documentation uses the Professional JetBrains Darcula theme.\", \"evidence\": \"- **🌙 Dark Theme**: Professional JetBrains Darcula theme\", \"short_answer\": null}]}"
+}

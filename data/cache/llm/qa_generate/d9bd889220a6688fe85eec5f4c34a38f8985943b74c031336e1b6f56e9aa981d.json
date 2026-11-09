@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-1980cb9e138b2aac",
+ "chunk_sha": "052cd7b3dd6a6e3a09cecbbe6e24122b538993202f72d0de2692fe267063f98d",
+ "key": "d9bd889220a6688fe85eec5f4c34a38f8985943b74c031336e1b6f56e9aa981d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does the Troubleshooting section cover for the Catalog Portfolio API?\", \"answer\": \"It covers common problems from setup issues to runtime errors.\", \"evidence\": \"This section provides solutions to common problems you might encounter while working with the Catalog Portfolio API service, from setup issues to runtime errors.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a0e27f58cfef5924",
+ "chunk_sha": "b7d5e467436c049bfd4d98675b7f8ab78beb69997430e1d83c55bbbe70509ee1",
+ "key": "b0fd0faf762caf02bef8a23dd2162e318f2153db1e638d9cb6bc4e8390989d0a",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should you do if the project encounters a 'Port Already in Use' issue during startup?\", \"answer\": \"Change the port or kill the existing process.\", \"evidence\": \"| **Port Already in Use** | `Address already in use` | Change port or kill existing process |\", \"short_answer\": null}]}"
+}

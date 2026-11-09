@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-593936ef8cc6744b",
+ "chunk_sha": "e2d82850b73103636e288582c9847764bfd0d9c79e3e8cc7f49ee331e1df399c",
+ "key": "25ee7fea8dfcfcd963258699aff14c8e53b86273835f3d30c828379136e25e07",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP method and endpoint are used to get the form options for payment promises?\", \"answer\": \"GET /payment_promise/form\", \"evidence\": \"- GET /payment_promise/form\", \"short_answer\": null}, {\"question\": \"Which headers are required for all API requests to the Payment Promise Gateway?\", \"answer\": \"Authorization and Content-Type headers are required for all API requests.\", \"evidence\": \"-H \\\"Authorization: Bearer ${AUTH_TOKEN}\\\" \\\\\\n  -H \\\"Content-Type: application/json\\\" \", \"short_answer\": null}]}"
+}

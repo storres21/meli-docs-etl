@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-870637245d02b804",
+ "chunk_sha": "29b482d849f439e26d87ffb36c20338c6c1fda9805611388db14fa784dabc634",
+ "key": "ef504b0167b7a9462b6ead469de0282987b45e55d042de7b00b0aaa91c708493",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What command is used to run the service in development mode?\", \"answer\": \"The command to run the service in development mode is ./gradlew run -Denvironment=development.\", \"evidence\": \"./gradlew run -Denvironment=development\", \"short_answer\": null}]}"
+}

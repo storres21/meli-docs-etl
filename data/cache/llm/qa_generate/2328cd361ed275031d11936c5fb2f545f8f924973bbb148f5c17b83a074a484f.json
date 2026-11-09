@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-e55968eccb06803b",
+ "chunk_sha": "ca8386fc7e5727a7b51893384255f990d6ccb70f9adb48a09ef4710a2d7785d2",
+ "key": "2328cd361ed275031d11936c5fb2f545f8f924973bbb148f5c17b83a074a484f",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be checked if database migrations fail during local development?\", \"answer\": \"Ensure MySQL version compatibility and user permissions.\", \"evidence\": \"- **Issue**: Database migrations fail\\n- **Solution**: Ensure MySQL version compatibility and user permissions\", \"short_answer\": null}]}"
+}

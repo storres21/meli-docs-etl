@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c24b63fe906ee378",
+ "chunk_sha": "46c9d289fee4208a532d02324cd6429049a06481e3d8c104165b445644a81cde",
+ "key": "d31f57e9a56ec71f6af82caf161d336771ba763db55503a69c5ec3b215fc4bae",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is directly extracted from the provided documentation fragment, making it a faithful representation of the endpoint used for operation validation consumer.\", \"faithfulness\": 5, \"clarity\": 5, \"usefulness\": 5}"
+}

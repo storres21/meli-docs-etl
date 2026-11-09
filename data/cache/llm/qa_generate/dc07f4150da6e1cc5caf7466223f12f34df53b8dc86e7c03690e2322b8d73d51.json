@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-2b0579418c440004",
+ "chunk_sha": "32e05d0a4b6ce88be577dd20d8205e4097b3ddc660c80640f8c3160392b54767",
+ "key": "dc07f4150da6e1cc5caf7466223f12f34df53b8dc86e7c03690e2322b8d73d51",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What should be verified to resolve a 404 Not Found error in the catalog-portfolio-api?\", \"answer\": \"Verify brand ID exists in database.\", \"evidence\": \"| **404 Not Found** | Brand not found errors | Verify brand ID exists in database |\", \"short_answer\": null}]}"
+}

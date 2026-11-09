@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-40a2d38030357ea6",
+ "chunk_sha": "a7a0406d6453259d10b05792f0ee1ff16554c17391c85df03914b98d157efabd",
+ "key": "e51cedb0a02b3bdb4a1cc314ba0b707eacbe4c893e9309ba3aaed1e85a7ab410",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly describe the process for integrating VendorFlow CLI commands into the Spring Boot application for generating API specs, but it does provide a link to the VendorFlow Specs Hub guide, which may contain relevant information.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 4}"
+}

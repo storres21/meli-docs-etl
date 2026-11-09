@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-64575bc6e142290b",
+ "chunk_sha": "f6387e70d33c0eb574851e5ff6c9e05d1792e3a96ee12ae161a1747f6e501c99",
+ "key": "102cf8e1a60c45fb03a2c55a8d518fb79a413172186c14e409d46f581ddb6622",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is supported by the fragment, but it is not the first step in the entire pipeline, it is the first step in the 'IngestMarketplaceData' subgraph.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

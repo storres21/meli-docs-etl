@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-de50f4e20e85740b",
+ "chunk_sha": "b5133952cdde6c040b53233dbc58edc80cb1146e32615bd012af56c1c34d5548",
+ "key": "431bea43b2ab43eb505139f3a9b07bb1c1dfae2a424bbc789eddaf1bdf3a4f33",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué ocurre si durante el procesamiento de una dirección IP llega la misma dirección a analizar?\", \"answer\": \"Se identifica que es un duplicado y que ya está en proceso de whitelist.\", \"evidence\": \"si durante la ejecución llega la misma dirección IP a analizar se identifica que es un duplicado y que ya está en proceso de whitelist)\", \"short_answer\": null}]}"
+}

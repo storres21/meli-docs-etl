@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c107abf9cc49e201",
+ "chunk_sha": "f8ed2c3810231ad428ed7b6d364ae46c1ddd3dd506fdf8aad32a1b7cf824a1f2",
+ "key": "306a8f0b3dc56de7be4da88b0f0a282ac49e01f6cadc9c2594692e1fe450aa70",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The proposed answer is fully supported by the documentation fragment, but it is not the only query that can be used to check if a brand with a specific ID exists.\", \"faithfulness\": 4, \"clarity\": 5, \"usefulness\": 5}"
+}

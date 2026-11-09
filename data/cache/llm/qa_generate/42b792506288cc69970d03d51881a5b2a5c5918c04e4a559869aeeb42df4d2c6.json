@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-33cfebf1c4a683fa",
+ "chunk_sha": "adcbd3186fc41d048a20e2a2f3bb648c787d9206e5c0c2f0bb74caaec671d637",
+ "key": "42b792506288cc69970d03d51881a5b2a5c5918c04e4a559869aeeb42df4d2c6",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What are task-images in RDA?\", \"answer\": \"Task-images are frozen images of the code at the moment of creation - they point to a specific commit in the git repository. They are used to run tasks. The task-images are also defined by their entrypoint file, which will be executed later, and a set of input fields (artifacts and/or parameters) and outputs (artifacts).\", \"evidence\": \"- **Task-images** are frozen images of the code at the moment of creation - they point to a specific commit in the git repository. They are used to run tasks. The task-images are also defined by their entrypoint file, which will be executed later, and a set of input fields (artifacts and/or parameters) and outputs (artifacts).\", \"short_answer\": null}]}"
+}

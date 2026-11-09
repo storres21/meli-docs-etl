@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-61e1b55946e948d0",
+ "chunk_sha": "a1435ea557a73313fb601488a1ce9ea9e46a05ba5d6043da6e0e7d3b8741372c",
+ "key": "4847986b6366a428ceb5dddd15ea9eb4afd21a61be79a24b3c169815cdff1528",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents a question that is not present in the fragment, and the proposed answer is a direct quote from the fragment, but it does not answer the question being asked.\", \"faithfulness\": 1, \"clarity\": 1, \"usefulness\": 1}"
+}

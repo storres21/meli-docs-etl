@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-0b18883b531bf53b",
+ "chunk_sha": "4dcff934f9dd3f2b51f49dce183aebb59197271f60971bcbb63a0e7394acc696",
+ "key": "a9bb8ad64711cc5644bb6a9ca8ec40f22522f8f1a3476d34c8dfd797bf78c4f4",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What HTTP status code is returned when a workflow already exists during an insert attempt?\", \"answer\": \"HTTP 409 CONFLICT\", \"evidence\": \"- alt not workflowExists\\n        W-->>U: Return HTTP 201 CREATED\\n    else\\n        W-->>U: Return HTTP 409 CONFLICT\", \"short_answer\": null}]}"
+}

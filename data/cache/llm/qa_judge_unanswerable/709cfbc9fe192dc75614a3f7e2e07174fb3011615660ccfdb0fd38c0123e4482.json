@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-d2a47cb9bfc51ffd",
+ "chunk_sha": "65335b964ff826543ad7151ce305ec9b44c8f958679cecc4daf99e5fe71f02e5",
+ "key": "709cfbc9fe192dc75614a3f7e2e07174fb3011615660ccfdb0fd38c0123e4482",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention the default sorting order for the products list.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

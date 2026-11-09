@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-c4dfb2dc0a5c0709",
+ "chunk_sha": "058c36f7963c47721d00765a17cefe07a54c9d759865cf44d58ed18d05dc4741",
+ "key": "365c053d438add497649bdfac55945fcb0067a6d17fb457556727c2293a04e5d",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Qué tabla guarda el estado de los jobs que llaman a /whitelist en Traffic Gate API?\", \"answer\": \"La tabla Execution guarda el estado de los jobs que llaman a /whitelist.\", \"evidence\": \"- **Tabla Execution**: En esta tabla se guarda el estado de los jobs que hacen los llamados a los endpoints de la API de traffic-gate.\", \"short_answer\": null}, {\"question\": \"¿Qué ocurre con las direcciones IP en la tabla Whitelist cuando se determina que no deben continuar autorizadas?\", \"answer\": \"Se realiza un borrado lógico en la base de datos, actualizando el campo 'deleted' a true.\", \"evidence\": \"- **Tabla Whitelist**: En esta tabla se guardan las direcciones ip que se envían a una whitelist en las reglas del WAF. Después de cierto tiempo, se determina mediante un proceso de purga, si la ip debe continuar autorizada en la whitelist o si ya se puede remover de la misma. Cuando se determina que una ip ya no debe pertenecer a una whitelist, se hace un borrado lógico en base de datos, actualizando el campo 'deleted' en true.\", \"short_answer\": null}]}"
+}

@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-dd8bf0e5dc43a5a5",
+ "chunk_sha": "583ad3325800d31dfc8da26da278f56c6190489013d78c94ea1fb225a7702796",
+ "key": "a8c423779001ac0ada966ac4c571592122c3d6c83ca8a9855f59298a9033e843",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the title of the team, which is not explicitly mentioned in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

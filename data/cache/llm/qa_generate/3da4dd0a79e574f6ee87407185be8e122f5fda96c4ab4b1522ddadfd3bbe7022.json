@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-89d00bd6e874a02c",
+ "chunk_sha": "2d3493ada434e4bd27587b5a67ac9edb02f1a96b7b3f638dc5d479148b0d0601",
+ "key": "3da4dd0a79e574f6ee87407185be8e122f5fda96c4ab4b1522ddadfd3bbe7022",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What does running `poetry install` allow developers to do?\", \"answer\": \"Import modules inside the `src/` folder as if they were part of a normal package.\", \"evidence\": \"If you run `poetry install`, then you can import the modules inside the `src/` folder as you would for a normal package.\", \"short_answer\": null}]}"
+}

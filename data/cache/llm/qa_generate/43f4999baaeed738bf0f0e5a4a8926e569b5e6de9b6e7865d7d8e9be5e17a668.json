@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-6fcab0aa193a05e4",
+ "chunk_sha": "fbc95aa783af942435b43d04f077bb85fdd8ff854f27c6e0e22ebc1fdf868c2c",
+ "key": "43f4999baaeed738bf0f0e5a4a8926e569b5e6de9b6e7865d7d8e9be5e17a668",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the API endpoint for Restock Consumer in the vendor-stockkeeper-api project?\", \"answer\": \"The API endpoint is https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/restock-new.\", \"evidence\": \"curl --location 'https://vendor-stockkeeper-test.techzoneoffice.com/fp/inventory/operations/restock-new' \\\\\", \"short_answer\": null}]}"
+}

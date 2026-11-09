@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-59089407891400bf",
+ "chunk_sha": "ffddf837fd4c9f555338094ad9114e2c4050022517c553d364671d08b440bcaf",
+ "key": "1cbb09318457143601508142eab25b91cd601364c764f3de46837e28e10a0084",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"How can you ingest data using the IngestMarketplaceData pipe in a notebook?\", \"answer\": \"You can import the IngestMarketplaceData pipe, pass the parameters, and run it. Alternatively, you can use a context to reuse the same object for different datasets.\", \"evidence\": \"To ingest data, it's really simple. In your notebook, import the ingest pipe, pass the parameters and run.\", \"short_answer\": null}]}"
+}

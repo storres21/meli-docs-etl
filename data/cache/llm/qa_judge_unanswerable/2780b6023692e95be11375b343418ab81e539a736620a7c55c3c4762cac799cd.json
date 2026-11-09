@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-91af07dc16454e6e",
+ "chunk_sha": "57be4852593cf96c82566e4238d7b0ef603d6391687234f19ae0064555592dd8",
+ "key": "2780b6023692e95be11375b343418ab81e539a736620a7c55c3c4762cac799cd",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge_unanswerable.v1",
+ "prompt_sha": "0f4e48e4b7e7bc09142822b799b1e6988210660c32f77409151618995097d360",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The provided documentation does not explicitly mention default values for environment variables during setup and installation.\", \"answered\": false, \"clarity\": 5, \"usefulness\": 5}"
+}

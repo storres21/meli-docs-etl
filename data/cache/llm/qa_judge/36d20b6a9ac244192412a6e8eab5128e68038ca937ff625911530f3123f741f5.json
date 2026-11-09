@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-5e31c8a1889f13b4",
+ "chunk_sha": "a4fd5c8be05a9e8746f5fe87ee912289145ea597f8e1e65071737c1d35ba4206",
+ "key": "36d20b6a9ac244192412a6e8eab5128e68038ca937ff625911530f3123f741f5",
+ "model": "llama3.1:8b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_judge.v1",
+ "prompt_sha": "3a2a949cedf43e541963ee4acabe2bb856946e7609ba6fe3b0d5cf24cd91aac2",
+ "provider": "ollama",
+ "response": "{\"rationale\": \"The answer invents the project name 'traffic-gate-api' which is not mentioned in the fragment.\", \"faithfulness\": 1, \"clarity\": 5, \"usefulness\": 5}"
+}

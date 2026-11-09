@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-12b550870d2ed002",
+ "chunk_sha": "cd13246c4c84fa0e2a2e6b40f5ee642bfecb38728ba2e15d4940f850449adf2c",
+ "key": "17fffd5432414030c48e9f3819f8ddaaf11bd8d464e82a43203d224856d92d54",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuál es el procedimiento para solicitar la inclusión de una dirección IP en la whitelist según los criterios de PCI y PCI GLOBAL?\", \"missing_information\": \"Procedimiento para solicitar la inclusión de una dirección IP en la whitelist.\"}]}"
+}

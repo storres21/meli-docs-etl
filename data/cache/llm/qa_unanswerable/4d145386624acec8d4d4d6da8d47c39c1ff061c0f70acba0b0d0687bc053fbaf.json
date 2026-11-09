@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-a3aebbee0b623d5b",
+ "chunk_sha": "23c5cf467599384cb5eb58573128c43c590c51df9807ed2a1d78a1c98ab42eb6",
+ "key": "4d145386624acec8d4d4d6da8d47c39c1ff061c0f70acba0b0d0687bc053fbaf",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_unanswerable.v1",
+ "prompt_sha": "6e9652e6743d9446a6dd251234466bc835d15ac6924feb89fea0bca8a18dca74",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"¿Cuáles son las reglas específicas que se utilizan en las Web_ACL para proteger las aplicaciones de RetailHub?\", \"missing_information\": \"falta la lista o descripción de las reglas específicas utilizadas en las Web_ACL\"}]}"
+}

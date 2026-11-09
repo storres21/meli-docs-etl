@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-45f4b1af2c304b5f",
+ "chunk_sha": "2d98ac8c4e7f2dab1cbcb4a284c32c70a1505b3439d80c9b011a170edefbea11",
+ "key": "858353efabefa518c4e528984fa3601de847213a85c235f200479e3540980bbd",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"What is the host for the Test environment in the vendor-stockkeeper-api project?\", \"answer\": \"The host for the Test environment is proxysql.master.techzoneseginf.com.\", \"evidence\": \"- **Host:** proxysql.master.techzoneseginf.com\", \"short_answer\": null}]}"
+}

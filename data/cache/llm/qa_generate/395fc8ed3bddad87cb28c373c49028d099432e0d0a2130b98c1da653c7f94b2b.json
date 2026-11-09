@@ -1,0 +1,16 @@
+{
+ "chunk_id": "ck-f39f891b90b7ac3a",
+ "chunk_sha": "dca2a987ac72163195d467b6eb2e6c5552350560df23d8a5f757232c72889175",
+ "key": "395fc8ed3bddad87cb28c373c49028d099432e0d0a2130b98c1da653c7f94b2b",
+ "model": "qwen2.5:7b",
+ "params": {
+  "max_tokens": 1024,
+  "num_ctx": 8192,
+  "seed": 42,
+  "temperature": 0
+ },
+ "prompt": "qa_generate.v1",
+ "prompt_sha": "baa607ec1a66a0e5c8e71d289180ee6e3349959085b54e32b6c61a9e3ba6a55e",
+ "provider": "ollama",
+ "response": "{\"questions\": [{\"question\": \"Which version of Java is used in the payment-promise-gateway project?\", \"answer\": \"Java 17\", \"evidence\": \"- **Language**: Java 17\", \"short_answer\": \"Java 17\"}]}"
+}
